@@ -1,0 +1,75 @@
+\hypertarget{_s_c_p_8h_source}{}\doxysection{SCP.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <Eigen/Dense>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}Units.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{11 \textcolor{keyword}{using namespace }Eigen;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_s_c_p}{SCP}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_units}{Units}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{private}:}
+\DoxyCodeLine{22   \textcolor{comment}{//Data}}
+\DoxyCodeLine{23   \textcolor{keywordtype}{double} t, L, D, A, lambda, he, hv, ro, a, roa, dt, lambda\_p\_2D, S0, g;}
+\DoxyCodeLine{24   \textcolor{keywordtype}{string} name, node\_from, node\_to;}
+\DoxyCodeLine{25   \textcolor{keywordtype}{double} phi, alpha, gamma, mu;}
+\DoxyCodeLine{26   \textcolor{keywordtype}{int} Npts; }
+\DoxyCodeLine{27   VectorXd x, v, p;}
+\DoxyCodeLine{28   \textcolor{keywordtype}{bool} ini\_done; }
+\DoxyCodeLine{29   \textcolor{keywordtype}{void} BCLeft(\textcolor{keywordtype}{string} type, \textcolor{keywordtype}{double} val, \textcolor{keywordtype}{double} \&pstart, \textcolor{keywordtype}{double} \&vstart);}
+\DoxyCodeLine{30   \textcolor{keywordtype}{void} BCRight(\textcolor{keywordtype}{string} type, \textcolor{keywordtype}{double} val, \textcolor{keywordtype}{double} \&pend, \textcolor{keywordtype}{double} \&vend);}
+\DoxyCodeLine{31   \textcolor{keywordtype}{double} Source(\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{comment}{//Saving and plotting data}}
+\DoxyCodeLine{34   vector< vector<double> > data;}
+\DoxyCodeLine{35   vector<double> tmpvec;}
+\DoxyCodeLine{36   vector<double> tstatus; \textcolor{comment}{//time data for the status}}
+\DoxyCodeLine{37   vector< vector<double> > vstatus, pstatus;}
+\DoxyCodeLine{38   \textcolor{keywordtype}{bool} save\_data; }
+\DoxyCodeLine{39   \textcolor{comment}{//bool do\_plot\_runtime;}}
+\DoxyCodeLine{40   \textcolor{comment}{//bool ylim\_isset;}}
+\DoxyCodeLine{41   \textcolor{comment}{//double lim\_pbottom, lim\_pup, lim\_vbottom, lim\_vup;}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{public}:}
+\DoxyCodeLine{44   \mbox{\hyperlink{class_s_c_p_a3dedbee89f8f613bd2987b6fca6dca94}{SCP}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \_nev,}
+\DoxyCodeLine{45       \textcolor{keyword}{const} \textcolor{keywordtype}{string} \_cspe\_nev,}
+\DoxyCodeLine{46       \textcolor{keyword}{const} \textcolor{keywordtype}{string} \_cspv\_nev,}
+\DoxyCodeLine{47       \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_ro,}
+\DoxyCodeLine{48       \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_a,}
+\DoxyCodeLine{49       \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_L,}
+\DoxyCodeLine{50       \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_D,}
+\DoxyCodeLine{51       \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_lambda,}
+\DoxyCodeLine{52       \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_he,}
+\DoxyCodeLine{53       \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_hv,}
+\DoxyCodeLine{54       \textcolor{keyword}{const} \textcolor{keywordtype}{bool} save\_data);}
+\DoxyCodeLine{55   \mbox{\hyperlink{class_s_c_p_aec0db6047f6437d1ff4de3e5c21a9671}{\string~SCP}}();}
+\DoxyCodeLine{56   \textcolor{keywordtype}{string} \mbox{\hyperlink{class_s_c_p_af16d744aa2d09926cf227f260773a82c}{GetName}}();}
+\DoxyCodeLine{57   \textcolor{keywordtype}{string} \mbox{\hyperlink{class_s_c_p_a49d5f5d781536e58ce5e21026dfa8059}{Info}}(\textcolor{keywordtype}{bool} show\_pts);}
+\DoxyCodeLine{58   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_c_p_afd01c84f7ecfe434523957f646bfbcb1}{Ini}}(\textcolor{keywordtype}{int} Npts\_mul);}
+\DoxyCodeLine{59   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_c_p_afd01c84f7ecfe434523957f646bfbcb1}{Ini}}(\textcolor{keywordtype}{double} vini, \textcolor{keywordtype}{double} \_pstart, \textcolor{keywordtype}{int} Npts\_mul);}
+\DoxyCodeLine{60   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_c_p_afd01c84f7ecfe434523957f646bfbcb1}{Ini}}(\textcolor{keywordtype}{double} vini, \textcolor{keywordtype}{double} \_pstart, \textcolor{keywordtype}{double} dt\_target);}
+\DoxyCodeLine{61   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_c_p_af1f4995d58d75d80ed1738346ff06bf4}{UpdateDimlessPars}}(\textcolor{keywordtype}{double} pref, \textcolor{keywordtype}{double} mp\_nevl, \textcolor{keywordtype}{double} omega, \textcolor{keywordtype}{double} xref, \textcolor{keywordtype}{double} m);}
+\DoxyCodeLine{62   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_s_c_p_a046c2c6fa8dedf9d5797b294db9c4f15}{Get\_dprop}}(\textcolor{keywordtype}{string} prop\_string);}
+\DoxyCodeLine{63   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_c_p_ac1f64a4207c1e612da730cebbb44c682}{Set\_dprop}}(\textcolor{keywordtype}{string} prop\_string, \textcolor{keywordtype}{double} val);}
+\DoxyCodeLine{64   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_c_p_a58097cfe30d419e07d14bac541d04af5}{Step}}(}
+\DoxyCodeLine{65     \textcolor{keywordtype}{string} BC\_start\_type, \textcolor{keywordtype}{double} BC\_start\_val,}
+\DoxyCodeLine{66     \textcolor{keywordtype}{string} BC\_end\_type, \textcolor{keywordtype}{double} BC\_end\_val);}
+\DoxyCodeLine{67   \textcolor{keywordtype}{double} GetAlphaAtEnd(\textcolor{keywordtype}{double} t\_target);}
+\DoxyCodeLine{68   \textcolor{keywordtype}{double} GetBetaAtFront(\textcolor{keywordtype}{double} t\_target);}
+\DoxyCodeLine{69   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_c_p_a15a21288294d0ae18e73ef2fccc1388b}{Save\_data}}();}
+\DoxyCodeLine{70   \textcolor{keywordtype}{void} Save\_status(\textcolor{keywordtype}{bool} newfile, \textcolor{keywordtype}{bool} atonce);}
+\DoxyCodeLine{71   \textcolor{keywordtype}{float} \mbox{\hyperlink{class_s_c_p_acf9565ea5e961dc2b13593556414a113}{GetPenult}}(\textcolor{keywordtype}{string} what);}
+\DoxyCodeLine{72   vector<double> Get\_dvprop(\textcolor{keywordtype}{string} prop\_string);}
+\DoxyCodeLine{73   \textcolor{keywordtype}{string} fname;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \};}
+
+\end{DoxyCode}

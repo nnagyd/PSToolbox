@@ -1,0 +1,82 @@
+\hypertarget{class_reservoir}{}\doxysection{Reservoir Class Reference}
+\label{class_reservoir}\index{Reservoir@{Reservoir}}
+
+
+Class for modeling ideal gases.  
+
+
+
+
+{\ttfamily \#include $<$Reservoir.\+h$>$}
+
+Inheritance diagram for Reservoir\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_reservoir}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_reservoir_aae080b81c168a292bcaa78b4b9336af1}\label{class_reservoir_aae080b81c168a292bcaa78b4b9336af1}} 
+{\bfseries Reservoir} (const string \+\_\+nev, const double \+\_\+vol, const double \+\_\+a, const bool save\+\_\+data)
+\item 
+\mbox{\Hypertarget{class_reservoir_abee805f1826eb75ba2edf97fa0ab7bf2}\label{class_reservoir_abee805f1826eb75ba2edf97fa0ab7bf2}} 
+{\bfseries Reservoir} (const string \+\_\+name, const double \+\_\+vol, \mbox{\hyperlink{class_ideal___gas}{Ideal\+\_\+\+Gas}} $\ast$gas, double n\+\_\+poly, const bool \+\_\+save\+\_\+data)
+\item 
+\mbox{\Hypertarget{class_reservoir_a8f2bec99c8d8cf32873675f79d66d4c9}\label{class_reservoir_a8f2bec99c8d8cf32873675f79d66d4c9}} 
+string {\bfseries Get\+Name} ()
+\item 
+\mbox{\Hypertarget{class_reservoir_a093db21486b33b07564c0f2a555ef94a}\label{class_reservoir_a093db21486b33b07564c0f2a555ef94a}} 
+string {\bfseries Info} ()
+\item 
+\mbox{\Hypertarget{class_reservoir_acbf42969273a347c5b32fbf40248f38e}\label{class_reservoir_acbf42969273a347c5b32fbf40248f38e}} 
+void {\bfseries Update} (double delta\+\_\+t, double mp\+\_\+in, double mp\+\_\+out)
+\item 
+\mbox{\Hypertarget{class_reservoir_a914e7387e18311fe2e46bcad3ac96d96}\label{class_reservoir_a914e7387e18311fe2e46bcad3ac96d96}} 
+void {\bfseries Update\+Dimless\+Pars} (double pref, double mp\+\_\+nevl, double omega)
+\item 
+\mbox{\Hypertarget{class_reservoir_a61a6925be17180de646b0c4151c59454}\label{class_reservoir_a61a6925be17180de646b0c4151c59454}} 
+void {\bfseries Ini} (double \+\_\+pstart)
+\item 
+\mbox{\Hypertarget{class_reservoir_af0b230c3a0f3a6d3d84dfb0a3e8d8de2}\label{class_reservoir_af0b230c3a0f3a6d3d84dfb0a3e8d8de2}} 
+void {\bfseries Ini} (double \+\_\+pstart, double \+\_\+\+Tstart)
+\item 
+\mbox{\Hypertarget{class_reservoir_a0c08e2bf607ca1d30718100e78850291}\label{class_reservoir_a0c08e2bf607ca1d30718100e78850291}} 
+double {\bfseries Get\+\_\+dprop} (string prop\+\_\+string)
+\item 
+\mbox{\Hypertarget{class_reservoir_a846b7cea080db6afa41725f27652b555}\label{class_reservoir_a846b7cea080db6afa41725f27652b555}} 
+void {\bfseries Set\+\_\+dprop} (string prop\+\_\+string, double val)
+\item 
+\mbox{\Hypertarget{class_reservoir_a929cdd0a58c364b23576c225f3289594}\label{class_reservoir_a929cdd0a58c364b23576c225f3289594}} 
+double {\bfseries GetP} ()
+\item 
+\mbox{\Hypertarget{class_reservoir_a954e6b343e246da064894b167b858712}\label{class_reservoir_a954e6b343e246da064894b167b858712}} 
+void {\bfseries List\+\_\+data} ()
+\item 
+\mbox{\Hypertarget{class_reservoir_a25e857bf07d44c4e441116cef97002cc}\label{class_reservoir_a25e857bf07d44c4e441116cef97002cc}} 
+void {\bfseries Save\+\_\+data} ()
+\item 
+\mbox{\Hypertarget{class_reservoir_aa779b9aee18c7d3a066003c0a488e94c}\label{class_reservoir_aa779b9aee18c7d3a066003c0a488e94c}} 
+vector$<$ double $>$ {\bfseries Get\+\_\+dvprop} (string prop\+\_\+string)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_reservoir_ab7bc173165dec1b596ec7a9c15ab88d2}\label{class_reservoir_ab7bc173165dec1b596ec7a9c15ab88d2}} 
+string {\bfseries fname}
+\item 
+\mbox{\Hypertarget{class_reservoir_a01553d366721a5a1a256f98b67cec117}\label{class_reservoir_a01553d366721a5a1a256f98b67cec117}} 
+\mbox{\hyperlink{class_ideal___gas}{Ideal\+\_\+\+Gas}} {\bfseries gas}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for modeling ideal gases. 
+
+The class contains data from an ideal gas, and providing functions for the 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Reservoir.\+h\item 
+Reservoir.\+cpp\end{DoxyCompactItemize}

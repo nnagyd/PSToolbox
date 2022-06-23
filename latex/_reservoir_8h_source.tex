@@ -1,0 +1,68 @@
+\hypertarget{_reservoir_8h_source}{}\doxysection{Reservoir.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <Eigen/Dense>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}Units.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}IdealGas.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{11 \textcolor{keyword}{using namespace }Eigen;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_reservoir}{Reservoir}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_units}{Units}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20 \textcolor{keyword}{private}:}
+\DoxyCodeLine{21   \textcolor{keywordtype}{bool} save\_data;}
+\DoxyCodeLine{22   \textcolor{keywordtype}{string} name;}
+\DoxyCodeLine{23   \textcolor{keywordtype}{double} vol, a, p, t;}
+\DoxyCodeLine{24   \textcolor{keywordtype}{double} beta;}
+\DoxyCodeLine{25   \textcolor{keywordtype}{bool} is\_Ideal\_Gas;}
+\DoxyCodeLine{26   VectorXd ReservoirODE(\textcolor{keyword}{const} \textcolor{keywordtype}{double} x, \textcolor{keyword}{const} VectorXd \&y, \textcolor{keyword}{const} VectorXd \&pars);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   \textcolor{keywordtype}{void} rk45(\textcolor{keywordtype}{double} x\_0,}
+\DoxyCodeLine{29             \textcolor{keywordtype}{double} x\_max,}
+\DoxyCodeLine{30             VectorXd y\_0,}
+\DoxyCodeLine{31             vector<double> \&x, vector<vector<double> > \&y,}
+\DoxyCodeLine{32             \textcolor{keyword}{const} VectorXd \& pars);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   vector<vector<double> > data;}
+\DoxyCodeLine{35   vector<double> tmpvec;}
+\DoxyCodeLine{36   \textcolor{keywordtype}{bool} Ini\_done;}
+\DoxyCodeLine{37   \textcolor{keywordtype}{double} n\_poly;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{public}:}
+\DoxyCodeLine{40   \mbox{\hyperlink{class_reservoir}{Reservoir}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \_nev,}
+\DoxyCodeLine{41             \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_vol,}
+\DoxyCodeLine{42             \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_a,}
+\DoxyCodeLine{43             \textcolor{keyword}{const} \textcolor{keywordtype}{bool} save\_data);}
+\DoxyCodeLine{44   \mbox{\hyperlink{class_reservoir}{Reservoir}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \_name,}
+\DoxyCodeLine{45             \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_vol,}
+\DoxyCodeLine{46             \mbox{\hyperlink{class_ideal___gas}{Ideal\_Gas}}* gas,}
+\DoxyCodeLine{47             \textcolor{keywordtype}{double} n\_poly,}
+\DoxyCodeLine{48             \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \_save\_data);}
+\DoxyCodeLine{49   \mbox{\hyperlink{class_reservoir}{\string~Reservoir}}();}
+\DoxyCodeLine{50   \textcolor{keywordtype}{string} GetName();}
+\DoxyCodeLine{51   \textcolor{keywordtype}{string} Info();}
+\DoxyCodeLine{52   \textcolor{keywordtype}{void} Update(\textcolor{keywordtype}{double} delta\_t, \textcolor{keywordtype}{double} mp\_in, \textcolor{keywordtype}{double} mp\_out);}
+\DoxyCodeLine{53   \textcolor{keywordtype}{void} UpdateDimlessPars(\textcolor{keywordtype}{double} pref, \textcolor{keywordtype}{double} mp\_nevl, \textcolor{keywordtype}{double} omega);}
+\DoxyCodeLine{54   \textcolor{comment}{//void Ini();}}
+\DoxyCodeLine{55   \textcolor{keywordtype}{void} Ini(\textcolor{keywordtype}{double} \_pstart);}
+\DoxyCodeLine{56   \textcolor{keywordtype}{void} Ini(\textcolor{keywordtype}{double} \_pstart, \textcolor{keywordtype}{double} \_Tstart);}
+\DoxyCodeLine{57   \textcolor{keywordtype}{double} Get\_dprop(\textcolor{keywordtype}{string} prop\_string);}
+\DoxyCodeLine{58   \textcolor{keywordtype}{void} Set\_dprop(\textcolor{keywordtype}{string} prop\_string, \textcolor{keywordtype}{double} val);}
+\DoxyCodeLine{59   \textcolor{keywordtype}{double} GetP() \{\textcolor{keywordflow}{return} p;\}}
+\DoxyCodeLine{60   \textcolor{keywordtype}{void} List\_data();}
+\DoxyCodeLine{61   \textcolor{keywordtype}{void} Save\_data();}
+\DoxyCodeLine{62   vector<double> Get\_dvprop(\textcolor{keywordtype}{string} prop\_string);}
+\DoxyCodeLine{63   \textcolor{comment}{//void Plot();}}
+\DoxyCodeLine{64   \textcolor{keywordtype}{string} fname;}
+\DoxyCodeLine{65   \mbox{\hyperlink{class_ideal___gas}{Ideal\_Gas}} gas;}
+\DoxyCodeLine{66 \};}
+
+\end{DoxyCode}

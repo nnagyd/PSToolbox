@@ -1,10 +1,8 @@
-#ifndef MYTOOLS_HEADER
-#define MYTOOLS_HEADER
+#pragma once
 
 #include <Eigen/Dense>
 #include <string>
 #include <fstream>
-
 
 using namespace Eigen;
 using namespace std;
@@ -86,5 +84,3 @@ private:
 	//int elements{ 0 };
     int elements;
 };
-
-#endif // !MYTOOLS_HEADER

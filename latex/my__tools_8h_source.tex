@@ -1,0 +1,91 @@
+\hypertarget{my__tools_8h_source}{}\doxysection{my\+\_\+tools.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <Eigen/Dense>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{using namespace }Eigen;}
+\DoxyCodeLine{8 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keywordtype}{bool} NR(}
+\DoxyCodeLine{11     VectorXd (*fun)(VectorXd \& x, \textcolor{keyword}{const} VectorXd \& pars),}
+\DoxyCodeLine{12     VectorXd \& x,}
+\DoxyCodeLine{13     \textcolor{keyword}{const} VectorXd \& pars,}
+\DoxyCodeLine{14     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} show\_iter,}
+\DoxyCodeLine{15     \textcolor{keyword}{const} \textcolor{keywordtype}{double} err\_max,}
+\DoxyCodeLine{16     \textcolor{keyword}{const} \textcolor{keywordtype}{int} iter\_max,}
+\DoxyCodeLine{17     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} stop\_on\_failure);}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 MatrixXd num\_jac(}
+\DoxyCodeLine{20     VectorXd (*fun)(VectorXd \& x, \textcolor{keyword}{const} VectorXd \& pars),}
+\DoxyCodeLine{21     VectorXd \& x, \textcolor{keyword}{const} VectorXd \& pars);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 VectorXd linspace(\textcolor{keywordtype}{double} x\_min, \textcolor{keywordtype}{double} x\_max, \textcolor{keywordtype}{int} Nsteps, \textcolor{keywordtype}{bool} is\_linear);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keywordtype}{double} signum(\textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keywordtype}{double} mean(vector<double> x);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keywordtype}{double} stdev(vector<double> x);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keywordtype}{void} SteepestDescent(}
+\DoxyCodeLine{32     \textcolor{keywordtype}{double} (*fun)(VectorXd \& x, \textcolor{keyword}{const} VectorXd \& pars),}
+\DoxyCodeLine{33     VectorXd \& x,}
+\DoxyCodeLine{34     \textcolor{keyword}{const} VectorXd \& pars,}
+\DoxyCodeLine{35     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} show\_iter);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 VectorXd num\_grad(}
+\DoxyCodeLine{38     \textcolor{keywordtype}{double} (*fun)(VectorXd \& x, \textcolor{keyword}{const} VectorXd \& pars),}
+\DoxyCodeLine{39     VectorXd \& x,}
+\DoxyCodeLine{40     \textcolor{keyword}{const} VectorXd \& pars);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keywordtype}{void} NelderMead2D(}
+\DoxyCodeLine{43     \textcolor{keywordtype}{double} (*fun)(VectorXd \& x, \textcolor{keyword}{const} VectorXd \& pars),}
+\DoxyCodeLine{44     VectorXd \& x,}
+\DoxyCodeLine{45     \textcolor{keywordtype}{double} radius,}
+\DoxyCodeLine{46     \textcolor{keyword}{const} VectorXd \& pars,}
+\DoxyCodeLine{47     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} show\_iter);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keywordtype}{void} NelderMead(}
+\DoxyCodeLine{50     \textcolor{keywordtype}{double} (*fun)(VectorXd \& x, \textcolor{keyword}{const} VectorXd \& pars),}
+\DoxyCodeLine{51     VectorXd \& x,}
+\DoxyCodeLine{52     \textcolor{keywordtype}{double} radius,}
+\DoxyCodeLine{53     \textcolor{keyword}{const} VectorXd \& pars,}
+\DoxyCodeLine{54     \textcolor{keyword}{const} \textcolor{keywordtype}{double} x\_TOL,}
+\DoxyCodeLine{55     \textcolor{keyword}{const} \textcolor{keywordtype}{double} fun\_TOL,}
+\DoxyCodeLine{56     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} show\_iter);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{keywordtype}{void} swap(VectorXd x, VectorXd y);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keywordtype}{double} gen\_random\_double(\textcolor{keywordtype}{double} min, \textcolor{keywordtype}{double} max);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 VectorXd linspace(\textcolor{keywordtype}{double} x\_min, \textcolor{keywordtype}{double} x\_max, \textcolor{keywordtype}{int} Nsteps, \textcolor{keywordtype}{bool} is\_linear);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 vector<double> linspace\_vec(\textcolor{keywordtype}{double} x\_min, \textcolor{keywordtype}{double} x\_max, \textcolor{keywordtype}{int} Nsteps, \textcolor{keywordtype}{bool} is\_linear);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keywordtype}{double} signum(\textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{comment}{//Add methods for easier reading of data}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_datapair}{Datapair}}}
+\DoxyCodeLine{72 \{}
+\DoxyCodeLine{73     std::string name;}
+\DoxyCodeLine{74     \textcolor{keywordtype}{double} value;}
+\DoxyCodeLine{75 \};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{keyword}{class }\mbox{\hyperlink{class_input}{Input}} \{}
+\DoxyCodeLine{78 \textcolor{keyword}{public}:}
+\DoxyCodeLine{79     \textcolor{keywordtype}{void} add\_datapair(\mbox{\hyperlink{struct_datapair}{Datapair}} \_dp);}
+\DoxyCodeLine{80     \textcolor{keywordtype}{double} extract\_value(std::string name);}
+\DoxyCodeLine{81     \textcolor{keywordtype}{void} parse\_file(std::string filename);}
+\DoxyCodeLine{82 \textcolor{keyword}{private}:}
+\DoxyCodeLine{83     \mbox{\hyperlink{struct_datapair}{Datapair}} dataarray[100];}
+\DoxyCodeLine{84     \textcolor{comment}{//int elements\{ 0 \};}}
+\DoxyCodeLine{85     \textcolor{keywordtype}{int} elements;}
+\DoxyCodeLine{86 \};}
+
+\end{DoxyCode}

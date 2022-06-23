@@ -1,0 +1,76 @@
+\hypertarget{class_l_w_p}{}\doxysection{L\+WP Class Reference}
+\label{class_l_w_p}\index{LWP@{LWP}}
+Inheritance diagram for L\+WP\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_l_w_p}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_l_w_p_a06e7f2afc35461fc4648131b45e3be14}\label{class_l_w_p_a06e7f2afc35461fc4648131b45e3be14}} 
+{\bfseries L\+WP} (const string \+\_\+nev, const string \+\_\+cspe\+\_\+nev, const string \+\_\+cspv\+\_\+nev, const double \+\_\+L, const double \+\_\+D, const double \+\_\+lambda, const double \+\_\+he, const double \+\_\+hv, const bool \+\_\+save\+\_\+data, const bool \+\_\+save\+\_\+all\+\_\+data, \mbox{\hyperlink{class_ideal___gas}{Ideal\+\_\+\+Gas}} $\ast$gas)
+\item 
+\mbox{\Hypertarget{class_l_w_p_aa36b088feffd84c4441fdd3d74cfc15c}\label{class_l_w_p_aa36b088feffd84c4441fdd3d74cfc15c}} 
+string {\bfseries Info} (bool show\+\_\+pts)
+\item 
+\mbox{\Hypertarget{class_l_w_p_a875d84fdd79ada0be0ef67e49c30804a}\label{class_l_w_p_a875d84fdd79ada0be0ef67e49c30804a}} 
+void {\bfseries Ini\+Uniform} (double \+\_\+vini, double \+\_\+pini, double \+\_\+\+Tini, int Npts\+\_\+mul)
+\item 
+\mbox{\Hypertarget{class_l_w_p_a1d3c14f17c5b1d86cd46279f303a829c}\label{class_l_w_p_a1d3c14f17c5b1d86cd46279f303a829c}} 
+void {\bfseries Ini\+Distribution} (const vector$<$ double $>$ \+\_\+vini, const vector$<$ double $>$ \+\_\+pini, const vector$<$ double $>$ \+\_\+\+Tini)
+\item 
+\mbox{\Hypertarget{class_l_w_p_a253cf518a194b81b6fee6d09b4f8d4f3}\label{class_l_w_p_a253cf518a194b81b6fee6d09b4f8d4f3}} 
+double {\bfseries Get\+\_\+dprop} (string prop\+\_\+string)
+\item 
+\mbox{\Hypertarget{class_l_w_p_aa2fbc2f9ba755ad742a9ed20140803ee}\label{class_l_w_p_aa2fbc2f9ba755ad742a9ed20140803ee}} 
+void {\bfseries Set\+\_\+dprop} (string prop\+\_\+string, double val)
+\item 
+\mbox{\Hypertarget{class_l_w_p_ae7d85d9863635c898c014f03311b7cdf}\label{class_l_w_p_ae7d85d9863635c898c014f03311b7cdf}} 
+void {\bfseries Step} (string B\+C\+\_\+start\+\_\+type, double B\+C\+\_\+start\+\_\+val1, double B\+C\+\_\+start\+\_\+val2, string B\+C\+\_\+end\+\_\+type, double B\+C\+\_\+end\+\_\+val1, double B\+C\+\_\+end\+\_\+val2, double dt\+\_\+req)
+\item 
+\mbox{\Hypertarget{class_l_w_p_a0e5b3a6bb2724e98df0fb05345d90d73}\label{class_l_w_p_a0e5b3a6bb2724e98df0fb05345d90d73}} 
+double {\bfseries Get\+Alpha\+At\+End} (double t\+\_\+target)
+\item 
+\mbox{\Hypertarget{class_l_w_p_aeb19644371e18d6f7a2e6b5bda03d3b4}\label{class_l_w_p_aeb19644371e18d6f7a2e6b5bda03d3b4}} 
+double {\bfseries Get\+Beta\+At\+Front} (double t\+\_\+target)
+\item 
+\mbox{\Hypertarget{class_l_w_p_a3441f0d69d3245b4aa27781f2042f5f2}\label{class_l_w_p_a3441f0d69d3245b4aa27781f2042f5f2}} 
+string {\bfseries Get\+Name} ()
+\item 
+\mbox{\Hypertarget{class_l_w_p_a6d0de65cafe05e4c076d5a4b3e3e9049}\label{class_l_w_p_a6d0de65cafe05e4c076d5a4b3e3e9049}} 
+double {\bfseries Get\+\_\+dt} ()
+\item 
+\mbox{\Hypertarget{class_l_w_p_ad0192ee840a8bf95373151790a53c4f4}\label{class_l_w_p_ad0192ee840a8bf95373151790a53c4f4}} 
+vector$<$ double $>$ {\bfseries Get\+\_\+xgrid} ()
+\item 
+\mbox{\Hypertarget{class_l_w_p_a45f6e90a4f777ca17c59c7282fc62fb8}\label{class_l_w_p_a45f6e90a4f777ca17c59c7282fc62fb8}} 
+vector$<$ double $>$ {\bfseries Get\+\_\+p} ()
+\item 
+\mbox{\Hypertarget{class_l_w_p_a8263e42710733ed2912c0e777dfaa712}\label{class_l_w_p_a8263e42710733ed2912c0e777dfaa712}} 
+vector$<$ double $>$ {\bfseries Get\+\_\+v} ()
+\item 
+void \mbox{\hyperlink{class_l_w_p_a6099ce80536a506db01142692c19962d}{Save\+\_\+data}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_l_w_p_abef9f82d87b3ed9acb7cfd4a5362a8f4}\label{class_l_w_p_abef9f82d87b3ed9acb7cfd4a5362a8f4}} 
+string {\bfseries fname}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_l_w_p_a6099ce80536a506db01142692c19962d}\label{class_l_w_p_a6099ce80536a506db01142692c19962d}} 
+\index{LWP@{LWP}!Save\_data@{Save\_data}}
+\index{Save\_data@{Save\_data}!LWP@{LWP}}
+\doxysubsubsection{\texorpdfstring{Save\_data()}{Save\_data()}}
+{\footnotesize\ttfamily void L\+W\+P\+::\+Save\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Save data from the simulation. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/hoscsaba/program/\+P\+S\+Toolbox/S\+C\+P.\+h\item 
+/\+Users/hoscsaba/program/\+P\+S\+Toolbox/S\+C\+P.\+cpp\end{DoxyCompactItemize}

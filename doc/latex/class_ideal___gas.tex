@@ -1,0 +1,172 @@
+\hypertarget{class_ideal___gas}{}\doxysection{Ideal\+\_\+\+Gas Class Reference}
+\label{class_ideal___gas}\index{Ideal\_Gas@{Ideal\_Gas}}
+
+
+Class for modelling ideal gases.  
+
+
+
+
+{\ttfamily \#include $<$S\+C\+P.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ideal___gas_a9c283d68a70a5e22451105bbf92a0278}{Ideal\+\_\+\+Gas}} (const double \+\_\+kappa, const double \+\_\+R)
+\begin{DoxyCompactList}\small\item\em A class constructor for containing Ideal gas data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ideal___gas_a7ad78eb7306de382f7764d8c63ac4f33}{Ideal\+\_\+\+Gas}} (\mbox{\hyperlink{class_ideal___gas}{Ideal\+\_\+\+Gas}} const \&g)
+\begin{DoxyCompactList}\small\item\em Copy contructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ideal___gas_a9322cd08fc709a4d0a39951e5f20b15e}\label{class_ideal___gas_a9322cd08fc709a4d0a39951e5f20b15e}} 
+\mbox{\hyperlink{class_ideal___gas_a9322cd08fc709a4d0a39951e5f20b15e}{$\sim$\+Ideal\+\_\+\+Gas}} ()
+\begin{DoxyCompactList}\small\item\em Destructor of the Ideal gas function. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ideal___gas_a0f5dba6d4ffb76ea0ab6d33fdd7b633f}{Get\+Rho}} (double p, double T)
+\begin{DoxyCompactList}\small\item\em Get the density of the gas. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ideal___gas_a04fbad3b2f6982956a36ef9a962f939e}{GetP}} (double rho, double T)
+\begin{DoxyCompactList}\small\item\em Get the pressure of the gas. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_ideal___gas_aedb6497c80d69f240a81cf5a6937ba19}{Get\+Sonic\+Vel}} (double T)
+\begin{DoxyCompactList}\small\item\em Return the sonic velocity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ideal___gas_a6a905f29eea5736036f2cc0afb461065}\label{class_ideal___gas_a6a905f29eea5736036f2cc0afb461065}} 
+double \mbox{\hyperlink{class_ideal___gas_a6a905f29eea5736036f2cc0afb461065}{kappa}}
+\begin{DoxyCompactList}\small\item\em The ratio of specific heats. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ideal___gas_a26ff557cae246370ceb59796be20707d}\label{class_ideal___gas_a26ff557cae246370ceb59796be20707d}} 
+double \mbox{\hyperlink{class_ideal___gas_a26ff557cae246370ceb59796be20707d}{R}}
+\begin{DoxyCompactList}\small\item\em The specific gas constant. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ideal___gas_af1ec9b757d06b6db9bab7525affb0036}\label{class_ideal___gas_af1ec9b757d06b6db9bab7525affb0036}} 
+double \mbox{\hyperlink{class_ideal___gas_af1ec9b757d06b6db9bab7525affb0036}{cp}}
+\begin{DoxyCompactList}\small\item\em Izobaric specific heat. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ideal___gas_ae76e67a41fda6f191d9a2da5dde3eec8}\label{class_ideal___gas_ae76e67a41fda6f191d9a2da5dde3eec8}} 
+double \mbox{\hyperlink{class_ideal___gas_ae76e67a41fda6f191d9a2da5dde3eec8}{cv}}
+\begin{DoxyCompactList}\small\item\em Isochoric specific heat. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for modelling ideal gases. 
+
+The class contains data from an ideal gas, and providing functions for the 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ideal___gas_a9c283d68a70a5e22451105bbf92a0278}\label{class_ideal___gas_a9c283d68a70a5e22451105bbf92a0278}} 
+\index{Ideal\_Gas@{Ideal\_Gas}!Ideal\_Gas@{Ideal\_Gas}}
+\index{Ideal\_Gas@{Ideal\_Gas}!Ideal\_Gas@{Ideal\_Gas}}
+\doxysubsubsection{\texorpdfstring{Ideal\_Gas()}{Ideal\_Gas()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Ideal\+\_\+\+Gas\+::\+Ideal\+\_\+\+Gas (\begin{DoxyParamCaption}\item[{const double}]{\+\_\+kappa,  }\item[{const double}]{\+\_\+R }\end{DoxyParamCaption})}
+
+
+
+A class constructor for containing Ideal gas data. 
+
+A class constructor used to calculate the various specific heats of an ideal gas and for retrieving parameters (density, pressure, sonic velocity) of the gas. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+kappa} & Adiabatic exponent$\ast$/ \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+R} & Specific gas constant \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ideal___gas_a7ad78eb7306de382f7764d8c63ac4f33}\label{class_ideal___gas_a7ad78eb7306de382f7764d8c63ac4f33}} 
+\index{Ideal\_Gas@{Ideal\_Gas}!Ideal\_Gas@{Ideal\_Gas}}
+\index{Ideal\_Gas@{Ideal\_Gas}!Ideal\_Gas@{Ideal\_Gas}}
+\doxysubsubsection{\texorpdfstring{Ideal\_Gas()}{Ideal\_Gas()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Ideal\+\_\+\+Gas\+::\+Ideal\+\_\+\+Gas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ideal___gas}{Ideal\+\_\+\+Gas}} const \&}]{g }\end{DoxyParamCaption})}
+
+
+
+Copy contructor. 
+
+Copies data from an already existing class 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ideal___gas_a04fbad3b2f6982956a36ef9a962f939e}\label{class_ideal___gas_a04fbad3b2f6982956a36ef9a962f939e}} 
+\index{Ideal\_Gas@{Ideal\_Gas}!GetP@{GetP}}
+\index{GetP@{GetP}!Ideal\_Gas@{Ideal\_Gas}}
+\doxysubsubsection{\texorpdfstring{GetP()}{GetP()}}
+{\footnotesize\ttfamily double Ideal\+\_\+\+Gas\+::\+GetP (\begin{DoxyParamCaption}\item[{double}]{rho,  }\item[{double}]{T }\end{DoxyParamCaption})}
+
+
+
+Get the pressure of the gas. 
+
+Calculate the density. Calculate the density using the ideal gas equation.
+
+Calculate the pressure of the ideal gas at a given density and temperature. All units in SI. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_ideal___gas_a04fbad3b2f6982956a36ef9a962f939e}{Get\+P()}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em rho} & Density in \mbox{[}kg/m$^\wedge$3\mbox{]} \\
+\hline
+{\em T} & Absolute temperature \mbox{[}K\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pressure in \mbox{[}Pa\mbox{]}
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \mbox{[}in\mbox{]} Density \\
+\hline
+{\em T} & \mbox{[}in\mbox{]} Temperature \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pressure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ideal___gas_a0f5dba6d4ffb76ea0ab6d33fdd7b633f}\label{class_ideal___gas_a0f5dba6d4ffb76ea0ab6d33fdd7b633f}} 
+\index{Ideal\_Gas@{Ideal\_Gas}!GetRho@{GetRho}}
+\index{GetRho@{GetRho}!Ideal\_Gas@{Ideal\_Gas}}
+\doxysubsubsection{\texorpdfstring{GetRho()}{GetRho()}}
+{\footnotesize\ttfamily double Ideal\+\_\+\+Gas\+::\+Get\+Rho (\begin{DoxyParamCaption}\item[{double}]{p,  }\item[{double}]{T }\end{DoxyParamCaption})}
+
+
+
+Get the density of the gas. 
+
+Calculate the density of an ideal gas at a given pressure and temperature. All units are to be in SI. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_ideal___gas_a04fbad3b2f6982956a36ef9a962f939e}{Get\+P()}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Pressure in \mbox{[}Pa\mbox{]} \\
+\hline
+{\em T} & Temperature in \mbox{[}K\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The density in \mbox{[}kg/m$^\wedge$3\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ideal___gas_aedb6497c80d69f240a81cf5a6937ba19}\label{class_ideal___gas_aedb6497c80d69f240a81cf5a6937ba19}} 
+\index{Ideal\_Gas@{Ideal\_Gas}!GetSonicVel@{GetSonicVel}}
+\index{GetSonicVel@{GetSonicVel}!Ideal\_Gas@{Ideal\_Gas}}
+\doxysubsubsection{\texorpdfstring{GetSonicVel()}{GetSonicVel()}}
+{\footnotesize\ttfamily double Ideal\+\_\+\+Gas\+::\+Get\+Sonic\+Vel (\begin{DoxyParamCaption}\item[{double}]{T }\end{DoxyParamCaption})}
+
+
+
+Return the sonic velocity. 
+
+Get the speed of sound Calculate the speed of sound based on the temperature of the gas.
+
+Returns the sonic velocity depentdent on the temperature 
+\begin{DoxyParams}{Parameters}
+{\em T} & temperature in \mbox{[}K\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sonic velocity in \mbox{[}m/s\mbox{]}
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em T} & The temperature \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The speed of sound 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/hoscsaba/program/\+P\+S\+Toolbox/S\+C\+P.\+h\item 
+/\+Users/hoscsaba/program/\+P\+S\+Toolbox/S\+C\+P.\+cpp\end{DoxyCompactItemize}

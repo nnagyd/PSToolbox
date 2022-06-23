@@ -310,7 +310,7 @@ void NelderMead2D(
     const VectorXd & pars, /**< [in] The parameters necessary for evaluating the function */
     const bool show_iter) /**< [in] Show iterations? (not used, iterations always shown)*/ {
 
-	int Nvar = x.size();
+//	int Nvar = x.size();
 	int Npts = 3;
 
 	double alpha = 1.; //reflection coefficient
@@ -441,14 +441,14 @@ void NelderMead(
     const double fun_TOL,
     const bool show_iter) {
 
-	int Nvar = x.size();
+//	int Nvar = x.size();
 	int Npts = 3;
 
-	double alpha = 1.; //Reflectiomn coefficient
-	double alpha_min = 0.001; //Minimum allowed reflection coefficient
-	double gamma = 2.; // gamma > 1, expansion coefficient
-	double ro = 0.5; // 0<ro<0.5 contraction coefficient
-	double sigma = 0.5; //Shrink coefficient
+//	double alpha = 1.; //Reflectiomn coefficient
+//	double alpha_min = 0.001; //Minimum allowed reflection coefficient
+//	double gamma = 2.; // gamma > 1, expansion coefficient
+//	double ro = 0.5; // 0<ro<0.5 contraction coefficient
+//	double sigma = 0.5; //Shrink coefficient
 
 	// Initialize
 	double f1, f2, f3, fR, fC1, fC2, fC, fS, fM, fE;
@@ -473,7 +473,8 @@ void NelderMead(
 	pts.push_back(make_pair(f2, x2));
 	pts.push_back(make_pair(f3, x3)); 
 
-	double diff_x = 1e5, diff_x_max = 1.e-5;
+	double diff_x = 1e5;
+	//double diff_x_max = 1.e-5;
 	int iter = 0, iter_max = 1000;
 
 	//Main itartions starting if convergence still happening and
@@ -614,7 +615,7 @@ void Input::parse_file(std::string filename)
 	std::string line; //The line to read
 	std::string name, val;
 	std::size_t splitplace1, splitplace2; //The placement of the
-	Datapair temp_pair{ "a", 0.0 };
+	Datapair temp_pair;//{ "a", 0.0 };
 
 	std::ifstream infile;
 	infile.open(filename, std::ifstream::in);

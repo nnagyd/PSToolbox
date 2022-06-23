@@ -1,0 +1,143 @@
+\hypertarget{class_l_w_p}{}\doxysection{LWP Class Reference}
+\label{class_l_w_p}\index{LWP@{LWP}}
+Inheritance diagram for LWP\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_l_w_p}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_l_w_p_a06e7f2afc35461fc4648131b45e3be14}\label{class_l_w_p_a06e7f2afc35461fc4648131b45e3be14}} 
+{\bfseries LWP} (const string \+\_\+nev, const string \+\_\+cspe\+\_\+nev, const string \+\_\+cspv\+\_\+nev, const double \+\_\+L, const double \+\_\+D, const double \+\_\+lambda, const double \+\_\+he, const double \+\_\+hv, const bool \+\_\+save\+\_\+data, const bool \+\_\+save\+\_\+all\+\_\+data, \mbox{\hyperlink{class_ideal___gas}{Ideal\+\_\+\+Gas}} $\ast$gas)
+\item 
+\mbox{\Hypertarget{class_l_w_p_aa36b088feffd84c4441fdd3d74cfc15c}\label{class_l_w_p_aa36b088feffd84c4441fdd3d74cfc15c}} 
+string {\bfseries Info} (bool show\+\_\+pts)
+\item 
+\mbox{\Hypertarget{class_l_w_p_a875d84fdd79ada0be0ef67e49c30804a}\label{class_l_w_p_a875d84fdd79ada0be0ef67e49c30804a}} 
+void {\bfseries Ini\+Uniform} (double \+\_\+vini, double \+\_\+pini, double \+\_\+\+Tini, int Npts\+\_\+mul)
+\item 
+void \mbox{\hyperlink{class_l_w_p_a0d5239a98987cfa05b1b47c64bb2343e}{Ini\+Uniform}} (double \+\_\+vini, double \+\_\+pini, double \+\_\+\+Tini, double dt\+\_\+target)
+\begin{DoxyCompactList}\small\item\em Initialize the \mbox{\hyperlink{class_l_w_p}{LWP}} pipe Initializes the \mbox{\hyperlink{class_l_w_p}{LWP}} pipe with as many points to statisfy a given timestep, an initial uniform (due to incompressibility) speed and a pressure at the inlet. (The generated pressure drops with friction.) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_l_w_p_a1d3c14f17c5b1d86cd46279f303a829c}\label{class_l_w_p_a1d3c14f17c5b1d86cd46279f303a829c}} 
+void {\bfseries Ini\+Distribution} (const vector$<$ double $>$ \+\_\+vini, const vector$<$ double $>$ \+\_\+pini, const vector$<$ double $>$ \+\_\+\+Tini)
+\item 
+\mbox{\Hypertarget{class_l_w_p_a253cf518a194b81b6fee6d09b4f8d4f3}\label{class_l_w_p_a253cf518a194b81b6fee6d09b4f8d4f3}} 
+double {\bfseries Get\+\_\+dprop} (string prop\+\_\+string)
+\item 
+\mbox{\Hypertarget{class_l_w_p_aa2fbc2f9ba755ad742a9ed20140803ee}\label{class_l_w_p_aa2fbc2f9ba755ad742a9ed20140803ee}} 
+void {\bfseries Set\+\_\+dprop} (string prop\+\_\+string, double val)
+\item 
+\mbox{\Hypertarget{class_l_w_p_ae7d85d9863635c898c014f03311b7cdf}\label{class_l_w_p_ae7d85d9863635c898c014f03311b7cdf}} 
+void {\bfseries Step} (string BC\+\_\+start\+\_\+type, double BC\+\_\+start\+\_\+val1, double BC\+\_\+start\+\_\+val2, string BC\+\_\+end\+\_\+type, double BC\+\_\+end\+\_\+val1, double BC\+\_\+end\+\_\+val2, double dt\+\_\+req)
+\item 
+\mbox{\Hypertarget{class_l_w_p_aeb19644371e18d6f7a2e6b5bda03d3b4}\label{class_l_w_p_aeb19644371e18d6f7a2e6b5bda03d3b4}} 
+double {\bfseries Get\+Beta\+At\+Front} (double t\+\_\+target)
+\item 
+\mbox{\Hypertarget{class_l_w_p_ac09d61578e520e9438abe29f9ef7c86d}\label{class_l_w_p_ac09d61578e520e9438abe29f9ef7c86d}} 
+double {\bfseries Get\+Beta\+Primitive\+At\+Front} (double t\+\_\+target)
+\item 
+\mbox{\Hypertarget{class_l_w_p_ac5ec2326d1b21d71325c3a72e4080ad6}\label{class_l_w_p_ac5ec2326d1b21d71325c3a72e4080ad6}} 
+void {\bfseries Get\+All\+Primitive\+At\+Front} (double t\+\_\+target, double \&pP, double \&vP, double \&TP, double \&rhoP)
+\item 
+\mbox{\Hypertarget{class_l_w_p_a0e5b3a6bb2724e98df0fb05345d90d73}\label{class_l_w_p_a0e5b3a6bb2724e98df0fb05345d90d73}} 
+double {\bfseries Get\+Alpha\+At\+End} (double t\+\_\+target)
+\item 
+\mbox{\Hypertarget{class_l_w_p_a849935a607832ef076d68723c295a7c3}\label{class_l_w_p_a849935a607832ef076d68723c295a7c3}} 
+double {\bfseries Get\+C0\+At\+End} (double t\+\_\+target)
+\item 
+\mbox{\Hypertarget{class_l_w_p_a14f32e6d2460b94620aea6566873e6aa}\label{class_l_w_p_a14f32e6d2460b94620aea6566873e6aa}} 
+double {\bfseries Get\+Alpha\+Primitive\+At\+End} (double t\+\_\+target)
+\item 
+\mbox{\Hypertarget{class_l_w_p_ae9b0f655b8d584e18af5960c7f017be5}\label{class_l_w_p_ae9b0f655b8d584e18af5960c7f017be5}} 
+void {\bfseries Get\+All\+Primitive\+At\+End} (double t\+\_\+target, double \&pP, double \&vP, double \&TP, double \&rhoP)
+\item 
+\mbox{\Hypertarget{class_l_w_p_a3441f0d69d3245b4aa27781f2042f5f2}\label{class_l_w_p_a3441f0d69d3245b4aa27781f2042f5f2}} 
+string {\bfseries Get\+Name} ()
+\item 
+\mbox{\Hypertarget{class_l_w_p_a6d0de65cafe05e4c076d5a4b3e3e9049}\label{class_l_w_p_a6d0de65cafe05e4c076d5a4b3e3e9049}} 
+double {\bfseries Get\+\_\+dt} ()
+\item 
+\mbox{\Hypertarget{class_l_w_p_ad0192ee840a8bf95373151790a53c4f4}\label{class_l_w_p_ad0192ee840a8bf95373151790a53c4f4}} 
+vector$<$ double $>$ {\bfseries Get\+\_\+xgrid} ()
+\item 
+\mbox{\Hypertarget{class_l_w_p_a45f6e90a4f777ca17c59c7282fc62fb8}\label{class_l_w_p_a45f6e90a4f777ca17c59c7282fc62fb8}} 
+vector$<$ double $>$ {\bfseries Get\+\_\+p} ()
+\item 
+\mbox{\Hypertarget{class_l_w_p_a8263e42710733ed2912c0e777dfaa712}\label{class_l_w_p_a8263e42710733ed2912c0e777dfaa712}} 
+vector$<$ double $>$ {\bfseries Get\+\_\+v} ()
+\item 
+\mbox{\Hypertarget{class_l_w_p_a11150e2e188fa9eceec8cf43a0c12fee}\label{class_l_w_p_a11150e2e188fa9eceec8cf43a0c12fee}} 
+vector$<$ double $>$ {\bfseries Get\+\_\+dvprop} (string prop\+\_\+string)
+\item 
+void \mbox{\hyperlink{class_l_w_p_a6099ce80536a506db01142692c19962d}{Save\+\_\+data}} ()
+\item 
+void \mbox{\hyperlink{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}{Update\+Dimless\+Pars}} (double pref, double mp\+\_\+nevl, double omega, double xref, double m)
+\begin{DoxyCompactList}\small\item\em Calculates the dimensionless parameters Calculates the dimensionless parametwers of the pipe using the input parameters as a base. While these parametersa have a usual definitions, here values need to be passed, and as such any can be used for non-\/dimensionalization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_l_w_p_abef9f82d87b3ed9acb7cfd4a5362a8f4}\label{class_l_w_p_abef9f82d87b3ed9acb7cfd4a5362a8f4}} 
+string {\bfseries fname}
+\item 
+\mbox{\Hypertarget{class_l_w_p_a7a60aa881899f3929530d8ab718cf999}\label{class_l_w_p_a7a60aa881899f3929530d8ab718cf999}} 
+\mbox{\hyperlink{class_ideal___gas}{Ideal\+\_\+\+Gas}} $\ast$ {\bfseries gas}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_l_w_p_a0d5239a98987cfa05b1b47c64bb2343e}\label{class_l_w_p_a0d5239a98987cfa05b1b47c64bb2343e}} 
+\index{LWP@{LWP}!IniUniform@{IniUniform}}
+\index{IniUniform@{IniUniform}!LWP@{LWP}}
+\doxysubsubsection{\texorpdfstring{IniUniform()}{IniUniform()}}
+{\footnotesize\ttfamily void LWP\+::\+Ini\+Uniform (\begin{DoxyParamCaption}\item[{double}]{\+\_\+vini,  }\item[{double}]{\+\_\+pini,  }\item[{double}]{\+\_\+\+Tini,  }\item[{double}]{dt\+\_\+target }\end{DoxyParamCaption})}
+
+
+
+Initialize the \mbox{\hyperlink{class_l_w_p}{LWP}} pipe Initializes the \mbox{\hyperlink{class_l_w_p}{LWP}} pipe with as many points to statisfy a given timestep, an initial uniform (due to incompressibility) speed and a pressure at the inlet. (The generated pressure drops with friction.) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vini} & Initial (uniform) velocity in the pipe \\
+\hline
+{\em pstart} & Pressure at the inlet, set up to decrease with friction \\
+\hline
+{\em dt\+\_\+target} & Target timestep, defines the grid \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_l_w_p_a6099ce80536a506db01142692c19962d}\label{class_l_w_p_a6099ce80536a506db01142692c19962d}} 
+\index{LWP@{LWP}!Save\_data@{Save\_data}}
+\index{Save\_data@{Save\_data}!LWP@{LWP}}
+\doxysubsubsection{\texorpdfstring{Save\_data()}{Save\_data()}}
+{\footnotesize\ttfamily void LWP\+::\+Save\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Save data from the simulation. \mbox{\Hypertarget{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}\label{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}} 
+\index{LWP@{LWP}!UpdateDimlessPars@{UpdateDimlessPars}}
+\index{UpdateDimlessPars@{UpdateDimlessPars}!LWP@{LWP}}
+\doxysubsubsection{\texorpdfstring{UpdateDimlessPars()}{UpdateDimlessPars()}}
+{\footnotesize\ttfamily void LWP\+::\+Update\+Dimless\+Pars (\begin{DoxyParamCaption}\item[{double}]{pref,  }\item[{double}]{mp\+\_\+nevl,  }\item[{double}]{omega,  }\item[{double}]{xref,  }\item[{double}]{m }\end{DoxyParamCaption})}
+
+
+
+Calculates the dimensionless parameters Calculates the dimensionless parametwers of the pipe using the input parameters as a base. While these parametersa have a usual definitions, here values need to be passed, and as such any can be used for non-\/dimensionalization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pref} & \mbox{[}in\mbox{]} Reference pressure \\
+\hline
+{\em mp\+\_\+nevl} & \mbox{[}in\mbox{]} Design mass flow rate \\
+\hline
+{\em omega} & \mbox{[}in\mbox{]} Referency frequency, ususally the natural frequency of the valve \\
+\hline
+{\em xref} & \mbox{[}in\mbox{]} Referecne length, usually equals the compession the reference (atmospheric) pressure would excert on the valve \\
+\hline
+{\em m} & \mbox{[}in\mbox{]} reference mass, ususally the moving mass of the spring-\/mass-\/damper system in the valve. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+LWP.\+h\item 
+LWP.\+cpp\end{DoxyCompactItemize}

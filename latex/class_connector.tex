@@ -1,0 +1,74 @@
+\hypertarget{class_connector}{}\doxysection{Connector Class Reference}
+\label{class_connector}\index{Connector@{Connector}}
+
+
+Class to contain Connectors.  
+
+
+
+
+{\ttfamily \#include $<$Connector.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_connector_a7e105ef8b0597d9f4f51bed19d14b0fd}\label{class_connector_a7e105ef8b0597d9f4f51bed19d14b0fd}} 
+void {\bfseries Connector\+\_\+\+LWP\+\_\+\+Reservoir\+\_\+and\+\_\+\+Pipe\+\_\+\+Front} (double t\+\_\+target, \mbox{\hyperlink{class_reservoir}{Reservoir}} $\ast$r, \mbox{\hyperlink{class_l_w_p}{LWP}} $\ast$p, double \&pf, double \&Tf)
+\item 
+void \mbox{\hyperlink{class_connector_a62503f0382bab2f1130e2e9abbd1f1a3}{Connector\+\_\+\+LWP\+\_\+\+Pipe\+\_\+\+Back\+\_\+and\+\_\+\+Valve}} (double t\+\_\+target, \mbox{\hyperlink{class_l_w_p}{LWP}} $\ast$p, \mbox{\hyperlink{class_valve}{Valve}} $\ast$v, double p\+\_\+downstream, double \&pb, double \&Tb)
+\begin{DoxyCompactList}\small\item\em Connect \mbox{\hyperlink{class_l_w_p}{LWP}} end to \mbox{\hyperlink{class_valve}{Valve}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_connector_ac6f13c672450413409ac698917469fee}\label{class_connector_ac6f13c672450413409ac698917469fee}} 
+void {\bfseries Connector\+\_\+\+SCP\+\_\+\+Pipes} (double t\+\_\+target, \mbox{\hyperlink{class_s_c_p}{SCP}} $\ast$p1, bool is\+\_\+front1, \mbox{\hyperlink{class_s_c_p}{SCP}} $\ast$p2, bool is\+\_\+front2, double mpout, double \&p, double \&v1, double \&v2)
+\item 
+\mbox{\Hypertarget{class_connector_a744d9b3278bb5f1d883d8481ac35f912}\label{class_connector_a744d9b3278bb5f1d883d8481ac35f912}} 
+void {\bfseries Connector\+\_\+\+SCP\+\_\+\+Pipes} (double t\+\_\+target, \mbox{\hyperlink{class_s_c_p}{SCP}} $\ast$p1, bool is\+\_\+front1, \mbox{\hyperlink{class_s_c_p}{SCP}} $\ast$p2, bool is\+\_\+front2, \mbox{\hyperlink{class_s_c_p}{SCP}} $\ast$p3, bool is\+\_\+front3, double mpout, double \&p, double \&v1, double \&v2, double \&v3)
+\item 
+\mbox{\Hypertarget{class_connector_a36464720a7f45c0bb13520af3a74ad0f}\label{class_connector_a36464720a7f45c0bb13520af3a74ad0f}} 
+void {\bfseries Connector\+\_\+\+LWP\+\_\+\+Pipes} (double t\+\_\+target, \mbox{\hyperlink{class_l_w_p}{LWP}} $\ast$p1, \mbox{\hyperlink{class_l_w_p}{LWP}} $\ast$p2, double \&pL, double \&pR, double \&TL, double \&TR, double \&rhoL, double \&rhoR, double \&vL, double \&vR)
+\item 
+\mbox{\Hypertarget{class_connector_aaa745a02f0e40659b0bfd860f9151fd8}\label{class_connector_aaa745a02f0e40659b0bfd860f9151fd8}} 
+void {\bfseries Connector\+\_\+\+Reservoir\+\_\+and\+\_\+\+Pipe\+\_\+\+Front} (double t\+\_\+target, \mbox{\hyperlink{class_reservoir}{Reservoir}} $\ast$r, \mbox{\hyperlink{class_l_w_p}{LWP}} $\ast$p, double \&pf, double \&Tf)
+\item 
+\mbox{\Hypertarget{class_connector_a863229eb535ba7d1886180402534f39c}\label{class_connector_a863229eb535ba7d1886180402534f39c}} 
+void {\bfseries Connector\+\_\+\+Pipe\+\_\+\+Back\+\_\+and\+\_\+\+Valve} (double t\+\_\+target, \mbox{\hyperlink{class_l_w_p}{LWP}} $\ast$p, \mbox{\hyperlink{class_valve}{Valve}} $\ast$v, double \&pb, double \&Tb)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to contain Connectors. 
+
+blabla 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_connector_a62503f0382bab2f1130e2e9abbd1f1a3}\label{class_connector_a62503f0382bab2f1130e2e9abbd1f1a3}} 
+\index{Connector@{Connector}!Connector\_LWP\_Pipe\_Back\_and\_Valve@{Connector\_LWP\_Pipe\_Back\_and\_Valve}}
+\index{Connector\_LWP\_Pipe\_Back\_and\_Valve@{Connector\_LWP\_Pipe\_Back\_and\_Valve}!Connector@{Connector}}
+\doxysubsubsection{\texorpdfstring{Connector\_LWP\_Pipe\_Back\_and\_Valve()}{Connector\_LWP\_Pipe\_Back\_and\_Valve()}}
+{\footnotesize\ttfamily void Connector\+::\+Connector\+\_\+\+LWP\+\_\+\+Pipe\+\_\+\+Back\+\_\+and\+\_\+\+Valve (\begin{DoxyParamCaption}\item[{double}]{t\+\_\+target,  }\item[{\mbox{\hyperlink{class_l_w_p}{LWP}} $\ast$}]{p1,  }\item[{\mbox{\hyperlink{class_valve}{Valve}} $\ast$}]{v1,  }\item[{double}]{p\+\_\+downstream,  }\item[{double \&}]{p,  }\item[{double \&}]{T }\end{DoxyParamCaption})}
+
+
+
+Connect \mbox{\hyperlink{class_l_w_p}{LWP}} end to \mbox{\hyperlink{class_valve}{Valve}}. 
+
+Connect \mbox{\hyperlink{class_l_w_p}{LWP}} end to \mbox{\hyperlink{class_valve}{Valve}} 
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+target,s} & \\
+\hline
+{\em LWP$\ast$} & pipe \\
+\hline
+{\em Valve$\ast$} & valve \\
+\hline
+{\em p\+\_\+downstream} & \\
+\hline
+{\em \&p} & pressure @ connection \\
+\hline
+{\em \&T} & temperature @ connection \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Connector.\+h\item 
+Connectors.\+h\item 
+Connector.\+cpp\end{DoxyCompactItemize}

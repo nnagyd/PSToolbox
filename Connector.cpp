@@ -22,18 +22,49 @@ Connector::Connector() {}
 // ! Default Destructor
 Connector::~Connector() {}
 
+void Connector_Reservoir_and_Valve(double t_target, Reservoir* r, Valve *v, double& p, double& mp){
+
+	// Solve the following system for p,T,rho,v,a:
+	// (1) mp = MassFlowRate(pt,Tt,pout,Tout,x)
+	// (2) rho=rho(p,T)gt
+	// (4) a  =a(p,T)
+	// (5) T/Tt=(pt/p)^(kappa-1)/kappa
+
+	//double kappa=p1->gas->kappa;
+	//double cp   =p1->gas->cp;
+
+	double update_OK=true;
+	double rho, v, a, alpha;
+	Apipe = p1->Get_dprop("A");
+	p1->GetAllPrimitiveAtEnd(t_target, pL, v, T, rho);
+	alpha = p1->GetAlphaPrimitiveAtEnd(t_target);
+
+	double err1, err2, err = 1.e5, mp, TOL = 1e-3;
+	int iter = 0, MAX_ITER = 10;
+	p = pL;
+	while ((err > TOL) && (iter<=MAX_ITER)) {
+		a   = p1->gas->Get_SonicVel(T,p);
+		rho = p1->gas->Get_rho(p, T);
+		mp  = v1->Get_MassFlowRate(p, T, p_downstream, 293., v1->Get_dprop("x"));
+		v   = mp / rho / Apipe;
+		p   = alpha - rho * a * v;
+		//T   = gas->Get_T(p,rho);
+		err1 = (alpha - (p + rho * a * v)) / 1.e5;
+		err2 = rho * v * Apipe - mp;
+}
+
 //! Connect LWP end to Valve
 /*! Connect LWP end to Valve
-	\param t_target, s
-	\param LWP* pipe
-	\param Valve* valve
-	\param p_downstream
-	\param &p pressure @ connection
-	\param &T temperature @ connection
-*/
+  \param t_target, s
+  \param LWP* pipe
+  \param Valve* valve
+  \param p_downstream
+  \param &p pressure @ connection
+  \param &T temperature @ connection
+  */
 
-void Connector::Connector_LWP_Pipe_Back_and_Valve(double t_target,
-        LWP* p1, Valve* v1, double p_downstream, double& p, double& T) {
+bool Connector::Connector_LWP_Pipe_Back_and_Valve(double t_target,
+		LWP* p1, Valve* v1, double p_downstream, double& p, double& T) {
 	// Solve the following system for p,T,rho,v:
 	// (1) alpha=p+ro*a*v
 	// (2) ro*Apipe*v=valve_mass_flow
@@ -44,8 +75,9 @@ void Connector::Connector_LWP_Pipe_Back_and_Valve(double t_target,
 	//double kappa=p1->gas->kappa;
 	//double cp   =p1->gas->cp;
 
+	double update_OK=true;
 	double rho, v, a, alpha, Apipe, pL;
-	Apipe = v1->Get_dprop("A");
+	Apipe = p1->Get_dprop("A");
 	p1->GetAllPrimitiveAtEnd(t_target, pL, v, T, rho);
 	alpha = p1->GetAlphaPrimitiveAtEnd(t_target);
 
@@ -55,7 +87,7 @@ void Connector::Connector_LWP_Pipe_Back_and_Valve(double t_target,
 	while ((err > TOL) && (iter<=MAX_ITER)) {
 		a   = p1->gas->Get_SonicVel(T,p);
 		rho = p1->gas->Get_rho(p, T);
-		mp  = v1->Get_MassFlowRate_Compressible(p, T, p_downstream, 293., v1->Get_dprop("x"));
+		mp  = v1->Get_MassFlowRate(p, T, p_downstream, 293., v1->Get_dprop("x"));
 		v   = mp / rho / Apipe;
 		p   = alpha - rho * a * v;
 		//T   = gas->Get_T(p,rho);
@@ -68,14 +100,17 @@ void Connector::Connector_LWP_Pipe_Back_and_Valve(double t_target,
 			cout << endl << "!!!ERROR!!! Connector_Pipe_Back_and_Valve() -> MAX_ITER reached, stopping iteration.";
 			printf("\n (back) iter #%2d: alpha=%5.3e, p=%5.3e, T=%5.3e, rho=%5.3e, a=%5.3e, v=%5.3e, err1=%+5.3e, err2=%+5.3e", iter, alpha, p, T, rho, a, v, err1, err2);
 			//cin.get();
+			update_OK=false;
 		}
 	}
-cout<<endl<<"\n\n exiting Connector...";
+	//cout<<endl<<"\n\n exiting Connector...";
+	//printf("\n\t p=%5.3e, T=%5.3e, rho=%5.3e, a=%5.3e, v=%5.3e, mp=%+5.3e",p, T, rho, a, v, mp);
+	return update_OK;
 }
 
 
 void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
-        Reservoir* r1, LWP* p1, double& p, double& T) {
+		Reservoir* r1, LWP* p1, double& p, double& T) {
 	// Solve the following system for p,T,rho,v:
 	// (1)  Tt=T+v^2/2/cp            Isentropic flow from the reservoir to the pipe
 	// (2)  p-rho*a*v = beta_front   Charactersistic equation
@@ -115,12 +150,12 @@ void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
 		err = f;
 
 		/*T = Tt * pow(rho / rhot,kappa_Tv - 1.);
-		a   = p1->gas->Get_SonicVel(T);
-		p   = p1->gas->Get_p(rho,T);
-		v = signed_sqrt(2 * cp * (Tt - T));
-		printf("\n (front) iter #%2d: pt=%5.3e, rhot=%5.3e, beta=%5.3e, p=%5.3e, T=%5.3e, rho=%5.3e, v=%5.3e, err=%5.3e, err1=%5.3e, err2=%5.3e, err3=%5.3e",
-		       iter, pt, rhot, beta, p, T, rho, v, err, err1, err2, err3);
-		cin.get();*/
+		  a   = p1->gas->Get_SonicVel(T);
+		  p   = p1->gas->Get_p(rho,T);
+		  v = signed_sqrt(2 * cp * (Tt - T));
+		  printf("\n (front) iter #%2d: pt=%5.3e, rhot=%5.3e, beta=%5.3e, p=%5.3e, T=%5.3e, rho=%5.3e, v=%5.3e, err=%5.3e, err1=%5.3e, err2=%5.3e, err3=%5.3e",
+		  iter, pt, rhot, beta, p, T, rho, v, err, err1, err2, err3);
+		  cin.get();*/
 
 		iter++; rho = rhonew;
 		if (iter == MAX_ITER) {
@@ -130,8 +165,8 @@ void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
 			v = signed_sqrt(2 * cp * (Tt - T));
 			cout << endl << "!!!ERROR!!! Connector_Reservoir_and_Pipe_Front() -> MAX_ITER reached.";
 			/*printf("\n (front) INFLOW iter #%2d: pt=%5.3e, rhot=%5.3e, beta=%5.3e, p=%5.3e, T=%5.3e, rho=%5.3e, v=%5.3e, err=%5.3e",
-			       iter, pt, rhot, beta, p, T, rho, v, err);
-			cin.get();*/
+			  iter, pt, rhot, beta, p, T, rho, v, err);
+			  cin.get();*/
 		}
 	}
 	T = Tt * pow(rho / rhot, kappa_Tv - 1.);
@@ -142,8 +177,8 @@ void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
 	if (v < 0) {
 		is_ok=false;
 		/*cout << endl << " Connector_Reservoir_and_Pipe_Front() -> Assumed inflow, but computed v<0";
-		printf("\n (front) iter #%2d: pt=%5.3e, rhot=%5.3e, beta=%5.3e, p=%5.3e, T=%5.3e, rho=%5.3e, v=%5.3e, err=%5.3e",
-		       iter, pt, rhot, beta, p, T, rho, v, err);*/
+		  printf("\n (front) iter #%2d: pt=%5.3e, rhot=%5.3e, beta=%5.3e, p=%5.3e, T=%5.3e, rho=%5.3e, v=%5.3e, err=%5.3e",
+		  iter, pt, rhot, beta, p, T, rho, v, err);*/
 		//cin.get();
 	}
 	else
@@ -161,8 +196,8 @@ void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
 			a   = p1->gas->Get_SonicVel(T,p);
 			v = (p - beta) / rho / a;
 			/*printf("\n (front) OUTFLOW pM=%5.3e, rhoM=%5.3e, TM=%5.3e, vM=%5.3e, beta=%5.3e, p=%5.3e, T=%5.3e, rho=%5.3e, v=%5.3e",
-			       pM, rhoM, TM, vM, beta, p, T, rho, v);
-			cin.get();*/
+			  pM, rhoM, TM, vM, beta, p, T, rho, v);
+			  cin.get();*/
 		}
 		else {
 			// Still inflow, set velocity to 0.
@@ -201,12 +236,12 @@ double Connector::signed_sqrt(double x) {
 }
 
 bool Connector::Connector_SCP_Pipe_Back_and_Valve(double t_target,
-        SCP* p1, Valve* v1, double p_downstream, double rho, double a, double& p) {
+		SCP* p1, Valve* v1, double p_downstream, double rho, double a, double& p) {
 	// Solve the following system for p,T,rho,v:
 	// (1) alpha=p+ro*a*v
 	// (2) ro*Apipe*v=valve_mass_flow
 
-bool update_OK=true;
+	bool update_OK=true;
 
 	double f, f1, df, dp, v, Apipe = p1->Get_dprop("A"), x = v1->Get_dprop("x");
 	double alpha = p1->GetAlphaPrimitiveAtEnd(t_target);
@@ -223,11 +258,11 @@ bool update_OK=true;
 		//err2 = rho * v * Apipe - (v1->Get_MassFlowRate_InCompressible(p, p_downstream, rho, x));
 
 		// Newton (this is faaar quicker)
-		mp  = v1->Get_MassFlowRate_InCompressible(p, p_downstream, rho, x);
+		mp  = v1->Get_MassFlowRate(p, 293., p_downstream, 293., x);
 		v   = mp / rho / Apipe;
 		f = p - (alpha - rho * a * v);
 		dp = 0.01 * p;
-		mp  = v1->Get_MassFlowRate_InCompressible(p + dp, p_downstream, rho, x);
+		mp  = v1->Get_MassFlowRate(p + dp, 293., p_downstream, 293., x);
 		v   = mp / rho / Apipe;
 		f1  = (p + dp) - (alpha - rho * a * v);
 		df  = (f1 - f) / dp;
@@ -241,14 +276,14 @@ bool update_OK=true;
 
 		err = sqrt(err1 * err1 + err2 * err2);
 
-//printf("\n (back) iter #%2d: alpha=%5.3e, p=%5.3e, v=%5.3e, err1=%+5.3e, err2=%+5.3e",
-//				iter, alpha, p, v, err1, err2);
+		//printf("\n (back) iter #%2d: alpha=%5.3e, p=%5.3e, v=%5.3e, err1=%+5.3e, err2=%+5.3e",
+		//				iter, alpha, p, v, err1, err2);
 
 		iter++;
 		if (iter == MAX_ITER) {
 			cout << endl << "!!!ERROR!!! Connector_SCP_Pipe_Back_and_Valve() -> MAX_ITER reached, exiting";
 			printf("\n (back) iter #%2d: alpha=%5.3e, p=%5.3e, v=%5.3e, err1=%+5.3e, err2=%+5.3e",
-			       iter, alpha, p, v, err1, err2);
+					iter, alpha, p, v, err1, err2);
 			//cin.get();
 			update_OK=false;
 		}
@@ -258,7 +293,7 @@ bool update_OK=true;
 
 
 void Connector::Connector_SCP_Reservoir_and_Pipe_Front(double t_target,
-        Reservoir* r1, SCP* p1, double rho, double a, double& p) {
+		Reservoir* r1, SCP* p1, double rho, double a, double& p) {
 	// Solve the following system for p,T,rho,v:
 	// (1) p-rho*a*v = beta_front   Charactersistic equation
 	// (1) p=pt-rho/2*v^2;
@@ -277,13 +312,13 @@ void Connector::Connector_SCP_Reservoir_and_Pipe_Front(double t_target,
 		err2 = (p - rho * a * v - beta) / 1.e5;
 		err = sqrt(err1 * err1 + err2 * err2);
 
-//printf("\n (front) iter #%2d: pt=%5.3e, rhot=%5.3e, beta=%5.3e, p=%5.3e, T=%5.3e, rho=%5.3e, v=%5.3e, err1=%5.3e, err2=%5.3e, err3=%5.3e", iter,pt,rhot,beta,p,T,rho,v,err1,err2,err3);
+		//printf("\n (front) iter #%2d: pt=%5.3e, rhot=%5.3e, beta=%5.3e, p=%5.3e, T=%5.3e, rho=%5.3e, v=%5.3e, err1=%5.3e, err2=%5.3e, err3=%5.3e", iter,pt,rhot,beta,p,T,rho,v,err1,err2,err3);
 
 		iter++;
 		if (iter == MAX_ITER) {
 			cout << endl << "!!!ERROR!!! Connector_Reservoir_and_Pipe_Front() -> MAX_ITER reached.";
 			printf("\n (front) iter #%2d: pt=%5.3e, p=%5.3e, v=%5.3e, err1=%5.3e, err2=%5.3e",
-			       iter, pt, p, v, err1, err2);
+					iter, pt, p, v, err1, err2);
 			cin.get();
 		}
 	}
@@ -292,10 +327,10 @@ void Connector::Connector_SCP_Reservoir_and_Pipe_Front(double t_target,
 
 
 void Connector::Connector_SCP_Pipes(double t_target,
-                                    SCP *p1, bool is_front1,
-                                    SCP *p2, bool is_front2,
-                                    double mpout,
-                                    double& p, double& v1, double& v2) {
+		SCP *p1, bool is_front1,
+		SCP *p2, bool is_front2,
+		double mpout,
+		double& p, double& v1, double& v2) {
 
 	// Solves:
 	// p + d1*rho*a*v1 = alpha1
@@ -334,11 +369,11 @@ void Connector::Connector_SCP_Pipes(double t_target,
 }
 
 void Connector::Connector_SCP_Pipes(double t_target,
-                                    SCP *p1, bool is_front1,
-                                    SCP *p2, bool is_front2,
-                                    SCP *p3, bool is_front3,
-                                    double mpout,
-                                    double& p, double& v1, double& v2, double& v3) {
+		SCP *p1, bool is_front1,
+		SCP *p2, bool is_front2,
+		SCP *p3, bool is_front3,
+		double mpout,
+		double& p, double& v1, double& v2, double& v3) {
 
 	// Solves:
 	// p + d1*rho*a*v1 = alpha1
@@ -386,11 +421,11 @@ void Connector::Connector_SCP_Pipes(double t_target,
 }
 
 void Connector::Connector_LWP_Pipes(double t_target,
-                                    LWP *p1, LWP *p2,
-                                    double& pL, double& pR,
-                                    double& TL, double& TR,
-                                    double& rhoL, double& rhoR,
-                                    double& vL, double& vR) {
+		LWP *p1, LWP *p2,
+		double& pL, double& pR,
+		double& TL, double& TR,
+		double& rhoL, double& rhoR,
+		double& vL, double& vR) {
 
 	// Solves:
 	// eq. (1) pL + rhoL*aL*vL = alpha_L

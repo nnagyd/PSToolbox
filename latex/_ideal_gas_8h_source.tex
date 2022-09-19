@@ -2,46 +2,38 @@
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{2 }
-\DoxyCodeLine{4 }
-\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_ideal___gas}{Ideal\_Gas}}}
-\DoxyCodeLine{8 \{}
-\DoxyCodeLine{9 \textcolor{comment}{//private:}}
-\DoxyCodeLine{10   \textcolor{comment}{//double p, T, pini, Tini;}}
-\DoxyCodeLine{11 \textcolor{keyword}{public}:}
-\DoxyCodeLine{13 }
-\DoxyCodeLine{16   \mbox{\hyperlink{class_ideal___gas}{Ideal\_Gas}}(}
-\DoxyCodeLine{17     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_kappa, }
-\DoxyCodeLine{18     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_R }
-\DoxyCodeLine{19   );}
-\DoxyCodeLine{20   \mbox{\hyperlink{class_ideal___gas}{Ideal\_Gas}}(\mbox{\hyperlink{class_ideal___gas}{Ideal\_Gas}}* g);}
-\DoxyCodeLine{21   \mbox{\hyperlink{class_ideal___gas}{Ideal\_Gas}}();}
-\DoxyCodeLine{22   \mbox{\hyperlink{class_ideal___gas_a9322cd08fc709a4d0a39951e5f20b15e}{\string~Ideal\_Gas}}();}
-\DoxyCodeLine{23 }
-\DoxyCodeLine{25 }
-\DoxyCodeLine{33   \textcolor{comment}{//double GetRho();}}
-\DoxyCodeLine{34 }
-\DoxyCodeLine{35   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_ideal___gas_a0f5dba6d4ffb76ea0ab6d33fdd7b633f}{GetRho}}(\textcolor{keywordtype}{double} p, \textcolor{keywordtype}{double} T);}
-\DoxyCodeLine{37 }
-\DoxyCodeLine{45   \textcolor{comment}{//double GetP();}}
-\DoxyCodeLine{46   \textcolor{comment}{//double GetT();}}
-\DoxyCodeLine{47   \textcolor{comment}{//double GetTCelsius();}}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_ideal___gas_a04fbad3b2f6982956a36ef9a962f939e}{GetP}}(\textcolor{keywordtype}{double} rho, \textcolor{keywordtype}{double} T);}
-\DoxyCodeLine{51 }
-\DoxyCodeLine{56   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_ideal___gas_a8c8e4872c9d26756938c0aefbf89cd1d}{GetT}}(\textcolor{keywordtype}{double} rho, \textcolor{keywordtype}{double} p);}
-\DoxyCodeLine{58 }
-\DoxyCodeLine{64   \textcolor{comment}{//double GetSonicVel();}}
-\DoxyCodeLine{65   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_ideal___gas_aedb6497c80d69f240a81cf5a6937ba19}{GetSonicVel}}(\textcolor{keywordtype}{double} T);}
-\DoxyCodeLine{66   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_ideal___gas_a6a905f29eea5736036f2cc0afb461065}{kappa}}; }
-\DoxyCodeLine{67   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_ideal___gas_a26ff557cae246370ceb59796be20707d}{R}}; }
-\DoxyCodeLine{68   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_ideal___gas_af1ec9b757d06b6db9bab7525affb0036}{cp}}; }
-\DoxyCodeLine{69   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_ideal___gas_ae76e67a41fda6f191d9a2da5dde3eec8}{cv}}; }
-\DoxyCodeLine{70   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_ideal___gas_a4d72e61374395f8569c17bc38428bbc0}{pcrit}}; }
-\DoxyCodeLine{71 }
-\DoxyCodeLine{72   \textcolor{comment}{//void Setp(double \_p) \{p = \_p;\}}}
-\DoxyCodeLine{73   \textcolor{comment}{//void SetT(double \_T) \{T = \_T;\}}}
-\DoxyCodeLine{74   \textcolor{comment}{//void UpdatePolytropicT(double n);}}
-\DoxyCodeLine{75 \};}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Gas.h"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{class }\mbox{\hyperlink{class_ideal_gas}{IdealGas}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_gas}{Gas}}}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \textcolor{keyword}{public}:}
+\DoxyCodeLine{7         \mbox{\hyperlink{class_ideal_gas}{IdealGas}}(}
+\DoxyCodeLine{8                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_kappa, }
+\DoxyCodeLine{9                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_R }
+\DoxyCodeLine{10             );}
+\DoxyCodeLine{11         \mbox{\hyperlink{class_ideal_gas}{IdealGas}}(\mbox{\hyperlink{class_ideal_gas}{IdealGas}}* g);}
+\DoxyCodeLine{12         \mbox{\hyperlink{class_ideal_gas}{IdealGas}}();}
+\DoxyCodeLine{13         \mbox{\hyperlink{class_ideal_gas}{\string~IdealGas}}();}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15         \textcolor{keywordtype}{double} Get\_p(\textcolor{keywordtype}{double} rho, \textcolor{keywordtype}{double} T);}
+\DoxyCodeLine{16         \textcolor{keywordtype}{double} Get\_rho(\textcolor{keywordtype}{double} p, \textcolor{keywordtype}{double} T);}
+\DoxyCodeLine{17         \textcolor{keywordtype}{double} Get\_T(\textcolor{keywordtype}{double} p, \textcolor{keywordtype}{double} rho);}
+\DoxyCodeLine{18         \textcolor{keywordtype}{double} Get\_e(\textcolor{keywordtype}{double} T);}
+\DoxyCodeLine{19         \textcolor{keywordtype}{double} Get\_SonicVel(\textcolor{keywordtype}{double} T, \textcolor{keywordtype}{double} p);}
+\DoxyCodeLine{20         \textcolor{keywordtype}{double} Get\_T\_from\_e(\textcolor{keywordtype}{double} e);}
+\DoxyCodeLine{21         \textcolor{keywordtype}{double} Get\_kappa\_pv();}
+\DoxyCodeLine{22         \textcolor{keywordtype}{double} Get\_kappa\_Tv();}
+\DoxyCodeLine{23         \textcolor{keywordtype}{double} Get\_kappa\_Tp();}
+\DoxyCodeLine{24         \textcolor{keywordtype}{double} Get\_pcrit();}
+\DoxyCodeLine{25         \textcolor{keywordtype}{double} Get\_cp();}
+\DoxyCodeLine{26         \textcolor{keywordtype}{double} Get\_cV();}
+\DoxyCodeLine{27         \textcolor{keywordtype}{double} Get\_MassFlux(\textcolor{keywordtype}{double} pu, \textcolor{keywordtype}{double} Tu, \textcolor{keywordtype}{double} pd, \textcolor{keywordtype}{double} Td);}
+\DoxyCodeLine{28         \textcolor{keywordtype}{double} Get\_eta\_crit();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         \textcolor{keywordtype}{double} kappa;}
+\DoxyCodeLine{31         \textcolor{keywordtype}{double} R;}
+\DoxyCodeLine{32         \textcolor{keywordtype}{double} cp;}
+\DoxyCodeLine{33         \textcolor{keywordtype}{double} cV;}
+\DoxyCodeLine{34 \};}
 
 \end{DoxyCode}

@@ -10,9 +10,11 @@ test6_3pipes_with_liquid \
 test7_2pipes_with_ideal_gas \
 test8_frozen_mixture
 
-INC = -I/usr/local/include/eigen3 -L/Users/hoscsaba/program/PSToolbox
-LINK = -lPSToolbox -lmy_tools -lpython2.7
-CFLAGS = -pedantic -O3 -Wall -Wno-c++11-long-long
+INC = -I/usr/local/include/eigen3 -L/Users/hoscsaba/program/PSToolbox -I/Users/hoscsaba/program/CoolProp/include -I/Users/hoscsaba/program/CoolProp/externals/fmtlib
+INC_CP = -I/Users/hoscsaba/program/CoolProp/include -I/Users/hoscsaba/program/CoolProp/externals/fmtlib
+LINK = -L/Users/hoscsaba/program/CoolProp/build1 -lPSToolbox -lmy_tools -lpython2.7 -lCoolProp
+LINK_CP = -L/Users/hoscsaba/program/CoolProp/build1 -lCoolProp
+CFLAGS = -std=c++11 -pedantic -O3 -Wall -Wno-c++11-long-long
 
 all:$(TARGETS)
 
@@ -54,6 +56,16 @@ test7_2pipes_with_ideal_gas: test7_2pipes_with_ideal_gas.cpp
 test8_frozen_mixture: test8_frozen_mixture.cpp
 	clear
 	$(CXX) $(INC) $(LINK) $(CFLAGS) test8_frozen_mixture.cpp
+	./a.out
+
+test9_CoolProp_base: test9_CoolProp_base.cpp
+	clear
+	$(CXX) $(INC_CP) $(LINK_CP) $(CFLAGS) test9_CoolProp_base.cpp
+	./a.out
+
+test10_reservoir_valve_with_hydrogen: test10_reservoir_valve_with_hydrogen.cpp
+	clear
+	$(CXX) $(INC) $(INC_CP) $(LINK) $(LINK_CP) $(CFLAGS) test10_reservoir_valve_with_hydrogen.cpp
 	./a.out
 
 clean:

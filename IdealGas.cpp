@@ -38,11 +38,16 @@ double IdealGas::Get_SonicVel(double T, double p) {
 		return sqrt(kappa * R * T);
 }
 
-double IdealGas::Get_T_from_e(double e) {
+double IdealGas::Get_T_from_ep(double e, double p) {
 		return e / cV;
 }
 
-double IdealGas::Get_e(double T) {
+double IdealGas::Get_T_from_erho(double e, double rho) {
+		return e / cV;
+}
+
+
+double IdealGas::Get_e_from_Tp(double T, double p) {
 		return T * cV;
 }
 
@@ -58,11 +63,11 @@ double IdealGas::Get_kappa_Tp() {
 		return kappa;
 }
 
-double IdealGas::Get_cp() {
+double IdealGas::Get_cp(double p, double T) {
 		return cp;
 }
 
-double IdealGas::Get_cV() {
+double IdealGas::Get_cV(double p, double T) {
 		return cV;
 }
 

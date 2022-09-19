@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['cp_0',['cp',['../class_ideal___gas.html#af1ec9b757d06b6db9bab7525affb0036',1,'Ideal_Gas']]],
-  ['cv_1',['cv',['../class_ideal___gas.html#ae76e67a41fda6f191d9a2da5dde3eec8',1,'Ideal_Gas']]]
+  ['ft_5fto_5fm_0',['ft_to_m',['../class_units.html#aae98637c25e6a33b2521c48465f29691',1,'Units']]]
 ];

@@ -46,7 +46,7 @@ class Valve: public Units
 				vector<double> &x, vector<vector<double> > &y,
 				const VectorXd & pars);
 
-		double SumStatForce(const double x, const double pv, const double pb);
+		//double SumStatForce(const double x, const double pv, const double pb);
 		double Aeff(const double x);
 		double Aeffmax, a1, a2;
 		vector<vector<double> > data;
@@ -111,4 +111,5 @@ class Valve: public Units
 //		double Get_MassFlowRate_Compressible_UnChoked(double p_upstream, double T_upstream, double p_downstream, double xx);
 //		double Get_MassFlowRate_InCompressible(double p_upstream, double p_downstream, double rho, double x) ;
 		//void Plot(bool show, bool save);
+		double SumStatForce(const double x, const double pv, const double pb);
 };

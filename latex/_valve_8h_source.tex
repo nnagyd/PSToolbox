@@ -5,99 +5,112 @@
 \DoxyCodeLine{2 }
 \DoxyCodeLine{3 \textcolor{preprocessor}{\#include <string>}}
 \DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{5 \textcolor{comment}{//\#include <cmath>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <cmath>}}
 \DoxyCodeLine{6 \textcolor{preprocessor}{\#include <Eigen/Dense>}}
 \DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}Units.h"{}}}
 \DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}IdealGas.h"{}}}
-\DoxyCodeLine{9 }
-\DoxyCodeLine{10 \textcolor{keyword}{using namespace }std;}
-\DoxyCodeLine{11 \textcolor{keyword}{using namespace }Eigen;}
-\DoxyCodeLine{12 }
+\DoxyCodeLine{9 \textcolor{comment}{//\#include "{}/Users/hoscsaba/program/matplotlib-\/cpp/matplotlibcpp.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{12 \textcolor{keyword}{using namespace }Eigen;}
 \DoxyCodeLine{13 }
 \DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_valve}{Valve}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_units}{Units}}}
 \DoxyCodeLine{19 \{}
-\DoxyCodeLine{20 \textcolor{keyword}{private}:}
-\DoxyCodeLine{21   \textcolor{keywordtype}{bool} save\_data; }
-\DoxyCodeLine{22   \textcolor{keywordtype}{string} name; }
-\DoxyCodeLine{23   \textcolor{keywordtype}{double} m , s  , k  \textcolor{comment}{/*damping factor in valve*/} , A \textcolor{comment}{/*effective area of the valve */} , Cd ;}
-\DoxyCodeLine{24   \textcolor{keywordtype}{double} ro \textcolor{comment}{/*Desity of fluid in the valve */}, Dbore \textcolor{comment}{/*Smallest cross section in valve*/}, xe , p\_set \textcolor{comment}{/* set pressure */};}
-\DoxyCodeLine{25   \textcolor{keywordtype}{double} mp\_nevl \textcolor{comment}{/*Design pressure */}, xmax \textcolor{comment}{/*maximum allowed displacement */}, r ;}
-\DoxyCodeLine{26   \textcolor{keywordtype}{double} t, x , v , p \textcolor{comment}{/*inlet side pressure in the valve */};}
-\DoxyCodeLine{27   \textcolor{keywordtype}{double} pref , xref , delta ;}
-\DoxyCodeLine{28   \textcolor{keywordtype}{bool} ini\_done; }
-\DoxyCodeLine{29   \textcolor{keywordtype}{double} x\_simul\_min , x\_simul\_max ;}
-\DoxyCodeLine{30   \textcolor{keywordtype}{double} TINY\_VELOCITY, TINY\_OPENING; }
-\DoxyCodeLine{31   \textcolor{keywordtype}{bool} is\_closed, is\_fully\_open; }
-\DoxyCodeLine{32 }
-\DoxyCodeLine{33   VectorXd ValveODE(\textcolor{keyword}{const} \textcolor{keywordtype}{double} x, \textcolor{keyword}{const} VectorXd \&y, \textcolor{keyword}{const} VectorXd \&pars);}
-\DoxyCodeLine{34 }
-\DoxyCodeLine{35   \textcolor{keywordtype}{void} rk45(\textcolor{keywordtype}{double} x\_0,}
-\DoxyCodeLine{36             \textcolor{keywordtype}{double} x\_max,}
-\DoxyCodeLine{37             VectorXd y\_0,}
-\DoxyCodeLine{38             vector<double> \&x, vector<vector<double> > \&y,}
-\DoxyCodeLine{39             \textcolor{keyword}{const} VectorXd \& pars);}
+\DoxyCodeLine{20     \textcolor{keyword}{private}:}
+\DoxyCodeLine{21         \textcolor{keywordtype}{bool} save\_data; }
+\DoxyCodeLine{22         \textcolor{keywordtype}{string} name; }
+\DoxyCodeLine{23         \textcolor{keywordtype}{double} m; }
+\DoxyCodeLine{24         \textcolor{keywordtype}{double} s; }
+\DoxyCodeLine{25         \textcolor{keywordtype}{double} k;  \textcolor{comment}{/*damping factor in valve*/}}
+\DoxyCodeLine{26         \textcolor{keywordtype}{double} A; \textcolor{comment}{/*effective area of the valve */}}
+\DoxyCodeLine{27         \textcolor{keywordtype}{double} Cd; }
+\DoxyCodeLine{28         \textcolor{keywordtype}{double} ro \textcolor{comment}{/*Desity of fluid in the valve */}, Dbore \textcolor{comment}{/*Smallest cross section in valve*/}, xe , p\_set \textcolor{comment}{/* set pressure */};}
+\DoxyCodeLine{29         \textcolor{keywordtype}{double} mp\_nevl; \textcolor{comment}{/*Design pressure */}}
+\DoxyCodeLine{30         \textcolor{keywordtype}{double} xmax\_unrestricted; \textcolor{comment}{/*maximum allowed displacement */}}
+\DoxyCodeLine{31         \textcolor{keywordtype}{double} RT; \textcolor{comment}{/* restriction, percent, 0=unrestricted*/}}
+\DoxyCodeLine{32         \textcolor{keywordtype}{double} xmax; \textcolor{comment}{/* restricted (actual) max. lift*/}}
+\DoxyCodeLine{33         \textcolor{keywordtype}{double} r ;}
+\DoxyCodeLine{34         \textcolor{keywordtype}{double} t, x , v , p \textcolor{comment}{/*inlet side pressure in the valve */};}
+\DoxyCodeLine{35         \textcolor{keywordtype}{double} pref , xref , delta ;}
+\DoxyCodeLine{36         \textcolor{keywordtype}{bool} ini\_done; }
+\DoxyCodeLine{37         \textcolor{keywordtype}{double} x\_simul\_min , x\_simul\_max ;}
+\DoxyCodeLine{38         \textcolor{keywordtype}{double} TINY\_VELOCITY, TINY\_OPENING; }
+\DoxyCodeLine{39         \textcolor{keywordtype}{bool} is\_closed, is\_fully\_open; }
 \DoxyCodeLine{40 }
-\DoxyCodeLine{41   \textcolor{keywordtype}{double} SumStatForce(\textcolor{keyword}{const} \textcolor{keywordtype}{double} x, \textcolor{keyword}{const} \textcolor{keywordtype}{double} pv, \textcolor{keyword}{const} \textcolor{keywordtype}{double} pb);}
-\DoxyCodeLine{42   \textcolor{keywordtype}{double} Aeff(\textcolor{keyword}{const} \textcolor{keywordtype}{double} x);}
-\DoxyCodeLine{43   \textcolor{keywordtype}{double} Aeffmax, a1, a2;}
-\DoxyCodeLine{44 }
-\DoxyCodeLine{45 }
-\DoxyCodeLine{46   vector<vector<double> > data;}
-\DoxyCodeLine{47   vector<double> tmpvec;}
-\DoxyCodeLine{48   \mbox{\hyperlink{class_ideal___gas}{Ideal\_Gas}} gas;}
-\DoxyCodeLine{49   \textcolor{keywordtype}{bool} is\_Ideal\_Gas;}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51 \textcolor{keyword}{public}:}
-\DoxyCodeLine{52   \mbox{\hyperlink{class_valve}{Valve}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \_nev,}
-\DoxyCodeLine{53         \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_m,}
-\DoxyCodeLine{54         \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_k,}
-\DoxyCodeLine{55         \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_s,}
-\DoxyCodeLine{56         \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_Dbore,}
-\DoxyCodeLine{57         \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_Cd,}
-\DoxyCodeLine{58         \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_ro,}
-\DoxyCodeLine{59         \textcolor{keyword}{const} \textcolor{keywordtype}{double} p\_set,}
-\DoxyCodeLine{60         \textcolor{comment}{//const double \_mp\_nevl,}}
-\DoxyCodeLine{61         \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_xmax,}
-\DoxyCodeLine{62         \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_r,}
-\DoxyCodeLine{63         \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_pref,}
-\DoxyCodeLine{64         \textcolor{keyword}{const} \textcolor{keywordtype}{bool} save\_data);}
-\DoxyCodeLine{65 }
-\DoxyCodeLine{66   \mbox{\hyperlink{class_valve}{Valve}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \_nev,}
-\DoxyCodeLine{67         \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_m,}
-\DoxyCodeLine{68         \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_k,}
-\DoxyCodeLine{69         \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_s,}
-\DoxyCodeLine{70         \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_Dbore,}
-\DoxyCodeLine{71         \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_Cd,}
-\DoxyCodeLine{72         \mbox{\hyperlink{class_ideal___gas}{Ideal\_Gas}}* \_gas,}
-\DoxyCodeLine{73         \textcolor{keyword}{const} \textcolor{keywordtype}{double} p\_set,}
-\DoxyCodeLine{74         \textcolor{comment}{//const double \_mp\_nevl,}}
-\DoxyCodeLine{75         \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_xmax,}
-\DoxyCodeLine{76         \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_r,}
-\DoxyCodeLine{77         \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_pref,}
-\DoxyCodeLine{78         \textcolor{keyword}{const} \textcolor{keywordtype}{bool} save\_data);}
-\DoxyCodeLine{79   \mbox{\hyperlink{class_valve}{\string~Valve}}();}
-\DoxyCodeLine{80   \textcolor{keywordtype}{string} GetName();}
-\DoxyCodeLine{81   \textcolor{keywordtype}{string} Info();}
-\DoxyCodeLine{82   \textcolor{keywordtype}{void} Update(\textcolor{keywordtype}{double} delta\_t, \textcolor{keywordtype}{double} p\_valve, \textcolor{keywordtype}{double} p\_back, \textcolor{keywordtype}{bool} monitor\_min\_max);}
-\DoxyCodeLine{83   \textcolor{keywordtype}{void} Ini();}
-\DoxyCodeLine{84   \textcolor{keywordtype}{void} Ini(\textcolor{keywordtype}{double} \_xstart, \textcolor{keywordtype}{double} \_vstart, \textcolor{keywordtype}{double} \_pstart);}
-\DoxyCodeLine{85   \textcolor{keywordtype}{void} Ini(\textcolor{keywordtype}{double} \_xstart, \textcolor{keywordtype}{double} \_vstart);}
-\DoxyCodeLine{86   \textcolor{keywordtype}{void} UpdateDimlessPars();}
-\DoxyCodeLine{87   \textcolor{keywordtype}{double} Get\_dprop(\textcolor{keywordtype}{string} prop\_string);}
-\DoxyCodeLine{88   vector<double> Get\_dvprop(\textcolor{keywordtype}{string} prop\_string);}
-\DoxyCodeLine{89   \textcolor{keywordtype}{void} Set\_dprop(\textcolor{keywordtype}{string} prop\_string, \textcolor{keywordtype}{double} val);}
-\DoxyCodeLine{90   \textcolor{keywordtype}{void} List\_data();}
-\DoxyCodeLine{91   \textcolor{keywordtype}{void} Save\_data();}
-\DoxyCodeLine{92   \textcolor{comment}{//void Plot();}}
-\DoxyCodeLine{93   \textcolor{keywordtype}{string} fname;}
-\DoxyCodeLine{94   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_valve_a98b0df021274e223a11cd5df12df42e6}{SetAeffCoeffs}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \_a1, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_a2, \textcolor{keyword}{const} \textcolor{keywordtype}{double} Aeffmax);}
-\DoxyCodeLine{95 }
-\DoxyCodeLine{96   \textcolor{keywordtype}{double} Get\_MassFlowRate\_Compressible(\textcolor{keywordtype}{double} p\_upstream, \textcolor{keywordtype}{double} T\_upstream, \textcolor{keywordtype}{double} p\_downstream, \textcolor{keywordtype}{double} T\_downstream, \textcolor{keywordtype}{double} xx);}
-\DoxyCodeLine{97   \textcolor{keywordtype}{double} Get\_MassFlowRate\_Compressible\_Choked(\textcolor{keywordtype}{double} p\_upstream, \textcolor{keywordtype}{double} T\_upstream, \textcolor{keywordtype}{double} x);}
-\DoxyCodeLine{98   \textcolor{keywordtype}{double} Get\_MassFlowRate\_Compressible\_UnChoked(\textcolor{keywordtype}{double} p\_upstream, \textcolor{keywordtype}{double} T\_upstream, \textcolor{keywordtype}{double} p\_downstream,\textcolor{keywordtype}{double} xx);}
-\DoxyCodeLine{99 }
-\DoxyCodeLine{100   \textcolor{keywordtype}{double} Get\_MassFlowRate\_InCompressible(\textcolor{keywordtype}{double} p\_upstream, \textcolor{keywordtype}{double} p\_downstream, \textcolor{keywordtype}{double} rho, \textcolor{keywordtype}{double} x) ;}
-\DoxyCodeLine{101 }
-\DoxyCodeLine{102 \};}
+\DoxyCodeLine{41         VectorXd ValveODE(\textcolor{keyword}{const} \textcolor{keywordtype}{double} x, \textcolor{keyword}{const} VectorXd \&y, \textcolor{keyword}{const} VectorXd \&pars);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \textcolor{keywordtype}{void} rk45(\textcolor{keywordtype}{double} x\_0,}
+\DoxyCodeLine{44                 \textcolor{keywordtype}{double} x\_max,}
+\DoxyCodeLine{45                 VectorXd y\_0,}
+\DoxyCodeLine{46                 vector<double> \&x, vector<vector<double> > \&y,}
+\DoxyCodeLine{47                 \textcolor{keyword}{const} VectorXd \& pars);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \textcolor{comment}{//double SumStatForce(const double x, const double pv, const double pb);}}
+\DoxyCodeLine{50         \textcolor{keywordtype}{double} Aeff(\textcolor{keyword}{const} \textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{51         \textcolor{keywordtype}{double} Aeffmax, a1, a2;}
+\DoxyCodeLine{52         vector<vector<double> > data;}
+\DoxyCodeLine{53         vector<double> tmpvec;}
+\DoxyCodeLine{54         \mbox{\hyperlink{class_gas}{Gas}}* gas;}
+\DoxyCodeLine{55         \textcolor{keywordtype}{bool} is\_Gas;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         \textcolor{keywordtype}{double} Get\_MassFlowRate\_Compressible(\textcolor{keywordtype}{double} p\_upstream, \textcolor{keywordtype}{double} T\_upstream, \textcolor{keywordtype}{double} p\_downstream, \textcolor{keywordtype}{double} T\_downstream, \textcolor{keywordtype}{double} xx);}
+\DoxyCodeLine{59         \textcolor{keywordtype}{double} Get\_MassFlowRate\_Compressible\_Choked(\textcolor{keywordtype}{double} p\_upstream, \textcolor{keywordtype}{double} T\_upstream, \textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{60         \textcolor{keywordtype}{double} Get\_MassFlowRate\_Compressible\_UnChoked(\textcolor{keywordtype}{double} p\_upstream, \textcolor{keywordtype}{double} T\_upstream, \textcolor{keywordtype}{double} p\_downstream, \textcolor{keywordtype}{double} xx);}
+\DoxyCodeLine{61         \textcolor{keywordtype}{double} Get\_MassFlowRate\_InCompressible(\textcolor{keywordtype}{double} p\_upstream, \textcolor{keywordtype}{double} p\_downstream, \textcolor{keywordtype}{double} rho, \textcolor{keywordtype}{double} x) ;}
+\DoxyCodeLine{62     \textcolor{keyword}{public}:}
+\DoxyCodeLine{63         \mbox{\hyperlink{class_valve_aab5b8b088aa400a31d0020605cdf1015}{Valve}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \_nev,}
+\DoxyCodeLine{64                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_m,}
+\DoxyCodeLine{65                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_k,}
+\DoxyCodeLine{66                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_s,}
+\DoxyCodeLine{67                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_Dbore,}
+\DoxyCodeLine{68                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_Cd,}
+\DoxyCodeLine{69                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_ro,}
+\DoxyCodeLine{70                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} p\_set,}
+\DoxyCodeLine{71                 \textcolor{comment}{//const double \_mp\_nevl,}}
+\DoxyCodeLine{72                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_xmax,}
+\DoxyCodeLine{73                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_r,}
+\DoxyCodeLine{74                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_pref,}
+\DoxyCodeLine{75                 \textcolor{keyword}{const} \textcolor{keywordtype}{bool} save\_data);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77         \mbox{\hyperlink{class_valve_aab5b8b088aa400a31d0020605cdf1015}{Valve}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \_nev,}
+\DoxyCodeLine{78                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_m,}
+\DoxyCodeLine{79                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_k,}
+\DoxyCodeLine{80                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_s,}
+\DoxyCodeLine{81                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_Dbore,}
+\DoxyCodeLine{82                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_Cd,}
+\DoxyCodeLine{83                 \mbox{\hyperlink{class_gas}{Gas}}* \_gas,}
+\DoxyCodeLine{84                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} p\_set,}
+\DoxyCodeLine{85                 \textcolor{comment}{//const double \_mp\_nevl,}}
+\DoxyCodeLine{86                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_xmax,}
+\DoxyCodeLine{87                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_r,}
+\DoxyCodeLine{88                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_pref,}
+\DoxyCodeLine{89                 \textcolor{keyword}{const} \textcolor{keywordtype}{bool} save\_data);}
+\DoxyCodeLine{90         \mbox{\hyperlink{class_valve}{\string~Valve}}();}
+\DoxyCodeLine{91         \textcolor{keywordtype}{string} GetName();}
+\DoxyCodeLine{92         \textcolor{keywordtype}{string} Info();}
+\DoxyCodeLine{93         \textcolor{keywordtype}{void} Update(\textcolor{keywordtype}{double} delta\_t, \textcolor{keywordtype}{double} p\_valve, \textcolor{keywordtype}{double} p\_back, \textcolor{keywordtype}{bool} monitor\_min\_max);}
+\DoxyCodeLine{94         \textcolor{keywordtype}{void} Ini();}
+\DoxyCodeLine{95         \textcolor{keywordtype}{void} Ini(\textcolor{keywordtype}{double} \_xstart, \textcolor{keywordtype}{double} \_vstart, \textcolor{keywordtype}{double} \_pstart);}
+\DoxyCodeLine{96         \textcolor{keywordtype}{void} Ini(\textcolor{keywordtype}{double} \_xstart, \textcolor{keywordtype}{double} \_vstart);}
+\DoxyCodeLine{97         \textcolor{keywordtype}{void} UpdateDimlessPars();}
+\DoxyCodeLine{98         \textcolor{keywordtype}{double} Get\_dprop(\textcolor{keywordtype}{string} prop\_string);}
+\DoxyCodeLine{99         vector<double> Get\_dvprop(\textcolor{keywordtype}{string} prop\_string);}
+\DoxyCodeLine{100         \textcolor{keywordtype}{void} Set\_dprop(\textcolor{keywordtype}{string} prop\_string, \textcolor{keywordtype}{double} val);}
+\DoxyCodeLine{101         \textcolor{keywordtype}{void} List\_data();}
+\DoxyCodeLine{102         \textcolor{keywordtype}{void} Save\_data();}
+\DoxyCodeLine{103         \textcolor{comment}{//void Plot();}}
+\DoxyCodeLine{104         \textcolor{keywordtype}{string} fname;}
+\DoxyCodeLine{105         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_valve_a98b0df021274e223a11cd5df12df42e6}{SetAeffCoeffs}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \_a1, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_a2, \textcolor{keyword}{const} \textcolor{keywordtype}{double} Aeffmax);}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107         \textcolor{keywordtype}{double} Get\_MassFlowRate(\textcolor{keywordtype}{double} p\_upstream, \textcolor{keywordtype}{double} T\_upstream, \textcolor{keywordtype}{double} p\_downstream, \textcolor{keywordtype}{double} T\_downstream, \textcolor{keywordtype}{double} xx);}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{comment}{//      double Get\_MassFlowRate\_Compressible(double p\_upstream, double T\_upstream, double p\_downstream, double T\_downstream, double xx);}}
+\DoxyCodeLine{110 \textcolor{comment}{//      double Get\_MassFlowRate\_Compressible\_Choked(double p\_upstream, double T\_upstream, double x);}}
+\DoxyCodeLine{111 \textcolor{comment}{//      double Get\_MassFlowRate\_Compressible\_UnChoked(double p\_upstream, double T\_upstream, double p\_downstream, double xx);}}
+\DoxyCodeLine{112 \textcolor{comment}{//      double Get\_MassFlowRate\_InCompressible(double p\_upstream, double p\_downstream, double rho, double x) ;}}
+\DoxyCodeLine{113         \textcolor{comment}{//void Plot(bool show, bool save);}}
+\DoxyCodeLine{114         \textcolor{keywordtype}{double} SumStatForce(\textcolor{keyword}{const} \textcolor{keywordtype}{double} x, \textcolor{keyword}{const} \textcolor{keywordtype}{double} pv, \textcolor{keyword}{const} \textcolor{keywordtype}{double} pb);}
+\DoxyCodeLine{115 \};}
 
 \end{DoxyCode}

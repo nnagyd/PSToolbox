@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['r_0',['R',['../class_ideal___gas.html#a26ff557cae246370ceb59796be20707d',1,'Ideal_Gas']]],
-  ['reservoir_1',['Reservoir',['../class_reservoir.html',1,'']]]
+  ['reservoir_0',['Reservoir',['../class_reservoir.html',1,'Reservoir'],['../class_reservoir.html#aae080b81c168a292bcaa78b4b9336af1',1,'Reservoir::Reservoir()']]]
 ];

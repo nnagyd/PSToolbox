@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['_7eideal_5fgas_0',['~Ideal_Gas',['../class_ideal___gas.html#a9322cd08fc709a4d0a39951e5f20b15e',1,'Ideal_Gas']]],
-  ['_7escp_1',['~SCP',['../class_s_c_p.html#aec0db6047f6437d1ff4de3e5c21a9671',1,'SCP']]],
-  ['_7eunits_2',['~Units',['../class_units.html#a64dc33d12edc3be94cfc72472cefecfe',1,'Units']]]
+  ['units_0',['Units',['../class_units.html#aa10ded064259f35f044246879725b98a',1,'Units']]],
+  ['updatedimlesspars_1',['UpdateDimlessPars',['../class_l_w_p.html#a813a723122fdb8141ded3ace0f03d34c',1,'LWP::UpdateDimlessPars()'],['../class_s_c_p.html#af1f4995d58d75d80ed1738346ff06bf4',1,'SCP::UpdateDimlessPars()']]]
 ];

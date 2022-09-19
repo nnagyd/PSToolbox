@@ -77,7 +77,8 @@ public:
     double dt_req);
   
  // double GetBetaAtFront(double t_target);
-  bool GetC0AtFront(double t_target, double& p, double& v, double& T, double& rho);
+  //bool GetC0AtFront(double t_target, double& p, double& v, double& T, double& rho);
+  bool GetC0AtFront(double t_target);
   double GetBetaPrimitiveAtFront(double t_target);
   void GetAllPrimitiveAtFront(double t_target, double& pP, double& vP, double& TP, double& rhoP);
 

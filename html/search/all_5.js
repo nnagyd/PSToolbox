@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ideal_5fgas_0',['Ideal_Gas',['../class_ideal___gas.html',1,'Ideal_Gas'],['../class_ideal___gas.html#a9c283d68a70a5e22451105bbf92a0278',1,'Ideal_Gas::Ideal_Gas(const double _kappa, const double _R)'],['../class_ideal___gas.html#a534ed1f6ca95a2c0a6e628d4f193fae0',1,'Ideal_Gas::Ideal_Gas(Ideal_Gas *g)']]],
+  ['idealgas_0',['IdealGas',['../class_ideal_gas.html',1,'IdealGas'],['../class_ideal_gas.html#a49de9b805a4c160746961f2a8df35e48',1,'IdealGas::IdealGas()']]],
   ['inch3_5fto_5fm3_1',['inch3_to_m3',['../class_units.html#aa8eaefa114dd3f3f71441fca9f530c68',1,'Units']]],
   ['inch_5fto_5fm_2',['inch_to_m',['../class_units.html#a825b374297ce7d7d0e03a3908d716ae8',1,'Units']]],
   ['info_3',['Info',['../class_s_c_p.html#a49d5f5d781536e58ce5e21026dfa8059',1,'SCP']]],

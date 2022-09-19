@@ -1,0 +1,31 @@
+\hypertarget{_gas_8h_source}{}\doxysection{Gas.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{keyword}{class }\mbox{\hyperlink{class_gas}{Gas}}}
+\DoxyCodeLine{2 \{}
+\DoxyCodeLine{3 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{4     \textcolor{keywordtype}{double} p;}
+\DoxyCodeLine{5     \textcolor{keywordtype}{double} rho;}
+\DoxyCodeLine{6     \textcolor{keywordtype}{double} T;}
+\DoxyCodeLine{7     \textcolor{keywordtype}{double} e;}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{public}:}
+\DoxyCodeLine{10     \mbox{\hyperlink{class_gas}{Gas}}();}
+\DoxyCodeLine{11     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_gas}{\string~Gas}}();}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} Get\_p(\textcolor{keywordtype}{double} rho, \textcolor{keywordtype}{double} T) = 0;}
+\DoxyCodeLine{14     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} Get\_rho(\textcolor{keywordtype}{double} p, \textcolor{keywordtype}{double} T) = 0;}
+\DoxyCodeLine{15     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} Get\_T(\textcolor{keywordtype}{double} p, \textcolor{keywordtype}{double} rho) = 0;}
+\DoxyCodeLine{16     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} Get\_e(\textcolor{keywordtype}{double} T) = 0;}
+\DoxyCodeLine{17     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} Get\_SonicVel(\textcolor{keywordtype}{double} T, \textcolor{keywordtype}{double} p) = 0;}
+\DoxyCodeLine{18     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} Get\_T\_from\_e(\textcolor{keywordtype}{double} e) = 0;}
+\DoxyCodeLine{19     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} Get\_kappa\_pv() = 0;}
+\DoxyCodeLine{20     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} Get\_kappa\_Tv() = 0;}
+\DoxyCodeLine{21     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} Get\_kappa\_Tp() = 0;}
+\DoxyCodeLine{22     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} Get\_cp() = 0;}
+\DoxyCodeLine{23     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} Get\_cV() = 0;}
+\DoxyCodeLine{24     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} Get\_eta\_crit() = 0;}
+\DoxyCodeLine{25     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} Get\_MassFlux(\textcolor{keywordtype}{double} pu, \textcolor{keywordtype}{double} rhou, \textcolor{keywordtype}{double} pd, \textcolor{keywordtype}{double} rhod) = 0;}
+\DoxyCodeLine{26 \};}
+
+\end{DoxyCode}

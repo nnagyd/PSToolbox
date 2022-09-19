@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
 		p1->Step("Pressure",p0+dp,"Pressure",p);
 		p2->Step("Pressure",p,"Pressure",p0);
 		p3->Step("Pressure",p,"Pressure",p0);
-		p3->Step("Pressure",p,"Velocity",0.1);
+		//p3->Step("Pressure",p,"Velocity",0.1);
 		
 		printf("\n t=%5.3f s, p=%5.3f barg, v1=%5.3f m/s, v2=%5.3f m/s, v3=%5.3f m/s",t, p/1.e5,v1,v2,v3); 
 	}

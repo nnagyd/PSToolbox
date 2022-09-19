@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
 	double t = 0, tmax=3., dt=1./v1.Get_dprop("freq")/50.;
 	double mp,mpin=v1.Get_dprop("mp_nom");
 	while (t<tmax) {
-		mp=v1.Get_MassFlowRate_InCompressible(r1.Get_dprop("p"),p0,rho,v1.Get_dprop("x"));
+		mp=v1.Get_MassFlowRate(r1.Get_dprop("p"),293,p0,293,v1.Get_dprop("x"));
 		printf("\n t=%5.3f s, p=%5.3f barg, x=%5.3f mm, mp=%5.3f kg/s (imbalance: %5.3f%%)",
 		       t, r1.Get_dprop("p")/1.e5-1., v1.Get_dprop("x_mm"),
 		       mp, (mp-mpin)/mpin*100);

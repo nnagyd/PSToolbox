@@ -33,7 +33,7 @@ int main(int argc, char **argv) {
 	double t = 0, tmax = 10., dt = 1. / v1->Get_dprop("freq") / 10., tout = -1.e-10, dtout = tmax / 20.;
 	double mp, mpin = v1->Get_dprop("mp_nom") * 1.0;
 	while (t < tmax) {
-		mp = v1->Get_MassFlowRate_Compressible_Choked(r1->Get_dprop("p"), r1->Get_dprop("T"), v1->Get_dprop("x"));
+		mp = v1->Get_MassFlowRate(r1->Get_dprop("p"), r1->Get_dprop("T"), p0,293,v1->Get_dprop("x"));
 		if (t > tout) {
 			printf("\n t=%5.3f s, p=%5.3f barg, x=%5.1f mm, mp=%5.3f kg/s (imbalance: %+5.1f%%)",
 			       t, r1->Get_dprop("p") / 1.e5 - 1., v1->Get_dprop("x_mm"),

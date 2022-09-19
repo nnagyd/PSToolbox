@@ -47,6 +47,12 @@ double {\bfseries Get\+Alpha\+At\+End} (double t\+\_\+target)
 \mbox{\Hypertarget{class_s_c_p_a6183e93948861f5d3a3282cbf31f977b}\label{class_s_c_p_a6183e93948861f5d3a3282cbf31f977b}} 
 double {\bfseries Get\+Beta\+At\+Front} (double t\+\_\+target)
 \item 
+\mbox{\Hypertarget{class_s_c_p_a6137f34f11cf5c9b4c3fc3c266aac067}\label{class_s_c_p_a6137f34f11cf5c9b4c3fc3c266aac067}} 
+double {\bfseries Get\+Alpha\+Primitive\+At\+End} (double t\+\_\+target)
+\item 
+\mbox{\Hypertarget{class_s_c_p_a67b7c3d88873f91950d4881c42947bc7}\label{class_s_c_p_a67b7c3d88873f91950d4881c42947bc7}} 
+double {\bfseries Get\+Beta\+Primitive\+At\+Front} (double t\+\_\+target)
+\item 
 \mbox{\Hypertarget{class_s_c_p_a15a21288294d0ae18e73ef2fccc1388b}\label{class_s_c_p_a15a21288294d0ae18e73ef2fccc1388b}} 
 void {\bfseries Save\+\_\+data} ()
 \begin{DoxyCompactList}\small\item\em Exports savied data Exports data saved from previous settings (such as steps and initialization.) Only works if the save\+\_\+data flag was set to true, otherwise an error message is displayed. Data is saved to the previously determined savefile name. No inputs/outputs. \end{DoxyCompactList}\item 
@@ -84,25 +90,25 @@ Constructor for the slightly compressible pipe class.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em \+\_\+name} & Name of the slightls compressible pipe \\
+\mbox{\texttt{ in}}  & {\em \+\_\+name} & Name of the slightls compressible pipe\\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+cspe\+\_\+name} & Name of the previous node \\
+\mbox{\texttt{ in}}  & {\em \+\_\+cspe\+\_\+name} & Name of the previous node\\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+cspv\+\_\+name} & Name of the next node \\
+\mbox{\texttt{ in}}  & {\em \+\_\+cspv\+\_\+name} & Name of the next node\\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+ro} & Density of the fluid in the system (Constant as it is incompressible) \\
+\mbox{\texttt{ in}}  & {\em \+\_\+ro} & Density of the fluid in the system (Constant as it is incompressible)\\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+a} & Speed of sound in the system \\
+\mbox{\texttt{ in}}  & {\em \+\_\+a} & Speed of sound in the system\\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+L} & Length of the pipe section \\
+\mbox{\texttt{ in}}  & {\em \+\_\+L} & Length of the pipe section\\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+D} & Diameter of the pipe \\
+\mbox{\texttt{ in}}  & {\em \+\_\+D} & Diameter of the pipe\\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+lambda} & Friction loss factor \\
+\mbox{\texttt{ in}}  & {\em \+\_\+lambda} & Friction loss factor\\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+he} & Height at the beginning \mbox{[}eleje\mbox{]} of the pipe \\
+\mbox{\texttt{ in}}  & {\em \+\_\+he} & Height at the beginning \mbox{[}eleje\mbox{]} of the pipe\\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+hv} & Height at the end \mbox{[}v{\ucr}ge\mbox{]} of the pipe \\
+\mbox{\texttt{ in}}  & {\em \+\_\+hv} & Height at the end \mbox{[}v{\ucr}ge\mbox{]} of the pipe\\
 \hline
 \mbox{\texttt{ in}}  & {\em \+\_\+save\+\_\+data} & whether to save data \\
 \hline

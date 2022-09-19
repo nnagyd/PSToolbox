@@ -1,9 +1,7 @@
 #pragma once
-//#include "Gas.h"
 #include "IdealGas.h"
-#include "FrozenMixtureLiquidGas.h"
 
-class FrozenMixtureLiquidGas : public Gas
+class FrozenMixtureLiquidGas : public IdealGas
 {
 public:
   FrozenMixtureLiquidGas(
@@ -25,8 +23,8 @@ public:
   double Get_kappa_Tv();
   double Get_kappa_Tp();
   double Get_pcrit(double pr, double omega);
-  double Get_cp();
-  double Get_cV();
+  double Get_cp(double p, double T);
+  double Get_cV(double p, double T);
   double Get_MassFlux(double pu, double Tu, double pd, double Td);
 
   double rho_L(double p);

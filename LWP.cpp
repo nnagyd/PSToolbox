@@ -203,8 +203,8 @@ void LWP::IniUniform(double _vini, double _pini, double _Tini, double dt_target)
 
 // Direct, user-defined initialization of the primitive variables
 // with uniform distribution
-void LWP::IniUniform(double _vini, double _pini, double _Tini, int _Npts) {
-	Npts = _Npts;
+void LWP::IniUniform(double _vini, double _pini, double _Tini, int _Npts_mul) {
+	Npts = _Npts_mul*20;
 	Ini(Npts);
 	for (int i = 0; i < Npts; i++) {
 		x(i) = i * L / (Npts - 1);
@@ -494,7 +494,7 @@ void LWP::Pack(bool is_half_step) {
 	double e;
 	if (is_half_step) {
 		for (unsigned int i = 0; i < Npts - 1; i++) {
-			e = gas->Get_e(Thalf(i));
+			e = gas->Get_e_from_Tp(Thalf(i),phalf(i));
 			Fhalf(i, 0) = rhohalf(i) * vhalf(i) * A;
 			Fhalf(i, 1) = ( rhohalf(i) * vhalf(i) * vhalf(i) + phalf(i) ) * A;
 			Fhalf(i, 2) = ( rhohalf(i) * vhalf(i) * e + phalf(i) * vhalf(i) ) * A;
@@ -506,7 +506,7 @@ void LWP::Pack(bool is_half_step) {
 	}
 	else {
 		for (unsigned int i = 0; i < Npts; i++) {
-			e = gas->Get_e(T(i));
+			e = gas->Get_e_from_Tp(T(i),p(i));
 			U(i, 0) = rho(i) * A;
 			U(i, 1) = rho(i) * v(i) * A;
 			U(i, 2) = rho(i) * e * A;
@@ -528,7 +528,7 @@ void LWP::UnPackU(bool is_half_step) {
 		for (unsigned int i = 0; i < Npts - 1; i++) {
 			rhohalf(i) = Uhalf(i, 0) / A;
 			vhalf(i) = Uhalf(i, 1) / Uhalf(i, 0);
-			Thalf(i) = gas->Get_T_from_e(Uhalf(i, 2) / Uhalf(i, 0));
+			Thalf(i) = gas->Get_T_from_erho(Uhalf(i, 2) / Uhalf(i, 0),rhohalf(i));
 			phalf(i) = gas->Get_p(rhohalf(i), Thalf(i));
 		}
 	}
@@ -536,7 +536,7 @@ void LWP::UnPackU(bool is_half_step) {
 		for (unsigned int i = 0; i < Npts; i++) {
 			rhonew(i) = Unew(i, 0) / A;
 			vnew(i) = Unew(i, 1) / Unew(i, 0);
-			Tnew(i) = gas->Get_T_from_e(Unew(i, 2) / Unew(i, 0));
+			Tnew(i) = gas->Get_T_from_erho(Unew(i, 2) / Unew(i, 0),rhonew(i));
 			pnew(i) = gas->Get_p(rhonew(i), Tnew(i));
 		}
 		// artificial viscosity
@@ -776,11 +776,11 @@ void LWP::BCLeft(string type, double val1, double val2) {
 		     << "ERROR! LWP::BCLeft(), unknown BC type: " << type << endl;
 		cout << "Possible choices:" << endl;
 		cout << "\t Wall" << endl;
-		cout << "\t MassFlowIn_and_T" << endl;
+		//cout << "\t MassFlowIn_and_T" << endl;
 		cout << "\t StaticPres_and_StaticTemp" << endl;
-		cout << "\t TotalPres_and_TotalTemp" << endl;
-		cout << "\t TotalPres_and_TotalTemp_Isentropic" << endl;
-		cout << "\t Opening" << endl;
+		//cout << "\t TotalPres_and_TotalTemp" << endl;
+		//cout << "\t TotalPres_and_TotalTemp_Isentropic" << endl;
+		//cout << "\t Opening" << endl;
 		cout << endl << "Name of pipe: " << name << endl;
 		cin.get();
 	}
@@ -969,13 +969,20 @@ void LWP::BCRight(string type, double val1, double val2) {
 		ok = true;
 	}*/
 
-	if (!ok) {
-		cout << endl
-		     << "ERROR! LWP::BCRight(), unknown BC type: " << type << endl
-		     << endl;
+if (!ok) {
+		cout << endl << endl
+		     << "ERROR! LWP::BCRight(), unknown BC type: " << type << endl;
+		cout << "Possible choices:" << endl;
+		cout << "\t Wall" << endl;
+		//cout << "\t MassFlowIn_and_T" << endl;
+		cout << "\t StaticPres_and_StaticTemp" << endl;
+		//cout << "\t TotalPres_and_TotalTemp" << endl;
+		//cout << "\t TotalPres_and_TotalTemp_Isentropic" << endl;
+		//cout << "\t Opening" << endl;
 		cout << endl << "Name of pipe: " << name << endl;
 		cin.get();
 	}
+
 }
 
 /*double LWP::GetBetaAtFront(double t_target) {
@@ -1091,7 +1098,8 @@ double LWP::GetBetaPrimitiveAtFront(double t_target) {
 	return pR - rhoR * gas->Get_SonicVel(TR,pR) * vR;
 }
 
-bool LWP::GetC0AtFront(double t_target, double& pM, double& vM, double& TM, double& rhoM) {
+//bool LWP::GetC0AtFront(double t_target, double& pM, double& vM, double& TM, double& rhoM) {
+bool LWP::GetC0AtFront(double t_target) {
 
 	double delta_t = t_target - t;
 	double TOL = dt / 1000.;

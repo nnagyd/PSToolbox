@@ -5,9 +5,13 @@ INC = -I/usr/local/include/eigen3
 # LINK = -lmy_tools -lpython2.7
 LINK = -lmy_tools
 
+INC_CP = -I/Users/hoscsaba/program/CoolProp/include -I/Users/hoscsaba/program/CoolProp/externals/fmtlib
+LINK_CP = -L/Users/hoscsaba/program/CoolProp/build1 -lCoolProp
+#CFLAGS = -std=c++11 -pedantic -O3 -Wall -Wno-c++11-long-long
+
 all:$(TARGETS)
 	libtool -static -o libmy_tools.a my_tools.o
-	libtool -static -o libPSToolbox.a Gas.o IdealGas.o FrozenMixtureLiquidGas.o Units.o LWP.o SCP.o Reservoir.o Valve.o Connector.o 
+	libtool -static -o libPSToolbox.a Gas.o IdealGas.o FrozenMixtureLiquidGas.o Units.o LWP.o SCP.o Reservoir.o Valve.o Connector.o CoolPropGas.o
 
 my_tools: my_tools.cpp 
 	$(CXX) $(INC) $(CFLAGS) my_tools.cpp -c -o my_tools.o
@@ -40,6 +44,9 @@ Valve:
 
 Connector: Connector.cpp
 	$(CXX) $(INC) $(CFLAGS) Connector.cpp -c -o Connector.o
+
+CoolPropGas: CoolPropGas.cpp
+	$(CXX) $(INC_CP) $(LINK_CP) $(CFLAGS) CoolPropGas.cpp -c -o CoolPropGas.o
 
 clean:
 	$(RM) *.o *.a

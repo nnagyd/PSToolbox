@@ -9,8 +9,8 @@ Inheritance diagram for LWP\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_l_w_p_a06e7f2afc35461fc4648131b45e3be14}\label{class_l_w_p_a06e7f2afc35461fc4648131b45e3be14}} 
-{\bfseries LWP} (const string \+\_\+nev, const string \+\_\+cspe\+\_\+nev, const string \+\_\+cspv\+\_\+nev, const double \+\_\+L, const double \+\_\+D, const double \+\_\+lambda, const double \+\_\+he, const double \+\_\+hv, const bool \+\_\+save\+\_\+data, const bool \+\_\+save\+\_\+all\+\_\+data, \mbox{\hyperlink{class_ideal___gas}{Ideal\+\_\+\+Gas}} $\ast$gas)
+\mbox{\Hypertarget{class_l_w_p_ac9a2993122afab5f796f4d84884fc465}\label{class_l_w_p_ac9a2993122afab5f796f4d84884fc465}} 
+{\bfseries LWP} (const string \+\_\+nev, const string \+\_\+cspe\+\_\+nev, const string \+\_\+cspv\+\_\+nev, const double \+\_\+L, const double \+\_\+D, const double \+\_\+lambda, const double \+\_\+he, const double \+\_\+hv, const bool \+\_\+save\+\_\+data, const bool \+\_\+save\+\_\+all\+\_\+data, \mbox{\hyperlink{class_gas}{Gas}} $\ast$gas)
 \item 
 \mbox{\Hypertarget{class_l_w_p_aa36b088feffd84c4441fdd3d74cfc15c}\label{class_l_w_p_aa36b088feffd84c4441fdd3d74cfc15c}} 
 string {\bfseries Info} (bool show\+\_\+pts)
@@ -32,17 +32,14 @@ void {\bfseries Set\+\_\+dprop} (string prop\+\_\+string, double val)
 \mbox{\Hypertarget{class_l_w_p_ae7d85d9863635c898c014f03311b7cdf}\label{class_l_w_p_ae7d85d9863635c898c014f03311b7cdf}} 
 void {\bfseries Step} (string BC\+\_\+start\+\_\+type, double BC\+\_\+start\+\_\+val1, double BC\+\_\+start\+\_\+val2, string BC\+\_\+end\+\_\+type, double BC\+\_\+end\+\_\+val1, double BC\+\_\+end\+\_\+val2, double dt\+\_\+req)
 \item 
-\mbox{\Hypertarget{class_l_w_p_aeb19644371e18d6f7a2e6b5bda03d3b4}\label{class_l_w_p_aeb19644371e18d6f7a2e6b5bda03d3b4}} 
-double {\bfseries Get\+Beta\+At\+Front} (double t\+\_\+target)
+\mbox{\Hypertarget{class_l_w_p_a033e845113056b47a3150690507d304f}\label{class_l_w_p_a033e845113056b47a3150690507d304f}} 
+bool {\bfseries Get\+C0\+At\+Front} (double t\+\_\+target, double \&p, double \&v, double \&T, double \&rho)
 \item 
 \mbox{\Hypertarget{class_l_w_p_ac09d61578e520e9438abe29f9ef7c86d}\label{class_l_w_p_ac09d61578e520e9438abe29f9ef7c86d}} 
 double {\bfseries Get\+Beta\+Primitive\+At\+Front} (double t\+\_\+target)
 \item 
 \mbox{\Hypertarget{class_l_w_p_ac5ec2326d1b21d71325c3a72e4080ad6}\label{class_l_w_p_ac5ec2326d1b21d71325c3a72e4080ad6}} 
 void {\bfseries Get\+All\+Primitive\+At\+Front} (double t\+\_\+target, double \&pP, double \&vP, double \&TP, double \&rhoP)
-\item 
-\mbox{\Hypertarget{class_l_w_p_a0e5b3a6bb2724e98df0fb05345d90d73}\label{class_l_w_p_a0e5b3a6bb2724e98df0fb05345d90d73}} 
-double {\bfseries Get\+Alpha\+At\+End} (double t\+\_\+target)
 \item 
 \mbox{\Hypertarget{class_l_w_p_a849935a607832ef076d68723c295a7c3}\label{class_l_w_p_a849935a607832ef076d68723c295a7c3}} 
 double {\bfseries Get\+C0\+At\+End} (double t\+\_\+target)
@@ -81,8 +78,8 @@ void \mbox{\hyperlink{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}{Update\+Dim
 \mbox{\Hypertarget{class_l_w_p_abef9f82d87b3ed9acb7cfd4a5362a8f4}\label{class_l_w_p_abef9f82d87b3ed9acb7cfd4a5362a8f4}} 
 string {\bfseries fname}
 \item 
-\mbox{\Hypertarget{class_l_w_p_a7a60aa881899f3929530d8ab718cf999}\label{class_l_w_p_a7a60aa881899f3929530d8ab718cf999}} 
-\mbox{\hyperlink{class_ideal___gas}{Ideal\+\_\+\+Gas}} $\ast$ {\bfseries gas}
+\mbox{\Hypertarget{class_l_w_p_a7ae6efcf2cb20a9aedf295ed534d87be}\label{class_l_w_p_a7ae6efcf2cb20a9aedf295ed534d87be}} 
+\mbox{\hyperlink{class_gas}{Gas}} $\ast$ {\bfseries gas}
 \end{DoxyCompactItemize}
 
 

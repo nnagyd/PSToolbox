@@ -10,7 +10,7 @@ FrozenMixtureLiquidGas::FrozenMixtureLiquidGas(
     const double _rhoL_ref,
     const double _pL_ref,
     const double _cL,
-    IdealGas* _gas) : Gas() {
+    IdealGas* _gas)  : IdealGas() {
 
 	x_g    = _x_g;
 	rhoL_ref =  _rhoL_ref;
@@ -29,7 +29,7 @@ double FrozenMixtureLiquidGas::Get_rho(double p, double T) {
 
 double FrozenMixtureLiquidGas::Get_p(double rho, double T) {
 	double pp = 1.;
-	double R = gas->Get_cp() - gas->Get_cV();
+	double R = gas->R;
 
 	double b = -(pL_ref + R * T * x_g * rho + cL * cL * (rho * (1 - x_g) - rhoL_ref));
 	double c = R * T * x_g * rho * (pL_ref - cL * cL * rhoL_ref);
@@ -86,12 +86,12 @@ double FrozenMixtureLiquidGas::Get_kappa_Tp() {
 	return gas->kappa;
 }
 
-double FrozenMixtureLiquidGas::Get_cp() {
-	return gas->cp;
+double FrozenMixtureLiquidGas::Get_cp(double p, double T) {
+	return (x_g*gas->cV)+(1.-x_g)*cL;
 }
 
-double FrozenMixtureLiquidGas::Get_cV() {
-	return gas->cV;
+double FrozenMixtureLiquidGas::Get_cV(double p, double T) {
+	return (x_g*gas->cp)+(1.-x_g)*cL;
 }
 
 double FrozenMixtureLiquidGas::Get_MassFlux(double pu, double Tu, double pd, double Td) {

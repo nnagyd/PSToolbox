@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['kappa_0',['kappa',['../class_ideal___gas.html#a6a905f29eea5736036f2cc0afb461065',1,'Ideal_Gas']]],
-  ['kg_5fto_5flbm_1',['kg_to_lbm',['../class_units.html#acefd99f83c8cf786bd5c6e045283f2e8',1,'Units']]]
+  ['lbf_5fto_5fn_0',['lbf_to_N',['../class_units.html#a5215c9f5e61c890b28bff680e6a511ca',1,'Units']]],
+  ['lbm_5fto_5fkg_1',['lbm_to_kg',['../class_units.html#a0cf66a20a8f5651c3a5e46ebd6bb4f63',1,'Units']]]
 ];

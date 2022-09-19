@@ -18,11 +18,10 @@ Inheritance diagram for Valve\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_valve_aab5b8b088aa400a31d0020605cdf1015}\label{class_valve_aab5b8b088aa400a31d0020605cdf1015}} 
-{\bfseries Valve} (const string \+\_\+nev, const double \+\_\+m, const double \+\_\+k, const double \+\_\+s, const double \+\_\+\+Dbore, const double \+\_\+\+Cd, const double \+\_\+ro, const double p\+\_\+set, const double \+\_\+xmax, const double \+\_\+r, const double \+\_\+pref, const bool save\+\_\+data)
-\item 
-\mbox{\Hypertarget{class_valve_aa787ab2682b88bcc53bc1621cfda245f}\label{class_valve_aa787ab2682b88bcc53bc1621cfda245f}} 
-{\bfseries Valve} (const string \+\_\+nev, const double \+\_\+m, const double \+\_\+k, const double \+\_\+s, const double \+\_\+\+Dbore, const double \+\_\+\+Cd, \mbox{\hyperlink{class_ideal___gas}{Ideal\+\_\+\+Gas}} $\ast$\+\_\+gas, const double p\+\_\+set, const double \+\_\+xmax, const double \+\_\+r, const double \+\_\+pref, const bool save\+\_\+data)
+\mbox{\hyperlink{class_valve_aab5b8b088aa400a31d0020605cdf1015}{Valve}} (const string \+\_\+nev, const double \+\_\+m, const double \+\_\+k, const double \+\_\+s, const double \+\_\+\+Dbore, const double \+\_\+\+Cd, const double \+\_\+ro, const double p\+\_\+set, const double \+\_\+xmax, const double \+\_\+r, const double \+\_\+pref, const bool save\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Class for modeling valves. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_valve_aa81bca7be68af43735a65c3062059bee}\label{class_valve_aa81bca7be68af43735a65c3062059bee}} 
+{\bfseries Valve} (const string \+\_\+nev, const double \+\_\+m, const double \+\_\+k, const double \+\_\+s, const double \+\_\+\+Dbore, const double \+\_\+\+Cd, \mbox{\hyperlink{class_gas}{Gas}} $\ast$\+\_\+gas, const double p\+\_\+set, const double \+\_\+xmax, const double \+\_\+r, const double \+\_\+pref, const bool save\+\_\+data)
 \item 
 \mbox{\Hypertarget{class_valve_a8d7f1f36ac81611396a6718cc14a7669}\label{class_valve_a8d7f1f36ac81611396a6718cc14a7669}} 
 string {\bfseries Get\+Name} ()
@@ -62,17 +61,11 @@ void {\bfseries Save\+\_\+data} ()
 \item 
 void \mbox{\hyperlink{class_valve_a98b0df021274e223a11cd5df12df42e6}{Set\+Aeff\+Coeffs}} (const double \+\_\+a1, const double \+\_\+a2, const double Aeffmax)
 \begin{DoxyCompactList}\small\item\em set teh coefficients forthe function describing the effective area Set two elements of a second order function (and a maximum value) for the relative multiplicator of the effective area. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_valve_a7a7dfd13d31680386dae1a6a4c525b6d}\label{class_valve_a7a7dfd13d31680386dae1a6a4c525b6d}} 
-double {\bfseries Get\+\_\+\+Mass\+Flow\+Rate\+\_\+\+Compressible} (double p\+\_\+upstream, double T\+\_\+upstream, double p\+\_\+downstream, double T\+\_\+downstream, double xx)
+\mbox{\Hypertarget{class_valve_a8b888ce9f7151c8790f428c301dea232}\label{class_valve_a8b888ce9f7151c8790f428c301dea232}} 
+double {\bfseries Get\+\_\+\+Mass\+Flow\+Rate} (double p\+\_\+upstream, double T\+\_\+upstream, double p\+\_\+downstream, double T\+\_\+downstream, double xx)
 \item 
-\mbox{\Hypertarget{class_valve_a73fa2b4b5fda8d88f0898333810d038a}\label{class_valve_a73fa2b4b5fda8d88f0898333810d038a}} 
-double {\bfseries Get\+\_\+\+Mass\+Flow\+Rate\+\_\+\+Compressible\+\_\+\+Choked} (double p\+\_\+upstream, double T\+\_\+upstream, double x)
-\item 
-\mbox{\Hypertarget{class_valve_afe687aeb627d4e49b35dec8c322b3d2e}\label{class_valve_afe687aeb627d4e49b35dec8c322b3d2e}} 
-double {\bfseries Get\+\_\+\+Mass\+Flow\+Rate\+\_\+\+Compressible\+\_\+\+Un\+Choked} (double p\+\_\+upstream, double T\+\_\+upstream, double p\+\_\+downstream, double xx)
-\item 
-\mbox{\Hypertarget{class_valve_a7d7f4d5cbc6c9b3c71df24961d5b110a}\label{class_valve_a7d7f4d5cbc6c9b3c71df24961d5b110a}} 
-double {\bfseries Get\+\_\+\+Mass\+Flow\+Rate\+\_\+\+In\+Compressible} (double p\+\_\+upstream, double p\+\_\+downstream, double rho, double x)
+\mbox{\Hypertarget{class_valve_a8507a2b6e6b88d4e4ae0359416f320ba}\label{class_valve_a8507a2b6e6b88d4e4ae0359416f320ba}} 
+double {\bfseries Sum\+Stat\+Force} (const double x, const double pv, const double pb)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -84,6 +77,19 @@ string {\bfseries fname}
 
 \doxysubsection{Detailed Description}
 A class for handling both liquid and fluid valves A class for storing data regarding a valve and allowing for a solution of the differential equation describing the movement of the spring, mass damper system. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_valve_aab5b8b088aa400a31d0020605cdf1015}\label{class_valve_aab5b8b088aa400a31d0020605cdf1015}} 
+\index{Valve@{Valve}!Valve@{Valve}}
+\index{Valve@{Valve}!Valve@{Valve}}
+\doxysubsubsection{\texorpdfstring{Valve()}{Valve()}}
+{\footnotesize\ttfamily Valve\+::\+Valve (\begin{DoxyParamCaption}\item[{const string}]{\+\_\+name,  }\item[{const double}]{\+\_\+m,  }\item[{const double}]{\+\_\+k,  }\item[{const double}]{\+\_\+s,  }\item[{const double}]{\+\_\+\+Dbore,  }\item[{const double}]{\+\_\+\+Cd,  }\item[{const double}]{\+\_\+ro,  }\item[{const double}]{\+\_\+p\+\_\+set,  }\item[{const double}]{\+\_\+xmax,  }\item[{const double}]{\+\_\+r,  }\item[{const double}]{\+\_\+pref,  }\item[{const bool}]{\+\_\+save\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Class for modeling valves. 
+
+The class contains data for direct spring operated pressure reliev valve 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_valve_a98b0df021274e223a11cd5df12df42e6}\label{class_valve_a98b0df021274e223a11cd5df12df42e6}} 

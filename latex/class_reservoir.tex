@@ -2,7 +2,7 @@
 \label{class_reservoir}\index{Reservoir@{Reservoir}}
 
 
-Class for modeling ideal gases.  
+Class for modeling \mbox{\hyperlink{class_reservoir}{Reservoir}}.  
 
 
 
@@ -18,11 +18,13 @@ Inheritance diagram for Reservoir\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_reservoir_aae080b81c168a292bcaa78b4b9336af1}\label{class_reservoir_aae080b81c168a292bcaa78b4b9336af1}} 
-{\bfseries Reservoir} (const string \+\_\+nev, const double \+\_\+vol, const double \+\_\+a, const bool save\+\_\+data)
+\mbox{\hyperlink{class_reservoir_aae080b81c168a292bcaa78b4b9336af1}{Reservoir}} (const string \+\_\+nev, const double \+\_\+vol, const double \+\_\+a, const bool save\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Class for modeling valves. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_reservoir_a7c2cafd71e8397b755ecbc45c88f8064}\label{class_reservoir_a7c2cafd71e8397b755ecbc45c88f8064}} 
+{\bfseries Reservoir} (const string \+\_\+name, const double \+\_\+vol, \mbox{\hyperlink{class_ideal_gas}{Ideal\+Gas}} $\ast$gas, double n\+\_\+poly, const bool \+\_\+save\+\_\+data)
 \item 
-\mbox{\Hypertarget{class_reservoir_abee805f1826eb75ba2edf97fa0ab7bf2}\label{class_reservoir_abee805f1826eb75ba2edf97fa0ab7bf2}} 
-{\bfseries Reservoir} (const string \+\_\+name, const double \+\_\+vol, \mbox{\hyperlink{class_ideal___gas}{Ideal\+\_\+\+Gas}} $\ast$gas, double n\+\_\+poly, const bool \+\_\+save\+\_\+data)
+\mbox{\Hypertarget{class_reservoir_acc65e141d64b7d1f884e8efa2bb5d0e0}\label{class_reservoir_acc65e141d64b7d1f884e8efa2bb5d0e0}} 
+{\bfseries Reservoir} (const string \+\_\+name, const double \+\_\+vol, \mbox{\hyperlink{class_gas}{Gas}} $\ast$gas, double n\+\_\+poly, const bool \+\_\+save\+\_\+data)
 \item 
 \mbox{\Hypertarget{class_reservoir_a8f2bec99c8d8cf32873675f79d66d4c9}\label{class_reservoir_a8f2bec99c8d8cf32873675f79d66d4c9}} 
 string {\bfseries Get\+Name} ()
@@ -59,6 +61,9 @@ void {\bfseries Save\+\_\+data} ()
 \item 
 \mbox{\Hypertarget{class_reservoir_aa779b9aee18c7d3a066003c0a488e94c}\label{class_reservoir_aa779b9aee18c7d3a066003c0a488e94c}} 
 vector$<$ double $>$ {\bfseries Get\+\_\+dvprop} (string prop\+\_\+string)
+\item 
+\mbox{\Hypertarget{class_reservoir_adc22cbe39c5900ad45dafda317a07afc}\label{class_reservoir_adc22cbe39c5900ad45dafda317a07afc}} 
+void {\bfseries Plot} (bool show, bool save)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -66,15 +71,28 @@ vector$<$ double $>$ {\bfseries Get\+\_\+dvprop} (string prop\+\_\+string)
 \mbox{\Hypertarget{class_reservoir_ab7bc173165dec1b596ec7a9c15ab88d2}\label{class_reservoir_ab7bc173165dec1b596ec7a9c15ab88d2}} 
 string {\bfseries fname}
 \item 
-\mbox{\Hypertarget{class_reservoir_a01553d366721a5a1a256f98b67cec117}\label{class_reservoir_a01553d366721a5a1a256f98b67cec117}} 
-\mbox{\hyperlink{class_ideal___gas}{Ideal\+\_\+\+Gas}} {\bfseries gas}
+\mbox{\Hypertarget{class_reservoir_a00cb83324b4fa4d62be3ad55e2cab962}\label{class_reservoir_a00cb83324b4fa4d62be3ad55e2cab962}} 
+\mbox{\hyperlink{class_gas}{Gas}} $\ast$ {\bfseries gas}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Class for modeling ideal gases. 
+Class for modeling \mbox{\hyperlink{class_reservoir}{Reservoir}}. 
 
-The class contains data from an ideal gas, and providing functions for the 
+The class contains data for \mbox{\hyperlink{class_reservoir}{Reservoir}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_reservoir_aae080b81c168a292bcaa78b4b9336af1}\label{class_reservoir_aae080b81c168a292bcaa78b4b9336af1}} 
+\index{Reservoir@{Reservoir}!Reservoir@{Reservoir}}
+\index{Reservoir@{Reservoir}!Reservoir@{Reservoir}}
+\doxysubsubsection{\texorpdfstring{Reservoir()}{Reservoir()}}
+{\footnotesize\ttfamily Reservoir\+::\+Reservoir (\begin{DoxyParamCaption}\item[{const string}]{\+\_\+name,  }\item[{const double}]{\+\_\+vol,  }\item[{const double}]{\+\_\+a,  }\item[{const bool}]{\+\_\+save\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Class for modeling valves. 
+
+The class contains data for \mbox{\hyperlink{class_reservoir}{Reservoir}} 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

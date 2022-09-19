@@ -45,7 +45,7 @@ Valve::Valve(const string _name,
 	
 	pref = _pref;
 	is_Gas = false;
-	mp_nevl = Get_MassFlowRate(1.1 * p_set+pref, 293., pref, 293., xmax); //Cd * xmax * M_PI * Dbore * sqrt(2.*ro * 1.1 * p_set);
+	mp_nevl = Get_MassFlowRate(1.1 * p_set+pref, 293., pref, 293., xmax_unrestricted); //Cd * xmax * M_PI * Dbore * sqrt(2.*ro * 1.1 * p_set);
 	r = _r;
 	//pref = _pref;
 
@@ -101,7 +101,7 @@ Valve::Valve(const string _name,
 	//double Temp_at_NominalMassFlowRate = 293.;
 	//mp_nevl = Get_MassFlowRate_Compressible_Choked(1.1 * p_set + 1.e5, Temp_at_NominalMassFlowRate, xmax);
 	//mp_nevl = Get_MassFlowRate(1.1 * p_set + 1.e5, Temp_at_NominalMassFlowRate, xmax);
-	mp_nevl = Get_MassFlowRate(1.1 * p_set + pref,293., pref, 293.,xmax);
+	mp_nevl = Get_MassFlowRate(1.1 * p_set + pref,293., pref, 293.,xmax_unrestricted);
 
 	r = _r;
 	//pref = _pref;
@@ -831,10 +831,11 @@ string Valve::Info() {
 	oss << "\n       omega : " << sqrt(s / m) << " rad/s";
 	oss << "\n           f : " << sqrt(s / m) / 2. / M_PI << " Hz";
 	oss << "\n       Dbore : " << Dbore * 1000. << " mm = " << Dbore*m_to_inch << " in (nozzle diameter)";
-	oss << "\n orifice area: " << A*1.e6<<" mm^2";
-	oss << "\n          Cd : " << Cd;
 	oss << "\n xmax unrest.: " << xmax_unrestricted * 1000. << " mm = " << xmax_unrestricted*m_to_inch << " in";
 	oss << "\n          RT : " << RT << "% -> xmax = "<<xmax*1000<<" mm";
+	oss << "\n A orif. area: " << A*1.e6<<" mm^2 = Dbore^2*pi/4";
+	oss << "\n      A@xmax : " << Dbore*M_PI*xmax*1.e6<<" mm^2 = Dbore*pi*xmax";
+	oss << "\n          Cd : " << Cd;
 	if (is_Gas)	
 		oss << "\n          ro : " << gas->Get_rho(1.e5, 273+16) << " kg/m3 @ 1 bar, 16C";
 	else
@@ -843,6 +844,9 @@ string Valve::Info() {
 	oss << "\n          xe : " << xe * 1000. << " mm = " << xe*m_to_inch << " in";
 	oss << "\n      F(x=0) : " << s*xe << " N ( = s*xe )";
 	oss << "\n    F(p_set) : " << p_set*A << " N ( = p_set * A )";
+	oss << "\n   F(x=xmax) : " << s*(xe+xmax_unrestricted) << " N ( = s*(xe+xmax_unrestricted )";
+	oss << "\nF(1.1*p_set) : " << 1.1*p_set*A << " N ( = 1.1*p_set * A )";
+	//oss << "\n "
 	oss << endl;
 
 	UpdateDimlessPars();

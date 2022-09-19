@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['inch3_5fto_5fm3_0',['inch3_to_m3',['../class_units.html#aa8eaefa114dd3f3f71441fca9f530c68',1,'Units']]],
-  ['inch_5fto_5fm_1',['inch_to_m',['../class_units.html#a825b374297ce7d7d0e03a3908d716ae8',1,'Units']]]
+  ['kg_5fto_5flbm_0',['kg_to_lbm',['../class_units.html#acefd99f83c8cf786bd5c6e045283f2e8',1,'Units']]]
 ];

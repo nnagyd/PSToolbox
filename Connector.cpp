@@ -192,7 +192,7 @@ void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
 	if (!is_ok) {
 
 		double pM, vM, TM, rhoM;
-		bool is_C0_ok = p1->GetC0AtFront(t_target, pM, vM, TM, rhoM);
+		bool is_C0_ok = p1->GetC0AtFront(t_target);
 		if (is_C0_ok) {
 			rho = rhoM;
 			T = TM * pow(rho / rhoM, kappa_Tv - 1.);

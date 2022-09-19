@@ -1170,10 +1170,10 @@ bool LWP::GetC0AtFront(double t_target) {
 		}
 	}
 
-	vM   = v(0)   * (1. - dxM / dx) + v(1) * dxM / dx;
-	TM   = T(0)   * (1. - dxM / dx) + T(1) * dxM / dx;
-	pM   = p(0)   * (1. - dxM / dx) + p(1) * dxM / dx;
-	rhoM = rho(0) * (1. - dxM / dx) + rho(1) * dxM / dx;
+	double vM   = v(0)   * (1. - dxM / dx) + v(1) * dxM / dx;
+	double TM   = T(0)   * (1. - dxM / dx) + T(1) * dxM / dx;
+	double pM   = p(0)   * (1. - dxM / dx) + p(1) * dxM / dx;
+	double rhoM = rho(0) * (1. - dxM / dx) + rho(1) * dxM / dx;
 
 	if (!is_ok) {
 		printf("\n\n--------------------\n dxM/dx=%5.3f", dxM / dx);

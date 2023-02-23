@@ -35,4 +35,6 @@ int main(int argc, char **argv) {
 		//gas.Setp(r1.Get_dprop("p"));
 		//gas.UpdatePolytropic(1.4);
 	}
+	r1.Save_data();
+	r2.Save_data();
 }

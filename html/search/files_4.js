@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['my_5ftools_2ecpp_0',['my_tools.cpp',['../my__tools_8cpp.html',1,'']]],
-  ['my_5ftools_2eh_1',['my_tools.h',['../my__tools_8h.html',1,'']]]
+  ['idealgas_2ecpp_0',['IdealGas.cpp',['../_ideal_gas_8cpp.html',1,'']]],
+  ['idealgas_2eh_1',['IdealGas.h',['../_ideal_gas_8h.html',1,'']]]
 ];

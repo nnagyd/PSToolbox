@@ -2,47 +2,45 @@
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{2 \textcolor{comment}{//\#include "{}Gas.h"{}}}
-\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}IdealGas.h"{}}}
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}FrozenMixtureLiquidGas.h"{}}}
-\DoxyCodeLine{5 }
-\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_frozen_mixture_liquid_gas}{FrozenMixtureLiquidGas}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_gas}{Gas}}}
-\DoxyCodeLine{7 \{}
-\DoxyCodeLine{8 \textcolor{keyword}{public}:}
-\DoxyCodeLine{9   \mbox{\hyperlink{class_frozen_mixture_liquid_gas}{FrozenMixtureLiquidGas}}(}
-\DoxyCodeLine{10     \textcolor{keyword}{const} \textcolor{keywordtype}{double} x\_g,}
-\DoxyCodeLine{11     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_aL,}
-\DoxyCodeLine{12     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_rhoL\_ref,}
-\DoxyCodeLine{13     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_pL\_ref,}
-\DoxyCodeLine{14     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_cV,}
-\DoxyCodeLine{15     \mbox{\hyperlink{class_ideal_gas}{IdealGas}}* gas);}
-\DoxyCodeLine{16   \mbox{\hyperlink{class_frozen_mixture_liquid_gas}{\string~FrozenMixtureLiquidGas}}();}
-\DoxyCodeLine{17 }
-\DoxyCodeLine{18   \textcolor{keywordtype}{double} Get\_p(\textcolor{keywordtype}{double} rho, \textcolor{keywordtype}{double} T);}
-\DoxyCodeLine{19   \textcolor{keywordtype}{double} Get\_rho(\textcolor{keywordtype}{double} p, \textcolor{keywordtype}{double} T);}
-\DoxyCodeLine{20   \textcolor{keywordtype}{double} Get\_T(\textcolor{keywordtype}{double} p, \textcolor{keywordtype}{double} rho);}
-\DoxyCodeLine{21   \textcolor{keywordtype}{double} Get\_e(\textcolor{keywordtype}{double} T);}
-\DoxyCodeLine{22   \textcolor{keywordtype}{double} Get\_SonicVel(\textcolor{keywordtype}{double} T, \textcolor{keywordtype}{double} p);}
-\DoxyCodeLine{23   \textcolor{keywordtype}{double} Get\_T\_from\_e(\textcolor{keywordtype}{double} e);}
-\DoxyCodeLine{24   \textcolor{keywordtype}{double} Get\_kappa\_pv();}
-\DoxyCodeLine{25   \textcolor{keywordtype}{double} Get\_kappa\_Tv();}
-\DoxyCodeLine{26   \textcolor{keywordtype}{double} Get\_kappa\_Tp();}
-\DoxyCodeLine{27   \textcolor{keywordtype}{double} Get\_pcrit(\textcolor{keywordtype}{double} pr, \textcolor{keywordtype}{double} omega);}
-\DoxyCodeLine{28   \textcolor{keywordtype}{double} Get\_cp();}
-\DoxyCodeLine{29   \textcolor{keywordtype}{double} Get\_cV();}
-\DoxyCodeLine{30   \textcolor{keywordtype}{double} Get\_MassFlux(\textcolor{keywordtype}{double} pu, \textcolor{keywordtype}{double} Tu, \textcolor{keywordtype}{double} pd, \textcolor{keywordtype}{double} Td);}
-\DoxyCodeLine{31 }
-\DoxyCodeLine{32   \textcolor{keywordtype}{double} rho\_L(\textcolor{keywordtype}{double} p);}
-\DoxyCodeLine{33   \textcolor{keywordtype}{double} Get\_alpha\_g(\textcolor{keywordtype}{double} p, \textcolor{keywordtype}{double} T);  }
-\DoxyCodeLine{34 }
-\DoxyCodeLine{35   \textcolor{keywordtype}{double} rhoL\_ref, pL\_ref, aL, cL;}
-\DoxyCodeLine{36   \textcolor{keywordtype}{double} x\_g;}
-\DoxyCodeLine{37   \mbox{\hyperlink{class_ideal_gas}{IdealGas}}* gas;}
-\DoxyCodeLine{38 }
-\DoxyCodeLine{39 \textcolor{keyword}{private}:}
-\DoxyCodeLine{40   \textcolor{keywordtype}{double} omega;}
-\DoxyCodeLine{41   \textcolor{keywordtype}{double} eta\_crit\_fun(\textcolor{keywordtype}{double} x);}
-\DoxyCodeLine{42   \textcolor{keywordtype}{double} Get\_eta\_crit();}
-\DoxyCodeLine{43 \};}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}IdealGas.h"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{class }\mbox{\hyperlink{class_frozen_mixture_liquid_gas}{FrozenMixtureLiquidGas}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_ideal_gas}{IdealGas}}}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6 \textcolor{keyword}{public}:}
+\DoxyCodeLine{7   \mbox{\hyperlink{class_frozen_mixture_liquid_gas}{FrozenMixtureLiquidGas}}(}
+\DoxyCodeLine{8     \textcolor{keyword}{const} \textcolor{keywordtype}{double} x\_g,}
+\DoxyCodeLine{9     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_aL,}
+\DoxyCodeLine{10     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_rhoL\_ref,}
+\DoxyCodeLine{11     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_pL\_ref,}
+\DoxyCodeLine{12     \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_cV,}
+\DoxyCodeLine{13     \mbox{\hyperlink{class_ideal_gas}{IdealGas}}* gas);}
+\DoxyCodeLine{14   \mbox{\hyperlink{class_frozen_mixture_liquid_gas}{\string~FrozenMixtureLiquidGas}}();}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16   \textcolor{keywordtype}{double} Get\_p(\textcolor{keywordtype}{double} rho, \textcolor{keywordtype}{double} T);}
+\DoxyCodeLine{17   \textcolor{keywordtype}{double} Get\_rho(\textcolor{keywordtype}{double} p, \textcolor{keywordtype}{double} T);}
+\DoxyCodeLine{18   \textcolor{keywordtype}{double} Get\_T(\textcolor{keywordtype}{double} p, \textcolor{keywordtype}{double} rho);}
+\DoxyCodeLine{19   \textcolor{keywordtype}{double} Get\_e(\textcolor{keywordtype}{double} T);}
+\DoxyCodeLine{20   \textcolor{keywordtype}{double} Get\_SonicVel(\textcolor{keywordtype}{double} T, \textcolor{keywordtype}{double} p);}
+\DoxyCodeLine{21   \textcolor{keywordtype}{double} Get\_T\_from\_e(\textcolor{keywordtype}{double} e);}
+\DoxyCodeLine{22   \textcolor{keywordtype}{double} Get\_kappa\_pv();}
+\DoxyCodeLine{23   \textcolor{keywordtype}{double} Get\_kappa\_Tv();}
+\DoxyCodeLine{24   \textcolor{keywordtype}{double} Get\_kappa\_Tp();}
+\DoxyCodeLine{25   \textcolor{keywordtype}{double} Get\_pcrit(\textcolor{keywordtype}{double} pr, \textcolor{keywordtype}{double} omega);}
+\DoxyCodeLine{26   \textcolor{keywordtype}{double} Get\_cp(\textcolor{keywordtype}{double} p, \textcolor{keywordtype}{double} T);}
+\DoxyCodeLine{27   \textcolor{keywordtype}{double} Get\_cV(\textcolor{keywordtype}{double} p, \textcolor{keywordtype}{double} T);}
+\DoxyCodeLine{28   \textcolor{keywordtype}{double} Get\_MassFlux(\textcolor{keywordtype}{double} pu, \textcolor{keywordtype}{double} Tu, \textcolor{keywordtype}{double} pd, \textcolor{keywordtype}{double} Td);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{keywordtype}{double} rho\_L(\textcolor{keywordtype}{double} p);}
+\DoxyCodeLine{31   \textcolor{keywordtype}{double} Get\_alpha\_g(\textcolor{keywordtype}{double} p, \textcolor{keywordtype}{double} T);  }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33   \textcolor{keywordtype}{double} rhoL\_ref, pL\_ref, aL, cL;}
+\DoxyCodeLine{34   \textcolor{keywordtype}{double} x\_g;}
+\DoxyCodeLine{35   \mbox{\hyperlink{class_ideal_gas}{IdealGas}}* gas;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{private}:}
+\DoxyCodeLine{38   \textcolor{keywordtype}{double} omega;}
+\DoxyCodeLine{39   \textcolor{keywordtype}{double} eta\_crit\_fun(\textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{40   \textcolor{keywordtype}{double} Get\_eta\_crit();}
+\DoxyCodeLine{41 \};}
 
 \end{DoxyCode}

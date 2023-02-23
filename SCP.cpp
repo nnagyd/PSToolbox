@@ -245,7 +245,7 @@ void SCP::UpdateDimlessPars(double pref, double mp_nevl, double omega, double xr
 }
 
 /*! \brief Return a property of the SCP.
-	\param prop_string: A string describing the needed property
+	\param prop_string: A string describing the needed property ("L" | "L_feet" | "D" | "D_inch" | "A" | "dt" | "p_front" | "p_back" | "v_front" | "v_back" | "mp_front" | "mp_back" | "frek" | "tnext" | "lambda" | "phi" | "mu" | "rho" | "a")
 	\return The value that was looked up.
 */
 double SCP::Get_dprop(string prop_string) {
@@ -321,12 +321,12 @@ void SCP::Set_dprop(string prop_string, double val) {
 	}
 }
 
-/*! \brief Do a timestep.
+/*! \brief Take a timestep.
 	Calculates a timestep in the system dependent on the boundary conditions. (Those are given by the same strings
 	and values as the ones in BCLeft and BCRight) Accepted boundary condition types: "Pressure" & "Velocity"
-	\param [in] BC_start_type the type of the boundary condition at the beginning of the pipe
+	\param [in] BC_start_type the type of the boundary condition at the beginning of the pipe ("Pressure" | "Velocity")
 	\param [in] BC_start_val The value associated with the boundary condition at the start of the pipe
-	\param [in] BC_end_type the type of the boundary condition at the end of the pipe
+	\param [in] BC_end_type the type of the boundary condition at the end of the pipe ("Pressure" | "Velocity")
 	\param [in] BC_end_val The value associated with the boundary condition at the end of the pipe
 	\sa BCLeft, BCRight
 */
@@ -397,7 +397,7 @@ void SCP::BCLeft(string type, double val, double & pp, double & vv) {
 }
 
 
-/*! \brief Right side bounbdary condition.
+/*! \brief Right side boundary condition.
 	The right side boundary condition, with multiple possible formations. Allows for a possibility of set
 	pressure or velocity, or a valve at the edge. If a wrong type is chosen an error message is displayed.
 	\param type [in] Parameter to set at the boundary. Accepted values are "Pressure" and "Velocity" and "Valve".

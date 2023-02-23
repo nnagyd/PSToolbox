@@ -1,5 +1,6 @@
 #define _USE_MATH_DEFINES
 #include <stdio.h>
+#include <cstdlib>
 #include <vector>
 #include <iostream>
 #include <utility>  // pair, make_pair
@@ -14,6 +15,39 @@
 
 using namespace std;
 using namespace Eigen;
+
+double interpolate_val(vector<double> x, vector<double> y, double x0){
+	bool is_OK=false;
+	if (x0<x.at(0)){
+		cout<<endl<<"my_tools/interpolate_val -> ERROR: x0<x.at(0)";
+		cin.get();
+		exit(-1);
+	}
+
+	if (x0>x.back()){
+		cout<<endl<<"my_tools/interpolate_val -> ERROR: x0>x.at(end)";
+		cin.get();
+		exit(-1);
+	}
+	double val=0.;
+	if (is_OK){
+int i=0;
+		while (x0<x.at(i))
+			i++;
+		double slope = (y.at(i)-y.at(i-1))/(x.at(i)-x.at(i-1));
+		val=y.at(i-1)+slope*(x0-x.at(i-1));
+	}
+	return val;
+}
+
+vector<double> interp1(vector<double> x, vector<double> y, vector<double> xi){
+	vector<double> yi(xi);
+	for (int i=0; i<xi.size(); i++)
+		yi.at(i)=interpolate_val(x,y,xi.at(i));
+
+	return yi;
+}
+
 
 //Compare two evaluated multidimensional functions
 /*! Compare two evaluated multidimensional functions where the data is stored in a pair, 
@@ -194,7 +228,7 @@ VectorXd num_grad(double (*fun)(VectorXd & x, const VectorXd & pars), /**< [in] 
 	\param is_linear If true the distribution is linear, else it is exponential
 	\return A vector with the linspace
 */
-VectorXd linspace(double x_min, double x_max, int Nsteps, bool is_linear) {
+VectorXd linspace_VectorXd(double x_min, double x_max, int Nsteps, bool is_linear) {
 	double d_ap;
 	VectorXd out = VectorXd::Zero(Nsteps);
 	out(0) = x_min;
@@ -212,7 +246,7 @@ VectorXd linspace(double x_min, double x_max, int Nsteps, bool is_linear) {
 	return out;
 }
 
-vector<double> linspace_vec(double x_min, double x_max, int Nsteps, bool is_linear) {
+vector<double> linspace(double x_min, double x_max, int Nsteps, bool is_linear) {
 	double d_ap;
 	vector<double> out(Nsteps);
 	out.at(0) = x_min;

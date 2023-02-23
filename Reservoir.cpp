@@ -96,6 +96,8 @@ void Reservoir::Ini(double pstart) {
 
 	tmpvec.push_back(t);
 	tmpvec.push_back(p);
+	tmpvec.push_back(0.); //mp_in
+	tmpvec.push_back(0.); //mp_out
 	data.clear();
 	data.reserve(100);
 	data.push_back(tmpvec);
@@ -118,6 +120,8 @@ void Reservoir::Ini(double pstart, double Tstart) {
 
 	tmpvec.push_back(t);
 	tmpvec.push_back(p);
+	tmpvec.push_back(0.); //mp_in
+	tmpvec.push_back(0.); //mp_out
 	data.clear();
 	data.reserve(100);
 	data.push_back(tmpvec);
@@ -162,6 +166,8 @@ void Reservoir::Update(double delta_t, double mp_in, double mp_out) {
 	if (save_data) {
 		tmpvec.at(0) = t;
 		tmpvec.at(1) = p;
+		tmpvec.at(2) = mp_in;
+		tmpvec.at(3) = mp_out;
 
 		data.push_back(tmpvec);
 	}
@@ -324,9 +330,11 @@ void Reservoir::Save_data() {
 
 		FILE * pFile;
 		pFile = fopen (fname.c_str(), "w");
-		fprintf(pFile, "t (s); p (bar)\n");
+		fprintf(pFile, "t (s); p (bar); mp_in (kg/s); mp_out (kg/s)\n");
 		for (int i = 0; i < data.size(); i++)
-			fprintf(pFile, "%8.6e; %8.6e\n", data.at(i).at(0), data.at(i).at(1) / 1.e5);
+			fprintf(pFile, "%8.6e; %8.6e; %8.6e; %8.6e\n", 
+					data.at(i).at(0), data.at(i).at(1) / 1.e5,
+					data.at(i).at(2), data.at(i).at(3));
 		fclose (pFile);
 
 		cout << " done.";
@@ -409,10 +417,16 @@ vector<double> Reservoir::Get_dvprop(string prop_string) {
 	else if (prop_string == "p_bar")
 		for (unsigned int i = 0; i < Ntime; i++)
 			out.at(i) = data.at(i).at(1) / 1.e5;
+	else if (prop_string == "mp_in")
+		for (unsigned int i = 0; i < Ntime; i++)
+			out.at(i) = data.at(i).at(2);
+	else if (prop_string == "mp_out")
+		for (unsigned int i = 0; i < Ntime; i++)
+			out.at(i) = data.at(i).at(3);
 	else {
 		cout << endl
-		     << "ERROR! Valve::Get_dvprop(prop_string), unknown input: prop_string=" << prop_string << endl
-		     << endl;
+		     << "ERROR! Valve::Get_dvprop(prop_string), unknown input: prop_string=" << prop_string << endl;
+		cout<<"Valid options: t | p | p_bar | mp_in | mp_out"<<endl;
 		cout << endl << "Name of valve: " << name << endl;
 		cin.get();
 	}

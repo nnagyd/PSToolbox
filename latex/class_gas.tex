@@ -3,7 +3,7 @@
 Inheritance diagram for Gas\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_gas}
+\includegraphics[height=3.000000cm]{class_gas}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -18,14 +18,17 @@ virtual double {\bfseries Get\+\_\+rho} (double p, double T)=0
 \mbox{\Hypertarget{class_gas_af1250a912519161ada99be3f8a51fedb}\label{class_gas_af1250a912519161ada99be3f8a51fedb}} 
 virtual double {\bfseries Get\+\_\+T} (double p, double rho)=0
 \item 
-\mbox{\Hypertarget{class_gas_a7e8bebfe6a1ffc5b491da7790c10a8ad}\label{class_gas_a7e8bebfe6a1ffc5b491da7790c10a8ad}} 
-virtual double {\bfseries Get\+\_\+e} (double T)=0
+\mbox{\Hypertarget{class_gas_a778dfca16ae0df7a1d2d2d7881e018e2}\label{class_gas_a778dfca16ae0df7a1d2d2d7881e018e2}} 
+virtual double {\bfseries Get\+\_\+e\+\_\+from\+\_\+\+Tp} (double T, double p)=0
 \item 
 \mbox{\Hypertarget{class_gas_a19adfd6aefc7321a2bf8b5f54c19925e}\label{class_gas_a19adfd6aefc7321a2bf8b5f54c19925e}} 
 virtual double {\bfseries Get\+\_\+\+Sonic\+Vel} (double T, double p)=0
 \item 
-\mbox{\Hypertarget{class_gas_a6177374ce4226a90028806f6076eeda1}\label{class_gas_a6177374ce4226a90028806f6076eeda1}} 
-virtual double {\bfseries Get\+\_\+\+T\+\_\+from\+\_\+e} (double e)=0
+\mbox{\Hypertarget{class_gas_ae0d91e705e13a079a2c6f4d21621a6fd}\label{class_gas_ae0d91e705e13a079a2c6f4d21621a6fd}} 
+virtual double {\bfseries Get\+\_\+\+T\+\_\+from\+\_\+ep} (double e, double p)=0
+\item 
+\mbox{\Hypertarget{class_gas_af2c9fa62156f888d1cac2c6aebebca09}\label{class_gas_af2c9fa62156f888d1cac2c6aebebca09}} 
+virtual double {\bfseries Get\+\_\+\+T\+\_\+from\+\_\+erho} (double e, double rho)=0
 \item 
 \mbox{\Hypertarget{class_gas_afbb3561b223effe9537135293199db2f}\label{class_gas_afbb3561b223effe9537135293199db2f}} 
 virtual double {\bfseries Get\+\_\+kappa\+\_\+pv} ()=0
@@ -36,11 +39,11 @@ virtual double {\bfseries Get\+\_\+kappa\+\_\+\+Tv} ()=0
 \mbox{\Hypertarget{class_gas_a74c379be0f66a67ef19bf2c480b4f0a8}\label{class_gas_a74c379be0f66a67ef19bf2c480b4f0a8}} 
 virtual double {\bfseries Get\+\_\+kappa\+\_\+\+Tp} ()=0
 \item 
-\mbox{\Hypertarget{class_gas_abc7143842e16428bab62589c6762c127}\label{class_gas_abc7143842e16428bab62589c6762c127}} 
-virtual double {\bfseries Get\+\_\+cp} ()=0
+\mbox{\Hypertarget{class_gas_a2d5323882d08752e13ac73e2c2dd43ce}\label{class_gas_a2d5323882d08752e13ac73e2c2dd43ce}} 
+virtual double {\bfseries Get\+\_\+cp} (double p, double T)=0
 \item 
-\mbox{\Hypertarget{class_gas_a72d38cb8c57c8916e0e3d36047151e43}\label{class_gas_a72d38cb8c57c8916e0e3d36047151e43}} 
-virtual double {\bfseries Get\+\_\+cV} ()=0
+\mbox{\Hypertarget{class_gas_ae49644371b6ca1faf4de9959d12b42f7}\label{class_gas_ae49644371b6ca1faf4de9959d12b42f7}} 
+virtual double {\bfseries Get\+\_\+cV} (double p, double T)=0
 \item 
 \mbox{\Hypertarget{class_gas_a86843414d7aa7f3fd039bb917aacf843}\label{class_gas_a86843414d7aa7f3fd039bb917aacf843}} 
 virtual double {\bfseries Get\+\_\+eta\+\_\+crit} ()=0

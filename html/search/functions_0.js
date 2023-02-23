@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['connector_5flwp_5fpipe_5fback_5fand_5fvalve_0',['Connector_LWP_Pipe_Back_and_Valve',['../class_connector.html#a0c26734a5ca79673f137182ee081a298',1,'Connector']]]
+  ['aeff_0',['Aeff',['../class_valve.html#a09e51698b043545e875dbd5e44e2876a',1,'Valve']]]
 ];

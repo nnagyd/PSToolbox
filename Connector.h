@@ -4,6 +4,7 @@
 #include "LWP.h"
 #include "SCP.h"
 #include "Valve.h"
+#include "Valve_with_Absorber.h"
 
 // @file
 //! Class to contain Connectors
@@ -12,7 +13,7 @@
 class Connector
 {
 	public:
-		Connector();
+		Connector(bool DEBUG);
 		~Connector();
 
 		void Connector_Reservoir_and_Valve(double t_target, Reservoir* r, Valve *v, double& p, double& mp);
@@ -22,9 +23,13 @@ class Connector
 
 		bool Connector_LWP_Pipe_Back_and_Valve(double t_target, 
 				LWP *p, Valve *v, double p_downstream, double& pb, double& Tb);
+		
+		bool Connector_LWP_Pipe_Back_and_Valve_with_Absorber(double t_target, 
+				LWP *p, Valve_with_Absorber *v, double p_downstream, double& pb, double& Tb);
 
 		void Connector_SCP_Reservoir_and_Pipe_Front(double t_target, 
 				Reservoir *r, SCP *p, double rho, double a, double& pf);
+		
 		bool Connector_SCP_Pipe_Back_and_Valve(double t_target, 
 				SCP *p, Valve *v, double rho, double a, double p_downstream, double& pb);
 
@@ -49,6 +54,7 @@ class Connector
 				double& vL, double& vR);
 
 	private:
+		bool DEBUG;
 		double Connector_LWP_Reservoir_and_Pipe_Front_fun(double rho, double beta, Reservoir* r1, LWP* p1);
 		double signed_sqrt(double x);
 };

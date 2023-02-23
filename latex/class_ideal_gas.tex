@@ -3,7 +3,7 @@
 Inheritance diagram for Ideal\+Gas\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_ideal_gas}
+\includegraphics[height=3.000000cm]{class_ideal_gas}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -20,11 +20,13 @@ double \mbox{\hyperlink{class_ideal_gas_a6d6da951b6035e25143ca7dcd79df51c}{Get\+
 \item 
 double \mbox{\hyperlink{class_ideal_gas_a3475de367bcf73dd6ccd32da1f300e96}{Get\+\_\+T}} (double p, double rho)
 \item 
-double \mbox{\hyperlink{class_ideal_gas_a40e26082c5c8f8b3d26b672caede94ec}{Get\+\_\+e}} (double T)
+double \mbox{\hyperlink{class_ideal_gas_ac3494000af614bb8532aa346308469b8}{Get\+\_\+e\+\_\+from\+\_\+\+Tp}} (double T, double p)
 \item 
 double \mbox{\hyperlink{class_ideal_gas_a33ed0ddc662709e2d6de454c7ebe99a7}{Get\+\_\+\+Sonic\+Vel}} (double T, double p)
 \item 
-double \mbox{\hyperlink{class_ideal_gas_a80807fed6e8ad10c2994ab231f192769}{Get\+\_\+\+T\+\_\+from\+\_\+e}} (double e)
+double \mbox{\hyperlink{class_ideal_gas_aabbac25cf6098971fba9b15306032013}{Get\+\_\+\+T\+\_\+from\+\_\+ep}} (double e, double p)
+\item 
+double \mbox{\hyperlink{class_ideal_gas_a110d8841869b9023a3da0f7fdf5dcfb6}{Get\+\_\+\+T\+\_\+from\+\_\+erho}} (double e, double rho)
 \item 
 double \mbox{\hyperlink{class_ideal_gas_a9edd0c74d1b2908a7deba4f1a315b226}{Get\+\_\+kappa\+\_\+pv}} ()
 \item 
@@ -35,9 +37,9 @@ double \mbox{\hyperlink{class_ideal_gas_a79e200c5e9f3423e13be31f382bc2212}{Get\+
 \mbox{\Hypertarget{class_ideal_gas_ab1dad70757b9c07e1fc5c5078ba56d30}\label{class_ideal_gas_ab1dad70757b9c07e1fc5c5078ba56d30}} 
 double {\bfseries Get\+\_\+pcrit} ()
 \item 
-double \mbox{\hyperlink{class_ideal_gas_ad0693b2a81427a08bd652a07cdec7d70}{Get\+\_\+cp}} ()
+double \mbox{\hyperlink{class_ideal_gas_ab314861529e7c0c7711ad1cb163bdfd3}{Get\+\_\+cp}} (double p, double T)
 \item 
-double \mbox{\hyperlink{class_ideal_gas_aaa02a70b914d21cae154bc2c49a81b99}{Get\+\_\+cV}} ()
+double \mbox{\hyperlink{class_ideal_gas_afd1e1499429871b7f09c85179e7089cd}{Get\+\_\+cV}} (double p, double T)
 \item 
 double \mbox{\hyperlink{class_ideal_gas_ab2b3f18fe44b3671983f128705f4476e}{Get\+\_\+\+Mass\+Flux}} (double pu, double Tu, double pd, double Td)
 \item 
@@ -78,31 +80,31 @@ double {\bfseries cV}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_ideal_gas_ad0693b2a81427a08bd652a07cdec7d70}\label{class_ideal_gas_ad0693b2a81427a08bd652a07cdec7d70}} 
+\mbox{\Hypertarget{class_ideal_gas_ab314861529e7c0c7711ad1cb163bdfd3}\label{class_ideal_gas_ab314861529e7c0c7711ad1cb163bdfd3}} 
 \index{IdealGas@{IdealGas}!Get\_cp@{Get\_cp}}
 \index{Get\_cp@{Get\_cp}!IdealGas@{IdealGas}}
 \doxysubsubsection{\texorpdfstring{Get\_cp()}{Get\_cp()}}
-{\footnotesize\ttfamily double Ideal\+Gas\+::\+Get\+\_\+cp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily double Ideal\+Gas\+::\+Get\+\_\+cp (\begin{DoxyParamCaption}\item[{double}]{p,  }\item[{double}]{T }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
 Implements \mbox{\hyperlink{class_gas}{Gas}}.
 
-\mbox{\Hypertarget{class_ideal_gas_aaa02a70b914d21cae154bc2c49a81b99}\label{class_ideal_gas_aaa02a70b914d21cae154bc2c49a81b99}} 
+\mbox{\Hypertarget{class_ideal_gas_afd1e1499429871b7f09c85179e7089cd}\label{class_ideal_gas_afd1e1499429871b7f09c85179e7089cd}} 
 \index{IdealGas@{IdealGas}!Get\_cV@{Get\_cV}}
 \index{Get\_cV@{Get\_cV}!IdealGas@{IdealGas}}
 \doxysubsubsection{\texorpdfstring{Get\_cV()}{Get\_cV()}}
-{\footnotesize\ttfamily double Ideal\+Gas\+::\+Get\+\_\+cV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily double Ideal\+Gas\+::\+Get\+\_\+cV (\begin{DoxyParamCaption}\item[{double}]{p,  }\item[{double}]{T }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
 Implements \mbox{\hyperlink{class_gas}{Gas}}.
 
-\mbox{\Hypertarget{class_ideal_gas_a40e26082c5c8f8b3d26b672caede94ec}\label{class_ideal_gas_a40e26082c5c8f8b3d26b672caede94ec}} 
-\index{IdealGas@{IdealGas}!Get\_e@{Get\_e}}
-\index{Get\_e@{Get\_e}!IdealGas@{IdealGas}}
-\doxysubsubsection{\texorpdfstring{Get\_e()}{Get\_e()}}
-{\footnotesize\ttfamily double Ideal\+Gas\+::\+Get\+\_\+e (\begin{DoxyParamCaption}\item[{double}]{T }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\mbox{\Hypertarget{class_ideal_gas_ac3494000af614bb8532aa346308469b8}\label{class_ideal_gas_ac3494000af614bb8532aa346308469b8}} 
+\index{IdealGas@{IdealGas}!Get\_e\_from\_Tp@{Get\_e\_from\_Tp}}
+\index{Get\_e\_from\_Tp@{Get\_e\_from\_Tp}!IdealGas@{IdealGas}}
+\doxysubsubsection{\texorpdfstring{Get\_e\_from\_Tp()}{Get\_e\_from\_Tp()}}
+{\footnotesize\ttfamily double Ideal\+Gas\+::\+Get\+\_\+e\+\_\+from\+\_\+\+Tp (\begin{DoxyParamCaption}\item[{double}]{T,  }\item[{double}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -198,11 +200,21 @@ Implements \mbox{\hyperlink{class_gas}{Gas}}.
 
 Implements \mbox{\hyperlink{class_gas}{Gas}}.
 
-\mbox{\Hypertarget{class_ideal_gas_a80807fed6e8ad10c2994ab231f192769}\label{class_ideal_gas_a80807fed6e8ad10c2994ab231f192769}} 
-\index{IdealGas@{IdealGas}!Get\_T\_from\_e@{Get\_T\_from\_e}}
-\index{Get\_T\_from\_e@{Get\_T\_from\_e}!IdealGas@{IdealGas}}
-\doxysubsubsection{\texorpdfstring{Get\_T\_from\_e()}{Get\_T\_from\_e()}}
-{\footnotesize\ttfamily double Ideal\+Gas\+::\+Get\+\_\+\+T\+\_\+from\+\_\+e (\begin{DoxyParamCaption}\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\mbox{\Hypertarget{class_ideal_gas_aabbac25cf6098971fba9b15306032013}\label{class_ideal_gas_aabbac25cf6098971fba9b15306032013}} 
+\index{IdealGas@{IdealGas}!Get\_T\_from\_ep@{Get\_T\_from\_ep}}
+\index{Get\_T\_from\_ep@{Get\_T\_from\_ep}!IdealGas@{IdealGas}}
+\doxysubsubsection{\texorpdfstring{Get\_T\_from\_ep()}{Get\_T\_from\_ep()}}
+{\footnotesize\ttfamily double Ideal\+Gas\+::\+Get\+\_\+\+T\+\_\+from\+\_\+ep (\begin{DoxyParamCaption}\item[{double}]{e,  }\item[{double}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_gas}{Gas}}.
+
+\mbox{\Hypertarget{class_ideal_gas_a110d8841869b9023a3da0f7fdf5dcfb6}\label{class_ideal_gas_a110d8841869b9023a3da0f7fdf5dcfb6}} 
+\index{IdealGas@{IdealGas}!Get\_T\_from\_erho@{Get\_T\_from\_erho}}
+\index{Get\_T\_from\_erho@{Get\_T\_from\_erho}!IdealGas@{IdealGas}}
+\doxysubsubsection{\texorpdfstring{Get\_T\_from\_erho()}{Get\_T\_from\_erho()}}
+{\footnotesize\ttfamily double Ideal\+Gas\+::\+Get\+\_\+\+T\+\_\+from\+\_\+erho (\begin{DoxyParamCaption}\item[{double}]{e,  }\item[{double}]{rho }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 

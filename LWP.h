@@ -98,4 +98,8 @@ public:
 
   string fname;
   Gas *gas;
+
+void SetHeatTransfer(double Tout, double therm_cond_fluid, double nu_fluid);
+double HetFluxThroughWall(double Tgas, double v, double rho);
+
 };

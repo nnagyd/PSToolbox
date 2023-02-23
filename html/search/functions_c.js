@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['units_0',['Units',['../class_units.html#aa10ded064259f35f044246879725b98a',1,'Units']]],
-  ['update_1',['Update',['../class_reservoir.html#acbf42969273a347c5b32fbf40248f38e',1,'Reservoir::Update()'],['../class_valve.html#a89bbc20718e6d252214894deceeb6c85',1,'Valve::Update()']]],
-  ['updatedimlesspars_2',['UpdateDimlessPars',['../class_l_w_p.html#a813a723122fdb8141ded3ace0f03d34c',1,'LWP::UpdateDimlessPars()'],['../class_reservoir.html#a914e7387e18311fe2e46bcad3ac96d96',1,'Reservoir::UpdateDimlessPars()'],['../class_s_c_p.html#af1f4995d58d75d80ed1738346ff06bf4',1,'SCP::UpdateDimlessPars()'],['../class_valve.html#ab5a0dac96189a1622be491c3287b6b56',1,'Valve::UpdateDimlessPars()']]]
+  ['reservoir_0',['Reservoir',['../class_reservoir.html#aae080b81c168a292bcaa78b4b9336af1',1,'Reservoir::Reservoir(const string _nev, const double _vol, const double _a, const bool save_data)'],['../class_reservoir.html#a7c2cafd71e8397b755ecbc45c88f8064',1,'Reservoir::Reservoir(const string _name, const double _vol, IdealGas *gas, double n_poly, const bool _save_data)'],['../class_reservoir.html#acc65e141d64b7d1f884e8efa2bb5d0e0',1,'Reservoir::Reservoir(const string _name, const double _vol, Gas *gas, double n_poly, const bool _save_data)']]],
+  ['reservoirode_1',['ReservoirODE',['../class_reservoir.html#a9185644a6e41925706ce7a08768dd485',1,'Reservoir']]],
+  ['rho_5fl_2',['rho_L',['../class_frozen_mixture_liquid_gas.html#a286acec5af6cdd774cc070f6e4c12097',1,'FrozenMixtureLiquidGas']]],
+  ['rk45_3',['rk45',['../class_reservoir.html#a10ba4593d4c7195a0c60a4182bdb99b6',1,'Reservoir::rk45()'],['../class_valve.html#a15d0ab3a9467c3f0ccd39f957b28447a',1,'Valve::rk45()']]]
 ];

@@ -12,8 +12,14 @@
 
 //! Class for modeling valves
 /*!
-  The class contains data for direct spring operated pressure reliev valve
-  */
+	The class contains data for direct spring operated pressure relief valve
+	*/
+
+
+/**
+	\fn Valve constructor with liquid (fixed density provided)
+	\details Details come here
+	*/
 
 Valve::Valve(const string _name,
 		const double _m,
@@ -42,7 +48,7 @@ Valve::Valve(const string _name,
 	xmax_unrestricted = _xmax;
 	RT = 0.;
 	xmax = (1.-RT/100.)*xmax_unrestricted;
-	
+
 	pref = _pref;
 	is_Gas = false;
 	mp_nevl = Get_MassFlowRate(1.1 * p_set+pref, 293., pref, 293., xmax_unrestricted); //Cd * xmax * M_PI * Dbore * sqrt(2.*ro * 1.1 * p_set);
@@ -62,8 +68,14 @@ Valve::Valve(const string _name,
 	// AeffCoeffs
 	a1 = 0.;
 	a2 = 0.;
+	a3 = 0.;
 	Aeffmax = 1.;
 }
+
+/**
+	\fn Valve constructor with gas
+	\details Details come here
+	*/
 
 Valve::Valve(const string _name,
 		const double _m,
@@ -117,6 +129,7 @@ Valve::Valve(const string _name,
 	// AeffCoeffs
 	a1 = 0.;
 	a2 = 0.;
+	a3 = 0.;
 	Aeffmax = 1.;
 
 }
@@ -345,54 +358,52 @@ void Valve::Update(double delta_t, double pv, double pb, bool monitor_min_max) {
 	}
 }
 /* \brief Summ the static forces of the system
-   Calcualte the static forces acting on the valve (pressure and compression dependent)
-   The equation is $$ A_{eff} (x) \left(  p_v - p_b \right) + s (x+x_e)
-   where s is the sriong compressuion, p a re the pressure, x the displacement, and xe a pre-compression
+	 Calcualte the static forces acting on the valve (pressure and compression dependent)
+	 The equation is $$ A_{eff} (x) \left(  p_v - p_b \right) + s (x+x_e)
+	 where s is the sriong compressuion, p a re the pressure, x the displacement, and xe a pre-compression
 
-   \param x [in] the displacement
-   \param pv [in] the pressure in the upstream sid of tghe valve
-   \param pb [in] the back pressure of the valve
-   \return the static forces (displacement dependent one) of the valve
-   */
+	 \param x [in] the displacement
+	 \param pv [in] the pressure in the upstream sid of tghe valve
+	 \param pb [in] the back pressure of the valve
+	 \return the static forces (displacement dependent one) of the valve
+	 */
 double Valve::SumStatForce(const double x, const double pv, const double pb) {
 	//printf("\n \t Valve: Aeff*dp=%5.3f, s*(x+xe)=%5.3f N, +++++ %5.3e, %5.3e, %5.3e",Aeff(x) * (pv - pb),s * (x + xe),pv,pb,x);
-	return (Aeff(x) * (pv - pb)  - s * (x + xe));
+	return (Aeff(x) *A* (pv - pb)  - s * (x + xe));
 }
 
-/*! \brief set teh coefficients forthe function describing the effective area
-  Set two elements of a second order function (and a maximum value) for the relative multiplicator
-  of the effective area.
+/*! 
+	Set two elements of a second-order function (and a maximum value) for the relative multiplicator
+	of the effective area. The approximating function will be $A_{eff}=min(A_{eff,max},1+a_1 y+a_2 y^2+a_3 y^3)$, where x is the relative lift: $y=x/(D/4)$
 
-  \param _a1 [in] first order parameter
-  \param _a2 [in] second order parameter
-  \param _Aeffmax [in] maximum area relative to valve cross section
-  */
-void Valve::SetAeffCoeffs(const double _a1, const double _a2, const double _AeffMax) {
+	\param _a1 [in] first order parameter
+	\param _a2 [in] second order parameter
+	\param _Aeffmax [in] maximum area relative to valve cross section (Abore)  
+	*/
+
+void Valve::SetAeffCoeffs(const double _a1, const double _a2, const double _a3, const double _AeffMax) {
 	a1 = _a1;
 	a2 = _a2;
+	a3 = _a3;
 	Aeffmax = _AeffMax;
 }
 
-/*! \brief Calculate the effective area
-  Calcualte the effective are based on the effective area coefficients set previously. Uses a second order correlation
-  \param x [in] the valve disk displacement
-  \return The effective area
-  \sa SetACoeffs
-  */
+/*! 
+	Calculate the effective are based on the effective area coefficients set previously in SetAeffCoeffs. 
+	\param x [in] the valve disk displacement
+	\return The effective area
+	\sa SetAeffCoeffs
+	*/
+
 double Valve::Aeff(const double x) {
-	//double a1=1.0;
-	//double a2=0.0;
-	//double des_Aeffmax = s * (xmax + xe) / (1.1 * p_set + p0 - 1e5) / A; // 2J3: 1.55
-	//	double des_Aeffmax = s * (xmax + xe) / (1.1 * p_set) / A; // 2J3: 1.55
-	//cout<<endl<<"\n Aeffmax required = "<<des_Aeffmax<<endl;
-	//cin.get();
-	double Aeff = (1. + a1 * (x / xmax) + a2 * pow(x / xmax, 2.));
+	double Aeff = (1. + a1 * (x / xmax) + a2 * pow(x / xmax, 2.) + a3 * pow(x/xmax,3));
 	if (Aeff > Aeffmax)
 		Aeff = Aeffmax;
-	return Aeff * A;
+	return Aeff;
 }
+
 /* \brief The differential equation describing the
-   An equation that returns the zero solved equations of the valve ODE
+	 An equation that returns the zero solved equations of the valve ODE
 Equations:
 $$o(0) = v$$
 $$o(1) = \left( A_{eff}(p_v - p_b) + s(xe+x) - k v \right) \cdot \frac{1}{m} $$
@@ -416,28 +427,28 @@ VectorXd Valve::ValveODE(const double x, const VectorXd & y, const VectorXd & pa
 	out(1) = (SumStatForce(x_v, pv, pb) - k * v_v) / m;
 
 	/*printf("\n\t s     = %g",s);
-	  printf("\n\t xe    = %g",xe);
-	  printf("\n\t Apres = %g",A);
-	  printf("\n\t x     = %g",y(0));
-	  printf("\n\t v     = %g",y(1));
-	  printf("\n\t p     = %g",pars(0));
-	  cout << "\n dfdt=" << out.transpose();
-	  cin.get();*/
+		printf("\n\t xe    = %g",xe);
+		printf("\n\t Apres = %g",A);
+		printf("\n\t x     = %g",y(0));
+		printf("\n\t v     = %g",y(1));
+		printf("\n\t p     = %g",pars(0));
+		cout << "\n dfdt=" << out.transpose();
+		cin.get();*/
 	return out;
 }
 
 /* \brief RK45 method for solving the valve differential equation
-   Uses a Runge-Kutta-Fehlberg (RK-45) adaptable timestep method to move the differential equation of the
-   valve further in time.
-   !!! x variables denote time !!!
+	 Uses a Runge-Kutta-Fehlberg (RK-45) adaptable timestep method to move the differential equation of the
+	 valve further in time.
+	 !!! x variables denote time !!!
 
-   \param x_0 [in] the current time of the system
-   \param x_max [in] the time amount we actually want to go (maximum we can move forward in time)
-   \param y_0 [in] initial displacement and its derivatives
-   \param x [out] vector of the times the method stepped to while working
-   \param y [out]
-   \param pars [in] the parameters of the valve
-   */
+	 \param x_0 [in] the current time of the system
+	 \param x_max [in] the time amount we actually want to go (maximum we can move forward in time)
+	 \param y_0 [in] initial displacement and its derivatives
+	 \param x [out] vector of the times the method stepped to while working
+	 \param y [out]
+	 \param pars [in] the parameters of the valve
+	 */
 
 void Valve::rk45(
 		double x_0, double x_max, VectorXd y_0,
@@ -448,7 +459,7 @@ void Valve::rk45(
 	bool is_rk = true; //If true a RK-45 method is used, otherwise the Heun method.
 
 	int Neq = y_0.size(); //the number of equations is the size of the equation vector
-			      //clear the x and y vectors
+												//clear the x and y vectors
 	x.clear();
 	y.clear();
 	x.push_back(x_0); //insert x0 to the first place
@@ -505,7 +516,7 @@ void Valve::rk45(
 			}
 
 			if (is_rk) { //This swithc is affected by changing the source code
-				     // RK45
+									 // RK45
 				k1 = ValveODE(xx, yy, pars);
 				k2 = ValveODE(xx + c2 * dx, yy + a21 * dx * k1, pars);
 				k3 = ValveODE(xx + c3 * dx, yy + a31 * dx * k1 + a32 * dx * k2, pars);
@@ -535,7 +546,7 @@ void Valve::rk45(
 			if (hiba > hiba_max) { //If the accuracy is not sufficient
 				dx /= 2.; // a smaller timestep
 				retake_step = true; // is used for retaking
-						    // printf("\n\t dx -> dx/2 (dx=%g)", dx);
+														// printf("\n\t dx -> dx/2 (dx=%g)", dx);
 				if (fabs(dx) < dx_min) { //Dispaly error message in case the necessary timestep is smaller than the minimum allowed one
 					last_step = true;
 					cout << endl << endl << "!!!! PANIC dxuj<dx_min !!!!" << endl << endl;
@@ -548,7 +559,7 @@ void Valve::rk45(
 				xx += dx; //timestep
 
 				x.push_back(xx); //enter new time we stepped to
-						 //Create a vector of arrays and save the y-s we had
+												 //Create a vector of arrays and save the y-s we had
 				for (int iii = 0; iii < Neq; iii++)
 					tmp.at(iii) = yy[iii];
 				y.push_back(tmp);
@@ -615,23 +626,23 @@ double Valve::Get_MassFlowRate(double p_upstream, double T_upstream, double p_do
 
 double Valve::Get_MassFlowRate_Compressible(double p_upstream, double T_upstream, double p_downstream, double T_downstream, double xx) {
 	/*double dir_mul = 1.;
-	  if (p_downstream > p_upstream) {
-	  double p_tmp = p_upstream;
-	  double T_tmp = T_upstream;
-	  p_upstream = p_downstream;
-	  T_upstream = T_downstream;
-	  p_downstream = p_tmp;
-	  T_downstream = T_tmp;
-	  dir_mul = -1.;
-	  }
+		if (p_downstream > p_upstream) {
+		double p_tmp = p_upstream;
+		double T_tmp = T_upstream;
+		p_upstream = p_downstream;
+		T_upstream = T_downstream;
+		p_downstream = p_tmp;
+		T_downstream = T_tmp;
+		dir_mul = -1.;
+		}
 
-	  double mp = 0.;
-	  if (p_downstream / p_upstream < gas->Get_pcrit())
-	  mp = Get_MassFlowRate_Compressible_Choked(p_upstream, T_upstream, xx) ;
-	  else
-	  mp = Get_MassFlowRate_Compressible_UnChoked(p_upstream, T_upstream, p_downstream, xx);
+		double mp = 0.;
+		if (p_downstream / p_upstream < gas->Get_pcrit())
+		mp = Get_MassFlowRate_Compressible_Choked(p_upstream, T_upstream, xx) ;
+		else
+		mp = Get_MassFlowRate_Compressible_UnChoked(p_upstream, T_upstream, p_downstream, xx);
 
-	  mp *= dir_mul;*/
+		mp *= dir_mul;*/
 	double A_flowthrough = Dbore * M_PI * xx;
 	double massflux = gas->Get_MassFlux(p_upstream, T_upstream, p_downstream, T_downstream);
 	return Cd*A_flowthrough*massflux;
@@ -738,9 +749,9 @@ double Valve::Get_dprop(string prop_string) {
 		out = s * (x + xe);
 	else if (prop_string == "A")
 		out = A;
-	else if (prop_string == "p_set")
+	else if ((prop_string == "p_set") || (prop_string == "pset"))
 		out = p_set;
-	else if (prop_string == "p_set_bar")
+	else if ((prop_string == "p_set_bar") || (prop_string == "pset_bar"))
 		out = p_set / 1.e5;
 	else if (prop_string == "p_set_psi_abs")
 		out = p_set / 1.e5 * bar_to_psi;
@@ -771,10 +782,10 @@ double Valve::Get_dprop(string prop_string) {
 	else if (prop_string == "m_lbm")
 		out = m * kg_to_lbm;
 	/*	else if (prop_string == "mp"){
-		if (is_Gas){
-		}
-		else{
-		out = Get_MassFlowRate_InCompressible(p,);
+			if (is_Gas){
+			}
+			else{
+			out = Get_MassFlowRate_InCompressible(p,);
 	//out = Cd * Dbore * M_PI * x * sqrt(2 * ro * p);
 	}*/
 	else if (prop_string == "k")
@@ -836,6 +847,15 @@ string Valve::Info() {
 	oss << "\n A orif. area: " << A*1.e6<<" mm^2 = Dbore^2*pi/4";
 	oss << "\n      A@xmax : " << Dbore*M_PI*xmax*1.e6<<" mm^2 = Dbore*pi*xmax";
 	oss << "\n          Cd : " << Cd;
+
+	oss << "\n\n Coefficients of Aeff(x) : ";
+	oss << "\n          a0 = " <<1.;
+	oss << "\n          a1 = " <<a1;
+	oss << "\n          a2 = " <<a2;
+	oss << "\n          a3 = " <<a3;
+	oss << "\n     Aeff(1) = " <<(1+a1+a2+a3);
+	oss << "\n     xmax/xe = " <<xmax/xe<<" ?<? Aeff'(0)=a1="<<a1<<" (-> if true, blowdown will occur)\n";
+	
 	if (is_Gas)	
 		oss << "\n          ro : " << gas->Get_rho(1.e5, 273+16) << " kg/m3 @ 1 bar, 16C";
 	else
@@ -865,15 +885,15 @@ string Valve::Info() {
 
 
 /*void Valve::Plot(bool show, bool save) {
-  namespace plt = matplotlibcpp;
-  int n = data.size();
-  std::vector<double> t(n), x(n), v(n), mp(n);
-  for (int i = 0; i < n; ++i) {
-  t.at(i) = data.at(i).at(0);
-  x.at(i) = data.at(i).at(1) * 1000.;
-  v.at(i) = data.at(i).at(2);
-  mp.at(i) = data.at(i).at(3);
-  }
+	namespace plt = matplotlibcpp;
+	int n = data.size();
+	std::vector<double> t(n), x(n), v(n), mp(n);
+	for (int i = 0; i < n; ++i) {
+	t.at(i) = data.at(i).at(0);
+	x.at(i) = data.at(i).at(1) * 1000.;
+	v.at(i) = data.at(i).at(2);
+	mp.at(i) = data.at(i).at(3);
+	}
 
 // Plot line from given x and y data. Color is selected automatically.
 plt::subplot(3, 1, 1);

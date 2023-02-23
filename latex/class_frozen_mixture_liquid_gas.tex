@@ -3,7 +3,7 @@
 Inheritance diagram for Frozen\+Mixture\+Liquid\+Gas\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_frozen_mixture_liquid_gas}
+\includegraphics[height=3.000000cm]{class_frozen_mixture_liquid_gas}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -18,11 +18,13 @@ double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a75bc9aaed7b8eae7cd84e4e
 \item 
 double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a2690cccd6a2df2102b4d73da262afebe}{Get\+\_\+T}} (double p, double rho)
 \item 
-double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a1006f44d0392a49247d6b9dde64dbb44}{Get\+\_\+e}} (double T)
+\mbox{\Hypertarget{class_frozen_mixture_liquid_gas_a1006f44d0392a49247d6b9dde64dbb44}\label{class_frozen_mixture_liquid_gas_a1006f44d0392a49247d6b9dde64dbb44}} 
+double {\bfseries Get\+\_\+e} (double T)
 \item 
 double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_ae1b3ef09051f57cfb78b333e68fcd13b}{Get\+\_\+\+Sonic\+Vel}} (double T, double p)
 \item 
-double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a84729a0a753f6b10443821a453bd858b}{Get\+\_\+\+T\+\_\+from\+\_\+e}} (double e)
+\mbox{\Hypertarget{class_frozen_mixture_liquid_gas_a84729a0a753f6b10443821a453bd858b}\label{class_frozen_mixture_liquid_gas_a84729a0a753f6b10443821a453bd858b}} 
+double {\bfseries Get\+\_\+\+T\+\_\+from\+\_\+e} (double e)
 \item 
 double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_afc05edd4ae8900732eb41f6858b38c84}{Get\+\_\+kappa\+\_\+pv}} ()
 \item 
@@ -33,9 +35,9 @@ double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_ade85ba228a0dc9ab15ea347
 \mbox{\Hypertarget{class_frozen_mixture_liquid_gas_a8300c0092b9bc459e854e5b1fe042432}\label{class_frozen_mixture_liquid_gas_a8300c0092b9bc459e854e5b1fe042432}} 
 double {\bfseries Get\+\_\+pcrit} (double pr, double omega)
 \item 
-double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_ac5e188a71374fd71ca964f3dd9b588ec}{Get\+\_\+cp}} ()
+double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a0b1f2a9a905ebe6b65f0531811bea129}{Get\+\_\+cp}} (double p, double T)
 \item 
-double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_ae525db3d5f7634b015c3265e73d68c1e}{Get\+\_\+cV}} ()
+double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a7eecc89f0026894252e180d7aa11ffd4}{Get\+\_\+cV}} (double p, double T)
 \item 
 double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_ac171f9bdf1d642fb327befba066a7c8a}{Get\+\_\+\+Mass\+Flux}} (double pu, double Tu, double pd, double Td)
 \item 
@@ -70,31 +72,21 @@ double {\bfseries x\+\_\+g}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_frozen_mixture_liquid_gas_ac5e188a71374fd71ca964f3dd9b588ec}\label{class_frozen_mixture_liquid_gas_ac5e188a71374fd71ca964f3dd9b588ec}} 
+\mbox{\Hypertarget{class_frozen_mixture_liquid_gas_a0b1f2a9a905ebe6b65f0531811bea129}\label{class_frozen_mixture_liquid_gas_a0b1f2a9a905ebe6b65f0531811bea129}} 
 \index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!Get\_cp@{Get\_cp}}
 \index{Get\_cp@{Get\_cp}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
 \doxysubsubsection{\texorpdfstring{Get\_cp()}{Get\_cp()}}
-{\footnotesize\ttfamily double Frozen\+Mixture\+Liquid\+Gas\+::\+Get\+\_\+cp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily double Frozen\+Mixture\+Liquid\+Gas\+::\+Get\+\_\+cp (\begin{DoxyParamCaption}\item[{double}]{p,  }\item[{double}]{T }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
 Implements \mbox{\hyperlink{class_gas}{Gas}}.
 
-\mbox{\Hypertarget{class_frozen_mixture_liquid_gas_ae525db3d5f7634b015c3265e73d68c1e}\label{class_frozen_mixture_liquid_gas_ae525db3d5f7634b015c3265e73d68c1e}} 
+\mbox{\Hypertarget{class_frozen_mixture_liquid_gas_a7eecc89f0026894252e180d7aa11ffd4}\label{class_frozen_mixture_liquid_gas_a7eecc89f0026894252e180d7aa11ffd4}} 
 \index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!Get\_cV@{Get\_cV}}
 \index{Get\_cV@{Get\_cV}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
 \doxysubsubsection{\texorpdfstring{Get\_cV()}{Get\_cV()}}
-{\footnotesize\ttfamily double Frozen\+Mixture\+Liquid\+Gas\+::\+Get\+\_\+cV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Implements \mbox{\hyperlink{class_gas}{Gas}}.
-
-\mbox{\Hypertarget{class_frozen_mixture_liquid_gas_a1006f44d0392a49247d6b9dde64dbb44}\label{class_frozen_mixture_liquid_gas_a1006f44d0392a49247d6b9dde64dbb44}} 
-\index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!Get\_e@{Get\_e}}
-\index{Get\_e@{Get\_e}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
-\doxysubsubsection{\texorpdfstring{Get\_e()}{Get\_e()}}
-{\footnotesize\ttfamily double Frozen\+Mixture\+Liquid\+Gas\+::\+Get\+\_\+e (\begin{DoxyParamCaption}\item[{double}]{T }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily double Frozen\+Mixture\+Liquid\+Gas\+::\+Get\+\_\+cV (\begin{DoxyParamCaption}\item[{double}]{p,  }\item[{double}]{T }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -175,16 +167,6 @@ Implements \mbox{\hyperlink{class_gas}{Gas}}.
 \index{Get\_T@{Get\_T}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
 \doxysubsubsection{\texorpdfstring{Get\_T()}{Get\_T()}}
 {\footnotesize\ttfamily double Frozen\+Mixture\+Liquid\+Gas\+::\+Get\+\_\+T (\begin{DoxyParamCaption}\item[{double}]{p,  }\item[{double}]{rho }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Implements \mbox{\hyperlink{class_gas}{Gas}}.
-
-\mbox{\Hypertarget{class_frozen_mixture_liquid_gas_a84729a0a753f6b10443821a453bd858b}\label{class_frozen_mixture_liquid_gas_a84729a0a753f6b10443821a453bd858b}} 
-\index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!Get\_T\_from\_e@{Get\_T\_from\_e}}
-\index{Get\_T\_from\_e@{Get\_T\_from\_e}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
-\doxysubsubsection{\texorpdfstring{Get\_T\_from\_e()}{Get\_T\_from\_e()}}
-{\footnotesize\ttfamily double Frozen\+Mixture\+Liquid\+Gas\+::\+Get\+\_\+\+T\+\_\+from\+\_\+e (\begin{DoxyParamCaption}\item[{double}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 

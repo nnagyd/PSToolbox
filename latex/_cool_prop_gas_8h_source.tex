@@ -1,0 +1,35 @@
+\hypertarget{_cool_prop_gas_8h_source}{}\doxysection{Cool\+Prop\+Gas.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Gas.h"{}}}
+\DoxyCodeLine{3 \textcolor{comment}{//\#include "{}CoolProp.h"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{class_cool_prop_gas}{CoolPropGas}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_gas}{Gas}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     \textcolor{keyword}{public}:}
+\DoxyCodeLine{8         \mbox{\hyperlink{class_cool_prop_gas}{CoolPropGas}}(\textcolor{keyword}{const} std::string fluid\_name);}
+\DoxyCodeLine{9         \mbox{\hyperlink{class_cool_prop_gas}{\string~CoolPropGas}}();}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11         \textcolor{keywordtype}{double} Get\_rho(\textcolor{keywordtype}{double} p, \textcolor{keywordtype}{double} T);}
+\DoxyCodeLine{12         \textcolor{keywordtype}{double} Get\_p(\textcolor{keywordtype}{double} rho, \textcolor{keywordtype}{double} T);}
+\DoxyCodeLine{13         \textcolor{keywordtype}{double} Get\_T(\textcolor{keywordtype}{double} p, \textcolor{keywordtype}{double} rho);}
+\DoxyCodeLine{14         \textcolor{keywordtype}{double} Get\_SonicVel(\textcolor{keywordtype}{double} T, \textcolor{keywordtype}{double} p);}
+\DoxyCodeLine{15         \textcolor{keywordtype}{double} Get\_T\_from\_ep(\textcolor{keywordtype}{double} e, \textcolor{keywordtype}{double} p);}
+\DoxyCodeLine{16         \textcolor{keywordtype}{double} Get\_T\_from\_erho(\textcolor{keywordtype}{double} e, \textcolor{keywordtype}{double} rho);}
+\DoxyCodeLine{17         \textcolor{keywordtype}{double} Get\_e\_from\_Tp(\textcolor{keywordtype}{double} T, \textcolor{keywordtype}{double} p);}
+\DoxyCodeLine{18         \textcolor{keywordtype}{double} Get\_kappa\_pv();}
+\DoxyCodeLine{19         \textcolor{keywordtype}{double} Get\_kappa\_Tv();}
+\DoxyCodeLine{20         \textcolor{keywordtype}{double} Get\_kappa\_Tp();}
+\DoxyCodeLine{21         \textcolor{keywordtype}{double} Get\_pcrit();}
+\DoxyCodeLine{22         \textcolor{keywordtype}{double} Get\_cp();}
+\DoxyCodeLine{23         \textcolor{keywordtype}{double} Get\_cV();}
+\DoxyCodeLine{24         \textcolor{keywordtype}{double} Get\_cp(\textcolor{keywordtype}{double} p, \textcolor{keywordtype}{double} T);}
+\DoxyCodeLine{25         \textcolor{keywordtype}{double} Get\_cV(\textcolor{keywordtype}{double} p, \textcolor{keywordtype}{double} T);      }
+\DoxyCodeLine{26         \textcolor{keywordtype}{double} Get\_MassFlux(\textcolor{keywordtype}{double} pu, \textcolor{keywordtype}{double} Tu, \textcolor{keywordtype}{double} pd, \textcolor{keywordtype}{double} Td);}
+\DoxyCodeLine{27         \textcolor{keywordtype}{double} Get\_eta\_crit();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         std::string fluid\_name;}
+\DoxyCodeLine{30 \};}
+
+\end{DoxyCode}

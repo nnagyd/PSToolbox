@@ -501,7 +501,7 @@ void LWP::Pack(bool is_half_step) {
 
 			Shalf(i, 0) = 0.;
 			Shalf(i, 1) = -A * rhohalf(i) / 2. * lambda / D * vhalf(i) * fabs(vhalf(i));
-			Shalf(i, 2) = 0;
+			Shalf(i, 2) = HeatTransfer();
 		}
 	}
 	else {
@@ -517,7 +517,7 @@ void LWP::Pack(bool is_half_step) {
 
 			S(i, 0) = 0.;
 			S(i, 1) = -A * rho(i) / 2. * lambda / D * v(i) * fabs(v(i));
-			S(i, 2) = 0.;
+			S(i, 2) = HeatTransfer();
 		}
 	}
 }
@@ -597,11 +597,14 @@ void LWP::BCLeft(string type, double val1, double val2) {
 		ok = true;
 	}*/
 
-	if (type == "StaticPres_and_StaticTemp") {
+	if (type == "StaticPres_and_StaticTemp_Inlet") {
 		pnew(0)  = val1;
 		Tnew(0)  = val2;
 		rhonew(0) = gas->Get_rho(pnew(0), Tnew(0));
 		vnew(0)  = (pnew(0) - beta_primitive) / rhonew(0) / gas->Get_SonicVel(Tnew(0),pnew(0));
+		if (vnew(0)<0)
+			vnew(0)=0;
+		
 		ok = true;
 	}
 
@@ -1133,11 +1136,6 @@ bool LWP::GetC0AtFront(double t_target) {
 	double dxM = dx * v0 / (v0 - v1 - dx / delta_t);
 
 	if (dxM < 0.) {
-		if (fabs(dxM / dx) < 1.e-2) {
-			dxM = 0.;
-			is_ok = true;
-		}
-		else {
 			is_ok = false;
 			cout << endl << "WARNING! LWP::GetC0AtFront(), dxM/dx = " << dxM / dx << " < 0 !!!";
 			if (v(0) < 0) {
@@ -1154,20 +1152,13 @@ bool LWP::GetC0AtFront(double t_target) {
 			}
 			cout << endl << "Name of pipe: " << name << " --> is_ok set to false";
 			//cin.get();
-		}
 	}
 	if (dxM > dx) {
-		if (fabs(dxM / dx) < 1. + 1e-2) {
-			dxM = dx;
-			is_ok = true;
-		}
-		else {
 			is_ok = false;
 			cout << endl
 			     << "ERROR! LWP::GetC0AtFront(), dxM/dx = " << dxM / dx << " > 1 !!!" << endl;
 			cout << endl << "Name of pipe: " << name << endl;
 			//cin.get();
-		}
 	}
 
 	double vM   = v(0)   * (1. - dxM / dx) + v(1) * dxM / dx;
@@ -1178,10 +1169,10 @@ bool LWP::GetC0AtFront(double t_target) {
 	if (!is_ok) {
 		printf("\n\n--------------------\n dxM/dx=%5.3f", dxM / dx);
 		printf("\n         0       M       1");
-		printf("\n p  =  %5.3f   %5.3f   %5.3f", p(0) / 1.e5, pM / 1.e5, p(1) / 1.e5);
-		printf("\n rho=  %5.3f   %5.3f   %5.3f", rho(0), rhoM, rho(1));
-		printf("\n T  =  %5.1f   %5.1f   %5.1f", T(0), TM, T(1));
-		printf("\n v  =  %+5.2f   %+5.2f   %+5.2f\n", v(0), vM, v(1));
+		printf("\n p  =   %5.3e    %5.3e    %5.3e", p(0) / 1.e5, pM / 1.e5, p(1) / 1.e5);
+		printf("\n rho=   %5.3e    %5.3e    %5.3e", rho(0), rhoM, rho(1));
+		printf("\n T  =   %5.3e    %5.3e    %5.3e", T(0), TM, T(1));
+		printf("\n v  =  %+5.3e   %+5.3e   %+5.3e\n", v(0), vM, v(1));
 	}
 
 	return is_ok;
@@ -1472,14 +1463,14 @@ vector<double> LWP::Get_dvprop(string prop_string) {
 			out.at(i) = data.at(i).at(4);
 	else if (prop_string == "mp_front")
 		for (unsigned int i = 0; i < Ntime; i++)
-			out.at(i) = data.at(i).at(5);
+			out.at(i) = data.at(i).at(9);
 	else if (prop_string == "mp_back")
 		for (unsigned int i = 0; i < Ntime; i++)
-			out.at(i) = data.at(i).at(6);
+			out.at(i) = data.at(i).at(10);
 	else {
 		cout << endl
-		     << "ERROR! LWP::Get_dvprop(prop_string), unknown input: prop_string=" << prop_string << endl
-		     << endl;
+		     << "ERROR! LWP::Get_dvprop(prop_string), unknown input: prop_string=" << prop_string << endl;
+		cout<<"options: t | p_front | p_front_bar | p_back | p_back_bar | v_front | v_back | mp_front | mp_back";
 		cout << endl << "Name of the LWP: " << name << endl;
 		cin.get();
 	}
@@ -1598,5 +1589,15 @@ void LWP::Save_data() {
 		fclose (pFile);
 		cout << " done. ";
 	}
+}
+
+double LWP::HeatFluxThroughWall(double Tgas, double v, double rho){
+	double alpha_fluid = therm_cond_fluid*cp/rho;
+	double Pr=nu_fluid/alpha_fluid;
+	double Re = v*D/nu_fluid;
+	double Nu=0.023*pow(Re,0.8)*pow(Pr,0.4);
+	double k=Nu*therm_cond_fluid/dx;
+	double q=-k*D*M_PI*(Tgas-Tout)/dx; // W/m^2
+	return q;
 }
 

@@ -18,8 +18,9 @@ Inheritance diagram for Valve\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_valve_aab5b8b088aa400a31d0020605cdf1015}{Valve}} (const string \+\_\+nev, const double \+\_\+m, const double \+\_\+k, const double \+\_\+s, const double \+\_\+\+Dbore, const double \+\_\+\+Cd, const double \+\_\+ro, const double p\+\_\+set, const double \+\_\+xmax, const double \+\_\+r, const double \+\_\+pref, const bool save\+\_\+data)
-\begin{DoxyCompactList}\small\item\em Class for modeling valves. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_valve_aab5b8b088aa400a31d0020605cdf1015}\label{class_valve_aab5b8b088aa400a31d0020605cdf1015}} 
+{\bfseries Valve} (const string \+\_\+nev, const double \+\_\+m, const double \+\_\+k, const double \+\_\+s, const double \+\_\+\+Dbore, const double \+\_\+\+Cd, const double \+\_\+ro, const double p\+\_\+set, const double \+\_\+xmax, const double \+\_\+r, const double \+\_\+pref, const bool save\+\_\+data)
+\item 
 \mbox{\Hypertarget{class_valve_aa81bca7be68af43735a65c3062059bee}\label{class_valve_aa81bca7be68af43735a65c3062059bee}} 
 {\bfseries Valve} (const string \+\_\+nev, const double \+\_\+m, const double \+\_\+k, const double \+\_\+s, const double \+\_\+\+Dbore, const double \+\_\+\+Cd, \mbox{\hyperlink{class_gas}{Gas}} $\ast$\+\_\+gas, const double p\+\_\+set, const double \+\_\+xmax, const double \+\_\+r, const double \+\_\+pref, const bool save\+\_\+data)
 \item 
@@ -59,8 +60,10 @@ void {\bfseries List\+\_\+data} ()
 \mbox{\Hypertarget{class_valve_a064fad4d4bab3e0938f57c95fe578289}\label{class_valve_a064fad4d4bab3e0938f57c95fe578289}} 
 void {\bfseries Save\+\_\+data} ()
 \item 
-void \mbox{\hyperlink{class_valve_a98b0df021274e223a11cd5df12df42e6}{Set\+Aeff\+Coeffs}} (const double \+\_\+a1, const double \+\_\+a2, const double Aeffmax)
-\begin{DoxyCompactList}\small\item\em set teh coefficients forthe function describing the effective area Set two elements of a second order function (and a maximum value) for the relative multiplicator of the effective area. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_valve_a09e51698b043545e875dbd5e44e2876a}{Aeff}} (const double x)
+\item 
+void \mbox{\hyperlink{class_valve_a499bc164260239199838c6c90a339657}{Set\+Aeff\+Coeffs}} (const double \+\_\+a1, const double \+\_\+a2, const double \+\_\+a3, const double Aeffmax)
+\item 
 \mbox{\Hypertarget{class_valve_a8b888ce9f7151c8790f428c301dea232}\label{class_valve_a8b888ce9f7151c8790f428c301dea232}} 
 double {\bfseries Get\+\_\+\+Mass\+Flow\+Rate} (double p\+\_\+upstream, double T\+\_\+upstream, double p\+\_\+downstream, double T\+\_\+downstream, double xx)
 \item 
@@ -78,29 +81,31 @@ string {\bfseries fname}
 \doxysubsection{Detailed Description}
 A class for handling both liquid and fluid valves A class for storing data regarding a valve and allowing for a solution of the differential equation describing the movement of the spring, mass damper system. 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_valve_aab5b8b088aa400a31d0020605cdf1015}\label{class_valve_aab5b8b088aa400a31d0020605cdf1015}} 
-\index{Valve@{Valve}!Valve@{Valve}}
-\index{Valve@{Valve}!Valve@{Valve}}
-\doxysubsubsection{\texorpdfstring{Valve()}{Valve()}}
-{\footnotesize\ttfamily Valve\+::\+Valve (\begin{DoxyParamCaption}\item[{const string}]{\+\_\+name,  }\item[{const double}]{\+\_\+m,  }\item[{const double}]{\+\_\+k,  }\item[{const double}]{\+\_\+s,  }\item[{const double}]{\+\_\+\+Dbore,  }\item[{const double}]{\+\_\+\+Cd,  }\item[{const double}]{\+\_\+ro,  }\item[{const double}]{\+\_\+p\+\_\+set,  }\item[{const double}]{\+\_\+xmax,  }\item[{const double}]{\+\_\+r,  }\item[{const double}]{\+\_\+pref,  }\item[{const bool}]{\+\_\+save\+\_\+data }\end{DoxyParamCaption})}
-
-
-
-Class for modeling valves. 
-
-The class contains data for direct spring operated pressure reliev valve 
-
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_valve_a98b0df021274e223a11cd5df12df42e6}\label{class_valve_a98b0df021274e223a11cd5df12df42e6}} 
+\mbox{\Hypertarget{class_valve_a09e51698b043545e875dbd5e44e2876a}\label{class_valve_a09e51698b043545e875dbd5e44e2876a}} 
+\index{Valve@{Valve}!Aeff@{Aeff}}
+\index{Aeff@{Aeff}!Valve@{Valve}}
+\doxysubsubsection{\texorpdfstring{Aeff()}{Aeff()}}
+{\footnotesize\ttfamily double Valve\+::\+Aeff (\begin{DoxyParamCaption}\item[{const double}]{x }\end{DoxyParamCaption})}
+
+Calculate the effective are based on the effective area coefficients set previously in Set\+Aeff\+Coeffs. 
+\begin{DoxyParams}{Parameters}
+{\em x} & \mbox{[}in\mbox{]} the valve disk displacement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The effective area 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_valve_a499bc164260239199838c6c90a339657}{Set\+Aeff\+Coeffs}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_valve_a499bc164260239199838c6c90a339657}\label{class_valve_a499bc164260239199838c6c90a339657}} 
 \index{Valve@{Valve}!SetAeffCoeffs@{SetAeffCoeffs}}
 \index{SetAeffCoeffs@{SetAeffCoeffs}!Valve@{Valve}}
 \doxysubsubsection{\texorpdfstring{SetAeffCoeffs()}{SetAeffCoeffs()}}
-{\footnotesize\ttfamily void Valve\+::\+Set\+Aeff\+Coeffs (\begin{DoxyParamCaption}\item[{const double}]{\+\_\+a1,  }\item[{const double}]{\+\_\+a2,  }\item[{const double}]{\+\_\+\+Aeff\+Max }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Valve\+::\+Set\+Aeff\+Coeffs (\begin{DoxyParamCaption}\item[{const double}]{\+\_\+a1,  }\item[{const double}]{\+\_\+a2,  }\item[{const double}]{\+\_\+a3,  }\item[{const double}]{\+\_\+\+Aeff\+Max }\end{DoxyParamCaption})}
 
-
-
-set teh coefficients forthe function describing the effective area Set two elements of a second order function (and a maximum value) for the relative multiplicator of the effective area. 
+Set two elements of a second-\/order function (and a maximum value) for the relative multiplicator of the effective area. The approximating function will be \$\+A\+\_\+\{eff\}=min(A\+\_\+\{eff,max\},1+a\+\_\+1 y+a\+\_\+2 y$^\wedge$2+a\+\_\+3 y$^\wedge$3)\$, where x is the relative lift\+: \$y=x/(D/4)\$
 
 
 \begin{DoxyParams}{Parameters}
@@ -108,7 +113,8 @@ set teh coefficients forthe function describing the effective area Set two eleme
 \hline
 {\em \+\_\+a2} & \mbox{[}in\mbox{]} second order parameter \\
 \hline
-{\em \+\_\+\+Aeffmax} & \mbox{[}in\mbox{]} maximum area relative to valve cross section \\
+{\em \+\_\+\+Aeffmax} & \mbox{[}in\mbox{]} maximum area relative to valve cross section (Abore) ~\newline
+ \\
 \hline
 \end{DoxyParams}
 

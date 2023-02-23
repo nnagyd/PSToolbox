@@ -46,8 +46,8 @@
 \DoxyCodeLine{47                 \textcolor{keyword}{const} VectorXd \& pars);}
 \DoxyCodeLine{48 }
 \DoxyCodeLine{49         \textcolor{comment}{//double SumStatForce(const double x, const double pv, const double pb);}}
-\DoxyCodeLine{50         \textcolor{keywordtype}{double} Aeff(\textcolor{keyword}{const} \textcolor{keywordtype}{double} x);}
-\DoxyCodeLine{51         \textcolor{keywordtype}{double} Aeffmax, a1, a2;}
+\DoxyCodeLine{50         \textcolor{comment}{// double Aeff(const double x);}}
+\DoxyCodeLine{51         \textcolor{keywordtype}{double} Aeffmax, a1, a2, a3;}
 \DoxyCodeLine{52         vector<vector<double> > data;}
 \DoxyCodeLine{53         vector<double> tmpvec;}
 \DoxyCodeLine{54         \mbox{\hyperlink{class_gas}{Gas}}* gas;}
@@ -59,7 +59,7 @@
 \DoxyCodeLine{60         \textcolor{keywordtype}{double} Get\_MassFlowRate\_Compressible\_UnChoked(\textcolor{keywordtype}{double} p\_upstream, \textcolor{keywordtype}{double} T\_upstream, \textcolor{keywordtype}{double} p\_downstream, \textcolor{keywordtype}{double} xx);}
 \DoxyCodeLine{61         \textcolor{keywordtype}{double} Get\_MassFlowRate\_InCompressible(\textcolor{keywordtype}{double} p\_upstream, \textcolor{keywordtype}{double} p\_downstream, \textcolor{keywordtype}{double} rho, \textcolor{keywordtype}{double} x) ;}
 \DoxyCodeLine{62     \textcolor{keyword}{public}:}
-\DoxyCodeLine{63         \mbox{\hyperlink{class_valve_aab5b8b088aa400a31d0020605cdf1015}{Valve}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \_nev,}
+\DoxyCodeLine{63         \mbox{\hyperlink{class_valve}{Valve}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \_nev,}
 \DoxyCodeLine{64                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_m,}
 \DoxyCodeLine{65                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_k,}
 \DoxyCodeLine{66                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_s,}
@@ -73,7 +73,7 @@
 \DoxyCodeLine{74                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_pref,}
 \DoxyCodeLine{75                 \textcolor{keyword}{const} \textcolor{keywordtype}{bool} save\_data);}
 \DoxyCodeLine{76 }
-\DoxyCodeLine{77         \mbox{\hyperlink{class_valve_aab5b8b088aa400a31d0020605cdf1015}{Valve}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \_nev,}
+\DoxyCodeLine{77         \mbox{\hyperlink{class_valve}{Valve}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \_nev,}
 \DoxyCodeLine{78                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_m,}
 \DoxyCodeLine{79                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_k,}
 \DoxyCodeLine{80                 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_s,}
@@ -101,16 +101,18 @@
 \DoxyCodeLine{102         \textcolor{keywordtype}{void} Save\_data();}
 \DoxyCodeLine{103         \textcolor{comment}{//void Plot();}}
 \DoxyCodeLine{104         \textcolor{keywordtype}{string} fname;}
-\DoxyCodeLine{105         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_valve_a98b0df021274e223a11cd5df12df42e6}{SetAeffCoeffs}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \_a1, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_a2, \textcolor{keyword}{const} \textcolor{keywordtype}{double} Aeffmax);}
-\DoxyCodeLine{106 }
-\DoxyCodeLine{107         \textcolor{keywordtype}{double} Get\_MassFlowRate(\textcolor{keywordtype}{double} p\_upstream, \textcolor{keywordtype}{double} T\_upstream, \textcolor{keywordtype}{double} p\_downstream, \textcolor{keywordtype}{double} T\_downstream, \textcolor{keywordtype}{double} xx);}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_valve_a09e51698b043545e875dbd5e44e2876a}{Aeff}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} x);}
+\DoxyCodeLine{107         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_valve_a499bc164260239199838c6c90a339657}{SetAeffCoeffs}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} \_a1, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_a2, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \_a3, \textcolor{keyword}{const} \textcolor{keywordtype}{double} Aeffmax);}
 \DoxyCodeLine{108 }
-\DoxyCodeLine{109 \textcolor{comment}{//      double Get\_MassFlowRate\_Compressible(double p\_upstream, double T\_upstream, double p\_downstream, double T\_downstream, double xx);}}
-\DoxyCodeLine{110 \textcolor{comment}{//      double Get\_MassFlowRate\_Compressible\_Choked(double p\_upstream, double T\_upstream, double x);}}
-\DoxyCodeLine{111 \textcolor{comment}{//      double Get\_MassFlowRate\_Compressible\_UnChoked(double p\_upstream, double T\_upstream, double p\_downstream, double xx);}}
-\DoxyCodeLine{112 \textcolor{comment}{//      double Get\_MassFlowRate\_InCompressible(double p\_upstream, double p\_downstream, double rho, double x) ;}}
-\DoxyCodeLine{113         \textcolor{comment}{//void Plot(bool show, bool save);}}
-\DoxyCodeLine{114         \textcolor{keywordtype}{double} SumStatForce(\textcolor{keyword}{const} \textcolor{keywordtype}{double} x, \textcolor{keyword}{const} \textcolor{keywordtype}{double} pv, \textcolor{keyword}{const} \textcolor{keywordtype}{double} pb);}
-\DoxyCodeLine{115 \};}
+\DoxyCodeLine{109         \textcolor{keywordtype}{double} Get\_MassFlowRate(\textcolor{keywordtype}{double} p\_upstream, \textcolor{keywordtype}{double} T\_upstream, \textcolor{keywordtype}{double} p\_downstream, \textcolor{keywordtype}{double} T\_downstream, \textcolor{keywordtype}{double} xx);}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{comment}{//      double Get\_MassFlowRate\_Compressible(double p\_upstream, double T\_upstream, double p\_downstream, double T\_downstream, double xx);}}
+\DoxyCodeLine{112 \textcolor{comment}{//      double Get\_MassFlowRate\_Compressible\_Choked(double p\_upstream, double T\_upstream, double x);}}
+\DoxyCodeLine{113 \textcolor{comment}{//      double Get\_MassFlowRate\_Compressible\_UnChoked(double p\_upstream, double T\_upstream, double p\_downstream, double xx);}}
+\DoxyCodeLine{114 \textcolor{comment}{//      double Get\_MassFlowRate\_InCompressible(double p\_upstream, double p\_downstream, double rho, double x) ;}}
+\DoxyCodeLine{115         \textcolor{comment}{//void Plot(bool show, bool save);}}
+\DoxyCodeLine{116         \textcolor{keywordtype}{double} SumStatForce(\textcolor{keyword}{const} \textcolor{keywordtype}{double} x, \textcolor{keyword}{const} \textcolor{keywordtype}{double} pv, \textcolor{keyword}{const} \textcolor{keywordtype}{double} pb);}
+\DoxyCodeLine{117 \};}
 
 \end{DoxyCode}

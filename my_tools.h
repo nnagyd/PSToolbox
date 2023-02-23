@@ -7,6 +7,10 @@
 using namespace Eigen;
 using namespace std;
 
+double interpolate_val(vector<double> x, vector<double> y, double x0);
+
+vector<double> interp1(vector<double> x, vector<double> y, vector<double> xi);
+
 bool NR(
     VectorXd (*fun)(VectorXd & x, const VectorXd & pars),
     VectorXd & x,
@@ -20,7 +24,7 @@ MatrixXd num_jac(
     VectorXd (*fun)(VectorXd & x, const VectorXd & pars),
     VectorXd & x, const VectorXd & pars);
 
-VectorXd linspace(double x_min, double x_max, int Nsteps, bool is_linear);
+//VectorXd linspace(double x_min, double x_max, int Nsteps, bool is_linear);
 
 double signum(double x);
 
@@ -60,9 +64,9 @@ void swap(VectorXd x, VectorXd y);
 
 double gen_random_double(double min, double max);
 
-VectorXd linspace(double x_min, double x_max, int Nsteps, bool is_linear);
+VectorXd linspace_VectorXd(double x_min, double x_max, int Nsteps, bool is_linear);
 
-vector<double> linspace_vec(double x_min, double x_max, int Nsteps, bool is_linear);
+vector<double> linspace(double x_min, double x_max, int Nsteps, bool is_linear);
 
 double signum(double x);
 

@@ -80,26 +80,27 @@
 \DoxyCodeLine{77     \textcolor{keywordtype}{double} dt\_req);}
 \DoxyCodeLine{78   }
 \DoxyCodeLine{79  \textcolor{comment}{// double GetBetaAtFront(double t\_target);}}
-\DoxyCodeLine{80   \textcolor{keywordtype}{bool} GetC0AtFront(\textcolor{keywordtype}{double} t\_target, \textcolor{keywordtype}{double}\& p, \textcolor{keywordtype}{double}\& v, \textcolor{keywordtype}{double}\& T, \textcolor{keywordtype}{double}\& rho);}
-\DoxyCodeLine{81   \textcolor{keywordtype}{double} GetBetaPrimitiveAtFront(\textcolor{keywordtype}{double} t\_target);}
-\DoxyCodeLine{82   \textcolor{keywordtype}{void} GetAllPrimitiveAtFront(\textcolor{keywordtype}{double} t\_target, \textcolor{keywordtype}{double}\& pP, \textcolor{keywordtype}{double}\& vP, \textcolor{keywordtype}{double}\& TP, \textcolor{keywordtype}{double}\& rhoP);}
-\DoxyCodeLine{83 }
-\DoxyCodeLine{84   \textcolor{comment}{//double GetAlphaAtEnd(double t\_target);}}
-\DoxyCodeLine{85   \textcolor{keywordtype}{double} GetC0AtEnd(\textcolor{keywordtype}{double} t\_target);}
-\DoxyCodeLine{86   \textcolor{keywordtype}{double} GetAlphaPrimitiveAtEnd(\textcolor{keywordtype}{double} t\_target);}
-\DoxyCodeLine{87   \textcolor{keywordtype}{void} GetAllPrimitiveAtEnd(\textcolor{keywordtype}{double} t\_target, \textcolor{keywordtype}{double}\& pP, \textcolor{keywordtype}{double}\& vP, \textcolor{keywordtype}{double}\& TP, \textcolor{keywordtype}{double}\& rhoP);}
-\DoxyCodeLine{88 }
-\DoxyCodeLine{89   \textcolor{keywordtype}{string} GetName();}
-\DoxyCodeLine{90   \textcolor{keywordtype}{double} Get\_dt();}
-\DoxyCodeLine{91   vector<double> Get\_xgrid();}
-\DoxyCodeLine{92   vector<double> Get\_p();}
-\DoxyCodeLine{93   vector<double> Get\_v();}
-\DoxyCodeLine{94   vector<double> Get\_dvprop(\textcolor{keywordtype}{string} prop\_string);}
-\DoxyCodeLine{95   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_l_w_p_a6099ce80536a506db01142692c19962d}{Save\_data}}();}
-\DoxyCodeLine{96   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}{UpdateDimlessPars}}(\textcolor{keywordtype}{double} pref, \textcolor{keywordtype}{double} mp\_nevl, \textcolor{keywordtype}{double} omega, \textcolor{keywordtype}{double} xref, \textcolor{keywordtype}{double} m);}
-\DoxyCodeLine{97 }
-\DoxyCodeLine{98   \textcolor{keywordtype}{string} fname;}
-\DoxyCodeLine{99   \mbox{\hyperlink{class_gas}{Gas}} *gas;}
-\DoxyCodeLine{100 \};}
+\DoxyCodeLine{80   \textcolor{comment}{//bool GetC0AtFront(double t\_target, double\& p, double\& v, double\& T, double\& rho);}}
+\DoxyCodeLine{81   \textcolor{keywordtype}{bool} GetC0AtFront(\textcolor{keywordtype}{double} t\_target);}
+\DoxyCodeLine{82   \textcolor{keywordtype}{double} GetBetaPrimitiveAtFront(\textcolor{keywordtype}{double} t\_target);}
+\DoxyCodeLine{83   \textcolor{keywordtype}{void} GetAllPrimitiveAtFront(\textcolor{keywordtype}{double} t\_target, \textcolor{keywordtype}{double}\& pP, \textcolor{keywordtype}{double}\& vP, \textcolor{keywordtype}{double}\& TP, \textcolor{keywordtype}{double}\& rhoP);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85   \textcolor{comment}{//double GetAlphaAtEnd(double t\_target);}}
+\DoxyCodeLine{86   \textcolor{keywordtype}{double} GetC0AtEnd(\textcolor{keywordtype}{double} t\_target);}
+\DoxyCodeLine{87   \textcolor{keywordtype}{double} GetAlphaPrimitiveAtEnd(\textcolor{keywordtype}{double} t\_target);}
+\DoxyCodeLine{88   \textcolor{keywordtype}{void} GetAllPrimitiveAtEnd(\textcolor{keywordtype}{double} t\_target, \textcolor{keywordtype}{double}\& pP, \textcolor{keywordtype}{double}\& vP, \textcolor{keywordtype}{double}\& TP, \textcolor{keywordtype}{double}\& rhoP);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90   \textcolor{keywordtype}{string} GetName();}
+\DoxyCodeLine{91   \textcolor{keywordtype}{double} Get\_dt();}
+\DoxyCodeLine{92   vector<double> Get\_xgrid();}
+\DoxyCodeLine{93   vector<double> Get\_p();}
+\DoxyCodeLine{94   vector<double> Get\_v();}
+\DoxyCodeLine{95   vector<double> Get\_dvprop(\textcolor{keywordtype}{string} prop\_string);}
+\DoxyCodeLine{96   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_l_w_p_a6099ce80536a506db01142692c19962d}{Save\_data}}();}
+\DoxyCodeLine{97   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}{UpdateDimlessPars}}(\textcolor{keywordtype}{double} pref, \textcolor{keywordtype}{double} mp\_nevl, \textcolor{keywordtype}{double} omega, \textcolor{keywordtype}{double} xref, \textcolor{keywordtype}{double} m);}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99   \textcolor{keywordtype}{string} fname;}
+\DoxyCodeLine{100   \mbox{\hyperlink{class_gas}{Gas}} *gas;}
+\DoxyCodeLine{101 \};}
 
 \end{DoxyCode}

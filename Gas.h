@@ -18,6 +18,9 @@ public:
     virtual double Get_SonicVel(double T, double p) = 0;
     virtual double Get_T_from_ep(double e, double p) = 0;
     virtual double Get_T_from_erho(double e, double rho) = 0;
+		virtual double Get_Prandtl_from_Tp(double T, double p)=0;
+		virtual double Get_ThermalConductivity_from_Tp(double T, double p)=0;
+		virtual double Get_DynamicViscosity_from_Tp(double T, double p)=0;
     virtual double Get_kappa_pv() = 0;
     virtual double Get_kappa_Tv() = 0;
     virtual double Get_kappa_Tp() = 0;

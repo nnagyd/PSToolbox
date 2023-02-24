@@ -15,6 +15,9 @@ class CoolPropGas : public Gas
 		double Get_T_from_ep(double e, double p);
 		double Get_T_from_erho(double e, double rho);
 		double Get_e_from_Tp(double T, double p);
+		double Get_Prandtl_from_Tp(double T, double p);
+		double Get_ThermalConductivity_from_Tp(double T, double p);
+		double Get_DynamicViscosity_from_Tp(double T, double p);
 		double Get_kappa_pv();
 		double Get_kappa_Tv();
 		double Get_kappa_Tp();

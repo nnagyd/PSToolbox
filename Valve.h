@@ -49,6 +49,8 @@ class Valve: public Units
 		//double SumStatForce(const double x, const double pv, const double pb);
 		// double Aeff(const double x);
 		double Aeffmax, a1, a2, a3;
+		// Cd coeffs
+		double b0,b1,b2,b3;
 		vector<vector<double> > data;
 		vector<double> tmpvec;
 		Gas* gas;
@@ -104,7 +106,9 @@ class Valve: public Units
 		string fname;
 
 		double Aeff(const double x);
+		double Cdfun(const double x);
 		void SetAeffCoeffs(const double _a1, const double _a2, const double _a3, const double Aeffmax);
+		void SetCdCoeffs(const double _b0, const double _b1, const double _b2, const double _b3);
 
 		double Get_MassFlowRate(double p_upstream, double T_upstream, double p_downstream, double T_downstream, double xx);
 

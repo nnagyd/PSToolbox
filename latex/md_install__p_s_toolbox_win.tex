@@ -1,0 +1,21 @@
+\hypertarget{md_install__p_s_toolbox_win_autotoc_md1}{}\doxysection{Install}\label{md_install__p_s_toolbox_win_autotoc_md1}
+First, you need a couple of utility programs\+:
+
+
+\begin{DoxyItemize}
+\item Use Chocolatex for instaaling Unix/\+Mac-\/like programs\+: \href{https://chocolatey.org/}{\texttt{ https\+://chocolatey.\+org/}}
+\item Next, install \textquotesingle{}make\textquotesingle{} command by typing\+: {\ttfamily choco install make}
+\item You\textquotesingle{}ll also need Min\+GW (Minimalist Gnu for Windows)\+: {\ttfamily choco install mingw}
+\item We will also need the eigen package\+: {\ttfamily choco install eigen}
+\end{DoxyItemize}
+
+Next you need to clone the repository from Git\+Hub. Once you\textquotesingle{}re done, you need to tailor the Windows makefile {\ttfamily makefile\+\_\+win.\+mk}\+:
+
+
+\begin{DoxyItemize}
+\item Specify the path to Eigen, e.\+g. {\ttfamily INC = -\/IC\+:/\+Program\+Data/chocolatey/lib/eigen/include}
+\item On Windows systems, you use the {\ttfamily ar rcs} utility to build static libraries, e.\+g. {\ttfamily ar rcs libmy\+\_\+tools.\+a my\+\_\+tools.\+o} (instead of {\ttfamily libtool -\/static -\/o libmy\+\_\+tools.\+a my\+\_\+tools.\+o}). This is already set in the sample {\ttfamily makefile\+\_\+win.\+mk} file.
+\end{DoxyItemize}
+
+At this point, you should be able to compile the toolbox apart from the classes depending on the {\ttfamily Coolprop} library.\hypertarget{md_install__p_s_toolbox_win_autotoc_md2}{}\doxysection{Using the library}\label{md_install__p_s_toolbox_win_autotoc_md2}
+Navigate to the \`{}\`{}\`{}\`{} 

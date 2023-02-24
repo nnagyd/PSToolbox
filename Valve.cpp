@@ -70,6 +70,12 @@ Valve::Valve(const string _name,
 	a2 = 0.;
 	a3 = 0.;
 	Aeffmax = 1.;
+
+	// CdCoeffs
+	b0=Cd;
+	b1=0.;
+	b2=0.;
+	b3=0.;
 }
 
 /**
@@ -132,6 +138,11 @@ Valve::Valve(const string _name,
 	a3 = 0.;
 	Aeffmax = 1.;
 
+	// CdCoeffs
+	b0=Cd;
+	b1=0.;
+	b2=0.;
+	b3=0.;
 }
 
 void Valve::UpdateDimlessPars() {
@@ -373,12 +384,13 @@ double Valve::SumStatForce(const double x, const double pv, const double pb) {
 }
 
 /*! 
-	Set two elements of a second-order function (and a maximum value) for the relative multiplicator
-	of the effective area. The approximating function will be $A_{eff}=min(A_{eff,max},1+a_1 y+a_2 y^2+a_3 y^3)$, where x is the relative lift: $y=x/(D/4)$
+	Set the coefficients for the Aeff(x) function
+	The approximating function will be $A_{eff}=min(A_{eff,max},1+a_1 y+a_2 y^2+a_3 y^3)$, where $y$ is the relative lift: $y=x/(D/4)$
 
-	\param _a1 [in] first order parameter
-	\param _a2 [in] second order parameter
-	\param _Aeffmax [in] maximum area relative to valve cross section (Abore)  
+	\param _a1 [in] coeff. of y
+	\param _a2 [in] coeff. of y^2
+	\param _a3 [in] coeff. of y^3
+	\param _Aeffmax [in] fixed value for y>1
 	*/
 
 void Valve::SetAeffCoeffs(const double _a1, const double _a2, const double _a3, const double _AeffMax) {
@@ -389,8 +401,8 @@ void Valve::SetAeffCoeffs(const double _a1, const double _a2, const double _a3, 
 }
 
 /*! 
-	Calculate the effective are based on the effective area coefficients set previously in SetAeffCoeffs. 
-	\param x [in] the valve disk displacement
+	Evaluate the effective are based on the effective area coefficients set previously in SetAeffCoeffs. 
+	\param x [in] valve lift 
 	\return The effective area
 	\sa SetAeffCoeffs
 	*/
@@ -402,11 +414,43 @@ double Valve::Aeff(const double x) {
 	return Aeff;
 }
 
+/*! 
+	Set coefficients for the Cd(x) function.
+	The approximating function will be $C_d=b_0+b_1 y+b_2 y^2+b_3 y^3)$, where x is the relative lift: $y=x/(D/4)$
+
+	\param _b0 [in] constant term (set this for fixed Cd value)
+	\param _b1 [in] coeff. of y
+	\param _b2 [in] coeff. of y^2
+	\param _b3 [in] coeff. of y^3
+*/
+	void Valve::SetCdCoeffs(const double _b0, const double _b1, const double _b2, const double _b3) {
+	b0 = _b0;
+	b1 = _b1;
+	b2 = _b2;
+	b3 = _b3;
+}
+
+/*! 
+  Evaluate the discharge coefficient Cd
+	\param x [in] valve lift
+	\return discharge coefficients
+	\sa SetCdCoeffs
+	*/
+
+double Valve::Cdfun(const double x) {
+	double out, y=x/xmax;
+	if (y>1.)
+out=b0+b1+b2+b3;
+	else
+		out = b0 + b1 * (x / xmax) + b2 * pow(x / xmax, 2.) + b3 * pow(x/xmax,3);
+	return out;
+}
+
 /* \brief The differential equation describing the
 	 An equation that returns the zero solved equations of the valve ODE
 Equations:
 $$o(0) = v$$
-$$o(1) = \left( A_{eff}(p_v - p_b) + s(xe+x) - k v \right) \cdot \frac{1}{m} $$
+$$o(1) = \left( A_{eff}*Abore*(p_v - p_b) - s(xe+x) - k v \right) \cdot \frac{1}{m} $$
 The first equation is simply returning the speed of the valve stem, and the second is the expression
 of the second derivative of x
 
@@ -645,7 +689,7 @@ double Valve::Get_MassFlowRate_Compressible(double p_upstream, double T_upstream
 		mp *= dir_mul;*/
 	double A_flowthrough = Dbore * M_PI * xx;
 	double massflux = gas->Get_MassFlux(p_upstream, T_upstream, p_downstream, T_downstream);
-	return Cd*A_flowthrough*massflux;
+	return Cdfun(x)*A_flowthrough*massflux;
 }
 
 
@@ -656,7 +700,7 @@ double Valve::Get_MassFlowRate_Compressible_Choked(double p_upstream, double T_u
 	double A_flowthrough = Dbore * M_PI * xx;
 	double exponent = (kappa + 1.) / (kappa - 1.);
 	double tmp = kappa * pow(2. / (kappa + 1.), exponent);
-	return Cd * A_flowthrough * sqrt(rho_upstream * p_upstream * tmp);
+	return Cdfun(x) * A_flowthrough * sqrt(rho_upstream * p_upstream * tmp);
 }
 
 double Valve::Get_MassFlowRate_Compressible_UnChoked(double p_upstream, double T_upstream, double p_downstream, double xx) {
@@ -668,7 +712,7 @@ double Valve::Get_MassFlowRate_Compressible_UnChoked(double p_upstream, double T
 	double exp2 = (kappa + 1.) / kappa;
 	double tmp = 2.*rho_upstream * p_upstream * kappa / (kappa - 1);
 	double pr = p_downstream / p_upstream;
-	return Cd * A_flowthrough * sqrt(tmp * (pow(pr, exp1) - pow(pr, exp2)));
+	return Cdfun(x) * A_flowthrough * sqrt(tmp * (pow(pr, exp1) - pow(pr, exp2)));
 }
 
 double Valve::Get_MassFlowRate_InCompressible(double p_upstream, double p_downstream, double rho, double xx) {
@@ -678,11 +722,11 @@ double Valve::Get_MassFlowRate_InCompressible(double p_upstream, double p_downst
 	double G0, mp;
 	if (fabs(dp) < DP_MIN) {
 		G0=sqrt(2. * ro * DP_MIN)*dp / DP_MIN;
-		mp = Cd * A_flowthrough * G0;		
+		mp = Cdfun(x) * A_flowthrough * G0;		
 	}
 	else{
 		G0=sqrt(2. * ro * fabs(dp)) * signum(dp);
-		mp = Cd * A_flowthrough * G0;
+		mp = Cdfun(x) * A_flowthrough * G0;
 	}
 
 	return mp;
@@ -724,7 +768,7 @@ double Valve::Get_dprop(string prop_string) {
 	if (prop_string == "Aft")
 		out = x * M_PI * Dbore;
 	else if (prop_string == "Cd")
-		out = Cd;
+		out = Cdfun(x);
 	else if (prop_string == "Dbore")
 		out = Dbore;
 	else if (prop_string == "Dbore_inch")
@@ -844,16 +888,22 @@ string Valve::Info() {
 	oss << "\n       Dbore : " << Dbore * 1000. << " mm = " << Dbore*m_to_inch << " in (nozzle diameter)";
 	oss << "\n xmax unrest.: " << xmax_unrestricted * 1000. << " mm = " << xmax_unrestricted*m_to_inch << " in";
 	oss << "\n          RT : " << RT << "% -> xmax = "<<xmax*1000<<" mm";
-	oss << "\n A orif. area: " << A*1.e6<<" mm^2 = Dbore^2*pi/4";
+	oss << "\n A orif. area: " << A*1.e6<<" mm^2 = Dbore^2*pi/4 aka Abore";
 	oss << "\n      A@xmax : " << Dbore*M_PI*xmax*1.e6<<" mm^2 = Dbore*pi*xmax";
-	oss << "\n          Cd : " << Cd;
 
-	oss << "\n\n Coefficients of Aeff(x) : ";
+	oss << "\n\n Coefficients of Cd(x) = b0+b0*y+b2*y^2+b3*y^3 :";
+	oss << "\n          b0 = " <<b0;
+	oss << "\n          b1 = " <<b1;
+	oss << "\n          b2 = " <<b2;
+	oss << "\n          b3 = " <<b2;
+	oss << "\n          for y>1, Cd is limited to Cd(1)";
+
+	oss << "\n\n Coefficients of Aeff(x) = a0+a0*y+a2*y^2+a3*y^3 :";
 	oss << "\n          a0 = " <<1.;
 	oss << "\n          a1 = " <<a1;
 	oss << "\n          a2 = " <<a2;
 	oss << "\n          a3 = " <<a3;
-	oss << "\n     Aeff(1) = " <<(1+a1+a2+a3);
+	oss << "\n     Aeff(1) = " <<(1+a1+a2+a3)<<" maximum value for y>1";
 	oss << "\n     xmax/xe = " <<xmax/xe<<" ?<? Aeff'(0)=a1="<<a1<<" (-> if true, blowdown will occur)\n";
 	
 	if (is_Gas)	

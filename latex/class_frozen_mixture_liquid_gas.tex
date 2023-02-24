@@ -47,6 +47,89 @@ double {\bfseries rho\+\_\+L} (double p)
 \mbox{\Hypertarget{class_frozen_mixture_liquid_gas_a109514b273bbd17d831b0cd70459cc87}\label{class_frozen_mixture_liquid_gas_a109514b273bbd17d831b0cd70459cc87}} 
 double {\bfseries Get\+\_\+alpha\+\_\+g} (double p, double T)
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ideal_gas}{Ideal\+Gas}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ideal_gas_a49de9b805a4c160746961f2a8df35e48}{Ideal\+Gas}} (const double \+\_\+kappa, const double \+\_\+R)
+\item 
+\mbox{\Hypertarget{class_ideal_gas_a4938f396a67b48b38478d40a6a6babfa}\label{class_ideal_gas_a4938f396a67b48b38478d40a6a6babfa}} 
+{\bfseries Ideal\+Gas} (\mbox{\hyperlink{class_ideal_gas}{Ideal\+Gas}} $\ast$g)
+\item 
+double \mbox{\hyperlink{class_ideal_gas_a003a25e110d40e86bb4fb2a76e4ec261}{Get\+\_\+p}} (double rho, double T)
+\item 
+double \mbox{\hyperlink{class_ideal_gas_a6d6da951b6035e25143ca7dcd79df51c}{Get\+\_\+rho}} (double p, double T)
+\item 
+double \mbox{\hyperlink{class_ideal_gas_a3475de367bcf73dd6ccd32da1f300e96}{Get\+\_\+T}} (double p, double rho)
+\item 
+double \mbox{\hyperlink{class_ideal_gas_ac3494000af614bb8532aa346308469b8}{Get\+\_\+e\+\_\+from\+\_\+\+Tp}} (double T, double p)
+\item 
+double \mbox{\hyperlink{class_ideal_gas_a33ed0ddc662709e2d6de454c7ebe99a7}{Get\+\_\+\+Sonic\+Vel}} (double T, double p)
+\item 
+double \mbox{\hyperlink{class_ideal_gas_aabbac25cf6098971fba9b15306032013}{Get\+\_\+\+T\+\_\+from\+\_\+ep}} (double e, double p)
+\item 
+double \mbox{\hyperlink{class_ideal_gas_a110d8841869b9023a3da0f7fdf5dcfb6}{Get\+\_\+\+T\+\_\+from\+\_\+erho}} (double e, double rho)
+\item 
+double \mbox{\hyperlink{class_ideal_gas_a9edd0c74d1b2908a7deba4f1a315b226}{Get\+\_\+kappa\+\_\+pv}} ()
+\item 
+double \mbox{\hyperlink{class_ideal_gas_a232c7ea3e7bceca289a3b2372fa45266}{Get\+\_\+kappa\+\_\+\+Tv}} ()
+\item 
+double \mbox{\hyperlink{class_ideal_gas_a79e200c5e9f3423e13be31f382bc2212}{Get\+\_\+kappa\+\_\+\+Tp}} ()
+\item 
+\mbox{\Hypertarget{class_ideal_gas_ab1dad70757b9c07e1fc5c5078ba56d30}\label{class_ideal_gas_ab1dad70757b9c07e1fc5c5078ba56d30}} 
+double {\bfseries Get\+\_\+pcrit} ()
+\item 
+double \mbox{\hyperlink{class_ideal_gas_ab314861529e7c0c7711ad1cb163bdfd3}{Get\+\_\+cp}} (double p, double T)
+\item 
+double \mbox{\hyperlink{class_ideal_gas_afd1e1499429871b7f09c85179e7089cd}{Get\+\_\+cV}} (double p, double T)
+\item 
+double \mbox{\hyperlink{class_ideal_gas_ab2b3f18fe44b3671983f128705f4476e}{Get\+\_\+\+Mass\+Flux}} (double pu, double Tu, double pd, double Td)
+\item 
+double \mbox{\hyperlink{class_ideal_gas_a546349500174946b9cd432fc1df6686d}{Get\+\_\+eta\+\_\+crit}} ()
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_gas_ab56247b61f7a428d2bba3fdede32160e}\label{class_gas_ab56247b61f7a428d2bba3fdede32160e}} 
+virtual double {\bfseries Get\+\_\+p} (double rho, double T)=0
+\item 
+\mbox{\Hypertarget{class_gas_a68926d08085031d22d1002cc5e8d624a}\label{class_gas_a68926d08085031d22d1002cc5e8d624a}} 
+virtual double {\bfseries Get\+\_\+rho} (double p, double T)=0
+\item 
+\mbox{\Hypertarget{class_gas_af1250a912519161ada99be3f8a51fedb}\label{class_gas_af1250a912519161ada99be3f8a51fedb}} 
+virtual double {\bfseries Get\+\_\+T} (double p, double rho)=0
+\item 
+\mbox{\Hypertarget{class_gas_a778dfca16ae0df7a1d2d2d7881e018e2}\label{class_gas_a778dfca16ae0df7a1d2d2d7881e018e2}} 
+virtual double {\bfseries Get\+\_\+e\+\_\+from\+\_\+\+Tp} (double T, double p)=0
+\item 
+\mbox{\Hypertarget{class_gas_a19adfd6aefc7321a2bf8b5f54c19925e}\label{class_gas_a19adfd6aefc7321a2bf8b5f54c19925e}} 
+virtual double {\bfseries Get\+\_\+\+Sonic\+Vel} (double T, double p)=0
+\item 
+\mbox{\Hypertarget{class_gas_ae0d91e705e13a079a2c6f4d21621a6fd}\label{class_gas_ae0d91e705e13a079a2c6f4d21621a6fd}} 
+virtual double {\bfseries Get\+\_\+\+T\+\_\+from\+\_\+ep} (double e, double p)=0
+\item 
+\mbox{\Hypertarget{class_gas_af2c9fa62156f888d1cac2c6aebebca09}\label{class_gas_af2c9fa62156f888d1cac2c6aebebca09}} 
+virtual double {\bfseries Get\+\_\+\+T\+\_\+from\+\_\+erho} (double e, double rho)=0
+\item 
+\mbox{\Hypertarget{class_gas_afbb3561b223effe9537135293199db2f}\label{class_gas_afbb3561b223effe9537135293199db2f}} 
+virtual double {\bfseries Get\+\_\+kappa\+\_\+pv} ()=0
+\item 
+\mbox{\Hypertarget{class_gas_ac46b7c1a4b449ceed9c916de11c84ee8}\label{class_gas_ac46b7c1a4b449ceed9c916de11c84ee8}} 
+virtual double {\bfseries Get\+\_\+kappa\+\_\+\+Tv} ()=0
+\item 
+\mbox{\Hypertarget{class_gas_a74c379be0f66a67ef19bf2c480b4f0a8}\label{class_gas_a74c379be0f66a67ef19bf2c480b4f0a8}} 
+virtual double {\bfseries Get\+\_\+kappa\+\_\+\+Tp} ()=0
+\item 
+\mbox{\Hypertarget{class_gas_a2d5323882d08752e13ac73e2c2dd43ce}\label{class_gas_a2d5323882d08752e13ac73e2c2dd43ce}} 
+virtual double {\bfseries Get\+\_\+cp} (double p, double T)=0
+\item 
+\mbox{\Hypertarget{class_gas_ae49644371b6ca1faf4de9959d12b42f7}\label{class_gas_ae49644371b6ca1faf4de9959d12b42f7}} 
+virtual double {\bfseries Get\+\_\+cV} (double p, double T)=0
+\item 
+\mbox{\Hypertarget{class_gas_a86843414d7aa7f3fd039bb917aacf843}\label{class_gas_a86843414d7aa7f3fd039bb917aacf843}} 
+virtual double {\bfseries Get\+\_\+eta\+\_\+crit} ()=0
+\item 
+\mbox{\Hypertarget{class_gas_a445292c603e0cd5c4242957094490ba4}\label{class_gas_a445292c603e0cd5c4242957094490ba4}} 
+virtual double {\bfseries Get\+\_\+\+Mass\+Flux} (double pu, double rhou, double pd, double rhod)=0
+\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -68,7 +151,37 @@ double {\bfseries x\+\_\+g}
 \mbox{\Hypertarget{class_frozen_mixture_liquid_gas_a148267a561e9d0fee01f1cc006615e68}\label{class_frozen_mixture_liquid_gas_a148267a561e9d0fee01f1cc006615e68}} 
 \mbox{\hyperlink{class_ideal_gas}{Ideal\+Gas}} $\ast$ {\bfseries gas}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_ideal_gas}{Ideal\+Gas}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ideal_gas_a89cc74c7f366f998dc86d7df26a81ca2}\label{class_ideal_gas_a89cc74c7f366f998dc86d7df26a81ca2}} 
+double {\bfseries kappa}
+\item 
+\mbox{\Hypertarget{class_ideal_gas_a87bec5783822dee54180b0e2e5b1258d}\label{class_ideal_gas_a87bec5783822dee54180b0e2e5b1258d}} 
+double {\bfseries R}
+\item 
+\mbox{\Hypertarget{class_ideal_gas_a14c45008348549bb9234e1e7c4961df5}\label{class_ideal_gas_a14c45008348549bb9234e1e7c4961df5}} 
+double {\bfseries cp}
+\item 
+\mbox{\Hypertarget{class_ideal_gas_a6caf46495d02ff5abaed974befac0495}\label{class_ideal_gas_a6caf46495d02ff5abaed974befac0495}} 
+double {\bfseries cV}
+\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_gas}{Gas}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}\label{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}} 
+double {\bfseries p}
+\item 
+\mbox{\Hypertarget{class_gas_a735aaa3bdcf2c171e813b4c435a432b2}\label{class_gas_a735aaa3bdcf2c171e813b4c435a432b2}} 
+double {\bfseries rho}
+\item 
+\mbox{\Hypertarget{class_gas_a42f7701045a5353123441f4dd018b4b9}\label{class_gas_a42f7701045a5353123441f4dd018b4b9}} 
+double {\bfseries T}
+\item 
+\mbox{\Hypertarget{class_gas_a0ed7699db3f9e71f8fe04ad6bd4e2baa}\label{class_gas_a0ed7699db3f9e71f8fe04ad6bd4e2baa}} 
+double {\bfseries e}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}

@@ -37,6 +37,18 @@ double CoolPropGas::Get_e_from_Tp(double T, double p) {
 		return CoolProp::PropsSI("U", "T", T, "P", p, fluid_name);
 }
 
+double CoolPropGas::Get_Prandtl_from_Tp(double T, double p) {
+		return CoolProp::PropsSI("Prandtl", "T", T, "P", p, fluid_name);
+}
+
+double CoolPropGas::Get_ThermalConductivity_from_Tp(double T, double p) {
+		return CoolProp::PropsSI("conductivity", "T", T, "P", p, fluid_name);
+}
+
+double CoolPropGas::Get_DynamicViscosity_from_Tp(double T, double p) {
+		return CoolProp::PropsSI("viscosity", "T", T, "P", p, fluid_name);
+}
+
 double CoolPropGas::Get_kappa_pv() {
 		return 1.4;
 }

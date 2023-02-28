@@ -70,14 +70,12 @@ vector$<$ double $>$ {\bfseries Get\+\_\+dvprop} (string prop\+\_\+string)
 \item 
 void \mbox{\hyperlink{class_l_w_p_a6099ce80536a506db01142692c19962d}{Save\+\_\+data}} ()
 \item 
+void \mbox{\hyperlink{class_l_w_p_a5004db75c5567fdfe917b97ad71bd308}{Save\+\_\+distribution}} ()
+\item 
 void \mbox{\hyperlink{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}{Update\+Dimless\+Pars}} (double pref, double mp\+\_\+nevl, double omega, double xref, double m)
 \begin{DoxyCompactList}\small\item\em Calculates the dimensionless parameters Calculates the dimensionless parametwers of the pipe using the input parameters as a base. While these parametersa have a usual definitions, here values need to be passed, and as such any can be used for non-\/dimensionalization. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_l_w_p_af0b1c59b2611d3037898cf1dbbcfb9de}\label{class_l_w_p_af0b1c59b2611d3037898cf1dbbcfb9de}} 
-void {\bfseries Set\+Heat\+Transfer} (double Tout, double therm\+\_\+cond\+\_\+fluid, double nu\+\_\+fluid)
-\item 
-\mbox{\Hypertarget{class_l_w_p_a61dfad0777b8f2ae3798320e446e98a7}\label{class_l_w_p_a61dfad0777b8f2ae3798320e446e98a7}} 
-double {\bfseries Het\+Flux\+Through\+Wall} (double Tgas, double v, double rho)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_l_w_p_a5fe23057c597baf5164e2b45e4fb1ed4}{Set\+Heat\+Transfer}} (double Tw, string heat\+\_\+transfer\+\_\+model, double tmp)
+\begin{DoxyCompactList}\small\item\em Sets up heat transfer through wall. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_units}{Units}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -168,7 +166,32 @@ Initialize the \mbox{\hyperlink{class_l_w_p}{LWP}} pipe Initializes the \mbox{\h
 \doxysubsubsection{\texorpdfstring{Save\_data()}{Save\_data()}}
 {\footnotesize\ttfamily void LWP\+::\+Save\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Save data from the simulation. \mbox{\Hypertarget{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}\label{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}} 
+Save time history at the two ends of the pipe. \mbox{\Hypertarget{class_l_w_p_a5004db75c5567fdfe917b97ad71bd308}\label{class_l_w_p_a5004db75c5567fdfe917b97ad71bd308}} 
+\index{LWP@{LWP}!Save\_distribution@{Save\_distribution}}
+\index{Save\_distribution@{Save\_distribution}!LWP@{LWP}}
+\doxysubsubsection{\texorpdfstring{Save\_distribution()}{Save\_distribution()}}
+{\footnotesize\ttfamily void LWP\+::\+Save\+\_\+distribution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Save current distribution of all variables to file. \mbox{\Hypertarget{class_l_w_p_a5fe23057c597baf5164e2b45e4fb1ed4}\label{class_l_w_p_a5fe23057c597baf5164e2b45e4fb1ed4}} 
+\index{LWP@{LWP}!SetHeatTransfer@{SetHeatTransfer}}
+\index{SetHeatTransfer@{SetHeatTransfer}!LWP@{LWP}}
+\doxysubsubsection{\texorpdfstring{SetHeatTransfer()}{SetHeatTransfer()}}
+{\footnotesize\ttfamily void LWP\+::\+Set\+Heat\+Transfer (\begin{DoxyParamCaption}\item[{double}]{\+\_\+\+Tw,  }\item[{string}]{model,  }\item[{double}]{tmp }\end{DoxyParamCaption})}
+
+
+
+Sets up heat transfer through wall. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Tw} & \mbox{[}in\mbox{]} Wall (reference) temperature \\
+\hline
+{\em model} & \mbox{[}in\mbox{]} \char`\"{}adiabatic\char`\"{}, \char`\"{}constant\+\_\+alpha\char`\"{} or \char`\"{}\+Dittus-\/\+Boelter\char`\"{} \\
+\hline
+{\em tmp} & \mbox{[}in\mbox{]} if model=\char`\"{}constant\+\_\+alpha\char`\"{}, this sets the heat transfer coeff alpha If heat transfer is switched on, \mbox{\hyperlink{class_l_w_p_a5004db75c5567fdfe917b97ad71bd308}{Save\+\_\+distribution()}} will add alpha and Q values for each node. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}\label{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}} 
 \index{LWP@{LWP}!UpdateDimlessPars@{UpdateDimlessPars}}
 \index{UpdateDimlessPars@{UpdateDimlessPars}!LWP@{LWP}}
 \doxysubsubsection{\texorpdfstring{UpdateDimlessPars()}{UpdateDimlessPars()}}

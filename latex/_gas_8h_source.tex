@@ -21,13 +21,16 @@
 \DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_SonicVel(\textcolor{keywordtype}{double}\ T,\ \textcolor{keywordtype}{double}\ p)\ =\ 0;}
 \DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_T\_from\_ep(\textcolor{keywordtype}{double}\ e,\ \textcolor{keywordtype}{double}\ p)\ =\ 0;}
 \DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_T\_from\_erho(\textcolor{keywordtype}{double}\ e,\ \textcolor{keywordtype}{double}\ rho)\ =\ 0;}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_kappa\_pv()\ =\ 0;}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_kappa\_Tv()\ =\ 0;}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_kappa\_Tp()\ =\ 0;}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_cp(\textcolor{keywordtype}{double}\ p,\ \textcolor{keywordtype}{double}\ T)\ =\ 0;}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_cV(\textcolor{keywordtype}{double}\ p,\ \textcolor{keywordtype}{double}\ T)\ =\ 0;}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_eta\_crit()\ =\ 0;}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_MassFlux(\textcolor{keywordtype}{double}\ pu,\ \textcolor{keywordtype}{double}\ rhou,\ \textcolor{keywordtype}{double}\ pd,\ \textcolor{keywordtype}{double}\ rhod)\ =\ 0;}
-\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_Prandtl\_from\_Tp(\textcolor{keywordtype}{double}\ T,\ \textcolor{keywordtype}{double}\ p)=0;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_ThermalConductivity\_from\_Tp(\textcolor{keywordtype}{double}\ T,\ \textcolor{keywordtype}{double}\ p)=0;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_DynamicViscosity\_from\_Tp(\textcolor{keywordtype}{double}\ T,\ \textcolor{keywordtype}{double}\ p)=0;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_kappa\_pv()\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_kappa\_Tv()\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_kappa\_Tp()\ =\ 0;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_cp(\textcolor{keywordtype}{double}\ p,\ \textcolor{keywordtype}{double}\ T)\ =\ 0;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_cV(\textcolor{keywordtype}{double}\ p,\ \textcolor{keywordtype}{double}\ T)\ =\ 0;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_eta\_crit()\ =\ 0;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_MassFlux(\textcolor{keywordtype}{double}\ pu,\ \textcolor{keywordtype}{double}\ rhou,\ \textcolor{keywordtype}{double}\ pd,\ \textcolor{keywordtype}{double}\ rhod)\ =\ 0;}
+\DoxyCodeLine{00031\ \};}
 
 \end{DoxyCode}

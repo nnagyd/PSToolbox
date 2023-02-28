@@ -115,6 +115,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aabbac25cf6098971fba9b15306032013"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a110d8841869b9023a3da0f7fdf5dcfb6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ideal_gas.html#a110d8841869b9023a3da0f7fdf5dcfb6">Get_T_from_erho</a> (double e, double rho)</td></tr>
 <tr class="separator:a110d8841869b9023a3da0f7fdf5dcfb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ccd74d5055d94a8a68ab8597faac6b7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ideal_gas.html#a1ccd74d5055d94a8a68ab8597faac6b7">Get_Prandtl_from_Tp</a> (double T, double p)</td></tr>
+<tr class="separator:a1ccd74d5055d94a8a68ab8597faac6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a164298983990d30edad69527d882deaa"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ideal_gas.html#a164298983990d30edad69527d882deaa">Get_ThermalConductivity_from_Tp</a> (double T, double p)</td></tr>
+<tr class="separator:a164298983990d30edad69527d882deaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62679fa5a59124e4e402b82786b09b5e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ideal_gas.html#a62679fa5a59124e4e402b82786b09b5e">Get_DynamicViscosity_from_Tp</a> (double T, double p)</td></tr>
+<tr class="separator:a62679fa5a59124e4e402b82786b09b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9edd0c74d1b2908a7deba4f1a315b226"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ideal_gas.html#a9edd0c74d1b2908a7deba4f1a315b226">Get_kappa_pv</a> ()</td></tr>
 <tr class="separator:a9edd0c74d1b2908a7deba4f1a315b226"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a232c7ea3e7bceca289a3b2372fa45266"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ideal_gas.html#a232c7ea3e7bceca289a3b2372fa45266">Get_kappa_Tv</a> ()</td></tr>
@@ -153,6 +159,15 @@ virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>Get_T_from_
 <tr class="memitem:af2c9fa62156f888d1cac2c6aebebca09"><td class="memItemLeft" align="right" valign="top"><a id="af2c9fa62156f888d1cac2c6aebebca09" name="af2c9fa62156f888d1cac2c6aebebca09"></a>
 virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>Get_T_from_erho</b> (double e, double rho)=0</td></tr>
 <tr class="separator:af2c9fa62156f888d1cac2c6aebebca09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04da6535684b8febf9a5b3a6fe0cebf9"><td class="memItemLeft" align="right" valign="top"><a id="a04da6535684b8febf9a5b3a6fe0cebf9" name="a04da6535684b8febf9a5b3a6fe0cebf9"></a>
+virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>Get_Prandtl_from_Tp</b> (double T, double p)=0</td></tr>
+<tr class="separator:a04da6535684b8febf9a5b3a6fe0cebf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a477568220b178b3e4a51ee60b103451a"><td class="memItemLeft" align="right" valign="top"><a id="a477568220b178b3e4a51ee60b103451a" name="a477568220b178b3e4a51ee60b103451a"></a>
+virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>Get_ThermalConductivity_from_Tp</b> (double T, double p)=0</td></tr>
+<tr class="separator:a477568220b178b3e4a51ee60b103451a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa289a3d8a3592197a2d6c79a554a59d"><td class="memItemLeft" align="right" valign="top"><a id="afa289a3d8a3592197a2d6c79a554a59d" name="afa289a3d8a3592197a2d6c79a554a59d"></a>
+virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>Get_DynamicViscosity_from_Tp</b> (double T, double p)=0</td></tr>
+<tr class="separator:afa289a3d8a3592197a2d6c79a554a59d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbb3561b223effe9537135293199db2f"><td class="memItemLeft" align="right" valign="top"><a id="afbb3561b223effe9537135293199db2f" name="afbb3561b223effe9537135293199db2f"></a>
 virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>Get_kappa_pv</b> ()=0</td></tr>
 <tr class="separator:afbb3561b223effe9537135293199db2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -301,6 +316,44 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>e</b></td></tr>
           <td></td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>T</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_gas.html">Gas</a>.</p>
+
+</div>
+</div>
+<a id="a62679fa5a59124e4e402b82786b09b5e" name="a62679fa5a59124e4e402b82786b09b5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62679fa5a59124e4e402b82786b09b5e">&#9670;&#160;</a></span>Get_DynamicViscosity_from_Tp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double IdealGas::Get_DynamicViscosity_from_Tp </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -553,6 +606,44 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>e</b></td></tr>
 
 </div>
 </div>
+<a id="a1ccd74d5055d94a8a68ab8597faac6b7" name="a1ccd74d5055d94a8a68ab8597faac6b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ccd74d5055d94a8a68ab8597faac6b7">&#9670;&#160;</a></span>Get_Prandtl_from_Tp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double IdealGas::Get_Prandtl_from_Tp </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_gas.html">Gas</a>.</p>
+
+</div>
+</div>
 <a id="a6d6da951b6035e25143ca7dcd79df51c" name="a6d6da951b6035e25143ca7dcd79df51c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6d6da951b6035e25143ca7dcd79df51c">&#9670;&#160;</a></span>Get_rho()</h2>
 
@@ -725,6 +816,44 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>e</b></td></tr>
           <td></td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>rho</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_gas.html">Gas</a>.</p>
+
+</div>
+</div>
+<a id="a164298983990d30edad69527d882deaa" name="a164298983990d30edad69527d882deaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a164298983990d30edad69527d882deaa">&#9670;&#160;</a></span>Get_ThermalConductivity_from_Tp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double IdealGas::Get_ThermalConductivity_from_Tp </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

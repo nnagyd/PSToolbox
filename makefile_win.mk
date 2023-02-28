@@ -1,7 +1,7 @@
 CXX = g++
 # CFLAGS = -g -std=c++11 -pedantic
 CFLAGS = -std=c++11 
-TARGETS = my_tools Gas IdealGas FrozenMixtureLiquidGas Units LWP SCP Reservoir Valve Connector
+TARGETS = my_tools Gas IdealGas FrozenMixtureLiquidGas Units LWP SCP Reservoir Valve Connector Valve_with_Absorber # CoolPropGas
 INC = -IC:/ProgramData/chocolatey/lib/eigen/include
 # LINK = -lmy_tools -lpython2.7
 LINK = -lmy_tools
@@ -13,7 +13,7 @@ LINK = -lmy_tools
 all:$(TARGETS)
 	ar rvs libmy_tools.a my_tools.o
 	ranlib libmy_tools.a
-	ar rvs libPSToolbox.a Gas.o IdealGas.o FrozenMixtureLiquidGas.o Units.o LWP.o SCP.o Reservoir.o Valve.o Connector.o 
+	ar rvs libPSToolbox.a Gas.o IdealGas.o FrozenMixtureLiquidGas.o Units.o LWP.o SCP.o Reservoir.o Valve.o Connector.o Valve_with_Absorber.o
 	ranlib libPSToolbox.a
 
 my_tools: my_tools.cpp 
@@ -44,6 +44,9 @@ Reservoir:
 Valve:
 	$(CXX) $(INC) $(CFLAGS) Valve.cpp -c -o Valve.o
 # 	$(CXX) $(INC) $(LINK) $(CFLAGS) Valve.cpp -c -o Valve.o
+
+Valve_with_Absorber:
+	$(CXX) $(INC) $(CFLAGS) Valve_with_Absorber.cpp -c -o Valve_with_Absorber.o
 
 Connector: Connector.cpp
 	$(CXX) $(INC) $(CFLAGS) Connector.cpp -c -o Connector.o

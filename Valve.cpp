@@ -51,9 +51,7 @@ Valve::Valve(const string _name,
 
 	pref = _pref;
 	is_Gas = false;
-	mp_nevl = Get_MassFlowRate(1.1 * p_set+pref, 293., pref, 293., xmax_unrestricted); //Cd * xmax * M_PI * Dbore * sqrt(2.*ro * 1.1 * p_set);
 	r = _r;
-	//pref = _pref;
 
 	ini_done = false;
 	fname = name + ".dat";
@@ -76,6 +74,10 @@ Valve::Valve(const string _name,
 	b1=0.;
 	b2=0.;
 	b3=0.;
+
+	// This needs to be hete, after setting Cd(x)
+	mp_nevl = Get_MassFlowRate(1.1 * p_set+pref, 293., pref, 293., xmax_unrestricted);
+
 }
 
 /**
@@ -422,8 +424,8 @@ double Valve::Aeff(const double x) {
 	\param _b1 [in] coeff. of y
 	\param _b2 [in] coeff. of y^2
 	\param _b3 [in] coeff. of y^3
-*/
-	void Valve::SetCdCoeffs(const double _b0, const double _b1, const double _b2, const double _b3) {
+	*/
+void Valve::SetCdCoeffs(const double _b0, const double _b1, const double _b2, const double _b3) {
 	b0 = _b0;
 	b1 = _b1;
 	b2 = _b2;
@@ -431,7 +433,7 @@ double Valve::Aeff(const double x) {
 }
 
 /*! 
-  Evaluate the discharge coefficient Cd
+	Evaluate the discharge coefficient Cd
 	\param x [in] valve lift
 	\return discharge coefficients
 	\sa SetCdCoeffs
@@ -440,7 +442,7 @@ double Valve::Aeff(const double x) {
 double Valve::Cdfun(const double x) {
 	double out, y=x/xmax;
 	if (y>1.)
-out=b0+b1+b2+b3;
+		out=b0+b1+b2+b3;
 	else
 		out = b0 + b1 * (x / xmax) + b2 * pow(x / xmax, 2.) + b3 * pow(x/xmax,3);
 	return out;
@@ -891,21 +893,21 @@ string Valve::Info() {
 	oss << "\n A orif. area: " << A*1.e6<<" mm^2 = Dbore^2*pi/4 aka Abore";
 	oss << "\n      A@xmax : " << Dbore*M_PI*xmax*1.e6<<" mm^2 = Dbore*pi*xmax";
 
-	oss << "\n\n Coefficients of Cd(x) = b0+b0*y+b2*y^2+b3*y^3 :";
+	oss << "\n\n Coefficients of Cd(x) = b0+b0*y+b2*y^2+b3*y^3 (y=x/xmax):";
 	oss << "\n          b0 = " <<b0;
 	oss << "\n          b1 = " <<b1;
 	oss << "\n          b2 = " <<b2;
 	oss << "\n          b3 = " <<b2;
 	oss << "\n          for y>1, Cd is limited to Cd(1)";
 
-	oss << "\n\n Coefficients of Aeff(x) = a0+a0*y+a2*y^2+a3*y^3 :";
+	oss << "\n\n Coefficients of Aeff(x) = a0+a0*y+a2*y^2+a3*y^3 (y=x/xmax):";
 	oss << "\n          a0 = " <<1.;
 	oss << "\n          a1 = " <<a1;
 	oss << "\n          a2 = " <<a2;
 	oss << "\n          a3 = " <<a3;
 	oss << "\n     Aeff(1) = " <<(1+a1+a2+a3)<<" maximum value for y>1";
 	oss << "\n     xmax/xe = " <<xmax/xe<<" ?<? Aeff'(0)=a1="<<a1<<" (-> if true, blowdown will occur)\n";
-	
+
 	if (is_Gas)	
 		oss << "\n          ro : " << gas->Get_rho(1.e5, 273+16) << " kg/m3 @ 1 bar, 16C";
 	else

@@ -116,11 +116,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afd01c84f7ecfe434523957f646bfbcb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_p.html#afd01c84f7ecfe434523957f646bfbcb1">Ini</a> (int Npts_mul)</td></tr>
 <tr class="memdesc:afd01c84f7ecfe434523957f646bfbcb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe Initializes the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe with a given number of points at 1 bar pressure and 0 velocity.  <br /></td></tr>
 <tr class="separator:afd01c84f7ecfe434523957f646bfbcb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c41b5c5742ed46307d91d73e6a46327"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_p.html#a7c41b5c5742ed46307d91d73e6a46327">Ini</a> (double vini, double _pstart)</td></tr>
+<tr class="memdesc:a7c41b5c5742ed46307d91d73e6a46327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe Initializes the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe with 20 grid points and initial uniform flow velocity and pressure. (The generated pressure drops with friction.)  <br /></td></tr>
+<tr class="separator:a7c41b5c5742ed46307d91d73e6a46327"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f5e519bf13863e1632f5607624143d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_p.html#a9f5e519bf13863e1632f5607624143d1">Ini</a> (double vini, double _pstart, int Npts_mul)</td></tr>
-<tr class="memdesc:a9f5e519bf13863e1632f5607624143d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe Initializes the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe with a given number of points, an initial uniform (due to incompressibility) speed and a pressure at the inlet. (The generated pressure drops with friction.)  <br /></td></tr>
+<tr class="memdesc:a9f5e519bf13863e1632f5607624143d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe Initializes the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe with 20*Npts_mul grid points, initial uniform velocity and pressure at the inlet. (The generated pressure drops with friction.)  <br /></td></tr>
 <tr class="separator:a9f5e519bf13863e1632f5607624143d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3709666047b1cf4cc6b6b460430bb83e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_p.html#a3709666047b1cf4cc6b6b460430bb83e">Ini</a> (double vini, double _pstart, double dt_target)</td></tr>
-<tr class="memdesc:a3709666047b1cf4cc6b6b460430bb83e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe Initializes the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe with as many points to statisfy a given timestep, an initial uniform (due to incompressibility) speed and a pressure at the inlet. (The generated pressure drops with friction.)  <br /></td></tr>
+<tr class="memdesc:a3709666047b1cf4cc6b6b460430bb83e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe Initializes the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe with number of grid points that satisfy the given timestep Initial uniform velocity distribution and a pressure at the inlet. (The generated pressure drops with friction.)  <br /></td></tr>
 <tr class="separator:a3709666047b1cf4cc6b6b460430bb83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1f4995d58d75d80ed1738346ff06bf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_p.html#af1f4995d58d75d80ed1738346ff06bf4">UpdateDimlessPars</a> (double pref, double mp_nevl, double omega, double xref, double m)</td></tr>
 <tr class="memdesc:af1f4995d58d75d80ed1738346ff06bf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the dimensionless parameters Calculates the dimensionless parametwers of the pipe using the input parameters as a base. While these parametersa have a usual definitions, here values need to be passed, and as such any can be used for non-dimensionalization.  <br /></td></tr>
@@ -436,8 +439,45 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>inch3_to_m3</b></td
 
 </div>
 </div>
+<a id="a7c41b5c5742ed46307d91d73e6a46327" name="a7c41b5c5742ed46307d91d73e6a46327"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c41b5c5742ed46307d91d73e6a46327">&#9670;&#160;</a></span>Ini() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SCP::Ini </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>vini</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pstart</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe Initializes the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe with 20 grid points and initial uniform flow velocity and pressure. (The generated pressure drops with friction.) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vini</td><td>Initial (uniform) velocity in the pipe </td></tr>
+    <tr><td class="paramname">pstart</td><td>Pressure at the inlet, set up lambda to decrease with friction </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a3709666047b1cf4cc6b6b460430bb83e" name="a3709666047b1cf4cc6b6b460430bb83e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3709666047b1cf4cc6b6b460430bb83e">&#9670;&#160;</a></span>Ini() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3709666047b1cf4cc6b6b460430bb83e">&#9670;&#160;</a></span>Ini() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -468,11 +508,11 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>inch3_to_m3</b></td
       </table>
 </div><div class="memdoc">
 
-<p>Initialize the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe Initializes the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe with as many points to statisfy a given timestep, an initial uniform (due to incompressibility) speed and a pressure at the inlet. (The generated pressure drops with friction.) </p>
+<p>Initialize the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe Initializes the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe with number of grid points that satisfy the given timestep Initial uniform velocity distribution and a pressure at the inlet. (The generated pressure drops with friction.) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">vini</td><td>Initial (uniform) velocity in the pipe </td></tr>
-    <tr><td class="paramname">pstart</td><td>Pressure at the inlet, set up to decrease with friction </td></tr>
+    <tr><td class="paramname">pstart</td><td>Pressure at the inlet, set up lambda to decrease with friction </td></tr>
     <tr><td class="paramname">dt_target</td><td>Target timestep, defines the grid </td></tr>
   </table>
   </dd>
@@ -481,7 +521,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>inch3_to_m3</b></td
 </div>
 </div>
 <a id="a9f5e519bf13863e1632f5607624143d1" name="a9f5e519bf13863e1632f5607624143d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f5e519bf13863e1632f5607624143d1">&#9670;&#160;</a></span>Ini() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f5e519bf13863e1632f5607624143d1">&#9670;&#160;</a></span>Ini() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -512,12 +552,12 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>inch3_to_m3</b></td
       </table>
 </div><div class="memdoc">
 
-<p>Initialize the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe Initializes the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe with a given number of points, an initial uniform (due to incompressibility) speed and a pressure at the inlet. (The generated pressure drops with friction.) </p>
+<p>Initialize the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe Initializes the <a class="el" href="class_s_c_p.html" title="Class to model a slightly compressible pipe.">SCP</a> pipe with 20*Npts_mul grid points, initial uniform velocity and pressure at the inlet. (The generated pressure drops with friction.) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">vini</td><td>Initial (uniform) velocity in the pipe </td></tr>
-    <tr><td class="paramname">pstart</td><td>Pressure at the inlet, set up to decrease with friction </td></tr>
-    <tr><td class="paramname">Npts_mul</td><td>Base number of points to create, actually 20 as many created </td></tr>
+    <tr><td class="paramname">pstart</td><td>Pressure at the inlet, set up lambda to decrease with friction </td></tr>
+    <tr><td class="paramname">Npts_mul</td><td>Multiplier of 20 (e.g. for Npts_mul=2, Ngrid=40) </td></tr>
   </table>
   </dd>
 </dl>
@@ -525,7 +565,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>inch3_to_m3</b></td
 </div>
 </div>
 <a id="afd01c84f7ecfe434523957f646bfbcb1" name="afd01c84f7ecfe434523957f646bfbcb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd01c84f7ecfe434523957f646bfbcb1">&#9670;&#160;</a></span>Ini() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afd01c84f7ecfe434523957f646bfbcb1">&#9670;&#160;</a></span>Ini() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

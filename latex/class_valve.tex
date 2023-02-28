@@ -62,7 +62,11 @@ void {\bfseries Save\+\_\+data} ()
 \item 
 double \mbox{\hyperlink{class_valve_a09e51698b043545e875dbd5e44e2876a}{Aeff}} (const double x)
 \item 
+double \mbox{\hyperlink{class_valve_ad182895de4386d4696566a30c260a897}{Cdfun}} (const double x)
+\item 
 void \mbox{\hyperlink{class_valve_a499bc164260239199838c6c90a339657}{Set\+Aeff\+Coeffs}} (const double \+\_\+a1, const double \+\_\+a2, const double \+\_\+a3, const double Aeffmax)
+\item 
+void \mbox{\hyperlink{class_valve_a7ff89a5c293c54fe0591acdb7a55a4f1}{Set\+Cd\+Coeffs}} (const double \+\_\+b0, const double \+\_\+b1, const double \+\_\+b2, const double \+\_\+b3)
 \item 
 \mbox{\Hypertarget{class_valve_a8b888ce9f7151c8790f428c301dea232}\label{class_valve_a8b888ce9f7151c8790f428c301dea232}} 
 double {\bfseries Get\+\_\+\+Mass\+Flow\+Rate} (double p\+\_\+upstream, double T\+\_\+upstream, double p\+\_\+downstream, double T\+\_\+downstream, double xx)
@@ -141,9 +145,9 @@ A class for handling both liquid and fluid valves A class for storing data regar
 \doxysubsubsection{\texorpdfstring{Aeff()}{Aeff()}}
 {\footnotesize\ttfamily double Valve\+::\+Aeff (\begin{DoxyParamCaption}\item[{const double}]{x }\end{DoxyParamCaption})}
 
-Calculate the effective are based on the effective area coefficients set previously in Set\+Aeff\+Coeffs. 
+Evaluate the effective are based on the effective area coefficients set previously in Set\+Aeff\+Coeffs. 
 \begin{DoxyParams}{Parameters}
-{\em x} & \mbox{[}in\mbox{]} the valve disk displacement \\
+{\em x} & \mbox{[}in\mbox{]} valve lift \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -152,22 +156,59 @@ The effective area
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_valve_a499bc164260239199838c6c90a339657}{Set\+Aeff\+Coeffs}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_valve_ad182895de4386d4696566a30c260a897}\label{class_valve_ad182895de4386d4696566a30c260a897}} 
+\index{Valve@{Valve}!Cdfun@{Cdfun}}
+\index{Cdfun@{Cdfun}!Valve@{Valve}}
+\doxysubsubsection{\texorpdfstring{Cdfun()}{Cdfun()}}
+{\footnotesize\ttfamily double Valve\+::\+Cdfun (\begin{DoxyParamCaption}\item[{const double}]{x }\end{DoxyParamCaption})}
+
+Evaluate the discharge coefficient Cd 
+\begin{DoxyParams}{Parameters}
+{\em x} & \mbox{[}in\mbox{]} valve lift \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+discharge coefficients 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_valve_a7ff89a5c293c54fe0591acdb7a55a4f1}{Set\+Cd\+Coeffs}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_valve_a499bc164260239199838c6c90a339657}\label{class_valve_a499bc164260239199838c6c90a339657}} 
 \index{Valve@{Valve}!SetAeffCoeffs@{SetAeffCoeffs}}
 \index{SetAeffCoeffs@{SetAeffCoeffs}!Valve@{Valve}}
 \doxysubsubsection{\texorpdfstring{SetAeffCoeffs()}{SetAeffCoeffs()}}
 {\footnotesize\ttfamily void Valve\+::\+Set\+Aeff\+Coeffs (\begin{DoxyParamCaption}\item[{const double}]{\+\_\+a1,  }\item[{const double}]{\+\_\+a2,  }\item[{const double}]{\+\_\+a3,  }\item[{const double}]{\+\_\+\+Aeff\+Max }\end{DoxyParamCaption})}
 
-Set two elements of a second-\/order function (and a maximum value) for the relative multiplicator of the effective area. The approximating function will be \$\+A\+\_\+\{eff\}=min(A\+\_\+\{eff,max\},1+a\+\_\+1 y+a\+\_\+2 y$^\wedge$2+a\+\_\+3 y$^\wedge$3)\$, where x is the relative lift\+: \$y=x/(D/4)\$
+Set the coefficients for the Aeff(x) function The approximating function will be \$\+A\+\_\+\{eff\}=min(A\+\_\+\{eff,max\},1+a\+\_\+1 y+a\+\_\+2 y$^\wedge$2+a\+\_\+3 y$^\wedge$3)\$, where \$y\$ is the relative lift\+: \$y=x/(D/4)\$
 
 
 \begin{DoxyParams}{Parameters}
-{\em \+\_\+a1} & \mbox{[}in\mbox{]} first order parameter \\
+{\em \+\_\+a1} & \mbox{[}in\mbox{]} coeff. of y \\
 \hline
-{\em \+\_\+a2} & \mbox{[}in\mbox{]} second order parameter \\
+{\em \+\_\+a2} & \mbox{[}in\mbox{]} coeff. of y$^\wedge$2 \\
 \hline
-{\em \+\_\+\+Aeffmax} & \mbox{[}in\mbox{]} maximum area relative to valve cross section (Abore) ~\newline
- \\
+{\em \+\_\+a3} & \mbox{[}in\mbox{]} coeff. of y$^\wedge$3 \\
+\hline
+{\em \+\_\+\+Aeffmax} & \mbox{[}in\mbox{]} fixed value for y\texorpdfstring{$>$}{>}1 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_valve_a7ff89a5c293c54fe0591acdb7a55a4f1}\label{class_valve_a7ff89a5c293c54fe0591acdb7a55a4f1}} 
+\index{Valve@{Valve}!SetCdCoeffs@{SetCdCoeffs}}
+\index{SetCdCoeffs@{SetCdCoeffs}!Valve@{Valve}}
+\doxysubsubsection{\texorpdfstring{SetCdCoeffs()}{SetCdCoeffs()}}
+{\footnotesize\ttfamily void Valve\+::\+Set\+Cd\+Coeffs (\begin{DoxyParamCaption}\item[{const double}]{\+\_\+b0,  }\item[{const double}]{\+\_\+b1,  }\item[{const double}]{\+\_\+b2,  }\item[{const double}]{\+\_\+b3 }\end{DoxyParamCaption})}
+
+Set coefficients for the Cd(x) function. The approximating function will be \$\+C\+\_\+d=b\+\_\+0+b\+\_\+1 y+b\+\_\+2 y$^\wedge$2+b\+\_\+3 y$^\wedge$3)\$, where x is the relative lift\+: \$y=x/(D/4)\$
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+b0} & \mbox{[}in\mbox{]} constant term (set this for fixed Cd value) \\
+\hline
+{\em \+\_\+b1} & \mbox{[}in\mbox{]} coeff. of y \\
+\hline
+{\em \+\_\+b2} & \mbox{[}in\mbox{]} coeff. of y$^\wedge$2 \\
+\hline
+{\em \+\_\+b3} & \mbox{[}in\mbox{]} coeff. of y$^\wedge$3 \\
 \hline
 \end{DoxyParams}
 

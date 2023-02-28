@@ -150,16 +150,14 @@ void SCP::Ini(int Npts_mul) {
 }
 
 /*! \brief Initialize the SCP pipe
-	Initializes the SCP pipe with a given number of points, an initial uniform (due to incompressibility) speed and a
-	pressure at the inlet. (The generated pressure drops with friction.)
+	Initializes the SCP pipe with 20 grid points and initial uniform flow velocity and pressure. (The generated pressure drops with friction.)
 	\param vini Initial (uniform) velocity in the pipe
-	\param pstart Pressure at the inlet, set up to decrease with friction
-	\param Npts_mul Base number of points to create, actually 20 as many created
+	\param pstart Pressure at the inlet, set up lambda to decrease with friction
 */
-void SCP::Ini(double vini, double pstart, int Npts_mul) {
+void SCP::Ini(double vini, double pstart) {
 	t = 0.;
 
-	Npts = 20 * Npts_mul;
+	Npts = 20;
 
 	x = VectorXd::Zero(Npts);
 	p = VectorXd::Zero(Npts);
@@ -169,7 +167,7 @@ void SCP::Ini(double vini, double pstart, int Npts_mul) {
 	for (int i = 0; i < Npts; i++) {
 		x(i) = i * L / (Npts - 1);
 		p(i) = pstart - lambda * x(i) / D * ro / 2.* vini * abs(vini) + S0 * g * ro * x(i);
-		v(i) = vini; //The valocity is the same as density is constant
+		v(i) = vini; //The velocity is the same as density is constant
 	}
 	ini_done = true;
 
@@ -186,10 +184,47 @@ void SCP::Ini(double vini, double pstart, int Npts_mul) {
 }
 
 /*! \brief Initialize the SCP pipe
-	Initializes the SCP pipe with as many points to statisfy a given timestep, an initial uniform (due to incompressibility) speed and a
+	Initializes the SCP pipe with 20*Npts_mul grid points, initial uniform velocity and 
 	pressure at the inlet. (The generated pressure drops with friction.)
 	\param vini Initial (uniform) velocity in the pipe
-	\param pstart Pressure at the inlet, set up to decrease with friction
+	\param pstart Pressure at the inlet, set up lambda to decrease with friction
+	\param Npts_mul Multiplier of 20 (e.g. for Npts_mul=2, Ngrid=40)
+*/
+void SCP::Ini(double vini, double pstart, int Npts_mul) {
+	t = 0.;
+
+	Npts = 20 * Npts_mul;
+
+	x = VectorXd::Zero(Npts);
+	p = VectorXd::Zero(Npts);
+	v = VectorXd::Zero(Npts);
+	dt = L / (Npts - 1) / a; //Time step according to the CFL condition
+
+	for (int i = 0; i < Npts; i++) {
+		x(i) = i * L / (Npts - 1);
+		p(i) = pstart - lambda * x(i) / D * ro / 2.* vini * abs(vini) + S0 * g * ro * x(i);
+		v(i) = vini; //The velocity is the same as density is constant
+	}
+	ini_done = true;
+
+	tmpvec.push_back(t);
+	tmpvec.push_back(p(0));
+	tmpvec.push_back(p(Npts - 1));
+	tmpvec.push_back(v(0));
+	tmpvec.push_back(v(Npts - 1));
+	tmpvec.push_back(v(0)*A * ro);
+	tmpvec.push_back(v(Npts - 1)*A * ro);
+	data.clear();
+	data.reserve(100);
+	data.push_back(tmpvec);
+}
+
+/*! \brief Initialize the SCP pipe
+	Initializes the SCP pipe with number of grid points that satisfy the given timestep
+	Initial uniform velocity distribution and a
+	pressure at the inlet. (The generated pressure drops with friction.)
+	\param vini Initial (uniform) velocity in the pipe
+	\param pstart Pressure at the inlet, set up lambda to decrease with friction
 	\param dt_target Target timestep, defines the grid
 */
 void SCP::Ini(double vini, double pstart, double dt_target) {

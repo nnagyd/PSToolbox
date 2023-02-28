@@ -144,8 +144,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Save_data</b> ()</td>
 <tr class="separator:a064fad4d4bab3e0938f57c95fe578289"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09e51698b043545e875dbd5e44e2876a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_valve.html#a09e51698b043545e875dbd5e44e2876a">Aeff</a> (const double x)</td></tr>
 <tr class="separator:a09e51698b043545e875dbd5e44e2876a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad182895de4386d4696566a30c260a897"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_valve.html#ad182895de4386d4696566a30c260a897">Cdfun</a> (const double x)</td></tr>
+<tr class="separator:ad182895de4386d4696566a30c260a897"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a499bc164260239199838c6c90a339657"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_valve.html#a499bc164260239199838c6c90a339657">SetAeffCoeffs</a> (const double _a1, const double _a2, const double _a3, const double Aeffmax)</td></tr>
 <tr class="separator:a499bc164260239199838c6c90a339657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ff89a5c293c54fe0591acdb7a55a4f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_valve.html#a7ff89a5c293c54fe0591acdb7a55a4f1">SetCdCoeffs</a> (const double _b0, const double _b1, const double _b2, const double _b3)</td></tr>
+<tr class="separator:a7ff89a5c293c54fe0591acdb7a55a4f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b888ce9f7151c8790f428c301dea232"><td class="memItemLeft" align="right" valign="top"><a id="a8b888ce9f7151c8790f428c301dea232" name="a8b888ce9f7151c8790f428c301dea232"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>Get_MassFlowRate</b> (double p_upstream, double T_upstream, double p_downstream, double T_downstream, double xx)</td></tr>
 <tr class="separator:a8b888ce9f7151c8790f428c301dea232"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -242,14 +246,40 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>inch3_to_m3</b></td
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Calculate the effective are based on the effective area coefficients set previously in SetAeffCoeffs. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Evaluate the effective are based on the effective area coefficients set previously in SetAeffCoeffs. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>[in] the valve disk displacement </td></tr>
+    <tr><td class="paramname">x</td><td>[in] valve lift </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The effective area </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_valve.html#a499bc164260239199838c6c90a339657">SetAeffCoeffs</a> </dd></dl>
+
+</div>
+</div>
+<a id="ad182895de4386d4696566a30c260a897" name="ad182895de4386d4696566a30c260a897"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad182895de4386d4696566a30c260a897">&#9670;&#160;</a></span>Cdfun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Valve::Cdfun </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Evaluate the discharge coefficient Cd </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>[in] valve lift </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>discharge coefficients </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_valve.html#a7ff89a5c293c54fe0591acdb7a55a4f1">SetCdCoeffs</a> </dd></dl>
 
 </div>
 </div>
@@ -290,13 +320,63 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>inch3_to_m3</b></td
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Set two elements of a second-order function (and a maximum value) for the relative multiplicator of the effective area. The approximating function will be $A_{eff}=min(A_{eff,max},1+a_1 y+a_2 y^2+a_3 y^3)$, where x is the relative lift: $y=x/(D/4)$</p>
+<p>Set the coefficients for the Aeff(x) function The approximating function will be $A_{eff}=min(A_{eff,max},1+a_1 y+a_2 y^2+a_3 y^3)$, where $y$ is the relative lift: $y=x/(D/4)$</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">_a1</td><td>[in] first order parameter </td></tr>
-    <tr><td class="paramname">_a2</td><td>[in] second order parameter </td></tr>
-    <tr><td class="paramname">_Aeffmax</td><td>[in] maximum area relative to valve cross section (Abore) <br  />
- </td></tr>
+    <tr><td class="paramname">_a1</td><td>[in] coeff. of y </td></tr>
+    <tr><td class="paramname">_a2</td><td>[in] coeff. of y^2 </td></tr>
+    <tr><td class="paramname">_a3</td><td>[in] coeff. of y^3 </td></tr>
+    <tr><td class="paramname">_Aeffmax</td><td>[in] fixed value for y&gt;1 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7ff89a5c293c54fe0591acdb7a55a4f1" name="a7ff89a5c293c54fe0591acdb7a55a4f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ff89a5c293c54fe0591acdb7a55a4f1">&#9670;&#160;</a></span>SetCdCoeffs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Valve::SetCdCoeffs </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>_b0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>_b1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>_b2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>_b3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set coefficients for the Cd(x) function. The approximating function will be $C_d=b_0+b_1 y+b_2 y^2+b_3 y^3)$, where x is the relative lift: $y=x/(D/4)$</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_b0</td><td>[in] constant term (set this for fixed Cd value) </td></tr>
+    <tr><td class="paramname">_b1</td><td>[in] coeff. of y </td></tr>
+    <tr><td class="paramname">_b2</td><td>[in] coeff. of y^2 </td></tr>
+    <tr><td class="paramname">_b3</td><td>[in] coeff. of y^3 </td></tr>
   </table>
   </dd>
 </dl>

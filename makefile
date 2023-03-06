@@ -7,7 +7,6 @@ LINK = -lmy_tools
 
 INC_CP = -I/Users/hoscsaba/program/CoolProp/include -I/Users/hoscsaba/program/CoolProp/externals/fmtlib
 LINK_CP = -L/Users/hoscsaba/program/CoolProp/build1 -lCoolProp
-#CFLAGS = -std=c++11 -pedantic -O3 -Wall -Wno-c++11-long-long
 
 all:$(TARGETS)
 	libtool -static -o libmy_tools.a my_tools.o

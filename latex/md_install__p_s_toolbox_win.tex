@@ -18,4 +18,10 @@ Next you need to clone the repository from Git\+Hub. Once you\textquotesingle{}r
 \end{DoxyItemize}
 
 At this point, you should be able to compile the toolbox apart from the classes depending on the {\ttfamily Coolprop} library.\hypertarget{md_install__p_s_toolbox_win_autotoc_md2}{}\doxysection{Using the library}\label{md_install__p_s_toolbox_win_autotoc_md2}
-Navigate to the \`{}\`{}\`{}\`{} 
+Navigate to the \`{}\`{}\`{}\`{}\hypertarget{md_install__p_s_toolbox_win_autotoc_md3}{}\doxysection{Installing with Coolp\+Prop support}\label{md_install__p_s_toolbox_win_autotoc_md3}
+
+\begin{DoxyItemize}
+\item Download Coolp\+Prop
+\item Compile with \textquotesingle{}\textquotesingle{}make .. -\/DCOOLPROP\+\_\+\+SHARED\+\_\+\+LIBRARY=ON -\/G \char`\"{}\+Min\+GW Makefiles\char`\"{} -\/DCMAKE\+\_\+\+BUILD\+\_\+\+TYPE=Release\textquotesingle{}\textquotesingle{}
+\item Set Cool\+Prop include and library in \textquotesingle{}\textquotesingle{}makefile\+\_\+win\textquotesingle{}\textquotesingle{} 
+\end{DoxyItemize}

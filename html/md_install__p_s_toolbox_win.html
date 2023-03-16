@@ -96,7 +96,14 @@ Install</h1>
 <p>At this point, you should be able to compile the toolbox apart from the classes depending on the <code>Coolprop</code> library.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Using the library</h1>
-<p>Navigate to the ```` </p>
+<p>Navigate to the ````</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Installing with CoolpProp support</h1>
+<ul>
+<li>Download CoolpProp</li>
+<li>Compile with ''make .. -DCOOLPROP_SHARED_LIBRARY=ON -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release''</li>
+<li>Set CoolProp include and library in ''makefile_win'' </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

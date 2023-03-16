@@ -75,9 +75,8 @@ Valve::Valve(const string _name,
 	b2=0.;
 	b3=0.;
 
-	// This needs to be hete, after setting Cd(x)
+	// This needs to be here, after setting Cd(x)
 	mp_nevl = Get_MassFlowRate(1.1 * p_set+pref, 293., pref, 293., xmax_unrestricted);
-
 }
 
 /**
@@ -145,6 +144,8 @@ Valve::Valve(const string _name,
 	b1=0.;
 	b2=0.;
 	b3=0.;
+	
+	mp_nevl = Get_MassFlowRate(1.1 * p_set+pref, 293., pref, 293., xmax_unrestricted);
 }
 
 void Valve::UpdateDimlessPars() {

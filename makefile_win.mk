@@ -1,12 +1,12 @@
 CXX = g++
 CFLAGS = -g -std=c++11 -pedantic
-TARGETS = my_tools Gas IdealGas FrozenMixtureLiquidGas Units LWP SCP Reservoir Valve Connector Valve_with_Absorber # CoolPropGas
+TARGETS = my_tools Gas IdealGas FrozenMixtureLiquidGas Units LWP SCP Reservoir Valve Connector Valve_with_Absorber  CoolPropGas
 INC = -IC:/ProgramData/chocolatey/lib/eigen/include
 # LINK = -lmy_tools -lpython2.7
 LINK = -lmy_tools
 
-#INC_CP = -I/Users/hoscsaba/program/CoolProp/include -I/Users/hoscsaba/program/CoolProp/externals/fmtlib
-#LINK_CP = -L/Users/hoscsaba/program/CoolProp/build1 -lCoolProp
+INC_CP = -I/Users/hoscsaba/program/CoolProp/include -I/Users/hoscsaba/program/CoolProp/externals/fmtlib
+LINK_CP = -L/Users/hoscsaba/program/CoolProp/build1 -lCoolProp
 
 all:$(TARGETS)
 	ar rvs libmy_tools.a my_tools.o

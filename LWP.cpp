@@ -56,7 +56,7 @@ LWP::LWP(const string _name,
 	dt = 0.;
 	Tw=293;
 	HEAT_TRANSFER_ON=false;
-	HEAT_TRANSFER_MODEL="none";
+	HEAT_TRANSFER_MODEL="adiabatic";
 
 	if (save_all_data) {
 		string pfname;

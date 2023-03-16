@@ -24,3 +24,10 @@ At this point, you should be able to compile the toolbox apart from the classes 
 
 Navigate to the ````
 
+## Installing with CoolpProp support
+
+* Download CoolpProp
+
+* Compile with ''make .. -DCOOLPROP_SHARED_LIBRARY=ON -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release''
+
+* Set CoolProp include and library in  ''makefile_win''

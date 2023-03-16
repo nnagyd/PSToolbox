@@ -51,10 +51,10 @@ test8_frozen_mixture: test8_frozen_mixture.cpp
 	$(CXX) $(INC) test8_frozen_mixture.cpp $(LINK)   $(CFLAGS)
 	./a.out
 
-# test9_CoolProp_base: test9_CoolProp_base.cpp
-# 	clear
-# 	$(CXX) $(INC_CP) $(LINK_CP) $(CFLAGS) test9_CoolProp_base.cpp
-# 	./a.out
+test9_CoolProp_base: test9_CoolProp_base.cpp
+ 	clear
+ 	$(CXX) $(INC_CP) $(LINK_CP) $(CFLAGS) test9_CoolProp_base.cpp
+ 	./a.out
 
 # test10_reservoir_valve_with_hydrogen: test10_reservoir_valve_with_hydrogen.cpp
 # 	clear

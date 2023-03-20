@@ -9,6 +9,7 @@ test2_reservoir_valve_with_liquid \
 #test6_3pipes_with_liquid \
 #test7_2pipes_with_ideal_gas \
 #test8_frozen_mixture
+test9_CoolProp_base
 
 INC = -IC:/ProgramData/chocolatey/lib/eigen/include -ID:/BME-GPK_BSc/TDK/Szelep/Code/PSToolbox -LD:/BME-GPK_BSc/TDK/Szelep/Code/PSToolbox
 LINK = -lPSToolbox -lmy_tools #-lpython2.7 -lCoolProp

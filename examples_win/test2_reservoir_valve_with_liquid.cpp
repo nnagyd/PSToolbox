@@ -1,4 +1,4 @@
-//#define _USE_MATH_DEFINES
+#define _USE_MATH_DEFINES
 
 // MAC:
 // g++ -I/usr/local/include/eigen3 -L/Users/hoscsaba/program/PSToolbox -lSCP -lmy_tools -pedantic -O3 -Wall -Wno-c++11-long-long reservoir_valve_with_liquid.cpp
@@ -7,6 +7,7 @@
 // g++ `pkg-config --cflags eigen3` /home/cshos/git/PSToolbox/staciserver/SCP.o /home/cshos/git/PSToolbox/staciserver/my_tools.o -I/usr/include/python3.6m/ -lpython3.6m  -pedantic -O3 -Wall reservoir_valve_with_ideal_gas.cpp
 
 #include <stdio.h>
+#include <cmath>
 #include "/Users/hoscsaba/program/PSToolbox/Reservoir.h"
 #include "/Users/hoscsaba/program/PSToolbox/Valve.h"
 

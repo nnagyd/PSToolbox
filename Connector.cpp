@@ -378,13 +378,27 @@ double RELAX=0.8;
 	return update_OK;
 }
 
+/*!
+ Connects SCP front to reservoir
+ \param t_target [in] target time value
+ \param *r1 [in] pointer to reservoir
+ \param *p1 [in] pointer to pipe
+ \param rho [in] density, kg/m3
+ \param a [in] dsonic velocity, m/s
+ \param inlet pressure drop [in] bool, if true, inlet pressure drop issumed, i.e. pr=p+rho/2*v^2
+ \param p [out] pressure at the first node of the pipe, result of computations
+ */
 
 void Connector::Connector_SCP_Reservoir_and_Pipe_Front(double t_target,
-		Reservoir* r1, SCP* p1, double rho, double a, double& p) {
+		Reservoir* r1, SCP* p1, double rho, double a, bool inlet_pressure_drop, double& p) {
 	// Solve the following system for p,T,rho,v:
 	// (1) p-rho*a*v = beta_front   Charactersistic equation
-	// (1) p=pt-rho/2*v^2;
+	// (2a) p=pt-rho/2*v^2       if inlet_pressure_drop=true
+	// (2a) p=pt                 if inlet_pressure_drop=false
 
+	double IPD_mul=0;
+	if (inlet_pressure_drop)
+		IPD_mul=1.;
 	double pt = r1->Get_dprop("p");
 	double v = 0;
 	double beta = p1->GetBetaPrimitiveAtFront(t_target);
@@ -394,8 +408,8 @@ void Connector::Connector_SCP_Reservoir_and_Pipe_Front(double t_target,
 	int iter = 0, MAX_ITER = 50;
 	while (fabs(err) > TOL) {
 		v   = (p - beta) / rho / a; // "Corrector"
-		p   = pt - rho / 2 * v * v;
-		err1 = pt - (p + rho * v * v / 2.);
+		p   = pt - IPD_mul*rho / 2 * v * v;
+		err1 = pt - (p + IPD_mul*rho * v * v / 2.);
 		err2 = (p - rho * a * v - beta) / 1.e5;
 		err = sqrt(err1 * err1 + err2 * err2);
 

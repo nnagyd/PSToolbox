@@ -28,7 +28,7 @@ class Connector
 				LWP *p, Valve_with_Absorber *v, double p_downstream, double& pb, double& Tb);
 
 		void Connector_SCP_Reservoir_and_Pipe_Front(double t_target, 
-				Reservoir *r, SCP *p, double rho, double a, double& pf);
+				Reservoir *r, SCP *p, double rho, double a, bool inlet_pressure_drop, double& pf);
 		
 		bool Connector_SCP_Pipe_Back_and_Valve(double t_target, 
 				SCP *p, Valve *v, double rho, double a, double p_downstream, double& pb);

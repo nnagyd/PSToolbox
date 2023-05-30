@@ -57,13 +57,13 @@ void Connector_Reservoir_and_Valve(double t_target, Reservoir* r1, Valve *v1, do
 
 //! Connect LWP end to Valve
 /*! Connect LWP end to Valve
-	\param t_target, s
-	\param LWP* pipe
-	\param Valve* valve
-	\param p_downstream
-	\param &p pressure @ connection
-	\param &T temperature @ connection
-	*/
+  \param t_target, s
+  \param LWP* pipe
+  \param Valve* valve
+  \param p_downstream
+  \param &p pressure @ connection
+  \param &T temperature @ connection
+  */
 
 bool Connector::Connector_LWP_Pipe_Back_and_Valve(double t_target,
 		LWP* p1, Valve* v1, double p_downstream, double& p, double& T) {
@@ -324,12 +324,13 @@ bool Connector::Connector_SCP_Pipe_Back_and_Valve(double t_target,
 
 	bool update_OK=true;
 
-	double f, f1, df, dp, v, Apipe = p1->Get_dprop("A"), x = v1->Get_dprop("x");
+	double f, f1, df, dp, v, Apipe = p1->Get_dprop("A");
+	double x = v1->Get_dprop("x");
 	double alpha = p1->GetAlphaPrimitiveAtEnd(t_target);
 
 	double err1, err2, err = 1.e5, mp, TOL = 10., pnew;
 	int iter = 0, MAX_ITER = 100;
-double RELAX=0.8;
+	double RELAX=0.8;
 	while ((fabs(err) > TOL) && (iter<=MAX_ITER)) {
 
 		// 1. sol
@@ -346,7 +347,7 @@ double RELAX=0.8;
 
 		dp = 0.01 * p;
 		if (fabs(dp)<10.)
-		dp = 10.;
+			dp = 10.;
 
 		mp  = v1->Get_MassFlowRate(p + dp, 293., p_downstream, 293., x);
 		v   = mp / rho / Apipe;
@@ -359,8 +360,8 @@ double RELAX=0.8;
 		err1 = f;
 		err2 = 0;
 		if (DEBUG)
-			printf("\n\t mp=%5.3e, v=%5.3e, f=%5.3e, f1=%5.3e, puj=%5.3e",mp,v,f,f1,p/1e5);
-		
+			printf("\n\t mp=%5.3e, x=%5.3e, v=%5.3e, f=%5.3e, f1=%5.3e, puj=%5.3e",mp,x,v,f,f1,p/1e5);
+
 		err = sqrt(err1 * err1 + err2 * err2);
 
 		//printf("\n (back) iter #%2d: alpha=%5.3e, p=%5.3e, v=%5.3e, err1=%+5.3e, err2=%+5.3e",
@@ -379,22 +380,22 @@ double RELAX=0.8;
 }
 
 /*!
- Connects SCP front to reservoir
- \param t_target [in] target time value
- \param *r1 [in] pointer to reservoir
- \param *p1 [in] pointer to pipe
- \param rho [in] density, kg/m3
- \param a [in] dsonic velocity, m/s
- \param inlet pressure drop [in] bool, if true, inlet pressure drop issumed, i.e. pr=p+rho/2*v^2
- \param p [out] pressure at the first node of the pipe, result of computations
- */
+  Connects SCP front to reservoir
+  \param t_target [in] target time value
+  \param *r1 [in] pointer to reservoir
+  \param *p1 [in] pointer to pipe
+  \param rho [in] density, kg/m3
+  \param a [in] dsonic velocity, m/s
+  \param inlet pressure drop [in] bool, if true, inlet pressure drop issumed, i.e. pr=p+rho/2*v^2
+  \param p [out] pressure at the first node of the pipe, result of computations
+  */
 
 void Connector::Connector_SCP_Reservoir_and_Pipe_Front(double t_target,
 		Reservoir* r1, SCP* p1, double rho, double a, bool inlet_pressure_drop, double& p) {
 	// Solve the following system for p,T,rho,v:
 	// (1) p-rho*a*v = beta_front   Charactersistic equation
 	// (2a) p=pt-rho/2*v^2       if inlet_pressure_drop=true
-	// (2a) p=pt                 if inlet_pressure_drop=false
+	// (2b) p=pt                 if inlet_pressure_drop=false
 
 	double IPD_mul=0;
 	if (inlet_pressure_drop)

@@ -173,6 +173,7 @@ void Valve::Ini() {
 	data.clear();
 	data.reserve(100);
 	data.push_back(tmpvec);
+	ini_done = true;
 }
 
 void Valve::Ini(double _xstart, double _vstart, double _pstart) {
@@ -198,6 +199,7 @@ void Valve::Ini(double _xstart, double _vstart, double _pstart) {
 	data.clear();
 	data.reserve(100);
 	data.push_back(tmpvec);
+	ini_done = true;
 }
 
 void Valve::Ini(double _xstart, double _vstart) {
@@ -223,6 +225,7 @@ void Valve::Ini(double _xstart, double _vstart) {
 	data.clear();
 	data.reserve(100);
 	data.push_back(tmpvec);
+	ini_done = true;
 }
 
 

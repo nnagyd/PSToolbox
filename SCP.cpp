@@ -11,21 +11,21 @@
 
 //! Constructor for the slightly compressible pipe class
 SCP::SCP(const string _name, //!< [in] Name of the slightls compressible pipe
-         const string _cspe_name, //!< [in] Name of the previous node
-         const string _cspv_name, //!< [in] Name of the next node
-         const double _ro, //!< [in] Density of the fluid in the system (Constant as it is incompressible)
-         const double _a, //!< [in] Speed of sound in the system
-         const double _L, //!< [in] Length of the pipe section
-         const double _D, //!< [in] Diameter of the pipe
-         const double _lambda, //!< [in] Friction loss factor
-         const double _he, //!< [in] Height at the beginning [eleje] of the pipe
-         const double _hv, //!< [in] Height at the end [v�ge] of the pipe
-         const bool _save_data /**< [in] whether to save data*/ ) : Units() {
-         save_data = _save_data;
-         name = _name;
-         node_from = _cspe_name;
-         node_to = _cspv_name;
-         ro = _ro;
+		const string _cspe_name, //!< [in] Name of the previous node
+		const string _cspv_name, //!< [in] Name of the next node
+		const double _ro, //!< [in] Density of the fluid in the system (Constant as it is incompressible)
+		const double _a, //!< [in] Speed of sound in the system
+		const double _L, //!< [in] Length of the pipe section
+		const double _D, //!< [in] Diameter of the pipe
+		const double _lambda, //!< [in] Friction loss factor
+		const double _he, //!< [in] Height at the beginning [eleje] of the pipe
+		const double _hv, //!< [in] Height at the end [v�ge] of the pipe
+		const bool _save_data /**< [in] whether to save data*/ ) : Units() {
+	save_data = _save_data;
+	name = _name;
+	node_from = _cspe_name;
+	node_to = _cspv_name;
+	ro = _ro;
 	a = _a; //Speed of sound;
 	roa = ro * a;
 	L = _L;
@@ -38,8 +38,8 @@ SCP::SCP(const string _name, //!< [in] Name of the slightls compressible pipe
 	lambda_p_2D = lambda / 2 / D;
 	ini_done = false;
 	fname = name + ".dat"; //name of the file for saving data about the pipe
-	//do_plot_runtime = false;
-	//ylim_isset = false;
+			       //do_plot_runtime = false;
+			       //ylim_isset = false;
 	g = 9.81;
 
 	// Dummy initialization
@@ -57,18 +57,18 @@ SCP::SCP(const string _name, //!< [in] Name of the slightls compressible pipe
 SCP::~SCP() {}
 
 /*! \brief Gives name of the pipe
-	Returns the name of the SCP pipe
-	\return name of the pipe
-*/
+  Returns the name of the SCP pipe
+  \return name of the pipe
+  */
 string SCP::GetName() {
 	return name;
 }
 /*! \brief Return the basic info of the pipe
-	Returns the basic info about the pipe section. If so set, the data within the points
-	is also displayed.
-	\param show_pts Whether to show the data for each point or not
-	\return a string containing all the pipe data, in a printable form.
-*/
+  Returns the basic info about the pipe section. If so set, the data within the points
+  is also displayed.
+  \param show_pts Whether to show the data for each point or not
+  \return a string containing all the pipe data, in a printable form.
+  */
 string SCP::Info(bool show_pts) {
 
 	if (!ini_done) //If not initialized, it will do it
@@ -118,9 +118,9 @@ string SCP::Info(bool show_pts) {
 
 
 /*! \brief Initialize the SCP pipe
-	Initializes the SCP pipe with a given number of points at 1 bar pressure and 0 velocity.
-	\param Npts_mul Base number of points to create, actually 20 as many created
-*/
+  Initializes the SCP pipe with a given number of points at 1 bar pressure and 0 velocity.
+  \param Npts_mul Base number of points to create, actually 20 as many created
+  */
 void SCP::Ini(int Npts_mul) {
 	t = 0.;
 
@@ -150,10 +150,10 @@ void SCP::Ini(int Npts_mul) {
 }
 
 /*! \brief Initialize the SCP pipe
-	Initializes the SCP pipe with 20 grid points and initial uniform flow velocity and pressure. (The generated pressure drops with friction.)
-	\param vini Initial (uniform) velocity in the pipe
-	\param pstart Pressure at the inlet, set up lambda to decrease with friction
-*/
+  Initializes the SCP pipe with 20 grid points and initial uniform flow velocity and pressure. (The generated pressure drops with friction.)
+  \param vini Initial (uniform) velocity in the pipe
+  \param pstart Pressure at the inlet, set up lambda to decrease with friction
+  */
 void SCP::Ini(double vini, double pstart) {
 	t = 0.;
 
@@ -184,12 +184,12 @@ void SCP::Ini(double vini, double pstart) {
 }
 
 /*! \brief Initialize the SCP pipe
-	Initializes the SCP pipe with 20*Npts_mul grid points, initial uniform velocity and 
-	pressure at the inlet. (The generated pressure drops with friction.)
-	\param vini Initial (uniform) velocity in the pipe
-	\param pstart Pressure at the inlet, set up lambda to decrease with friction
-	\param Npts_mul Multiplier of 20 (e.g. for Npts_mul=2, Ngrid=40)
-*/
+  Initializes the SCP pipe with 20*Npts_mul grid points, initial uniform velocity and 
+  pressure at the inlet. (The generated pressure drops with friction.)
+  \param vini Initial (uniform) velocity in the pipe
+  \param pstart Pressure at the inlet, set up lambda to decrease with friction
+  \param Npts_mul Multiplier of 20 (e.g. for Npts_mul=2, Ngrid=40)
+  */
 void SCP::Ini(double vini, double pstart, int Npts_mul) {
 	t = 0.;
 
@@ -220,21 +220,21 @@ void SCP::Ini(double vini, double pstart, int Npts_mul) {
 }
 
 /*! \brief Initialize the SCP pipe
-	Initializes the SCP pipe with number of grid points that satisfy the given timestep
-	Initial uniform velocity distribution and a
-	pressure at the inlet. (The generated pressure drops with friction.)
-	\param vini Initial (uniform) velocity in the pipe
-	\param pstart Pressure at the inlet, set up lambda to decrease with friction
-	\param dt_target Target timestep, defines the grid
-*/
+  Initializes the SCP pipe with number of grid points that satisfy the given timestep
+  Initial uniform velocity distribution and a
+  pressure at the inlet. (The generated pressure drops with friction.)
+  \param vini Initial (uniform) velocity in the pipe
+  \param pstart Pressure at the inlet, set up lambda to decrease with friction
+  \param dt_target Target timestep, defines the grid
+  */
 void SCP::Ini(double vini, double pstart, double dt_target) {
 	t = 0.;
 
 	Npts = round(L / a / dt_target); // CFL condition reorganized
-	//printf("\n\n L=%5.2f m, a=%5.1f m/s, dt_target=%5.3e s, Npts=%d ", L, a, dt_target, Npts);
+					 //printf("\n\n L=%5.2f m, a=%5.1f m/s, dt_target=%5.3e s, Npts=%d ", L, a, dt_target, Npts);
 	if (Npts < 20) {
 		Npts = 20; // a minimum of 20 points is set
-		//printf(" -> %d\n", Npts);
+			   //printf(" -> %d\n", Npts);
 	}
 	//cin.get();
 
@@ -263,15 +263,15 @@ void SCP::Ini(double vini, double pstart, double dt_target) {
 }
 
 /*! \brief Calculates the dimensionless parameters
-	Calculates the dimensionless parametwers of the pipe using the input parameters as a base.
-	While these parametersa have a usual definitions, here values need to be passed, and as such any can be used
-	for non-dimensionalization.
-	\param pref [in] Reference pressure
-	\param mp_nevl [in] Design mass flow rate
-	\param omega [in] Referency frequency, ususally the natural frequency of the valve
-	\param xref [in] Referecne length, usually equals the compession the reference (atmospheric) pressure would excert on the valve
-	\param m [in] reference mass, ususally the moving mass of the spring-mass-damper system in the valve.
-*/
+  Calculates the dimensionless parametwers of the pipe using the input parameters as a base.
+  While these parametersa have a usual definitions, here values need to be passed, and as such any can be used
+  for non-dimensionalization.
+  \param pref [in] Reference pressure
+  \param mp_nevl [in] Design mass flow rate
+  \param omega [in] Referency frequency, ususally the natural frequency of the valve
+  \param xref [in] Referecne length, usually equals the compession the reference (atmospheric) pressure would excert on the valve
+  \param m [in] reference mass, ususally the moving mass of the spring-mass-damper system in the valve.
+  */
 void SCP::UpdateDimlessPars(double pref, double mp_nevl, double omega, double xref, double m) {
 	phi   = lambda * xref / 2. / D;
 	alpha = ro * A * a / m / omega;
@@ -280,9 +280,9 @@ void SCP::UpdateDimlessPars(double pref, double mp_nevl, double omega, double xr
 }
 
 /*! \brief Return a property of the SCP.
-	\param prop_string: A string describing the needed property ("L" | "L_feet" | "D" | "D_inch" | "A" | "dt" | "p_front" | "p_back" | "v_front" | "v_back" | "mp_front" | "mp_back" | "frek" | "tnext" | "lambda" | "phi" | "mu" | "rho" | "a")
-	\return The value that was looked up.
-*/
+  \param prop_string: A string describing the needed property ("L" | "L_feet" | "D" | "D_inch" | "A" | "dt" | "p_front" | "p_back" | "v_front" | "v_back" | "mp_front" | "mp_back" | "frek" | "tnext" | "lambda" | "phi" | "mu" | "rho" | "a")
+  \return The value that was looked up.
+  */
 double SCP::Get_dprop(string prop_string) {
 	double out=0.0;
 	if (prop_string == "L")
@@ -329,8 +329,8 @@ double SCP::Get_dprop(string prop_string) {
 		out = a;
 	else {
 		cout << endl
-		<< "ERROR! SCP::Get_dprop(prop_string), unknown input: prop_string=" << prop_string << endl
-		<< endl;
+			<< "ERROR! SCP::Get_dprop(prop_string), unknown input: prop_string=" << prop_string << endl
+			<< endl;
 		cout << endl << "Name of pipe: " << name << endl;
 		cin.get();
 	}
@@ -338,11 +338,11 @@ double SCP::Get_dprop(string prop_string) {
 }
 
 /*! \brief Set a parameter
-	Allows to reset the diameter or length the pipe. Updating the length will rescale the system.
-	\param prop_string [in] The paramtere to change. Accepted values are "L" and "D"
-	\param val [in] The new value of the set parameter, in SI units.
-	\sa Get_dprop
-*/
+  Allows to reset the diameter or length the pipe. Updating the length will rescale the system.
+  \param prop_string [in] The paramtere to change. Accepted values are "L" and "D"
+  \param val [in] The new value of the set parameter, in SI units.
+  \sa Get_dprop
+  */
 void SCP::Set_dprop(string prop_string, double val) {
 	if (prop_string == "D") {
 		D = val;
@@ -351,23 +351,23 @@ void SCP::Set_dprop(string prop_string, double val) {
 		dt = L / (Npts - 1) / a;
 	} else {
 		cout << endl
-		<< "HIBA! Cso::Set_dprop(prop_string), ismeretlen bemenet: prop_string=" << prop_string << endl
-		<< endl;
+			<< "HIBA! Cso::Set_dprop(prop_string), ismeretlen bemenet: prop_string=" << prop_string << endl
+			<< endl;
 	}
 }
 
 /*! \brief Take a timestep.
-	Calculates a timestep in the system dependent on the boundary conditions. (Those are given by the same strings
-	and values as the ones in BCLeft and BCRight) Accepted boundary condition types: "Pressure" & "Velocity"
-	\param [in] BC_start_type the type of the boundary condition at the beginning of the pipe ("Pressure" | "Velocity")
-	\param [in] BC_start_val The value associated with the boundary condition at the start of the pipe
-	\param [in] BC_end_type the type of the boundary condition at the end of the pipe ("Pressure" | "Velocity")
-	\param [in] BC_end_val The value associated with the boundary condition at the end of the pipe
-	\sa BCLeft, BCRight
-*/
+  Calculates a timestep in the system dependent on the boundary conditions. (Those are given by the same strings
+  and values as the ones in BCLeft and BCRight) Accepted boundary condition types: "Pressure" & "Velocity"
+  \param [in] BC_start_type the type of the boundary condition at the beginning of the pipe ("Pressure" | "Velocity")
+  \param [in] BC_start_val The value associated with the boundary condition at the start of the pipe
+  \param [in] BC_end_type the type of the boundary condition at the end of the pipe ("Pressure" | "Velocity")
+  \param [in] BC_end_val The value associated with the boundary condition at the end of the pipe
+  \sa BCLeft, BCRight
+  */
 void SCP::Step(
-	string BC_start_type, double BC_start_val,
-	string BC_end_type, double BC_end_val) {
+		string BC_start_type, double BC_start_val,
+		string BC_end_type, double BC_end_val) {
 
 	double a, b;
 	VectorXd pnew = VectorXd::Zero(Npts); //new pressure vector
@@ -402,13 +402,13 @@ void SCP::Step(
 	}
 }
 /*! \brief Left side bounbdary condition.
-	The left side boundary condition, with multiple possible formations. Allows for a possibility of set
-	pressure or velocity at the edge. If a wrong type is chosen an error message is displayed.
-	\param type [in] Parameter to set at the boundary. Accepted values are "Pressure" and "Velocity".
-	\param val [in] Value to set at the edge. Either in [Pa] or [m/s] dependent on the type.
-	\param pp [out] The pressure at the left side. Modified in place.
-	\param vv [out] The velocity at the left side. Modified in place.
-*/
+  The left side boundary condition, with multiple possible formations. Allows for a possibility of set
+  pressure or velocity at the edge. If a wrong type is chosen an error message is displayed.
+  \param type [in] Parameter to set at the boundary. Accepted values are "Pressure" and "Velocity".
+  \param val [in] Value to set at the edge. Either in [Pa] or [m/s] dependent on the type.
+  \param pp [out] The pressure at the left side. Modified in place.
+  \param vv [out] The velocity at the left side. Modified in place.
+  */
 void SCP::BCLeft(string type, double val, double & pp, double & vv) {
 
 	// pp - roa*vv = b
@@ -424,8 +424,8 @@ void SCP::BCLeft(string type, double val, double & pp, double & vv) {
 	}
 	else {
 		cout << endl
-		<< "ERROR! SCP::BCLeft(), unknown BC type: " << type << endl
-		<< endl;
+			<< "ERROR! SCP::BCLeft(), unknown BC type: " << type << endl
+			<< endl;
 		cout << endl << "Name of pipe: " << name << endl;
 		cin.get();
 	}
@@ -433,13 +433,13 @@ void SCP::BCLeft(string type, double val, double & pp, double & vv) {
 
 
 /*! \brief Right side boundary condition.
-	The right side boundary condition, with multiple possible formations. Allows for a possibility of set
-	pressure or velocity, or a valve at the edge. If a wrong type is chosen an error message is displayed.
-	\param type [in] Parameter to set at the boundary. Accepted values are "Pressure" and "Velocity" and "Valve".
-	\param val [in] Value to set at the edge. Either in [Pa] or [m/s] dependent on the type for pressure and velocity boundary conditions. For the valve it is Cd*Aflow(x)
-	\param pp [out] The pressure at the right side. Modified in place.
-	\param vv [out] The velocity at the right side. Modified in place.
-*/
+  The right side boundary condition, with multiple possible formations. Allows for a possibility of set
+  pressure or velocity, or a valve at the edge. If a wrong type is chosen an error message is displayed.
+  \param type [in] Parameter to set at the boundary. Accepted values are "Pressure" and "Velocity" and "Valve".
+  \param val [in] Value to set at the edge. Either in [Pa] or [m/s] dependent on the type for pressure and velocity boundary conditions. For the valve it is Cd*Aflow(x)
+  \param pp [out] The pressure at the right side. Modified in place.
+  \param vv [out] The velocity at the right side. Modified in place.
+  */
 void SCP::BCRight(string type, double val, double & pp, double & vv) {
 
 	// pp + roa*vv = alpha
@@ -456,8 +456,8 @@ void SCP::BCRight(string type, double val, double & pp, double & vv) {
 	}
 	else if (type == "Valve") {
 		double mul = val;
-//		double pend = p(Npts - 1);
-//		double vend = v(Npts - 1);
+		//		double pend = p(Npts - 1);
+		//		double vend = v(Npts - 1);
 		// double alpha = (p(Npts - 2) + roa * v(Npts - 2)) + dt * roa * Source(Npts - 2);
 
 		double a_ = ro * ro * A * A;
@@ -474,17 +474,17 @@ void SCP::BCRight(string type, double val, double & pp, double & vv) {
 	}
 	else {
 		cout << endl
-		<< "ERROR! SCP::BCRight(), unknown BC type: " << type << endl
-		<< endl;
+			<< "ERROR! SCP::BCRight(), unknown BC type: " << type << endl
+			<< endl;
 		cout << endl << "Name of pipe: " << name << endl;
 		cin.get();
 	}
 }
 
 /* \brief
-	\param t_target the time we would like to step to. Needs to be set correctly,
-	as if there is an incorrect setting value it will not work properly
-*/
+   \param t_target the time we would like to step to. Needs to be set correctly,
+   as if there is an incorrect setting value it will not work properly
+   */
 double SCP::GetAlphaAtEnd(double t_target) {
 	double delta_t = t_target - t;
 	double TOL = dt / 1000.;
@@ -494,7 +494,7 @@ double SCP::GetAlphaAtEnd(double t_target) {
 			delta_t = 0.;
 		else {
 			cout << endl
-			<< "ERROR! SCP::GetAlphaAtEnd(), delta_t = " << delta_t << " < 0 ! (TOL=" << TOL << ")" << endl;
+				<< "ERROR! SCP::GetAlphaAtEnd(), delta_t = " << delta_t << " < 0 ! (TOL=" << TOL << ")" << endl;
 			cout << endl << "Name of pipe: " << name << endl;
 			cin.get();
 		}
@@ -504,7 +504,7 @@ double SCP::GetAlphaAtEnd(double t_target) {
 			delta_t = dt; //If it was within tolerance repair
 		else { //if target time is too big, an error occurs
 			cout << endl
-			<< "ERROR! SCP::GetAlphaAtEnd(), delta_t = " << delta_t << " > dt= " << dt << endl;
+				<< "ERROR! SCP::GetAlphaAtEnd(), delta_t = " << delta_t << " > dt= " << dt << endl;
 			cout << endl << "Name of pipe: " << name << endl;
 			cin.get();
 		}
@@ -533,7 +533,7 @@ double SCP::GetBetaAtFront(double t_target) {
 		else {
 			cout << endl << "Name of pipe: " << name << endl;
 			cout << endl
-			<< "ERROR! SCP::GetBetaAtFront(), delta_t = " << delta_t << " < 0  ! (TOL=" << TOL << ")" << endl;
+				<< "ERROR! SCP::GetBetaAtFront(), delta_t = " << delta_t << " < 0  ! (TOL=" << TOL << ")" << endl;
 			cout << endl << " t_pipe = " << t << ", t_target=" << t_target << endl;
 			cin.get();
 		}
@@ -543,7 +543,7 @@ double SCP::GetBetaAtFront(double t_target) {
 			delta_t = dt;
 		else {
 			cout << endl
-			<< "ERROR! SCP::GetBetaAtFront(), delta_t = " << delta_t << " > dt= " << dt << endl;
+				<< "ERROR! SCP::GetBetaAtFront(), delta_t = " << delta_t << " > dt= " << dt << endl;
 			cout << endl << "Name of pipe: " << name << endl;
 			cin.get();
 		}
@@ -562,19 +562,19 @@ double SCP::GetBetaPrimitiveAtFront(double t_target) {
 }
 
 /*! \brief Calculates local base pressure
-	Calculates local base pressure from the slope and the
-	\param i [in]
-	\return Base pressure in the given location.
-*/
+  Calculates local base pressure from the slope and the
+  \param i [in]
+  \return Base pressure in the given location.
+  */
 double SCP::Source(int i) {
 	return (g * S0 - lambda_p_2D * v(i) * abs(v(i)));
 }
 
 /*! \brief Exports savied data
-	Exports data saved from previous settings (such as steps and initialization.) Only works if the
-	save_data flag was set to true, otherwise an error message is displayed. Data is saved to the previously determined
-	savefile name. No inputs/outputs.
-*/
+  Exports data saved from previous settings (such as steps and initialization.) Only works if the
+  save_data flag was set to true, otherwise an error message is displayed. Data is saved to the previously determined
+  savefile name. No inputs/outputs.
+  */
 void SCP::Save_data() {
 	//char fname [50];
 	//sprintf (fname, "%s.dat", name.c_str());
@@ -591,11 +591,11 @@ void SCP::Save_data() {
 		fprintf(pFile, "t (s); p(0) (bar); p(L) (bar); v(0) m/s; v(L) (m/s); mp(0) (kg/s), mp(L) (kg/s), L, D, lambda\n");
 		for (int i = 0; i < data.size(); i++)
 			fprintf(pFile, "%8.6e; %8.6e; %8.6e; %8.6e; %8.6e; %8.6e; %8.6e; %8.6e; %8.6e; %8.6e\n",
-				data.at(i).at(0),
-				data.at(i).at(1) / 1.e5, data.at(i).at(2) / 1.e5,
-				data.at(i).at(3), data.at(i).at(4),
-				data.at(i).at(5), data.at(i).at(6),
-				L, D, lambda);
+					data.at(i).at(0),
+					data.at(i).at(1) / 1.e5, data.at(i).at(2) / 1.e5,
+					data.at(i).at(3), data.at(i).at(4),
+					data.at(i).at(5), data.at(i).at(6),
+					L, D, lambda);
 		fclose (pFile);
 		cout << " done. ";
 	}
@@ -603,53 +603,53 @@ void SCP::Save_data() {
 
 vector<double> SCP::Get_dvprop(string prop_string) {
 	int Ntime = data.size();
-//	int Nvars = data.at(0).size();
+	//	int Nvars = data.at(0).size();
 	//cout<<endl<<"Ntime="<<Ntime<<", Nvars="<<Nvars<<endl;
 	vector<double> out(Ntime);
 	if (prop_string == "t")
 		for (unsigned int i = 0; i < Ntime; i++)
 			out.at(i) = data.at(i).at(0);
-		else if (prop_string == "p_front")
-			for (unsigned int i = 0; i < Ntime; i++)
-				out.at(i) = data.at(i).at(1);
-			else if (prop_string == "p_back")
-				for (unsigned int i = 0; i < Ntime; i++)
-					out.at(i) = data.at(i).at(2);
-				else if (prop_string == "p_front_bar")
-					for (unsigned int i = 0; i < Ntime; i++)
-						out.at(i) = data.at(i).at(1) / 1.e5;
-					else if (prop_string == "p_back_bar")
-						for (unsigned int i = 0; i < Ntime; i++)
-							out.at(i) = data.at(i).at(2) / 1.e5;
-						else if (prop_string == "v_front")
-							for (unsigned int i = 0; i < Ntime; i++)
-								out.at(i) = data.at(i).at(3);
-							else if (prop_string == "v_back")
-								for (unsigned int i = 0; i < Ntime; i++)
-									out.at(i) = data.at(i).at(4);
-								else if (prop_string == "mp_front")
-									for (unsigned int i = 0; i < Ntime; i++)
-										out.at(i) = data.at(i).at(5);
-									else if (prop_string == "mp_back")
-										for (unsigned int i = 0; i < Ntime; i++)
-											out.at(i) = data.at(i).at(6);
-										else {
-											cout << endl
-											<< "ERROR! SCP::Get_dvprop(prop_string), unknown input: prop_string=" << prop_string << endl
-											<< endl;
-											cout << endl << "Name of valve: " << name << endl;
-											cin.get();
-										}
-										return out;
-									}
+	else if (prop_string == "p_front")
+		for (unsigned int i = 0; i < Ntime; i++)
+			out.at(i) = data.at(i).at(1);
+	else if (prop_string == "p_back")
+		for (unsigned int i = 0; i < Ntime; i++)
+			out.at(i) = data.at(i).at(2);
+	else if (prop_string == "p_front_bar")
+		for (unsigned int i = 0; i < Ntime; i++)
+			out.at(i) = data.at(i).at(1) / 1.e5;
+	else if (prop_string == "p_back_bar")
+		for (unsigned int i = 0; i < Ntime; i++)
+			out.at(i) = data.at(i).at(2) / 1.e5;
+	else if (prop_string == "v_front")
+		for (unsigned int i = 0; i < Ntime; i++)
+			out.at(i) = data.at(i).at(3);
+	else if (prop_string == "v_back")
+		for (unsigned int i = 0; i < Ntime; i++)
+			out.at(i) = data.at(i).at(4);
+	else if (prop_string == "mp_front")
+		for (unsigned int i = 0; i < Ntime; i++)
+			out.at(i) = data.at(i).at(5);
+	else if (prop_string == "mp_back")
+		for (unsigned int i = 0; i < Ntime; i++)
+			out.at(i) = data.at(i).at(6);
+	else {
+		cout << endl
+			<< "ERROR! SCP::Get_dvprop(prop_string), unknown input: prop_string=" << prop_string << endl
+			<< endl;
+		cout << endl << "Name of valve: " << name << endl;
+		cin.get();
+	}
+	return out;
+}
 
 /*! \brief Export the penultimate values of a given return data
-	Returns the penultimate value of the collected data. Only one value, the one specified
-	by the input value is returned. Possible values: t,p_front, p_back, v_front, v_back, mp_front, mp_back
+  Returns the penultimate value of the collected data. Only one value, the one specified
+  by the input value is returned. Possible values: t,p_front, p_back, v_front, v_back, mp_front, mp_back
 
-	\param The name of the value we would like tor return.
-*/
-									float SCP::GetPenult(string what) {
+  \param The name of the value we would like tor return.
+  */
+float SCP::GetPenult(string what) {
 	int penult = data.size() - 1 - 1; //Maximum allowed place is -1, the one before that
 	int loc = 0;
 	if (what == "t") { loc = 0; }
@@ -711,14 +711,22 @@ void SCP::Save_status(bool newfile, bool atonce) {
 			fprintf(pfile, "# Npts = %d \n", Npts); fprintf(vfile, "# Npts = %d \n", Npts);
 			fprintf(pfile, "%8.6e", t); fprintf(Tfile, "%8.6e", t); fprintf(vfile, "%8.6e", t);
 			for (int i = 0; i < Npts; i++) { fprintf(pfile, ";%8.6e", p(i)); fprintf(vfile, ";%8.6e", v(i)); }
-				fprintf(pfile, "%-s \n", "");  fprintf(vfile, "%-s \n", "");
+			fprintf(pfile, "%-s \n", "");  fprintf(vfile, "%-s \n", "");
 		}
 		else {
 			pfile = fopen(pfname.c_str(), "a"); vfile = fopen(vfname.c_str(), "a");
 			fprintf(pfile, "%8.6e", t); fprintf(vfile, "%8.6e", t);
 			for (int i = 0; i < Npts; i++) { fprintf(pfile, ";%8.6e", p(i)); fprintf(vfile, ";%8.6e", v(i)); } //Avoids hanging semicolon at end
-				fprintf(pfile, "%-s \n", ""); fprintf(vfile, "%-s \n", "");
+			fprintf(pfile, "%-s \n", ""); fprintf(vfile, "%-s \n", "");
 		}
 		fclose(pfile); fclose(vfile);
 	}
 }
+void SCP::list_pv(){
+	printf("\n\n Listing p (Pa) and v (m/s):");
+	for (unsigned int i=0; i<Npts; i++){
+		printf("\n\t #%2d: p=%5.3e, v=%5.3e",i,p(i),v(i));
+	}
+	printf("\n");
+}
+

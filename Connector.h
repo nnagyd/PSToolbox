@@ -19,7 +19,7 @@ class Connector
 		void Connector_Reservoir_and_Valve(double t_target, Reservoir* r, Valve *v, double& p, double& mp);
 
 		void Connector_LWP_Reservoir_and_Pipe_Front(double t_target, 
-				Reservoir *r, LWP *p, double& pf, double& Tf);  
+				Reservoir *r, LWP *p, bool inlet_pressure_drop, double& pf, double& Tf);  
 
 		bool Connector_LWP_Pipe_Back_and_Valve(double t_target, 
 				LWP *p, Valve *v, double p_downstream, double& pb, double& Tb);
@@ -55,6 +55,7 @@ class Connector
 
 	private:
 		bool DEBUG;
-		double Connector_LWP_Reservoir_and_Pipe_Front_fun(double rho, double beta, Reservoir* r1, LWP* p1);
+		double Connector_LWP_Reservoir_and_Pipe_Front_fun(double rho, double beta, 
+				Reservoir* r1, LWP* p1, bool inlet_pressure_drop);
 		double signed_sqrt(double x);
 };

@@ -161,7 +161,8 @@ bool Connector::Connector_LWP_Pipe_Back_and_Valve_with_Absorber(double t_target,
 
 
 void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
-		Reservoir* r1, LWP* p1, double& p, double& T) {
+		Reservoir* r1, LWP* p1, bool inlet_pressure_drop,
+		double& p, double& T) {
 	// Solve the following system for p,T,rho,v:
 	// (1)  Tt=T+v^2/2/cp            Isentropic flow from the reservoir to the pipe
 	// (2)  p-rho*a*v = beta_front   Charactersistic equation
@@ -189,13 +190,13 @@ void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
 	int iter = 0, MAX_ITER = 200;
 	while (fabs(err) > TOL) {		
 
-		f   = Connector_LWP_Reservoir_and_Pipe_Front_fun(v, beta, r1, p1);
+		f   = Connector_LWP_Reservoir_and_Pipe_Front_fun(v, beta, r1, p1, inlet_pressure_drop);
 
 		if (fabs(v)>0.001)
 			dv = v * 0.01;
 		else
 			dv=0.001;
-		f1 = Connector_LWP_Reservoir_and_Pipe_Front_fun(v + dv, beta, r1, p1);
+		f1 = Connector_LWP_Reservoir_and_Pipe_Front_fun(v + dv, beta, r1, p1,inlet_pressure_drop);
 
 		df = (f1 - f) / dv;
 		vnew = v - f / df;
@@ -222,7 +223,10 @@ void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
 		cp = p1->gas->Get_cp(p,T);
 		kappa_Tv = p1->gas->Get_kappa_Tv();
 		Tnew     = Tt-v*v/2/cp;
-		p   = pt * pow(Tnew / Tt, kappa_Tv/(kappa_Tv - 1.));
+		if (inlet_pressure_drop)
+			p   = pt * pow(Tnew / Tt, kappa_Tv/(kappa_Tv - 1.));
+		else 
+			p=pt;
 		rho = p1->gas->Get_rho(p, Tnew);
 		a   = p1->gas->Get_SonicVel(Tnew,p);
 
@@ -289,7 +293,7 @@ void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
 	}
 }
 
-double Connector::Connector_LWP_Reservoir_and_Pipe_Front_fun(double v, double beta, Reservoir* r1, LWP* p1) {
+double Connector::Connector_LWP_Reservoir_and_Pipe_Front_fun(double v, double beta, Reservoir* r1, LWP* p1,bool inlet_pressure_drop) {
 
 	double pt = r1->Get_dprop("p");
 	double Tt = r1->Get_dprop("T");
@@ -299,10 +303,13 @@ double Connector::Connector_LWP_Reservoir_and_Pipe_Front_fun(double v, double be
 	//double beta = p1->GetBetaPrimitiveAtFront(t_target);
 
 	double T   = Tt-v*v/2./cp;
-	double p   = pt * pow(T / Tt, kappa_Tv/(kappa_Tv - 1.));
+	double p;
+	if (inlet_pressure_drop)
+		p   = pt * pow(T / Tt, kappa_Tv/(kappa_Tv - 1.));
+	else 
+		p=pt;
 	double rho = p1->gas->Get_rho(p, T);
 	double a   = p1->gas->Get_SonicVel(T,p);
-	//double v   = signed_sqrt(2 * cp * (Tt - T));
 	return (p - rho * a * v) - beta;
 }
 

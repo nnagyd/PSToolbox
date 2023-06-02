@@ -111,9 +111,9 @@ string LWP::Info(bool show_pts) {
 	oss << "\n      actual dt : " << dt << " s";
 	oss << endl;
 	/*oss << "\n            phi : " << phi << " -";
-		oss << "\n          alpha : " << alpha << " -";
-		oss << "\n          gamma : " << gamma << " -";
-		oss << "\n             mu : " << mu << " -";*/
+	  oss << "\n          alpha : " << alpha << " -";
+	  oss << "\n          gamma : " << gamma << " -";
+	  oss << "\n             mu : " << mu << " -";*/
 	//oss << "\n f_pipe/f_valve : " << 2.*L/a/(omega/(2.*M_PI)) << " -";
 	//oss << "\n f_pipe/f_valve : " << M_PI / gamma << " -";
 
@@ -150,30 +150,30 @@ string LWP::Info(bool show_pts) {
 			oss << setw(6) << setprecision(3) << rho(i)*v(i)*A << " ";
 
 		/*	double mp_mean = rho.mean() * v.mean() * A;
-				oss << "\n       mp_imp (%) : ";
-				for (int i = 0; i < Npts; i++)
-				oss << setw(6) << setprecision(1) << fabs((rho(i)*v(i)*A - mp_mean) / mp_mean) * 100 << " ";*/
+			oss << "\n       mp_imp (%) : ";
+			for (int i = 0; i < Npts; i++)
+			oss << setw(6) << setprecision(1) << fabs((rho(i)*v(i)*A - mp_mean) / mp_mean) * 100 << " ";*/
 	}
 	oss << endl;
 	return oss.str();
 }
 
 /*! \brief Initialize the LWP pipe
-	Initializes the LWP pipe with as many points to statisfy a given timestep, an initial uniform (due to incompressibility) speed and a
-	pressure at the inlet. (The generated pressure drops with friction.)
-	\param vini Initial (uniform) velocity in the pipe
-	\param pstart Pressure at the inlet, set up to decrease with friction
-	\param dt_target Target timestep, defines the grid
-	*/
+  Initializes the LWP pipe with as many points to statisfy a given timestep, an initial uniform (due to incompressibility) speed and a
+  pressure at the inlet. (The generated pressure drops with friction.)
+  \param vini Initial (uniform) velocity in the pipe
+  \param pstart Pressure at the inlet, set up to decrease with friction
+  \param dt_target Target timestep, defines the grid
+  */
 void LWP::IniUniform(double _vini, double _pini, double _Tini, double dt_target) {
 	t = 0.;
 
 	double a = gas->Get_SonicVel(_Tini,_pini);
 	Npts = round(L / a / dt_target); // CFL condition reorganized
-																	 //printf("\n\n L=%5.2f m, a=%5.1f m/s, dt_target=%5.3e s, Npts=%d ", L, a, dt_target, Npts);
+					 //printf("\n\n L=%5.2f m, a=%5.1f m/s, dt_target=%5.3e s, Npts=%d ", L, a, dt_target, Npts);
 	if (Npts < 20) {
 		Npts = 20; // a minimum of 20 points is set
-							 //printf(" -> %d\n", Npts);
+			   //printf(" -> %d\n", Npts);
 	}
 	Ini(Npts);
 
@@ -580,41 +580,57 @@ void LWP::BCLeft(string type, double val1, double val2) {
 	}
 
 	/*if (type == "MassFlowIn_and_T") {
-		double mp = val1;
-		Tnew(0) = val2;
-		double  a = gas->Get_SonicVel( Tnew(0));
-		vnew(0) = (a - beta) * 2. / (kappa - 1);
-		if (vnew(0) < 0) {
-		cout << endl << endl << " ERROR!! LWP pipe: " << name;
-		cout << endl << endl << " LWP::BCLeft(): MassFlowIn_and_T -> negative velocity";
-		cout << endl << "  prescribed mass flow rate: " << mp << " kg/s";
-		cout << endl << "  prescribed temperature   : " << Tnew(0) - 273.15 << " C";
-		cout << endl << "  computed flow velocity   : " << v << " m/s";
-		cout << endl << " Something is wrong. Try increasing the node number and/or decreasing the timestep.";
-		cout << endl << "Exiting..." << endl;
-		exit(-1);
-		}
-		rhonew(0) = mp / A / vnew(0);
-		pnew(0) = gas->GetP(rhonew(0), Tnew(0));
-		ok = true;
-		}*/
+	  double mp = val1;
+	  Tnew(0) = val2;
+	  double  a = gas->Get_SonicVel( Tnew(0));
+	  vnew(0) = (a - beta) * 2. / (kappa - 1);
+	  if (vnew(0) < 0) {
+	  cout << endl << endl << " ERROR!! LWP pipe: " << name;
+	  cout << endl << endl << " LWP::BCLeft(): MassFlowIn_and_T -> negative velocity";
+	  cout << endl << "  prescribed mass flow rate: " << mp << " kg/s";
+	  cout << endl << "  prescribed temperature   : " << Tnew(0) - 273.15 << " C";
+	  cout << endl << "  computed flow velocity   : " << v << " m/s";
+	  cout << endl << " Something is wrong. Try increasing the node number and/or decreasing the timestep.";
+	  cout << endl << "Exiting..." << endl;
+	  exit(-1);
+	  }
+	  rhonew(0) = mp / A / vnew(0);
+	  pnew(0) = gas->GetP(rhonew(0), Tnew(0));
+	  ok = true;
+	  }*/
 
 	if (type == "StaticPres_and_StaticTemp_Inlet") {
 		pnew(0)  = val1;
 		Tnew(0)  = val2;
 		rhonew(0) = gas->Get_rho(pnew(0), Tnew(0));
 		vnew(0)  = (pnew(0) - beta_primitive) / rhonew(0) / gas->Get_SonicVel(Tnew(0),pnew(0));
-		if (vnew(0)<0)
+		if (vnew(0)<0){
 			vnew(0)=0;
 
+			cout << endl << endl << " WARNING!! LWP pipe: " << name;
+			cout << endl << "\tLWP::BCLeft(): StaticPres_and_StaticTemp_Inlet -> negative velocity";
+			cout << endl << "\tUsing Wall BC instead. If the situation persists, switch to other boundary condition";
+			cout<<endl;
+			// Just copied the Wall BC here
+			vnew(0) = 0;
+			pnew(0) = beta_primitive;
+			double p_old = p(0);
+			double T_old = T(0);
+			double kappa = gas->Get_kappa_Tp();
+			Tnew(0) = T_old * pow(pnew(0) / p_old, (kappa - 1) / kappa);
+			rhonew(0) = gas->Get_rho(pnew(0), Tnew(0));
+
+			printf("\tvnew(0)=%5.3e, pnew(0)=%5.3e, Tnew(0)=%5.3e, rhonew(0)=%5.3e\n",vnew(0),pnew(0),Tnew(0),rhonew(0));
+			//cin.get();
+		}
 		ok = true;
 	}
 
 	/*if (type == "TotalPres_and_TotalTemp") {
-		double pt  = val1;
-		double Tt  = val2;
-		double rot = gas->Get_rho(pt, Tt);
-		double at = gas->Get_SonicVel(Tt);
+	  double pt  = val1;
+	  double Tt  = val2;
+	  double rot = gas->Get_rho(pt, Tt);
+	  double at = gas->Get_SonicVel(Tt);
 
 	//printf("\n pt=%5.3f, Tt=%5.3f, vt=%5.3f, beta=%5.3f",
 	//	pt/1.e5, Tt, 0.,beta_primitive/1e5);
@@ -651,17 +667,17 @@ void LWP::BCLeft(string type, double val1, double val2) {
 
 
 	/*if (type == "TotalPres_and_TotalTemp_Isentropic") {
-		double pt  = val1;
-		double Tt  = val2;
-		double at = gas->Get_SonicVel(Tt);
-		double kp1km1 = (kappa + 1.) / (kappa - 1.);
-		double DD = at * at * kp1km1 - 2. / (kappa - 1.) * beta * beta;
-		cout << endl << "beta=" << beta;
-		cout << endl << "at=" << at;
+	  double pt  = val1;
+	  double Tt  = val2;
+	  double at = gas->Get_SonicVel(Tt);
+	  double kp1km1 = (kappa + 1.) / (kappa - 1.);
+	  double DD = at * at * kp1km1 - 2. / (kappa - 1.) * beta * beta;
+	  cout << endl << "beta=" << beta;
+	  cout << endl << "at=" << at;
 
-		if (DD > 0) {
-		if (at > beta) {
-		cout << endl << "\t ==> INLET";
+	  if (DD > 0) {
+	  if (at > beta) {
+	  cout << endl << "\t ==> INLET";
 
 	// Assume inlet
 	vnew(0) = 2. / (kappa + 1.) * (-beta + sqrt(DD));
@@ -702,74 +718,74 @@ void LWP::BCLeft(string type, double val1, double val2) {
 	}*/
 
 	/*if (type == "Opening") {
-		double pt = val1;
-		double Tt = val2;
-		double at = sqrt(kappa * R * Tt);
-		double a0 = sqrt(kappa * R * T(0));
+	  double pt = val1;
+	  double Tt = val2;
+	  double at = sqrt(kappa * R * Tt);
+	  double a0 = sqrt(kappa * R * T(0));
 
-		double aa = pow((kappa - 1.) / 2., 2.) + kappa * R / 2. / cp;
-		double bb = beta * (kappa - 1.);
-		double cc = beta * beta - kappa * R * Tt;
-		double D  = bb * bb - 4.*aa * cc;
-		double vv = (-bb + sqrt(D)) / 2. / aa;
+	  double aa = pow((kappa - 1.) / 2., 2.) + kappa * R / 2. / cp;
+	  double bb = beta * (kappa - 1.);
+	  double cc = beta * beta - kappa * R * Tt;
+	  double D  = bb * bb - 4.*aa * cc;
+	  double vv = (-bb + sqrt(D)) / 2. / aa;
 
-		cout << endl << "beta=" << beta << " ?< at=" << at;
-		cout << endl << " vv = " << vv << endl;
-		if (beta < at) {
-		double aa = pow((kappa - 1.) / 2., 2.) + kappa * R / 2. / cp;
-		double bb = beta * (kappa - 1.);
-		double cc = beta * beta - kappa * R * Tt;
-		double D  = bb * bb - 4.*aa * cc;
-		if (beta / a0 < (3 - kappa) / 2) { //We have a supersonic flow entering the system
-																			 //Does not use anything from the inside, both temperature and pressure of tank used
-																			 //vnew(0) = at; //sonic flow, we have no Laval nozzle
-																			 //Tnew(0) = Tt - (vnew(0) * vnew(0)) / (2 * gas->cp);
-																			 Tnew(0) = Tt / (1 + kappa * R / 2 / gas->cp);
-																			 vnew(0) = sqrt(kappa * R * Tnew(0));
-																			 pnew(0) = pt * pow(Tnew(0) / Tt, kappa / (kappa - 1.));
-																			 }
-																			 else { //Subsonic flow, all is well
-																			 vnew(0) = (-bb + sqrt(D)) / 2. / aa;
-																			 Tnew(0) = pow(beta + (kappa - 1) / 2.0 * vnew(0), 2.0) / kappa / R;
-																			 pnew(0) = pt * pow(Tnew(0) / Tt, kappa / (kappa - 1.));
-																			 }
+	  cout << endl << "beta=" << beta << " ?< at=" << at;
+	  cout << endl << " vv = " << vv << endl;
+	  if (beta < at) {
+	  double aa = pow((kappa - 1.) / 2., 2.) + kappa * R / 2. / cp;
+	  double bb = beta * (kappa - 1.);
+	  double cc = beta * beta - kappa * R * Tt;
+	  double D  = bb * bb - 4.*aa * cc;
+	  if (beta / a0 < (3 - kappa) / 2) { //We have a supersonic flow entering the system
+					     //Does not use anything from the inside, both temperature and pressure of tank used
+					     //vnew(0) = at; //sonic flow, we have no Laval nozzle
+					     //Tnew(0) = Tt - (vnew(0) * vnew(0)) / (2 * gas->cp);
+					     Tnew(0) = Tt / (1 + kappa * R / 2 / gas->cp);
+					     vnew(0) = sqrt(kappa * R * Tnew(0));
+					     pnew(0) = pt * pow(Tnew(0) / Tt, kappa / (kappa - 1.));
+					     }
+					     else { //Subsonic flow, all is well
+					     vnew(0) = (-bb + sqrt(D)) / 2. / aa;
+					     Tnew(0) = pow(beta + (kappa - 1) / 2.0 * vnew(0), 2.0) / kappa / R;
+					     pnew(0) = pt * pow(Tnew(0) / Tt, kappa / (kappa - 1.));
+					     }
 
-																			 cout << endl << "LWP::BCLeft Opening -> SUBSONIC INLET" << endl;
-																			 printf("\n pt = %5.3f bar, Tt = %5.3f K", pt / 1e5, Tt);
-																			 printf("\n p  = %5.3f bar, T  = %5.3f K, v = %5.3f m/s", pnew(0) / 1e5, Tnew(0), vnew(0));
-																			 printf("\n Tt = %5.3f K ?= %5.3f K", Tt, Tnew(0) + vnew(0)*vnew(0) / 2. / cp);
-																			 printf("\n T/Tt = %5.3f ?= %5.3f = (p/pt)^((k-1)/k)", Tnew(0) / Tt, pow(pnew(0) / pt, (kappa - 1.) / kappa));
-																			 cout << endl;
-																			 }
-																			 else {
-																			 vnew(0) = (-bb + sqrt(D)) / 2. / aa;
-																			 double aa = beta + (kappa - 1.) / 2.*vnew(0);
-																			 Tnew(0) = aa * aa / kappa / R;
-																			 pnew(0) = pt;
-																			 */
+					     cout << endl << "LWP::BCLeft Opening -> SUBSONIC INLET" << endl;
+					     printf("\n pt = %5.3f bar, Tt = %5.3f K", pt / 1e5, Tt);
+					     printf("\n p  = %5.3f bar, T  = %5.3f K, v = %5.3f m/s", pnew(0) / 1e5, Tnew(0), vnew(0));
+					     printf("\n Tt = %5.3f K ?= %5.3f K", Tt, Tnew(0) + vnew(0)*vnew(0) / 2. / cp);
+					     printf("\n T/Tt = %5.3f ?= %5.3f = (p/pt)^((k-1)/k)", Tnew(0) / Tt, pow(pnew(0) / pt, (kappa - 1.) / kappa));
+					     cout << endl;
+					     }
+					     else {
+					     vnew(0) = (-bb + sqrt(D)) / 2. / aa;
+					     double aa = beta + (kappa - 1.) / 2.*vnew(0);
+					     Tnew(0) = aa * aa / kappa / R;
+					     pnew(0) = pt;
+					     */
 	/*double dxB = -v(0) * dt / (1 + (v(1) - v(0)) * dt / dx);
-		if (dxB<0){
-		cout<<endl<<endl<<"v(0)="<<v(0)<<", v(1)="<<v(1);
-		cout<<endl<<"ERROR! LWP::BCLeft:: Opening -> dxB<0, dxB/dx= "<<dxB/dx<<" !!!"<<endl;
-		exit(-1);
-		}
-		if (dxB>dx){
-		cout<<endl<<"ERROR! LWP::BCLeft:: Opening -> dxB>dx (dxB/dx)="<<dxB/dx<<" !!!"<<endl;
-		exit(-1);
-		}
-		double pB = p(0) * (1 - dxB / dx) + p(1) * dxB / dx;
-		double TB = T(0) * (1 - dxB / dx) + T(1) * dxB / dx;
-		double tmp = pow(pB / pt, (kappa - 1) / kappa);
-		Tnew(0) = TB / tmp;
-		double aa = sqrt(kappa * R * Tnew(0));
-		vnew(0) = (beta-aa) * 2. / (kappa - 1.);*/
+	  if (dxB<0){
+	  cout<<endl<<endl<<"v(0)="<<v(0)<<", v(1)="<<v(1);
+	  cout<<endl<<"ERROR! LWP::BCLeft:: Opening -> dxB<0, dxB/dx= "<<dxB/dx<<" !!!"<<endl;
+	  exit(-1);
+	  }
+	  if (dxB>dx){
+	  cout<<endl<<"ERROR! LWP::BCLeft:: Opening -> dxB>dx (dxB/dx)="<<dxB/dx<<" !!!"<<endl;
+	  exit(-1);
+	  }
+	  double pB = p(0) * (1 - dxB / dx) + p(1) * dxB / dx;
+	  double TB = T(0) * (1 - dxB / dx) + T(1) * dxB / dx;
+	  double tmp = pow(pB / pt, (kappa - 1) / kappa);
+	  Tnew(0) = TB / tmp;
+	  double aa = sqrt(kappa * R * Tnew(0));
+	  vnew(0) = (beta-aa) * 2. / (kappa - 1.);*/
 
 	/*cout << endl << "LWP::BCLeft Opening -> SUBSONIC OUTLET" << endl;
-		printf("\n p  = %5.3f bar, T  = %5.3f K, v = %5.3f m/s", pnew(0) / 1e5, Tnew(0), vnew(0));
-		printf("\n pt = %5.3f bar, Tt = %5.3f K", pt / 1e5, Tt);
-		cout << endl;
-		}
-		rhonew(0) = gas->Get_rho(pnew(0), Tnew(0));
+	  printf("\n p  = %5.3f bar, T  = %5.3f K, v = %5.3f m/s", pnew(0) / 1e5, Tnew(0), vnew(0));
+	  printf("\n pt = %5.3f bar, Tt = %5.3f K", pt / 1e5, Tt);
+	  cout << endl;
+	  }
+	  rhonew(0) = gas->Get_rho(pnew(0), Tnew(0));
 
 	//cin.get();
 
@@ -800,7 +816,7 @@ void LWP::BCRight(string type, double val1, double val2) {
 	//double cp = gas->cp;
 
 	/*cout<<endl<<"GetAlphaAtEnd() finished."<<endl;
-		cin.get();*/
+	  cin.get();*/
 	bool ok = false;
 
 	if (type == "Wall") {
@@ -825,9 +841,9 @@ void LWP::BCRight(string type, double val1, double val2) {
 	}
 
 	/*if (type == "Outlet") {
-		double p0 = val1;
-		double pP, vP, TP, rhoP;
-		GetAllPrimitiveAtEnd(t + dt, pP, vP, TP, rhoP);
+	  double p0 = val1;
+	  double pP, vP, TP, rhoP;
+	  GetAllPrimitiveAtEnd(t + dt, pP, vP, TP, rhoP);
 
 	//printf("\n\t Outlet: pP=%5.3f, TP=%5.3f, vP=%5.3f, alpha=%5.3f",
 	//	pP/1.e5, TP, vP,alpha_primitive/1e5);
@@ -842,12 +858,12 @@ void LWP::BCRight(string type, double val1, double val2) {
 	v_  = (alpha_primitive - p_) / rho_ / a_;
 	*/
 	/*printf("\n\t\t p =%5.3f, T =%5.3f, v =%5.3f, rho=%5.3f, err=%5.3e",
-		p_/1.e5, T_, v_, rho_,err_v);		*/
+	  p_/1.e5, T_, v_, rho_,err_v);		*/
 	/*
-		 vnew(Npts - 1)  = v_;
-		 pnew(Npts - 1)  = p_;
-		 Tnew(Npts - 1)  = T_;
-		 rhonew(Npts - 1) = rho_;
+	   vnew(Npts - 1)  = v_;
+	   pnew(Npts - 1)  = p_;
+	   Tnew(Npts - 1)  = T_;
+	   rhonew(Npts - 1) = rho_;
 	//printf("\n pN=%5.3f, TN=%5.3f, vN=%5.3f, rhoN=%5.3f =? %5.3f",
 	//		pnew(Npts - 1)/1.e5, Tnew(Npts - 1), vnew(Npts - 1), rhonew(Npts - 1),gas->Get_rho(pnew(Npts - 1), Tnew(Npts - 1)));
 	ok = true;
@@ -856,12 +872,12 @@ void LWP::BCRight(string type, double val1, double val2) {
 
 
 	/*if (type == "Opening_OLD") {
-		double pt = val1;
-		double Tt = val2;
-		double at = sqrt(kappa * R * Tt);
-		double D  = at * at / alpha / alpha * (kappa + 1.) / 2. - 1.;
+	  double pt = val1;
+	  double Tt = val2;
+	  double at = sqrt(kappa * R * Tt);
+	  double D  = at * at / alpha / alpha * (kappa + 1.) / 2. - 1.;
 
-		if (D < 0) {
+	  if (D < 0) {
 	// Limit outlet sonic velocity
 	vnew(Npts - 1) = at * sqrt(2. / (kappa + 1));
 	// TODO!!!
@@ -911,56 +927,56 @@ void LWP::BCRight(string type, double val1, double val2) {
 	}*/
 
 	/*if (type == "Valve") {
-		double Afx = val1; //flow through area dependent on the displacement. This should not be considered outside info, as it is geometry, not status.
-											 //double pback = val2; //the back pressure of the system
-											 double alpha = GetAlphaAtEnd(t + dt);
-											 double kappa = gas->kappa;
-											 double R = gas->R;
-											 double psic = 1.;//gas->psi_c;
-											 double aNm1 = gas->Get_SonicVel(T(Npts - 2));
+	  double Afx = val1; //flow through area dependent on the displacement. This should not be considered outside info, as it is geometry, not status.
+			     //double pback = val2; //the back pressure of the system
+			     double alpha = GetAlphaAtEnd(t + dt);
+			     double kappa = gas->kappa;
+			     double R = gas->R;
+			     double psic = 1.;//gas->psi_c;
+			     double aNm1 = gas->Get_SonicVel(T(Npts - 2));
 
-											 if (Afx == 0) { //It is closed, then we need no other BC
-											 vnew(Npts - 1) = 0.;
-											 double a = alpha;
-											 Tnew(Npts - 1) = a * a / kappa / R;*/
+			     if (Afx == 0) { //It is closed, then we need no other BC
+			     vnew(Npts - 1) = 0.;
+			     double a = alpha;
+			     Tnew(Npts - 1) = a * a / kappa / R;*/
 	// Korrigalni kell majd meg a sebesseggel
 	/*pnew(Npts - 1) = R * Tnew(Npts - 1) * pow(R * Tnew(Npts - 1) * pow(r_old, kappa) / p_old, 1. / (kappa - 1));
-		rhonew(Npts - 1) = gas->Get_rho(pnew(Npts - 1), Tnew(Npts - 1));*/ //Csaba's version
+	  rhonew(Npts - 1) = gas->Get_rho(pnew(Npts - 1), Tnew(Npts - 1));*/ //Csaba's version
 
 	/*rhonew(Npts - 1) = pow(Tnew(Npts - 1) / T(Npts - 1), 1.0 / (kappa - 1)) * rho(Npts - 1);
-		pnew(Npts - 1) = gas->GetP(rhonew(Npts - 1), Tnew(Npts - 1));
-		}*/
+	  pnew(Npts - 1) = gas->GetP(rhonew(Npts - 1), Tnew(Npts - 1));
+	  }*/
 	//Now the open considerations!
 	/*	else if (alpha / aNm1 >= (kappa + 1) / 2) { // if it is faster than the speed of sound
-			double zeta = 0;
-			if (v(Npts - 1) - v(Npts - 2) != 0.0) {
-			zeta = (pow(M_E, (v(Npts - 2) - v(Npts - 1)) / dx * dt) - 1.0) * v(Npts - 1) * dx / (v(Npts - 2) - v(Npts - 1)); //Location of the fluid leaving
-			}
-			zeta = abs(zeta);
-			double Tzeta = T(Npts - 1) + (T(Npts - 2) - T(Npts - 1)) / dx * zeta;
-			double rho_zeta = rho(Npts - 1) + (rho(Npts - 2) - rho(Npts - 1)) / dx * zeta; //velocity at leaving point
+		double zeta = 0;
+		if (v(Npts - 1) - v(Npts - 2) != 0.0) {
+		zeta = (pow(M_E, (v(Npts - 2) - v(Npts - 1)) / dx * dt) - 1.0) * v(Npts - 1) * dx / (v(Npts - 2) - v(Npts - 1)); //Location of the fluid leaving
+		}
+		zeta = abs(zeta);
+		double Tzeta = T(Npts - 1) + (T(Npts - 2) - T(Npts - 1)) / dx * zeta;
+		double rho_zeta = rho(Npts - 1) + (rho(Npts - 2) - rho(Npts - 1)) / dx * zeta; //velocity at leaving point
 
-			vnew(Npts - 1) = (Afx * psic / sqrt(kappa) * alpha) / (Afx * psic / sqrt(kappa) * (kappa - 1) / 2.0 + A);
-			double anew = alpha - (kappa - 1.0) / 2.0 * vnew(Npts-1);
-			Tnew(Npts - 1) = anew * anew / kappa / R;
-			rhonew(Npts - 1) = rho_zeta * pow(Tnew(Npts - 1) / Tzeta, 1 / (kappa - 1));
-			pnew(Npts - 1) = gas->GetP(rhonew(Npts - 1), Tnew(Npts - 1)); //Old remaining code
-																																		//In case of supersonic flow, no outside effects are taken into account
-																																		//Same setup as in the case of the normal outflow
-																																		double Unp1[3] = { 0.0, 0.0, 0.0 };
-																																		for (int j = 0; j < 3; j++) { Unp1[j] = U(Npts - 1, j) + dt * ((S(Npts - 1, j) + S(Npts - 2, j)) / 2.0 - (F(Npts - 1, j) - F(Npts - 2, j)) / dx); } //Do the calculation
-																																																																																																												//Unpacking
-																																																																																																												rhonew(Npts - 1) = Unp1[0] / A;
-																																																																																																												vnew(Npts - 1) = Unp1[1] / Unp1[0];
-																																																																																																												Tnew(Npts - 1) =  gas->GetT_from_e(Unp1[2] / Unp1[0]);
-																																																																																																												pnew(Npts - 1) = gas->GetP(rhonew(Npts - 1), Tnew(Npts - 1));
-																																																																																																												}
-																																																																																																												else { //subsonic outlet, the valve can not function as an inlet
-																																																																																																												double zeta = 0; //Location of exiting fluid droplet
-																																																																																																												if (v(Npts - 1) - v(Npts - 2) != 0.0) {
-																																																																																																												zeta = (pow(M_E, (v(Npts - 2) - v(Npts - 1)) / dx * dt) - 1.0) * v(Npts - 1) * dx / (v(Npts - 2) - v(Npts - 1)); //Location of the fluid leaving
-																																																																																																												}
-																																																																																																												zeta = abs(zeta);
+		vnew(Npts - 1) = (Afx * psic / sqrt(kappa) * alpha) / (Afx * psic / sqrt(kappa) * (kappa - 1) / 2.0 + A);
+		double anew = alpha - (kappa - 1.0) / 2.0 * vnew(Npts-1);
+		Tnew(Npts - 1) = anew * anew / kappa / R;
+		rhonew(Npts - 1) = rho_zeta * pow(Tnew(Npts - 1) / Tzeta, 1 / (kappa - 1));
+		pnew(Npts - 1) = gas->GetP(rhonew(Npts - 1), Tnew(Npts - 1)); //Old remaining code
+											      //In case of supersonic flow, no outside effects are taken into account
+																	      //Same setup as in the case of the normal outflow
+																	      double Unp1[3] = { 0.0, 0.0, 0.0 };
+																	      for (int j = 0; j < 3; j++) { Unp1[j] = U(Npts - 1, j) + dt * ((S(Npts - 1, j) + S(Npts - 2, j)) / 2.0 - (F(Npts - 1, j) - F(Npts - 2, j)) / dx); } //Do the calculation
+																																																																																																					    //Unpacking
+																																																																																																					    rhonew(Npts - 1) = Unp1[0] / A;
+																																																																																																					    vnew(Npts - 1) = Unp1[1] / Unp1[0];
+																																																																																																					    Tnew(Npts - 1) =  gas->GetT_from_e(Unp1[2] / Unp1[0]);
+																																																																																																					    pnew(Npts - 1) = gas->GetP(rhonew(Npts - 1), Tnew(Npts - 1));
+																																																																																																					    }
+																																																																																																					    else { //subsonic outlet, the valve can not function as an inlet
+																																																																																																					    double zeta = 0; //Location of exiting fluid droplet
+																																																																																																					    if (v(Npts - 1) - v(Npts - 2) != 0.0) {
+																																																																																																					    zeta = (pow(M_E, (v(Npts - 2) - v(Npts - 1)) / dx * dt) - 1.0) * v(Npts - 1) * dx / (v(Npts - 2) - v(Npts - 1)); //Location of the fluid leaving
+																																																																																																					    }
+																																																																																																					    zeta = abs(zeta);
 	//double a0 = sqrt(kappa * R * T(Npts - 1)); double a1 = sqrt(kappa * R * T(Npts - 2)); //Speed of sounds necessary
 	double T_zeta = T(Npts - 1) + (T(Npts - 2) - T(Npts - 1)) / dx * zeta; //density at leaving point
 	double p_zeta = p(Npts - 1) + (p(Npts - 2) - p(Npts - 1)) / dx * zeta; //pressure at leaving point
@@ -992,57 +1008,57 @@ void LWP::BCRight(string type, double val1, double val2) {
 
 /*double LWP::GetBetaAtFront(double t_target) {
 
-	double delta_t = t_target - t;
-	double TOL = dt / 1000.;
+  double delta_t = t_target - t;
+  double TOL = dt / 1000.;
 
-	if (delta_t < 0) {
-	if (fabs(delta_t) < TOL)
-	delta_t = 0.;
-	else {
-	cout << endl
-	<< "ERROR! LWP::GetBetaAtFront(), delta_t = " << delta_t << " < 0 ! (TOL=" << TOL << ")" << endl;
-	cout << endl << "Name of pipe: " << name << endl;
-	cin.get();
-	}
-	}
-	if (delta_t > dt) {
-	if (delta_t - TOL < dt)
-	delta_t = dt;
-	else {
-	cout << endl
-	<< "ERROR! LWP::GetBetaAtFront(), delta_t = " << delta_t << " > dt= " << dt << endl;
-	cout << endl << "Name of pipe: " << name << endl;
-	cin.get();
-	}
-	}
+  if (delta_t < 0) {
+  if (fabs(delta_t) < TOL)
+  delta_t = 0.;
+  else {
+  cout << endl
+  << "ERROR! LWP::GetBetaAtFront(), delta_t = " << delta_t << " < 0 ! (TOL=" << TOL << ")" << endl;
+  cout << endl << "Name of pipe: " << name << endl;
+  cin.get();
+  }
+  }
+  if (delta_t > dt) {
+  if (delta_t - TOL < dt)
+  delta_t = dt;
+  else {
+  cout << endl
+  << "ERROR! LWP::GetBetaAtFront(), delta_t = " << delta_t << " > dt= " << dt << endl;
+  cout << endl << "Name of pipe: " << name << endl;
+  cin.get();
+  }
+  }
 
-	double kR = (gas->kappa) * (gas->R);
-	double a0 = sqrt(kR * T(0));
-	double v0 = v(0);
-	double a1 = sqrt(kR * T(1));
-	double v1 = v(1);
-	double dxL = dx * (a0 - v0) / (a0 - a1 - v0 + v1 + dx / delta_t);
+  double kR = (gas->kappa) * (gas->R);
+  double a0 = sqrt(kR * T(0));
+  double v0 = v(0);
+  double a1 = sqrt(kR * T(1));
+  double v1 = v(1);
+  double dxL = dx * (a0 - v0) / (a0 - a1 - v0 + v1 + dx / delta_t);
 
-	if (dxL < 0) {
-	cout << endl
-	<< "ERROR! LWP::GetAlphaAtEnd(), dxL = " << dxL << " < 0 !!!" << endl;
-	cout << endl << "Name of pipe: " << name << endl;
-	cin.get();
-	}
-	if (dxL > dx) {
-	cout << endl
-	<< "ERROR! LWP::GetAlphaAtEnd(), dxL/dx = " << dxL / dx << " > 1 !!!" << endl;
-	cout << endl << "Name of pipe: " << name << endl;
-	cin.get();
-	}
+  if (dxL < 0) {
+  cout << endl
+  << "ERROR! LWP::GetAlphaAtEnd(), dxL = " << dxL << " < 0 !!!" << endl;
+  cout << endl << "Name of pipe: " << name << endl;
+  cin.get();
+  }
+  if (dxL > dx) {
+  cout << endl
+  << "ERROR! LWP::GetAlphaAtEnd(), dxL/dx = " << dxL / dx << " > 1 !!!" << endl;
+  cout << endl << "Name of pipe: " << name << endl;
+  cin.get();
+  }
 
-	double vv = v0 * (dx - dxL) / dx + v1 * dxL / dx;
-	double aa = a0 * (dx - dxL) / dx + a1 * dxL / dx;
-	double beta = aa - (gas->kappa - 1.) / 2.*vv;
+  double vv = v0 * (dx - dxL) / dx + v1 * dxL / dx;
+  double aa = a0 * (dx - dxL) / dx + a1 * dxL / dx;
+  double beta = aa - (gas->kappa - 1.) / 2.*vv;
 
-	return beta;
+  return beta;
 
-	}*/
+  }*/
 
 void LWP::GetAllPrimitiveAtFront(double t_target, double& pR, double& vR, double& TR, double& rhoR) {
 
@@ -1105,7 +1121,7 @@ double LWP::GetBetaPrimitiveAtFront(double t_target) {
 
 //bool LWP::GetC0AtFront(double t_target, double& pM, double& vM, double& TM, double& rhoM) {
 bool LWP::GetC0AtFront(double t_target) {
-
+	bool DEBUG=false;
 	double delta_t = t_target - t;
 	double TOL = dt / 1000.;
 	bool is_ok = true;
@@ -1139,123 +1155,131 @@ bool LWP::GetC0AtFront(double t_target) {
 
 	if (dxM < 0.) {
 		is_ok = false;
-		cout << endl << "WARNING! LWP::GetC0AtFront(), dxM/dx = " << dxM / dx << " < 0 !!!";
-		if (v(0) < 0) {
-			cout << endl << "dx=" << dx;
-			cout << endl << "dt=" << delta_t;
-			cout << endl << "v(0)=" << v(0) << " < 0 ";
-			cout << endl << "we should have v(0)< v1+dx/dt = " << v(1) << " + " << dx / delta_t << " = " << v(1) + dx / delta_t;
+		if (DEBUG){
+			cout << endl << "WARNING! LWP::GetC0AtFront(), dxM/dx = " << dxM / dx << " < 0 !!!";
+			if (v(0) < 0) {
+				cout << endl << "dx=" << dx;
+				cout << endl << "dt=" << delta_t;
+				cout << endl << "v(0)=" << v(0) << " < 0 ";
+				cout << endl << "v(1)=" << v(1);
+				cout << endl << "we should have v(0)< v1+dx/dt = " << v(1) << " + " << dx / delta_t << " = " << v(1) + dx / delta_t;
+			}
+			if (v(0) > 0) {
+				cout << endl << "dx=" << dx;
+				cout << endl << "dt=" << delta_t;
+				cout << endl << "v(0)=" << v(0) << " > 0 ";
+				cout << endl << "v(1)=" << v(1);
+				cout << endl << "we should have v(0)> v1+dx/dt = " << v(1) << " + " << dx / delta_t << " = " << v(1) + dx / delta_t;
+			}
+			cout << endl << "Name of pipe: " << name << " --> is_ok set to false";
+			//cin.get();
 		}
-		if (v(0) > 0) {
-			cout << endl << "dx=" << dx;
-			cout << endl << "dt=" << delta_t;
-			cout << endl << "v(0)=" << v(0) << " > 0 ";
-			cout << endl << "we should have v(0)> v1+dx/dt = " << v(1) << " + " << dx / delta_t << " = " << v(1) + dx / delta_t;
-		}
-		cout << endl << "Name of pipe: " << name << " --> is_ok set to false";
-		//cin.get();
 	}
 	if (dxM > dx) {
 		is_ok = false;
-		cout << endl
-			<< "ERROR! LWP::GetC0AtFront(), dxM/dx = " << dxM / dx << " > 1 !!!" << endl;
-		cout << endl << "Name of pipe: " << name << endl;
-		//cin.get();
+		if (DEBUG){
+			cout << endl
+				<< "ERROR! LWP::GetC0AtFront(), dxM/dx = " << dxM / dx << " > 1 !!!" << endl;
+			cout << endl << "Name of pipe: " << name << endl;
+			//cin.get();
+		}
 	}
+
 
 	double vM   = v(0)   * (1. - dxM / dx) + v(1) * dxM / dx;
 	double TM   = T(0)   * (1. - dxM / dx) + T(1) * dxM / dx;
 	double pM   = p(0)   * (1. - dxM / dx) + p(1) * dxM / dx;
 	double rhoM = rho(0) * (1. - dxM / dx) + rho(1) * dxM / dx;
 
-	if (!is_ok) {
-		printf("\n\n--------------------\n dxM/dx=%5.3f", dxM / dx);
-		printf("\n         0       M       1");
-		printf("\n p  =   %5.3e    %5.3e    %5.3e", p(0) / 1.e5, pM / 1.e5, p(1) / 1.e5);
-		printf("\n rho=   %5.3e    %5.3e    %5.3e", rho(0), rhoM, rho(1));
-		printf("\n T  =   %5.3e    %5.3e    %5.3e", T(0), TM, T(1));
-		printf("\n v  =  %+5.3e   %+5.3e   %+5.3e\n", v(0), vM, v(1));
+	if (DEBUG){
+		if (!is_ok) {
+			printf("\n\n--------------------\n dxM/dx=%5.3f", dxM / dx);
+			printf("\n         0           M           1");
+			printf("\n p  =   %5.3e    %5.3e    %5.3e", p(0) / 1.e5, pM / 1.e5, p(1) / 1.e5);
+			printf("\n rho=   %5.3e    %5.3e    %5.3e", rho(0), rhoM, rho(1));
+			printf("\n T  =   %5.3e    %5.3e    %5.3e", T(0), TM, T(1));
+			printf("\n v  =  %+5.3e   %+5.3e   %+5.3e\n", v(0), vM, v(1));
+		}
 	}
-
 	return is_ok;
 
 }
 
 /*double LWP::GetAlphaAtEnd(double t_target) {
-	double delta_t = t_target - t;
-	double TOL = dt / 1000.;
-	*/
+  double delta_t = t_target - t;
+  double TOL = dt / 1000.;
+  */
 /*cout<<endl<<"entering GetAlphaAtEnd():";
-	cout<<endl<<"t_target   : "<<t_target;
-	cout<<endl<<"delta_t/dt : "<<delta_t/dt;
-	cin.get();*/
+  cout<<endl<<"t_target   : "<<t_target;
+  cout<<endl<<"delta_t/dt : "<<delta_t/dt;
+  cin.get();*/
 /*
-	 if (delta_t < 0) {
-	 if (fabs(delta_t) < TOL)
-	 delta_t = 0.;
-	 else {
-	 cout << endl << "Name of pipe: " << name << endl;
-	 cout << endl
-	 << "ERROR! SCP::GetBetaAtFront(), delta_t = " << delta_t << " < 0  ! (TOL=" << TOL << ")" << endl;
-	 cout << endl << " t_pipe = " << t << ", t_target=" << t_target << endl;
-	 cin.get();
-	 }
-	 }
-	 if (delta_t > dt) {
-	 if (delta_t - TOL < dt)
-	 delta_t = dt;
-	 else {
-	 cout << endl
-	 << "ERROR! SCP::GetBetaAtFront(), delta_t = " << delta_t << " > dt= " << dt << endl;
-	 cout << endl << "Name of pipe: " << name << endl;
-	 cin.get();
-	 }
-	 }
+   if (delta_t < 0) {
+   if (fabs(delta_t) < TOL)
+   delta_t = 0.;
+   else {
+   cout << endl << "Name of pipe: " << name << endl;
+   cout << endl
+   << "ERROR! SCP::GetBetaAtFront(), delta_t = " << delta_t << " < 0  ! (TOL=" << TOL << ")" << endl;
+   cout << endl << " t_pipe = " << t << ", t_target=" << t_target << endl;
+   cin.get();
+   }
+   }
+   if (delta_t > dt) {
+   if (delta_t - TOL < dt)
+   delta_t = dt;
+   else {
+   cout << endl
+   << "ERROR! SCP::GetBetaAtFront(), delta_t = " << delta_t << " > dt= " << dt << endl;
+   cout << endl << "Name of pipe: " << name << endl;
+   cin.get();
+   }
+   }
 
-	 double kR = (gas->kappa) * (gas->R);
-	 double aNm1 = sqrt(kR * T(Npts - 2));
-	 double vNm1 = v(Npts - 2);
-	 double aN = sqrt(kR * T(Npts - 1));
-	 double vN = v(Npts - 1);
-	 double dxR = dx * (aN + vN) / (aN - aNm1 + vN - vNm1 + dx / delta_t);
+   double kR = (gas->kappa) * (gas->R);
+   double aNm1 = sqrt(kR * T(Npts - 2));
+   double vNm1 = v(Npts - 2);
+   double aN = sqrt(kR * T(Npts - 1));
+   double vN = v(Npts - 1);
+   double dxR = dx * (aN + vN) / (aN - aNm1 + vN - vNm1 + dx / delta_t);
 
 */
 /*cout<<endl<<" aNm1   = :"<<aNm1;
-	cout<<endl<<" aN     = :"<<aN;
-	cout<<endl<<" vNm1   = :"<<vNm1;
-	cout<<endl<<" vN     = :"<<vN;
-	cout<<endl<<" dxR/dx = :"<<dxR/dx<<endl;
-	cin.get();*/
+  cout<<endl<<" aN     = :"<<aN;
+  cout<<endl<<" vNm1   = :"<<vNm1;
+  cout<<endl<<" vN     = :"<<vN;
+  cout<<endl<<" dxR/dx = :"<<dxR/dx<<endl;
+  cin.get();*/
 /*
-	 if (dxR < 0) {
-	 cout << endl
-	 << "ERROR! LWP::GetAlphaAtEnd(), dxR = " << dxR << " < 0 !!!" << endl;
-	 cout << endl << "Name of pipe: " << name << endl;
-	 cin.get();
-	 }
-	 if (dxR > dx) {
-	 cout << endl
-	 << "ERROR! LWP::GetAlphaAtEnd(), dxR/dx = " << dxR / dx << " > 1 !!!" << endl;
-	 cout << endl << "Name of pipe: " << name << endl;
-	 cin.get();
-	 }
+   if (dxR < 0) {
+   cout << endl
+   << "ERROR! LWP::GetAlphaAtEnd(), dxR = " << dxR << " < 0 !!!" << endl;
+   cout << endl << "Name of pipe: " << name << endl;
+   cin.get();
+   }
+   if (dxR > dx) {
+   cout << endl
+   << "ERROR! LWP::GetAlphaAtEnd(), dxR/dx = " << dxR / dx << " > 1 !!!" << endl;
+   cout << endl << "Name of pipe: " << name << endl;
+   cin.get();
+   }
 
-	 double vv = vN * (dx - dxR) / dx + vNm1 * dxR / dx;
-	 double aa = aN * (dx - dxR) / dx + aNm1 * dxR / dx;
-	 double alpha = aa + (gas->kappa - 1.) / 2.*vv;
+   double vv = vN * (dx - dxR) / dx + vNm1 * dxR / dx;
+   double aa = aN * (dx - dxR) / dx + aNm1 * dxR / dx;
+   double alpha = aa + (gas->kappa - 1.) / 2.*vv;
 
-	 return alpha;
+   return alpha;
 
-	 }*/
+   }*/
 
 double LWP::GetC0AtEnd(double t_target) {
 	double delta_t = t_target - t;
 	double TOL = dt / 1000.;
 
 	/*cout<<endl<<"entering GetAlphaAtEnd():";
-		cout<<endl<<"t_target   : "<<t_target;
-		cout<<endl<<"delta_t/dt : "<<delta_t/dt;
-		cin.get();*/
+	  cout<<endl<<"t_target   : "<<t_target;
+	  cout<<endl<<"delta_t/dt : "<<delta_t/dt;
+	  cin.get();*/
 
 	if (delta_t < 0) {
 		if (fabs(delta_t) < TOL)
@@ -1290,11 +1314,11 @@ double LWP::GetC0AtEnd(double t_target) {
 
 
 	/*cout<<endl<<" aNm1   = :"<<aNm1;
-		cout<<endl<<" aN     = :"<<aN;
-		cout<<endl<<" vNm1   = :"<<vNm1;
-		cout<<endl<<" vN     = :"<<vN;
-		cout<<endl<<" dxR/dx = :"<<dxR/dx<<endl;
-		cin.get();*/
+	  cout<<endl<<" aN     = :"<<aN;
+	  cout<<endl<<" vNm1   = :"<<vNm1;
+	  cout<<endl<<" vN     = :"<<vN;
+	  cout<<endl<<" dxR/dx = :"<<dxR/dx<<endl;
+	  cin.get();*/
 
 	if (dxR < 0) {
 		cout << endl
@@ -1352,11 +1376,11 @@ void LWP::GetAllPrimitiveAtEnd(double t_target, double& pP, double& vP, double& 
 
 
 	/*cout<<endl<<" aNm1   = :"<<aNm1;
-		cout<<endl<<" aN     = :"<<aN;
-		cout<<endl<<" vNm1   = :"<<vNm1;
-		cout<<endl<<" vN     = :"<<vN;
-		cout<<endl<<" dxR/dx = :"<<dxR/dx<<endl;
-		cin.get();*/
+	  cout<<endl<<" aN     = :"<<aN;
+	  cout<<endl<<" vNm1   = :"<<vNm1;
+	  cout<<endl<<" vN     = :"<<vN;
+	  cout<<endl<<" dxR/dx = :"<<dxR/dx<<endl;
+	  cin.get();*/
 
 	double TOL_dx_rel = 0.1 / 100.;
 	if (dxR < 0.) {
@@ -1401,15 +1425,15 @@ double LWP::GetAlphaPrimitiveAtEnd(double t_target) {
 
 
 /*! \brief Calculates the dimensionless parameters
-	Calculates the dimensionless parametwers of the pipe using the input parameters as a base.
-	While these parametersa have a usual definitions, here values need to be passed, and as such any can be used
-	for non-dimensionalization.
-	\param pref [in] Reference pressure
-	\param mp_nevl [in] Design mass flow rate
-	\param omega [in] Referency frequency, ususally the natural frequency of the valve
-	\param xref [in] Referecne length, usually equals the compession the reference (atmospheric) pressure would excert on the valve
-	\param m [in] reference mass, ususally the moving mass of the spring-mass-damper system in the valve.
-	*/
+  Calculates the dimensionless parametwers of the pipe using the input parameters as a base.
+  While these parametersa have a usual definitions, here values need to be passed, and as such any can be used
+  for non-dimensionalization.
+  \param pref [in] Reference pressure
+  \param mp_nevl [in] Design mass flow rate
+  \param omega [in] Referency frequency, ususally the natural frequency of the valve
+  \param xref [in] Referecne length, usually equals the compession the reference (atmospheric) pressure would excert on the valve
+  \param m [in] reference mass, ususally the moving mass of the spring-mass-damper system in the valve.
+  */
 void LWP::UpdateDimlessPars(double pref, double mp_nevl, double omega, double xref, double m) {
 	if (!ini_done) {
 		IniUniform(0, 1e5, 293, 20);
@@ -1614,15 +1638,15 @@ void LWP::Save_distribution() {
 			fprintf(pFile,"; %8.6e; %8.6e",alpha_heat,Q);
 		}
 	}
-		fclose (pFile);
-		cout << " done. ";
+	fclose (pFile);
+	cout << " done. ";
 }
 /*! \brief Sets up heat transfer through wall 
-	\param Tw [in] Wall (reference) temperature
-	\param model [in] "adiabatic", "constant_alpha" or "Dittus-Boelter"
-	\param tmp [in] if model="constant_alpha", this sets the heat transfer coeff alpha
-	If heat transfer is switched on, Save_distribution() will add alpha and Q values for each node.
-*/
+  \param Tw [in] Wall (reference) temperature
+  \param model [in] "adiabatic", "constant_alpha" or "Dittus-Boelter"
+  \param tmp [in] if model="constant_alpha", this sets the heat transfer coeff alpha
+  If heat transfer is switched on, Save_distribution() will add alpha and Q values for each node.
+  */
 
 void LWP::SetHeatTransfer(double _Tw,string model, double tmp){
 	HEAT_TRANSFER_ON=true;

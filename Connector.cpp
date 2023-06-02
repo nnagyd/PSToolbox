@@ -274,7 +274,7 @@ void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
 				printf("\n (front) OUTFLOW beta=%5.3e, p=%5.3e, T=%5.3e, rho=%5.3e, v=%5.3e",beta, p, T, rho, v);
 				if (v>0){
 					cout<<endl<<"ERROR!!! Assumed outflow but computed inflow."<<endl;
-					exit(-1);
+				//	exit(-1);
 				}
 			}
 		}
@@ -287,7 +287,7 @@ void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
 			v   = (p - beta) / rho / a;
 			if (DEBUG){
 				printf("\n (front) ERROR !! UNDECIDED beta=%5.3e, p=%5.3e, T=%5.3e, rho=%5.3e, v=%5.3e",beta, p, T, rho, v);
-				exit(-1);
+				//exit(-1);
 			}
 		}
 	}

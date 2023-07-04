@@ -10,8 +10,10 @@ INC_CP = -I/Users/hoscsaba/program/CoolProp/include -I/Users/hoscsaba/program/Co
 LINK_CP = -L/Users/hoscsaba/program/CoolProp/build1 -lCoolProp
 
 all:$(TARGETS)
+	del libmy_tools.a
 	ar rvs libmy_tools.a my_tools.o
 	ranlib libmy_tools.a
+	del libPSToolbox.a
 	ar rvs libPSToolbox.a Gas.o IdealGas.o FrozenMixtureLiquidGas.o Units.o LWP.o SCP.o Reservoir.o Valve.o Connector.o Valve_with_Absorber.o
 	ranlib libPSToolbox.a
 

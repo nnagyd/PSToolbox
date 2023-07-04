@@ -21,15 +21,24 @@ class Connector
 		void Connector_LWP_Reservoir_and_Pipe_Front(double t_target, 
 				Reservoir *r, LWP *p, bool inlet_pressure_drop, double& pf, double& Tf);  
 
+		bool Connector_LWP_Reservoir_and_Pipe_Front_inlet(double t_target, 
+				Reservoir *r, LWP *p, bool inlet_pressure_drop, double& pf, double& Tf);  
+
+		void Connector_LWP_Reservoir_and_Pipe_Front(double t_target, 
+				Reservoir *r, LWP *p, bool inlet_pressure_drop);  
+		
 		bool Connector_LWP_Pipe_Back_and_Valve(double t_target, 
 				LWP *p, Valve *v, double p_downstream, double& pb, double& Tb);
+		
+		bool Connector_LWP_Pipe_Back_and_Valve(double t_target, 
+				LWP *p, Valve *v, double p_downstream);
 		
 		bool Connector_LWP_Pipe_Back_and_Valve_with_Absorber(double t_target, 
 				LWP *p, Valve_with_Absorber *v, double p_downstream, double& pb, double& Tb);
 
 		void Connector_SCP_Reservoir_and_Pipe_Front(double t_target, 
 				Reservoir *r, SCP *p, double rho, double a, bool inlet_pressure_drop, double& pf);
-		
+
 		bool Connector_SCP_Pipe_Back_and_Valve(double t_target, 
 				SCP *p, Valve *v, double rho, double a, double p_downstream, double& pb);
 

@@ -66,7 +66,7 @@ void Connector_Reservoir_and_Valve(double t_target, Reservoir* r1, Valve *v1, do
   */
 
 bool Connector::Connector_LWP_Pipe_Back_and_Valve(double t_target,
-		LWP* p1, Valve* v1, double p_downstream, double& p, double& T) {
+		LWP* p1, Valve* v1, double p_downstream) {
 	// Solve the following system for p,T,rho,v:
 	// (1) alpha=p+ro*a*v
 	// (2) ro*Apipe*v=valve_mass_flow
@@ -78,15 +78,16 @@ bool Connector::Connector_LWP_Pipe_Back_and_Valve(double t_target,
 	//double cp   =p1->gas->cp;
 
 	double update_OK=true;
-	double rho, v, a, alpha, Apipe, pL;
+	double rho, v, a, alpha, Apipe;
 
 	Apipe = p1->Get_dprop("A");
-	p1->GetAllPrimitiveAtEnd(t_target, pL, v, T, rho);
+	//p1->GetAllPrimitiveAtEnd(t_target, pL, v, T, rho);
 	alpha = p1->GetAlphaPrimitiveAtEnd(t_target);
 
 	double err1, err2, err = 1.e5, mp, TOL = 1e-5;
 	int iter = 0, MAX_ITER = 10;
-	p = pL;
+	double p = p1->Get_dprop("p_back");
+	double T = p1->Get_dprop("T_back");
 	while ((err > TOL) && (iter<=MAX_ITER)) {
 		a   = p1->gas->Get_SonicVel(T,p);
 		rho = p1->gas->Get_rho(p, T);
@@ -107,8 +108,8 @@ bool Connector::Connector_LWP_Pipe_Back_and_Valve(double t_target,
 		}
 	}
 
-	//cout<<endl<<"\n\n exiting Connector...";
-	//printf("\n\t p=%5.3e, T=%5.3e, rho=%5.3e, a=%5.3e, v=%5.3e, mp=%+5.3e",p, T, rho, a, v, mp);
+	p1->BCRight("StaticPres_and_StaticTemp",p,T,true);
+
 	return update_OK;
 }
 
@@ -128,12 +129,12 @@ bool Connector::Connector_LWP_Pipe_Back_and_Valve_with_Absorber(double t_target,
 	double rho, v, a, alpha, Apipe, pL;
 
 	Apipe = p1->Get_dprop("A");
-	p1->GetAllPrimitiveAtEnd(t_target, pL, v, T, rho);
+	//p1->GetAllPrimitiveAtEnd(t_target, pL, v, T, rho);
 	alpha = p1->GetAlphaPrimitiveAtEnd(t_target);
 
 	double err1, err2, err = 1.e5, mp, TOL = 1e-5;
 	int iter = 0, MAX_ITER = 10;
-	p = pL;
+	p = p1->Get_dprop("p_back");
 	while ((err > TOL) && (iter<=MAX_ITER)) {
 		a   = p1->gas->Get_SonicVel(T,p);
 		rho = p1->gas->Get_rho(p, T);
@@ -161,6 +162,43 @@ bool Connector::Connector_LWP_Pipe_Back_and_Valve_with_Absorber(double t_target,
 
 
 void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
+		Reservoir* r1, LWP* p1, bool inlet_pressure_drop){
+	double pt = r1->Get_dprop("p");
+	double Tt = r1->Get_dprop("T");
+
+	double pin,Tin;
+	bool is_inflow=false, is_outflow=false;
+	if (!inlet_pressure_drop){
+		is_inflow=p1->BCLeft("StaticPres_and_StaticTemp_Inlet",pt,Tt,false);
+		pin=pt; Tin=Tt;
+	}
+	else{
+		is_inflow=Connector_LWP_Reservoir_and_Pipe_Front_inlet(t_target,r1,p1,inlet_pressure_drop,pt,Tt);
+		pin=pt;
+		Tin=Tt;
+		// Old pt, Tt values were overwritten load them again
+		pt = r1->Get_dprop("p");
+		Tt = r1->Get_dprop("T");
+	}
+
+	if (is_inflow)
+		is_inflow=p1->BCLeft("StaticPres_and_StaticTemp_Inlet",pin,Tin,true);
+	else{
+		is_outflow=p1->BCLeft("StaticPres_Outlet",pt,0,false);
+
+		if (is_outflow)
+			is_outflow=p1->BCLeft("StaticPres_Outlet",pt,0,true);
+		else{
+			p1->BCLeft("Wall",0,0,true);
+			cout<<endl<<"WARNING: Connector_LWP_Reservoir_and_Pipe_Front() -> Neither inflow, nor outflow! Applying wall BC.";
+			if (DEBUG)
+				cin.get();
+		}
+
+	}
+}
+
+bool Connector::Connector_LWP_Reservoir_and_Pipe_Front_inlet(double t_target,
 		Reservoir* r1, LWP* p1, bool inlet_pressure_drop,
 		double& p, double& T) {
 	// Solve the following system for p,T,rho,v:
@@ -179,15 +217,17 @@ void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
 	//double rhot = p1->gas->Get_rho(pt, Tt);
 
 	double rho, v, a, beta;
-	p1->GetAllPrimitiveAtFront(t_target, p, v, T, rho);
+	//p1->GetAllPrimitiveAtFront(t_target, p, v, T, rho);
 	beta = p1->GetBetaPrimitiveAtFront(t_target);
-	bool is_ok = false;
+	//bool is_ok = false;
 
 	// Assume inflow
-	v = 1.;
+	v = p1->Get_dprop("v_front");
+	if (v<0)
+		v=0.;
 
-	double err = 1.e5, TOL = 0.01 /*m/s*/, dv, f, f1, df, vnew;
-	int iter = 0, MAX_ITER = 200;
+	double err = 1.e5, TOL = 0.001 /*m/s*/, dv, f, f1, df, vnew;
+	int iter = 0, MAX_ITER = 50;
 	while (fabs(err) > TOL) {		
 
 		f   = Connector_LWP_Reservoir_and_Pipe_Front_fun(v, beta, r1, p1, inlet_pressure_drop);
@@ -208,11 +248,101 @@ void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
 
 		iter++; 
 
-		double RELAX=0.9;
+		double RELAX=0.5;
 		v = (1.-RELAX)*v + RELAX*vnew;
 
 		if (iter == MAX_ITER) {
 			cout << endl << "!!!ERROR!!! Connector_Reservoir_and_Pipe_Front() -> MAX_ITER reached. (1)";
+			exit(-1);
+		}
+	}
+
+	double Tnew;
+	iter=0; err=1.e5; T=293;
+	while (fabs(err)>0.1){
+		cp = p1->gas->Get_cp(p,T);
+		kappa_Tv = p1->gas->Get_kappa_Tv();
+		Tnew     = Tt-v*v/2/cp;
+		if (inlet_pressure_drop)
+			p   = pt * pow(Tnew / Tt, kappa_Tv/(kappa_Tv - 1.));
+		else 
+			p=pt;
+		rho = p1->gas->Get_rho(p, Tnew);
+		a   = p1->gas->Get_SonicVel(Tnew,p);
+
+		err=T-Tnew;
+		T=Tnew;
+
+		if (DEBUG)  
+			printf("\n (front, inflow) outer iter #%2d: cp=%5.3e, kappa_Tv=%5.3e, p=%5.3e, T=%5.3e, v=%5.3e, err=%5.3e",iter, cp, kappa_Tv, p, T, v, err);
+
+		if (iter == MAX_ITER) {
+			cout << endl << "!!!ERROR!!! Connector_Reservoir_and_Pipe_Front() -> MAX_ITER reached. (2)";
+			exit(-1);
+		}
+
+		iter++;
+	}
+
+	bool is_inflow=false;
+	if (v>0)
+		is_inflow=true;
+	return is_inflow;
+}
+
+void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
+		Reservoir* r1, LWP* p1, bool inlet_pressure_drop,
+		double& p, double& T) {
+	// Solve the following system for p,T,rho,v:
+	// (1)  Tt=T+v^2/2/cp            Isentropic flow from the reservoir to the pipe
+	// (2)  p-rho*a*v = beta_front   Charactersistic equation
+	// (3)  rho = rho(p,T)
+	// (4a) p=pt;
+	// (4b) pt/rhot^k = p/rho^k
+
+	if (DEBUG)
+		cout<<endl<<endl<< "Connector::Connector_LWP_Reservoir_and_Pipe_Front: entering DEBUG mode"<<endl;
+
+	double cp=1000., kappa_Tv=1.4;
+	double pt = r1->Get_dprop("p");
+	double Tt = r1->Get_dprop("T");
+	//double rhot = p1->gas->Get_rho(pt, Tt);
+
+	double rho, v, a, beta;
+	//p1->GetAllPrimitiveAtFront(t_target, p, v, T, rho);
+	beta = p1->GetBetaPrimitiveAtFront(t_target);
+	bool is_ok = false;
+
+	// Assume inflow
+	v = 1.;
+
+	double err = 1.e5, TOL = 0.001 /*m/s*/, dv, f, f1, df, vnew;
+	int iter = 0, MAX_ITER = 50;
+	while (fabs(err) > TOL) {		
+
+		f   = Connector_LWP_Reservoir_and_Pipe_Front_fun(v, beta, r1, p1, inlet_pressure_drop);
+
+		if (fabs(v)>0.001)
+			dv = v * 0.01;
+		else
+			dv=0.001;
+		f1 = Connector_LWP_Reservoir_and_Pipe_Front_fun(v + dv, beta, r1, p1,inlet_pressure_drop);
+
+		df = (f1 - f) / dv;
+		vnew = v - f / df;
+
+		err = f;
+
+		if (DEBUG)  
+			printf("\n (front, inflow) inner iter #%2d: pt=%5.3e, beta=%5.3e, v=%5.3e, err=%5.3e",iter, pt, beta, v, err);
+
+		iter++; 
+
+		double RELAX=0.5;
+		v = (1.-RELAX)*v + RELAX*vnew;
+
+		if (iter == MAX_ITER) {
+			cout << endl << "!!!ERROR!!! Connector_LWP_Reservoir_and_Pipe_Front() -> MAX_ITER reached. (1)";
 			exit(-1);
 		}
 	}
@@ -274,7 +404,7 @@ void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
 				printf("\n (front) OUTFLOW beta=%5.3e, p=%5.3e, T=%5.3e, rho=%5.3e, v=%5.3e",beta, p, T, rho, v);
 				if (v>0){
 					cout<<endl<<"ERROR!!! Assumed outflow but computed inflow."<<endl;
-				//	exit(-1);
+					//	exit(-1);
 				}
 			}
 		}
@@ -300,14 +430,12 @@ double Connector::Connector_LWP_Reservoir_and_Pipe_Front_fun(double v, double be
 	//double rhot = p1->gas->Get_rho(pt, Tt);
 	double cp   = p1->gas->Get_cp(pt,Tt);
 	double kappa_Tv = p1->gas->Get_kappa_Tv();
-	//double beta = p1->GetBetaPrimitiveAtFront(t_target);
 
-	double T   = Tt-v*v/2./cp;
-	double p;
+// The absolute value is very important!
+	double T   = Tt-v*fabs(v)/2./cp;
+	double p=pt;
 	if (inlet_pressure_drop)
 		p   = pt * pow(T / Tt, kappa_Tv/(kappa_Tv - 1.));
-	else 
-		p=pt;
 	double rho = p1->gas->Get_rho(p, T);
 	double a   = p1->gas->Get_SonicVel(T,p);
 	return (p - rho * a * v) - beta;

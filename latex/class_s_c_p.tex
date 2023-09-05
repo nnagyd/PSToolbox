@@ -1,5 +1,5 @@
-\hypertarget{class_s_c_p}{}\doxysection{SCP Class Reference}
-\label{class_s_c_p}\index{SCP@{SCP}}
+\doxysection{SCP Class Reference}
+\hypertarget{class_s_c_p}{}\label{class_s_c_p}\index{SCP@{SCP}}
 
 
 Class to model a slightly compressible pipe.  
@@ -15,114 +15,102 @@ Inheritance diagram for SCP\+:\begin{figure}[H]
 \includegraphics[height=2.000000cm]{class_s_c_p}
 \end{center}
 \end{figure}
-\doxysubsection*{Public Member Functions}
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_s_c_p_a3dedbee89f8f613bd2987b6fca6dca94}{SCP}} (const string \+\_\+nev, const string \+\_\+cspe\+\_\+nev, const string \+\_\+cspv\+\_\+nev, const double \+\_\+ro, const double \+\_\+a, const double \+\_\+L, const double \+\_\+D, const double \+\_\+lambda, const double \+\_\+he, const double \+\_\+hv, const bool save\+\_\+data)
 \begin{DoxyCompactList}\small\item\em Constructor for the slightly compressible pipe class. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_s_c_p_aec0db6047f6437d1ff4de3e5c21a9671}\label{class_s_c_p_aec0db6047f6437d1ff4de3e5c21a9671}} 
-{\bfseries $\sim$\+SCP} ()
-\begin{DoxyCompactList}\small\item\em Desctructor of the \mbox{\hyperlink{class_s_c_p}{SCP}} class. \end{DoxyCompactList}\item 
+\Hypertarget{class_s_c_p_aec0db6047f6437d1ff4de3e5c21a9671}\label{class_s_c_p_aec0db6047f6437d1ff4de3e5c21a9671} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+SCP} ()
+\begin{DoxyCompactList}\small\item\em Desctructor of the \doxylink{class_s_c_p}{SCP} class. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_s_c_p_af16d744aa2d09926cf227f260773a82c}{Get\+Name}} ()
-\begin{DoxyCompactList}\small\item\em Gives name of the pipe Returns the name of the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gives name of the pipe Returns the name of the \doxylink{class_s_c_p}{SCP} pipe. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_s_c_p_a49d5f5d781536e58ce5e21026dfa8059}{Info}} (bool show\+\_\+pts)
 \begin{DoxyCompactList}\small\item\em Return the basic info of the pipe Returns the basic info about the pipe section. If so set, the data within the points is also displayed. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_s_c_p_afd01c84f7ecfe434523957f646bfbcb1}{Ini}} (int Npts\+\_\+mul)
-\begin{DoxyCompactList}\small\item\em Initialize the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe Initializes the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe with a given number of points at 1 bar pressure and 0 velocity. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Initialize the \doxylink{class_s_c_p}{SCP} pipe Initializes the \doxylink{class_s_c_p}{SCP} pipe with a given number of points at 1 bar pressure and 0 velocity. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_s_c_p_a7c41b5c5742ed46307d91d73e6a46327}{Ini}} (double vini, double \+\_\+pstart)
-\begin{DoxyCompactList}\small\item\em Initialize the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe Initializes the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe with 20 grid points and initial uniform flow velocity and pressure. (The generated pressure drops with friction.) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Initialize the \doxylink{class_s_c_p}{SCP} pipe Initializes the \doxylink{class_s_c_p}{SCP} pipe with 20 grid points and initial uniform flow velocity and pressure. (The generated pressure drops with friction.) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_s_c_p_a9f5e519bf13863e1632f5607624143d1}{Ini}} (double vini, double \+\_\+pstart, int Npts\+\_\+mul)
-\begin{DoxyCompactList}\small\item\em Initialize the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe Initializes the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe with 20$\ast$\+Npts\+\_\+mul grid points, initial uniform velocity and pressure at the inlet. (The generated pressure drops with friction.) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Initialize the \doxylink{class_s_c_p}{SCP} pipe Initializes the \doxylink{class_s_c_p}{SCP} pipe with 20\texorpdfstring{$\ast$}{*}\+Npts\+\_\+mul grid points, initial uniform velocity and pressure at the inlet. (The generated pressure drops with friction.) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_s_c_p_a3709666047b1cf4cc6b6b460430bb83e}{Ini}} (double vini, double \+\_\+pstart, double dt\+\_\+target)
-\begin{DoxyCompactList}\small\item\em Initialize the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe Initializes the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe with number of grid points that satisfy the given timestep Initial uniform velocity distribution and a pressure at the inlet. (The generated pressure drops with friction.) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Initialize the \doxylink{class_s_c_p}{SCP} pipe Initializes the \doxylink{class_s_c_p}{SCP} pipe with number of grid points that satisfy the given timestep Initial uniform velocity distribution and a pressure at the inlet. (The generated pressure drops with friction.) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_s_c_p_af1f4995d58d75d80ed1738346ff06bf4}{Update\+Dimless\+Pars}} (double pref, double mp\+\_\+nevl, double omega, double xref, double m)
 \begin{DoxyCompactList}\small\item\em Calculates the dimensionless parameters Calculates the dimensionless parametwers of the pipe using the input parameters as a base. While these parametersa have a usual definitions, here values need to be passed, and as such any can be used for non-\/dimensionalization. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_s_c_p_a046c2c6fa8dedf9d5797b294db9c4f15}{Get\+\_\+dprop}} (string prop\+\_\+string)
-\begin{DoxyCompactList}\small\item\em Return a property of the \mbox{\hyperlink{class_s_c_p}{SCP}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Return a property of the \doxylink{class_s_c_p}{SCP}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_s_c_p_ac1f64a4207c1e612da730cebbb44c682}{Set\+\_\+dprop}} (string prop\+\_\+string, double val)
 \begin{DoxyCompactList}\small\item\em Set a parameter Allows to reset the diameter or length the pipe. Updating the length will rescale the system. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_s_c_p_a58097cfe30d419e07d14bac541d04af5}{Step}} (string BC\+\_\+start\+\_\+type, double BC\+\_\+start\+\_\+val, string BC\+\_\+end\+\_\+type, double BC\+\_\+end\+\_\+val)
-\begin{DoxyCompactList}\small\item\em Take a timestep. Calculates a timestep in the system dependent on the boundary conditions. (Those are given by the same strings and values as the ones in BCLeft and BCRight) Accepted boundary condition types\+: \char`\"{}\+Pressure\char`\"{} \& \char`\"{}\+Velocity\char`\"{}. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_s_c_p_a89b4153c9fb930954b585a0ca7cf9d7c}\label{class_s_c_p_a89b4153c9fb930954b585a0ca7cf9d7c}} 
+\begin{DoxyCompactList}\small\item\em Take a timestep. Calculates a timestep in the system dependent on the boundary conditions. (Those are given by the same strings and values as the ones in BCLeft and BCRight) Accepted boundary condition types\+: \"{}\+Pressure\"{} \& \"{}\+Velocity\"{}. \end{DoxyCompactList}\item 
+\Hypertarget{class_s_c_p_a89b4153c9fb930954b585a0ca7cf9d7c}\label{class_s_c_p_a89b4153c9fb930954b585a0ca7cf9d7c} 
 double {\bfseries Get\+Alpha\+At\+End} (double t\+\_\+target)
 \item 
-\mbox{\Hypertarget{class_s_c_p_a6183e93948861f5d3a3282cbf31f977b}\label{class_s_c_p_a6183e93948861f5d3a3282cbf31f977b}} 
+\Hypertarget{class_s_c_p_a6183e93948861f5d3a3282cbf31f977b}\label{class_s_c_p_a6183e93948861f5d3a3282cbf31f977b} 
 double {\bfseries Get\+Beta\+At\+Front} (double t\+\_\+target)
 \item 
-\mbox{\Hypertarget{class_s_c_p_a6137f34f11cf5c9b4c3fc3c266aac067}\label{class_s_c_p_a6137f34f11cf5c9b4c3fc3c266aac067}} 
+\Hypertarget{class_s_c_p_a6137f34f11cf5c9b4c3fc3c266aac067}\label{class_s_c_p_a6137f34f11cf5c9b4c3fc3c266aac067} 
 double {\bfseries Get\+Alpha\+Primitive\+At\+End} (double t\+\_\+target)
 \item 
-\mbox{\Hypertarget{class_s_c_p_a67b7c3d88873f91950d4881c42947bc7}\label{class_s_c_p_a67b7c3d88873f91950d4881c42947bc7}} 
+\Hypertarget{class_s_c_p_a67b7c3d88873f91950d4881c42947bc7}\label{class_s_c_p_a67b7c3d88873f91950d4881c42947bc7} 
 double {\bfseries Get\+Beta\+Primitive\+At\+Front} (double t\+\_\+target)
 \item 
-\mbox{\Hypertarget{class_s_c_p_a15a21288294d0ae18e73ef2fccc1388b}\label{class_s_c_p_a15a21288294d0ae18e73ef2fccc1388b}} 
+\Hypertarget{class_s_c_p_a15a21288294d0ae18e73ef2fccc1388b}\label{class_s_c_p_a15a21288294d0ae18e73ef2fccc1388b} 
 void {\bfseries Save\+\_\+data} ()
 \begin{DoxyCompactList}\small\item\em Exports savied data Exports data saved from previous settings (such as steps and initialization.) Only works if the save\+\_\+data flag was set to true, otherwise an error message is displayed. Data is saved to the previously determined savefile name. No inputs/outputs. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_s_c_p_a788d3c89f8db4ae29abe3d90dea03e54}\label{class_s_c_p_a788d3c89f8db4ae29abe3d90dea03e54}} 
+\Hypertarget{class_s_c_p_a788d3c89f8db4ae29abe3d90dea03e54}\label{class_s_c_p_a788d3c89f8db4ae29abe3d90dea03e54} 
 void {\bfseries Save\+\_\+status} (bool newfile, bool atonce)
 \item 
 float \mbox{\hyperlink{class_s_c_p_acf9565ea5e961dc2b13593556414a113}{Get\+Penult}} (string what)
 \begin{DoxyCompactList}\small\item\em Export the penultimate values of a given return data Returns the penultimate value of the collected data. Only one value, the one specified by the input value is returned. Possible values\+: t,p\+\_\+front, p\+\_\+back, v\+\_\+front, v\+\_\+back, mp\+\_\+front, mp\+\_\+back. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_s_c_p_a5736aeb413b6ea08f0c7bd6aa3da1d45}\label{class_s_c_p_a5736aeb413b6ea08f0c7bd6aa3da1d45}} 
+\Hypertarget{class_s_c_p_a5736aeb413b6ea08f0c7bd6aa3da1d45}\label{class_s_c_p_a5736aeb413b6ea08f0c7bd6aa3da1d45} 
 vector$<$ double $>$ {\bfseries Get\+\_\+dvprop} (string prop\+\_\+string)
+\item 
+\Hypertarget{class_s_c_p_a77774ab55f72cd0b175c09d6f7b8fba3}\label{class_s_c_p_a77774ab55f72cd0b175c09d6f7b8fba3} 
+void {\bfseries list\+\_\+pv} ()
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_units}{Units}}}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_units}{Units}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_units_aa10ded064259f35f044246879725b98a}{Units}} ()
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a64dc33d12edc3be94cfc72472cefecfe}\label{class_units_a64dc33d12edc3be94cfc72472cefecfe}} 
-{\bfseries $\sim$\+Units} ()
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Units} ()
 \begin{DoxyCompactList}\small\item\em Destuctor. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
+\doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_s_c_p_a77886d757791949bd29efe51e6c47703}\label{class_s_c_p_a77886d757791949bd29efe51e6c47703}} 
+\Hypertarget{class_s_c_p_a77886d757791949bd29efe51e6c47703}\label{class_s_c_p_a77886d757791949bd29efe51e6c47703} 
 string {\bfseries fname}
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_units}{Units}}}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_units}{Units}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_units_aae98637c25e6a33b2521c48465f29691}\label{class_units_aae98637c25e6a33b2521c48465f29691}} 
 double {\bfseries ft\+\_\+to\+\_\+m}
 \begin{DoxyCompactList}\small\item\em Converts foot to meters. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_ac43b581dc1a05a12a84cba0bde9d0fb3}\label{class_units_ac43b581dc1a05a12a84cba0bde9d0fb3}} 
 double {\bfseries m\+\_\+to\+\_\+ft}
 \begin{DoxyCompactList}\small\item\em Convert meters to foot. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a825b374297ce7d7d0e03a3908d716ae8}\label{class_units_a825b374297ce7d7d0e03a3908d716ae8}} 
 double {\bfseries inch\+\_\+to\+\_\+m}
 \begin{DoxyCompactList}\small\item\em Convert inches to meters. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a80da69188cc3184cb3596223bc5d1fc1}\label{class_units_a80da69188cc3184cb3596223bc5d1fc1}} 
 double {\bfseries m\+\_\+to\+\_\+inch}
 \begin{DoxyCompactList}\small\item\em Convert metres to inches. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a0cf66a20a8f5651c3a5e46ebd6bb4f63}\label{class_units_a0cf66a20a8f5651c3a5e46ebd6bb4f63}} 
 double {\bfseries lbm\+\_\+to\+\_\+kg}
 \begin{DoxyCompactList}\small\item\em Convert pounds to kilograms. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_acefd99f83c8cf786bd5c6e045283f2e8}\label{class_units_acefd99f83c8cf786bd5c6e045283f2e8}} 
 double {\bfseries kg\+\_\+to\+\_\+lbm}
 \begin{DoxyCompactList}\small\item\em Multiplier for conversion from kilogram to pound. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a5215c9f5e61c890b28bff680e6a511ca}\label{class_units_a5215c9f5e61c890b28bff680e6a511ca}} 
 double {\bfseries lbf\+\_\+to\+\_\+N}
 \begin{DoxyCompactList}\small\item\em Multiplier for conversion of poundforce to Newtons. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_ab7a4c6a874120920d5414ed57178b57b}\label{class_units_ab7a4c6a874120920d5414ed57178b57b}} 
 double {\bfseries N\+\_\+to\+\_\+lbf}
 \begin{DoxyCompactList}\small\item\em Mulitplier for conversion of Newtons to poundforce. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a525b1531b6b496d29fab81d65df1b83b}\label{class_units_a525b1531b6b496d29fab81d65df1b83b}} 
 double {\bfseries psi\+\_\+to\+\_\+\+Pa}
 \begin{DoxyCompactList}\small\item\em Mulitplier ofr conversion of pound per square inch to Pa. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a1b5a970e875c7153f84b206b5d02ee6d}\label{class_units_a1b5a970e875c7153f84b206b5d02ee6d}} 
 double {\bfseries Pa\+\_\+to\+\_\+psi}
 \begin{DoxyCompactList}\small\item\em Multiplier for conversion of pascals to pound per square inch. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a9ae6f34b3ff8b508d964ec2b605bc1a1}\label{class_units_a9ae6f34b3ff8b508d964ec2b605bc1a1}} 
 double {\bfseries psi\+\_\+to\+\_\+bar}
 \begin{DoxyCompactList}\small\item\em Mulitplier for conversion of psi to bar. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a5c07ef1fbf32eb6f128824ea44f18124}\label{class_units_a5c07ef1fbf32eb6f128824ea44f18124}} 
 double {\bfseries bar\+\_\+to\+\_\+psi}
 \begin{DoxyCompactList}\small\item\em Multiplier for conversion of bar to psi. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a5cf78bb6d35d06600c5b52dd7c451709}\label{class_units_a5cf78bb6d35d06600c5b52dd7c451709}} 
 double {\bfseries m3\+\_\+to\+\_\+inch3}
 \begin{DoxyCompactList}\small\item\em Multiplier for conversion of cubic meter to cumbic inch. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_aa8eaefa114dd3f3f71441fca9f530c68}\label{class_units_aa8eaefa114dd3f3f71441fca9f530c68}} 
 double {\bfseries inch3\+\_\+to\+\_\+m3}
 \begin{DoxyCompactList}\small\item\em Multiplier for conversion of cubic inches to cubic metres. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -133,7 +121,7 @@ Class to model a slightly compressible pipe.
 A class that is used for modelling a Slightly Compressible Pipe. (The latter means that the liquid is treated as having constant density, and the speed of sound is much higher than the usual flow speeds in the pipe.) The solution of the system will be based on the method of characterisctics (MOC) 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_s_c_p_a3dedbee89f8f613bd2987b6fca6dca94}\label{class_s_c_p_a3dedbee89f8f613bd2987b6fca6dca94}} 
+\Hypertarget{class_s_c_p_a3dedbee89f8f613bd2987b6fca6dca94}\label{class_s_c_p_a3dedbee89f8f613bd2987b6fca6dca94} 
 \index{SCP@{SCP}!SCP@{SCP}}
 \index{SCP@{SCP}!SCP@{SCP}}
 \doxysubsubsection{\texorpdfstring{SCP()}{SCP()}}
@@ -145,25 +133,25 @@ Constructor for the slightly compressible pipe class.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em \+\_\+name} & Name of the slightls compressible pipe\\
+\mbox{\texttt{ in}}  & {\em \+\_\+name} & Name of the slightls compressible pipe  \\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+cspe\+\_\+name} & Name of the previous node\\
+\mbox{\texttt{ in}}  & {\em \+\_\+cspe\+\_\+name} & Name of the previous node  \\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+cspv\+\_\+name} & Name of the next node\\
+\mbox{\texttt{ in}}  & {\em \+\_\+cspv\+\_\+name} & Name of the next node  \\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+ro} & Density of the fluid in the system (Constant as it is incompressible)\\
+\mbox{\texttt{ in}}  & {\em \+\_\+ro} & Density of the fluid in the system (Constant as it is incompressible)  \\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+a} & Speed of sound in the system\\
+\mbox{\texttt{ in}}  & {\em \+\_\+a} & Speed of sound in the system  \\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+L} & Length of the pipe section\\
+\mbox{\texttt{ in}}  & {\em \+\_\+L} & Length of the pipe section  \\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+D} & Diameter of the pipe\\
+\mbox{\texttt{ in}}  & {\em \+\_\+D} & Diameter of the pipe  \\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+lambda} & Friction loss factor\\
+\mbox{\texttt{ in}}  & {\em \+\_\+lambda} & Friction loss factor  \\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+he} & Height at the beginning \mbox{[}eleje\mbox{]} of the pipe\\
+\mbox{\texttt{ in}}  & {\em \+\_\+he} & Height at the beginning \mbox{[}eleje\mbox{]} of the pipe  \\
 \hline
-\mbox{\texttt{ in}}  & {\em \+\_\+hv} & Height at the end \mbox{[}v{\ucr}ge\mbox{]} of the pipe\\
+\mbox{\texttt{ in}}  & {\em \+\_\+hv} & Height at the end \mbox{[}v{\ucr}ge\mbox{]} of the pipe  \\
 \hline
 \mbox{\texttt{ in}}  & {\em \+\_\+save\+\_\+data} & whether to save data \\
 \hline
@@ -171,7 +159,7 @@ Constructor for the slightly compressible pipe class.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_s_c_p_a046c2c6fa8dedf9d5797b294db9c4f15}\label{class_s_c_p_a046c2c6fa8dedf9d5797b294db9c4f15}} 
+\Hypertarget{class_s_c_p_a046c2c6fa8dedf9d5797b294db9c4f15}\label{class_s_c_p_a046c2c6fa8dedf9d5797b294db9c4f15} 
 \index{SCP@{SCP}!Get\_dprop@{Get\_dprop}}
 \index{Get\_dprop@{Get\_dprop}!SCP@{SCP}}
 \doxysubsubsection{\texorpdfstring{Get\_dprop()}{Get\_dprop()}}
@@ -179,17 +167,17 @@ Constructor for the slightly compressible pipe class.
 
 
 
-Return a property of the \mbox{\hyperlink{class_s_c_p}{SCP}}. 
+Return a property of the \doxylink{class_s_c_p}{SCP}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em prop\+\_\+string} & A string describing the needed property (\char`\"{}\+L\char`\"{} $\vert$ \char`\"{}\+L\+\_\+feet\char`\"{} $\vert$ \char`\"{}\+D\char`\"{} $\vert$ \char`\"{}\+D\+\_\+inch\char`\"{} $\vert$ \char`\"{}\+A\char`\"{} $\vert$ \char`\"{}dt\char`\"{} $\vert$ \char`\"{}p\+\_\+front\char`\"{} $\vert$ \char`\"{}p\+\_\+back\char`\"{} $\vert$ \char`\"{}v\+\_\+front\char`\"{} $\vert$ \char`\"{}v\+\_\+back\char`\"{} $\vert$ \char`\"{}mp\+\_\+front\char`\"{} $\vert$ \char`\"{}mp\+\_\+back\char`\"{} $\vert$ \char`\"{}frek\char`\"{} $\vert$ \char`\"{}tnext\char`\"{} $\vert$ \char`\"{}lambda\char`\"{} $\vert$ \char`\"{}phi\char`\"{} $\vert$ \char`\"{}mu\char`\"{} $\vert$ \char`\"{}rho\char`\"{} $\vert$ \char`\"{}a\char`\"{}) \\
+{\em prop\+\_\+string} & A string describing the needed property (\"{}\+L\"{} \texorpdfstring{$\vert$}{|} \"{}\+L\+\_\+feet\"{} \texorpdfstring{$\vert$}{|} \"{}\+D\"{} \texorpdfstring{$\vert$}{|} \"{}\+D\+\_\+inch\"{} \texorpdfstring{$\vert$}{|} \"{}\+A\"{} \texorpdfstring{$\vert$}{|} \"{}dt\"{} \texorpdfstring{$\vert$}{|} \"{}p\+\_\+front\"{} \texorpdfstring{$\vert$}{|} \"{}p\+\_\+back\"{} \texorpdfstring{$\vert$}{|} \"{}v\+\_\+front\"{} \texorpdfstring{$\vert$}{|} \"{}v\+\_\+back\"{} \texorpdfstring{$\vert$}{|} \"{}mp\+\_\+front\"{} \texorpdfstring{$\vert$}{|} \"{}mp\+\_\+back\"{} \texorpdfstring{$\vert$}{|} \"{}frek\"{} \texorpdfstring{$\vert$}{|} \"{}tnext\"{} \texorpdfstring{$\vert$}{|} \"{}lambda\"{} \texorpdfstring{$\vert$}{|} \"{}phi\"{} \texorpdfstring{$\vert$}{|} \"{}mu\"{} \texorpdfstring{$\vert$}{|} \"{}rho\"{} \texorpdfstring{$\vert$}{|} \"{}a\"{}) \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 The value that was looked up. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_s_c_p_af16d744aa2d09926cf227f260773a82c}\label{class_s_c_p_af16d744aa2d09926cf227f260773a82c}} 
+\Hypertarget{class_s_c_p_af16d744aa2d09926cf227f260773a82c}\label{class_s_c_p_af16d744aa2d09926cf227f260773a82c} 
 \index{SCP@{SCP}!GetName@{GetName}}
 \index{GetName@{GetName}!SCP@{SCP}}
 \doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
@@ -197,12 +185,12 @@ The value that was looked up.
 
 
 
-Gives name of the pipe Returns the name of the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe. 
+Gives name of the pipe Returns the name of the \doxylink{class_s_c_p}{SCP} pipe. 
 
 \begin{DoxyReturn}{Returns}
 name of the pipe 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_s_c_p_acf9565ea5e961dc2b13593556414a113}\label{class_s_c_p_acf9565ea5e961dc2b13593556414a113}} 
+\Hypertarget{class_s_c_p_acf9565ea5e961dc2b13593556414a113}\label{class_s_c_p_acf9565ea5e961dc2b13593556414a113} 
 \index{SCP@{SCP}!GetPenult@{GetPenult}}
 \index{GetPenult@{GetPenult}!SCP@{SCP}}
 \doxysubsubsection{\texorpdfstring{GetPenult()}{GetPenult()}}
@@ -217,7 +205,7 @@ Export the penultimate values of a given return data Returns the penultimate val
 {\em The} & name of the value we would like tor return. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_s_c_p_a49d5f5d781536e58ce5e21026dfa8059}\label{class_s_c_p_a49d5f5d781536e58ce5e21026dfa8059}} 
+\Hypertarget{class_s_c_p_a49d5f5d781536e58ce5e21026dfa8059}\label{class_s_c_p_a49d5f5d781536e58ce5e21026dfa8059} 
 \index{SCP@{SCP}!Info@{Info}}
 \index{Info@{Info}!SCP@{SCP}}
 \doxysubsubsection{\texorpdfstring{Info()}{Info()}}
@@ -235,7 +223,7 @@ Return the basic info of the pipe Returns the basic info about the pipe section.
 \begin{DoxyReturn}{Returns}
 a string containing all the pipe data, in a printable form. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_s_c_p_a7c41b5c5742ed46307d91d73e6a46327}\label{class_s_c_p_a7c41b5c5742ed46307d91d73e6a46327}} 
+\Hypertarget{class_s_c_p_a7c41b5c5742ed46307d91d73e6a46327}\label{class_s_c_p_a7c41b5c5742ed46307d91d73e6a46327} 
 \index{SCP@{SCP}!Ini@{Ini}}
 \index{Ini@{Ini}!SCP@{SCP}}
 \doxysubsubsection{\texorpdfstring{Ini()}{Ini()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
@@ -243,7 +231,7 @@ a string containing all the pipe data, in a printable form.
 
 
 
-Initialize the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe Initializes the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe with 20 grid points and initial uniform flow velocity and pressure. (The generated pressure drops with friction.) 
+Initialize the \doxylink{class_s_c_p}{SCP} pipe Initializes the \doxylink{class_s_c_p}{SCP} pipe with 20 grid points and initial uniform flow velocity and pressure. (The generated pressure drops with friction.) 
 
 
 \begin{DoxyParams}{Parameters}
@@ -252,7 +240,7 @@ Initialize the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe Initializes the \mbox{\h
 {\em pstart} & Pressure at the inlet, set up lambda to decrease with friction \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_s_c_p_a3709666047b1cf4cc6b6b460430bb83e}\label{class_s_c_p_a3709666047b1cf4cc6b6b460430bb83e}} 
+\Hypertarget{class_s_c_p_a3709666047b1cf4cc6b6b460430bb83e}\label{class_s_c_p_a3709666047b1cf4cc6b6b460430bb83e} 
 \index{SCP@{SCP}!Ini@{Ini}}
 \index{Ini@{Ini}!SCP@{SCP}}
 \doxysubsubsection{\texorpdfstring{Ini()}{Ini()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
@@ -260,7 +248,7 @@ Initialize the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe Initializes the \mbox{\h
 
 
 
-Initialize the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe Initializes the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe with number of grid points that satisfy the given timestep Initial uniform velocity distribution and a pressure at the inlet. (The generated pressure drops with friction.) 
+Initialize the \doxylink{class_s_c_p}{SCP} pipe Initializes the \doxylink{class_s_c_p}{SCP} pipe with number of grid points that satisfy the given timestep Initial uniform velocity distribution and a pressure at the inlet. (The generated pressure drops with friction.) 
 
 
 \begin{DoxyParams}{Parameters}
@@ -271,7 +259,7 @@ Initialize the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe Initializes the \mbox{\h
 {\em dt\+\_\+target} & Target timestep, defines the grid \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_s_c_p_a9f5e519bf13863e1632f5607624143d1}\label{class_s_c_p_a9f5e519bf13863e1632f5607624143d1}} 
+\Hypertarget{class_s_c_p_a9f5e519bf13863e1632f5607624143d1}\label{class_s_c_p_a9f5e519bf13863e1632f5607624143d1} 
 \index{SCP@{SCP}!Ini@{Ini}}
 \index{Ini@{Ini}!SCP@{SCP}}
 \doxysubsubsection{\texorpdfstring{Ini()}{Ini()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
@@ -279,7 +267,7 @@ Initialize the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe Initializes the \mbox{\h
 
 
 
-Initialize the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe Initializes the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe with 20$\ast$\+Npts\+\_\+mul grid points, initial uniform velocity and pressure at the inlet. (The generated pressure drops with friction.) 
+Initialize the \doxylink{class_s_c_p}{SCP} pipe Initializes the \doxylink{class_s_c_p}{SCP} pipe with 20\texorpdfstring{$\ast$}{*}\+Npts\+\_\+mul grid points, initial uniform velocity and pressure at the inlet. (The generated pressure drops with friction.) 
 
 
 \begin{DoxyParams}{Parameters}
@@ -290,7 +278,7 @@ Initialize the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe Initializes the \mbox{\h
 {\em Npts\+\_\+mul} & Multiplier of 20 (e.\+g. for Npts\+\_\+mul=2, Ngrid=40) \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_s_c_p_afd01c84f7ecfe434523957f646bfbcb1}\label{class_s_c_p_afd01c84f7ecfe434523957f646bfbcb1}} 
+\Hypertarget{class_s_c_p_afd01c84f7ecfe434523957f646bfbcb1}\label{class_s_c_p_afd01c84f7ecfe434523957f646bfbcb1} 
 \index{SCP@{SCP}!Ini@{Ini}}
 \index{Ini@{Ini}!SCP@{SCP}}
 \doxysubsubsection{\texorpdfstring{Ini()}{Ini()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
@@ -298,14 +286,14 @@ Initialize the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe Initializes the \mbox{\h
 
 
 
-Initialize the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe Initializes the \mbox{\hyperlink{class_s_c_p}{SCP}} pipe with a given number of points at 1 bar pressure and 0 velocity. 
+Initialize the \doxylink{class_s_c_p}{SCP} pipe Initializes the \doxylink{class_s_c_p}{SCP} pipe with a given number of points at 1 bar pressure and 0 velocity. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em Npts\+\_\+mul} & Base number of points to create, actually 20 as many created \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_s_c_p_ac1f64a4207c1e612da730cebbb44c682}\label{class_s_c_p_ac1f64a4207c1e612da730cebbb44c682}} 
+\Hypertarget{class_s_c_p_ac1f64a4207c1e612da730cebbb44c682}\label{class_s_c_p_ac1f64a4207c1e612da730cebbb44c682} 
 \index{SCP@{SCP}!Set\_dprop@{Set\_dprop}}
 \index{Set\_dprop@{Set\_dprop}!SCP@{SCP}}
 \doxysubsubsection{\texorpdfstring{Set\_dprop()}{Set\_dprop()}}
@@ -317,15 +305,15 @@ Set a parameter Allows to reset the diameter or length the pipe. Updating the le
 
 
 \begin{DoxyParams}{Parameters}
-{\em prop\+\_\+string} & \mbox{[}in\mbox{]} The paramtere to change. Accepted values are \char`\"{}\+L\char`\"{} and \char`\"{}\+D\char`\"{} \\
+{\em prop\+\_\+string} & \mbox{[}in\mbox{]} The paramtere to change. Accepted values are \"{}\+L\"{} and \"{}\+D\"{} \\
 \hline
 {\em val} & \mbox{[}in\mbox{]} The new value of the set parameter, in SI units. \\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_s_c_p_a046c2c6fa8dedf9d5797b294db9c4f15}{Get\+\_\+dprop}} 
+\doxylink{class_s_c_p_a046c2c6fa8dedf9d5797b294db9c4f15}{Get\+\_\+dprop} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_s_c_p_a58097cfe30d419e07d14bac541d04af5}\label{class_s_c_p_a58097cfe30d419e07d14bac541d04af5}} 
+\Hypertarget{class_s_c_p_a58097cfe30d419e07d14bac541d04af5}\label{class_s_c_p_a58097cfe30d419e07d14bac541d04af5} 
 \index{SCP@{SCP}!Step@{Step}}
 \index{Step@{Step}!SCP@{SCP}}
 \doxysubsubsection{\texorpdfstring{Step()}{Step()}}
@@ -333,15 +321,15 @@ Set a parameter Allows to reset the diameter or length the pipe. Updating the le
 
 
 
-Take a timestep. Calculates a timestep in the system dependent on the boundary conditions. (Those are given by the same strings and values as the ones in BCLeft and BCRight) Accepted boundary condition types\+: \char`\"{}\+Pressure\char`\"{} \& \char`\"{}\+Velocity\char`\"{}. 
+Take a timestep. Calculates a timestep in the system dependent on the boundary conditions. (Those are given by the same strings and values as the ones in BCLeft and BCRight) Accepted boundary condition types\+: \"{}\+Pressure\"{} \& \"{}\+Velocity\"{}. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em BC\+\_\+start\+\_\+type} & the type of the boundary condition at the beginning of the pipe (\char`\"{}\+Pressure\char`\"{} $\vert$ \char`\"{}\+Velocity\char`\"{}) \\
+\mbox{\texttt{ in}}  & {\em BC\+\_\+start\+\_\+type} & the type of the boundary condition at the beginning of the pipe (\"{}\+Pressure\"{} \texorpdfstring{$\vert$}{|} \"{}\+Velocity\"{}) \\
 \hline
 \mbox{\texttt{ in}}  & {\em BC\+\_\+start\+\_\+val} & The value associated with the boundary condition at the start of the pipe \\
 \hline
-\mbox{\texttt{ in}}  & {\em BC\+\_\+end\+\_\+type} & the type of the boundary condition at the end of the pipe (\char`\"{}\+Pressure\char`\"{} $\vert$ \char`\"{}\+Velocity\char`\"{}) \\
+\mbox{\texttt{ in}}  & {\em BC\+\_\+end\+\_\+type} & the type of the boundary condition at the end of the pipe (\"{}\+Pressure\"{} \texorpdfstring{$\vert$}{|} \"{}\+Velocity\"{}) \\
 \hline
 \mbox{\texttt{ in}}  & {\em BC\+\_\+end\+\_\+val} & The value associated with the boundary condition at the end of the pipe \\
 \hline
@@ -349,7 +337,7 @@ Take a timestep. Calculates a timestep in the system dependent on the boundary c
 \begin{DoxySeeAlso}{See also}
 BCLeft, BCRight 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_s_c_p_af1f4995d58d75d80ed1738346ff06bf4}\label{class_s_c_p_af1f4995d58d75d80ed1738346ff06bf4}} 
+\Hypertarget{class_s_c_p_af1f4995d58d75d80ed1738346ff06bf4}\label{class_s_c_p_af1f4995d58d75d80ed1738346ff06bf4} 
 \index{SCP@{SCP}!UpdateDimlessPars@{UpdateDimlessPars}}
 \index{UpdateDimlessPars@{UpdateDimlessPars}!SCP@{SCP}}
 \doxysubsubsection{\texorpdfstring{UpdateDimlessPars()}{UpdateDimlessPars()}}

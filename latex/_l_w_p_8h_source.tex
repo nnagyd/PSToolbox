@@ -1,5 +1,5 @@
-\hypertarget{_l_w_p_8h_source}{}\doxysection{LWP.\+h}
-
+\doxysection{LWP.\+h}
+\hypertarget{_l_w_p_8h_source}{}\label{_l_w_p_8h_source}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00002\ }
@@ -15,103 +15,106 @@
 \DoxyCodeLine{00012\ }
 \DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_l_w_p}{LWP}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_units}{Units}}}
 \DoxyCodeLine{00014\ \{}
-\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{double}\ t,\ L,\ D,\ A,\ lambda,\ he,\ hv,\ dt,\ lambda\_p\_2D,\ S0,\ g,\ dx;}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{string}\ name,\ node\_from,\ node\_to;}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{double}\ phi,\ alpha,\ gamma,\ mu;}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ Npts;}
-\DoxyCodeLine{00020\ \ \ \ \ VectorXd\ x,\ v,\ p,\ T,\ rho,\ q;}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ ini\_done;}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateInternalPoints();}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//VectorXd\ \&p,\ VectorXd\ \&v,\ VectorXd\ \&T,\ VectorXd\ \&rho);}}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ BCLeft(\textcolor{keywordtype}{string}\ type,\ \textcolor{keywordtype}{double}\ val1,\ \textcolor{keywordtype}{double}\ val2);}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ BCRight(\textcolor{keywordtype}{string}\ type,\ \textcolor{keywordtype}{double}\ val1,\ \textcolor{keywordtype}{double}\ val2);}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ t,\ L,\ D,\ A,\ lambda,\ he,\ hv,\ dt,\ lambda\_p\_2D,\ S0,\ g,\ dx;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ name,\ node\_from,\ node\_to;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ phi,\ alpha,\ gamma,\ mu;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Npts;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ VectorXd\ x,\ v,\ p,\ T,\ rho,\ q;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ini\_done;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateInternalPoints();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{//VectorXd\ \&p,\ VectorXd\ \&v,\ VectorXd\ \&T,\ VectorXd\ \&rho);}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//bool\ BCLeft(string\ type,\ double\ val1,\ double\ val2);}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//void\ BCRight(string\ type,\ double\ val1,\ double\ val2);}}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{double}\ Source(\textcolor{keywordtype}{int}\ i);}
-\DoxyCodeLine{00028\ \ \ \ \ vector<vector<double>\ >\ data;}
-\DoxyCodeLine{00029\ \ \ \ \ vector<double>\ tmpvec;}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ save\_data,\ save\_all\_data;}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//bool\ do\_plot\_runtime;}}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//bool\ ylim\_isset;}}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//double\ lim\_pbottom,\ lim\_pup,\ lim\_vbottom,\ lim\_vup;}}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ Pack(\textcolor{keywordtype}{bool}\ is\_half\_step);}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ UnPackU(\textcolor{keywordtype}{bool}\ is\_half\_step);}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ VectorXd\ phalf,\ vhalf,\ Thalf,\ rhohalf;}
-\DoxyCodeLine{00039\ \ \ \ \ VectorXd\ pnew,\ vnew,\ Tnew,\ rhonew;}
-\DoxyCodeLine{00040\ \ \ \ \ MatrixXd\ U,\ F,\ S,\ Uhalf,\ Fhalf,\ Shalf,\ Unew;}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ Ini(\textcolor{keywordtype}{int}\ Npts\_mul);}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateTimeStep();}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ Add\_data\_row();}
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{double}\ P\_MIN,\ T\_MIN,\ art\_visc;}
-\DoxyCodeLine{00046\ \ \ \ \ }
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ For\ heat\ transfer\ via\ pipe\ wall}}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{double}\ Tw,heat\_transfer\_par;}
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ HEAT\_TRANSFER\_ON;}
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{string}\ HEAT\_TRANSFER\_MODEL;}
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{double}\ HeatFluxThroughWall(\textcolor{keywordtype}{double}\ Tgas,\ \textcolor{keywordtype}{double}\ v,\ \textcolor{keywordtype}{double}\ rho,\ \textcolor{keywordtype}{double}\ p);}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{double}\ HeatFluxThroughWall(\textcolor{keywordtype}{double}\ Tgas,\ \textcolor{keywordtype}{double}\ v,\ \textcolor{keywordtype}{double}\ rho,\ \textcolor{keywordtype}{double}\ p,\ \textcolor{keywordtype}{double}\&\ alpha\_heat);}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_l_w_p}{LWP}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \_nev,}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \_cspe\_nev,}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \_cspv\_nev,}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{comment}{//const\ double\ \_ro,}}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//const\ double\ \_a,}}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_L,}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_D,}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_lambda,}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_he,}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_hv,}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \_save\_data,}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \_save\_all\_data,}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gas}{Gas}}*\ gas);}
-\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_l_w_p}{\string~LWP}}();}
-\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{string}\ Info(\textcolor{keywordtype}{bool}\ show\_pts);}
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ IniUniform(\textcolor{keywordtype}{double}\ \_vini,\ \textcolor{keywordtype}{double}\ \_pini,\ \textcolor{keywordtype}{double}\ \_Tini,\ \textcolor{keywordtype}{int}\ Npts\_mul);}
-\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ IniUniform(\textcolor{keywordtype}{double}\ \_vini,\ \textcolor{keywordtype}{double}\ \_pini,\ \textcolor{keywordtype}{double}\ \_Tini,\ \textcolor{keywordtype}{double}\ dt\_target);}
-\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ IniDistribution(\textcolor{keyword}{const}\ vector<double>\ \_vini,}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ vector<double>\ \_pini,}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ vector<double>\ \_Tini);}
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{/*}}
-\DoxyCodeLine{00076\ \textcolor{comment}{\ \ \ \ \ \ \ void\ Ini(double\ vini,\ double\ \_pstart,\ double\ dt\_target);}}
-\DoxyCodeLine{00077\ \textcolor{comment}{\ \ \ \ \ \ \ void\ UpdateDimlessPars(double\ pref,\ double\ mp\_nevl,\ double\ omega,\ double\ xref,\ double\ m);}}
-\DoxyCodeLine{00078\ \textcolor{comment}{\ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_dprop(\textcolor{keywordtype}{string}\ prop\_string);}
-\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ Set\_dprop(\textcolor{keywordtype}{string}\ prop\_string,\ \textcolor{keywordtype}{double}\ val);}
-\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ Step(}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ BC\_start\_type,\ \textcolor{keywordtype}{double}\ BC\_start\_val1,\ \textcolor{keywordtype}{double}\ BC\_start\_val2,}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ BC\_end\_type,\ \textcolor{keywordtype}{double}\ BC\_end\_val1,\ \textcolor{keywordtype}{double}\ BC\_end\_val2,}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dt\_req);}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ double\ GetBetaAtFront(double\ t\_target);}}
-\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//bool\ GetC0AtFront(double\ t\_target,\ double\&\ p,\ double\&\ v,\ double\&\ T,\ double\&\ rho);}}
-\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{bool}\ GetC0AtFront(\textcolor{keywordtype}{double}\ t\_target);}
-\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{double}\ GetBetaPrimitiveAtFront(\textcolor{keywordtype}{double}\ t\_target);}
-\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ GetAllPrimitiveAtFront(\textcolor{keywordtype}{double}\ t\_target,\ \textcolor{keywordtype}{double}\&\ pP,\ \textcolor{keywordtype}{double}\&\ vP,\ \textcolor{keywordtype}{double}\&\ TP,\ \textcolor{keywordtype}{double}\&\ rhoP);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Source(\textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ vector<vector<double>\ >\ data;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ vector<double>\ tmpvec;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ save\_data,\ save\_all\_data;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ do\_plot\_runtime;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ left\_boundary\_points\_already\_updated;\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ right\_boundary\_points\_already\_updated;}
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{bool}\ is\_BCRight\_Wall;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Pack(\textcolor{keywordtype}{bool}\ is\_half\_step);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UnPackU(\textcolor{keywordtype}{bool}\ is\_half\_step);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ VectorXd\ phalf,\ vhalf,\ Thalf,\ rhohalf;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ VectorXd\ pnew,\ vnew,\ Tnew,\ rhonew;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ MatrixXd\ U,\ F,\ S,\ Uhalf,\ Fhalf,\ Shalf,\ Unew;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Ini(\textcolor{keywordtype}{int}\ Npts\_mul);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateTimeStep();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Add\_data\_row();}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ P\_MIN,\ T\_MIN,\ art\_visc;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ heat\ transfer\ via\ pipe\ wall}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Tw,heat\_transfer\_par;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ HEAT\_TRANSFER\_ON;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ HEAT\_TRANSFER\_MODEL;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ HeatFluxThroughWall(\textcolor{keywordtype}{double}\ Tgas,\ \textcolor{keywordtype}{double}\ v,\ \textcolor{keywordtype}{double}\ rho,\ \textcolor{keywordtype}{double}\ p);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ HeatFluxThroughWall(\textcolor{keywordtype}{double}\ Tgas,\ \textcolor{keywordtype}{double}\ v,\ \textcolor{keywordtype}{double}\ rho,\ \textcolor{keywordtype}{double}\ p,\ \textcolor{keywordtype}{double}\&\ alpha\_heat);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_l_w_p}{LWP}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \_nev,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \_cspe\_nev,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \_cspv\_nev,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//const\ double\ \_ro,}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//const\ double\ \_a,}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_L,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_D,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_lambda,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_he,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_hv,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \_save\_data,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \_save\_all\_data,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gas}{Gas}}*\ gas);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_l_w_p}{\string~LWP}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ Info(\textcolor{keywordtype}{bool}\ show\_pts);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ IniUniform(\textcolor{keywordtype}{double}\ \_vini,\ \textcolor{keywordtype}{double}\ \_pini,\ \textcolor{keywordtype}{double}\ \_Tini,\ \textcolor{keywordtype}{int}\ Npts\_mul);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ IniUniform(\textcolor{keywordtype}{double}\ \_vini,\ \textcolor{keywordtype}{double}\ \_pini,\ \textcolor{keywordtype}{double}\ \_Tini,\ \textcolor{keywordtype}{double}\ dt\_target);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ IniDistribution(\textcolor{keyword}{const}\ vector<double>\ \_vini,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ vector<double>\ \_pini,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ vector<double>\ \_Tini);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ void\ Ini(double\ vini,\ double\ \_pstart,\ double\ dt\_target);}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ void\ UpdateDimlessPars(double\ pref,\ double\ mp\_nevl,\ double\ omega,\ double\ xref,\ double\ m);}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_dprop(\textcolor{keywordtype}{string}\ prop\_string);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set\_dprop(\textcolor{keywordtype}{string}\ prop\_string,\ \textcolor{keywordtype}{double}\ val);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Step(\textcolor{keywordtype}{double}\ dt\_req);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Step(}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ BC\_start\_type,\ \textcolor{keywordtype}{double}\ BC\_start\_val1,\ \textcolor{keywordtype}{double}\ BC\_start\_val2,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ BC\_end\_type,\ \textcolor{keywordtype}{double}\ BC\_end\_val1,\ \textcolor{keywordtype}{double}\ BC\_end\_val2,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dt\_req);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ BCLeft(\textcolor{keywordtype}{string}\ type,\ \textcolor{keywordtype}{double}\ val1,\ \textcolor{keywordtype}{double}\ val2,\ \textcolor{keywordtype}{bool}\ write\_to\_node);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ BCRight(\textcolor{keywordtype}{string}\ type,\ \textcolor{keywordtype}{double}\ val1,\ \textcolor{keywordtype}{double}\ val2,\ \textcolor{keywordtype}{bool}\ write\_to\_node);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set\_BCRight\_Wall()\{is\_BCRight\_Wall=\textcolor{keyword}{true};\};}
 \DoxyCodeLine{00091\ }
-\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//double\ GetAlphaAtEnd(double\ t\_target);}}
-\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{double}\ GetC0AtEnd(\textcolor{keywordtype}{double}\ t\_target);}
-\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{double}\ GetAlphaPrimitiveAtEnd(\textcolor{keywordtype}{double}\ t\_target);}
-\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ GetAllPrimitiveAtEnd(\textcolor{keywordtype}{double}\ t\_target,\ \textcolor{keywordtype}{double}\&\ pP,\ \textcolor{keywordtype}{double}\&\ vP,\ \textcolor{keywordtype}{double}\&\ TP,\ \textcolor{keywordtype}{double}\&\ rhoP);}
-\DoxyCodeLine{00096\ }
-\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{string}\ GetName();}
-\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_dt();}
-\DoxyCodeLine{00099\ \ \ \ \ vector<double>\ Get\_xgrid();}
-\DoxyCodeLine{00100\ \ \ \ \ vector<double>\ Get\_p();}
-\DoxyCodeLine{00101\ \ \ \ \ vector<double>\ Get\_v();}
-\DoxyCodeLine{00102\ \ \ \ \ vector<double>\ Get\_dvprop(\textcolor{keywordtype}{string}\ prop\_string);}
-\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_l_w_p_a6099ce80536a506db01142692c19962d}{Save\_data}}();}
-\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_l_w_p_a5004db75c5567fdfe917b97ad71bd308}{Save\_distribution}}();}
-\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}{UpdateDimlessPars}}(\textcolor{keywordtype}{double}\ pref,\ \textcolor{keywordtype}{double}\ mp\_nevl,\ \textcolor{keywordtype}{double}\ omega,\ \textcolor{keywordtype}{double}\ xref,\ \textcolor{keywordtype}{double}\ m);}
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{string}\ fname;}
-\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{class_gas}{Gas}}\ *gas;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetC0AtFront(\textcolor{keywordtype}{double}\ t\_target);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetBetaPrimitiveAtFront(\textcolor{keywordtype}{double}\ t\_target);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ GetAllPrimitiveAtFront(\textcolor{keywordtype}{double}\ t\_target,\ \textcolor{keywordtype}{double}\&\ pP,\ \textcolor{keywordtype}{double}\&\ vP,\ \textcolor{keywordtype}{double}\&\ TP,\ \textcolor{keywordtype}{double}\&\ rhoP);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetC0AtEnd(\textcolor{keywordtype}{double}\ t\_target);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ GetAlphaPrimitiveAtEnd(\textcolor{keywordtype}{double}\ t\_target);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ GetAllPrimitiveAtEnd(\textcolor{keywordtype}{double}\ t\_target,\ \textcolor{keywordtype}{double}\&\ pP,\ \textcolor{keywordtype}{double}\&\ vP,\ \textcolor{keywordtype}{double}\&\ TP,\ \textcolor{keywordtype}{double}\&\ rhoP);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ GetName();}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_dt();}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ vector<double>\ Get\_xgrid();}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ vector<double>\ Get\_p();}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ vector<double>\ Get\_v();}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ vector<double>\ Get\_dvprop(\textcolor{keywordtype}{string}\ prop\_string);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_l_w_p_a6099ce80536a506db01142692c19962d}{Save\_data}}();}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_l_w_p_a5004db75c5567fdfe917b97ad71bd308}{Save\_distribution}}();}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}{UpdateDimlessPars}}(\textcolor{keywordtype}{double}\ pref,\ \textcolor{keywordtype}{double}\ mp\_nevl,\ \textcolor{keywordtype}{double}\ omega,\ \textcolor{keywordtype}{double}\ xref,\ \textcolor{keywordtype}{double}\ m);}
 \DoxyCodeLine{00109\ }
-\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{//\ For\ heat\ transfer\ via\ pipe\ wall}}
-\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_l_w_p_a5fe23057c597baf5164e2b45e4fb1ed4}{SetHeatTransfer}}(\textcolor{keywordtype}{double}\ Tw,\ \textcolor{keywordtype}{string}\ heat\_transfer\_model,\ \textcolor{keywordtype}{double}\ tmp);}
-\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ fname;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gas}{Gas}}\ *gas;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ heat\ transfer\ via\ pipe\ wall}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_l_w_p_a5fe23057c597baf5164e2b45e4fb1ed4}{SetHeatTransfer}}(\textcolor{keywordtype}{double}\ Tw,\ \textcolor{keywordtype}{string}\ heat\_transfer\_model,\ \textcolor{keywordtype}{double}\ tmp);}
+\DoxyCodeLine{00115\ \};}
 
 \end{DoxyCode}

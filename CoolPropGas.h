@@ -18,6 +18,7 @@ class CoolPropGas : public Gas
 		double Get_Prandtl_from_Tp(double T, double p);
 		double Get_ThermalConductivity_from_Tp(double T, double p);
 		double Get_DynamicViscosity_from_Tp(double T, double p);
+		double Get_kappa(double T, double p);
 		double Get_kappa_pv();
 		double Get_kappa_Tv();
 		double Get_kappa_Tp();
@@ -26,6 +27,7 @@ class CoolPropGas : public Gas
 		double Get_cV();
 		double Get_cp(double p, double T);
 		double Get_cV(double p, double T);		
+		double Get_Rspec();
 		double Get_MassFlux(double pu, double Tu, double pd, double Td);
 		double Get_eta_crit();
 

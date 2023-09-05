@@ -1,71 +1,83 @@
-\hypertarget{class_l_w_p}{}\doxysection{LWP Class Reference}
-\label{class_l_w_p}\index{LWP@{LWP}}
+\doxysection{LWP Class Reference}
+\hypertarget{class_l_w_p}{}\label{class_l_w_p}\index{LWP@{LWP}}
 Inheritance diagram for LWP\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{class_l_w_p}
 \end{center}
 \end{figure}
-\doxysubsection*{Public Member Functions}
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_l_w_p_ac9a2993122afab5f796f4d84884fc465}\label{class_l_w_p_ac9a2993122afab5f796f4d84884fc465}} 
-{\bfseries LWP} (const string \+\_\+nev, const string \+\_\+cspe\+\_\+nev, const string \+\_\+cspv\+\_\+nev, const double \+\_\+L, const double \+\_\+D, const double \+\_\+lambda, const double \+\_\+he, const double \+\_\+hv, const bool \+\_\+save\+\_\+data, const bool \+\_\+save\+\_\+all\+\_\+data, \mbox{\hyperlink{class_gas}{Gas}} $\ast$gas)
+\Hypertarget{class_l_w_p_ac9a2993122afab5f796f4d84884fc465}\label{class_l_w_p_ac9a2993122afab5f796f4d84884fc465} 
+{\bfseries LWP} (const string \+\_\+nev, const string \+\_\+cspe\+\_\+nev, const string \+\_\+cspv\+\_\+nev, const double \+\_\+L, const double \+\_\+D, const double \+\_\+lambda, const double \+\_\+he, const double \+\_\+hv, const bool \+\_\+save\+\_\+data, const bool \+\_\+save\+\_\+all\+\_\+data, \mbox{\hyperlink{class_gas}{Gas}} \texorpdfstring{$\ast$}{*}gas)
 \item 
-\mbox{\Hypertarget{class_l_w_p_aa36b088feffd84c4441fdd3d74cfc15c}\label{class_l_w_p_aa36b088feffd84c4441fdd3d74cfc15c}} 
+\Hypertarget{class_l_w_p_aa36b088feffd84c4441fdd3d74cfc15c}\label{class_l_w_p_aa36b088feffd84c4441fdd3d74cfc15c} 
 string {\bfseries Info} (bool show\+\_\+pts)
 \item 
-\mbox{\Hypertarget{class_l_w_p_a875d84fdd79ada0be0ef67e49c30804a}\label{class_l_w_p_a875d84fdd79ada0be0ef67e49c30804a}} 
+\Hypertarget{class_l_w_p_a875d84fdd79ada0be0ef67e49c30804a}\label{class_l_w_p_a875d84fdd79ada0be0ef67e49c30804a} 
 void {\bfseries Ini\+Uniform} (double \+\_\+vini, double \+\_\+pini, double \+\_\+\+Tini, int Npts\+\_\+mul)
 \item 
 void \mbox{\hyperlink{class_l_w_p_a0d5239a98987cfa05b1b47c64bb2343e}{Ini\+Uniform}} (double \+\_\+vini, double \+\_\+pini, double \+\_\+\+Tini, double dt\+\_\+target)
-\begin{DoxyCompactList}\small\item\em Initialize the \mbox{\hyperlink{class_l_w_p}{LWP}} pipe Initializes the \mbox{\hyperlink{class_l_w_p}{LWP}} pipe with as many points to statisfy a given timestep, an initial uniform (due to incompressibility) speed and a pressure at the inlet. (The generated pressure drops with friction.) \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_l_w_p_a1d3c14f17c5b1d86cd46279f303a829c}\label{class_l_w_p_a1d3c14f17c5b1d86cd46279f303a829c}} 
+\begin{DoxyCompactList}\small\item\em Initialize the \doxylink{class_l_w_p}{LWP} pipe Initializes the \doxylink{class_l_w_p}{LWP} pipe with as many points to statisfy a given timestep, an initial uniform (due to incompressibility) speed and a pressure at the inlet. (The generated pressure drops with friction.) \end{DoxyCompactList}\item 
+\Hypertarget{class_l_w_p_a1d3c14f17c5b1d86cd46279f303a829c}\label{class_l_w_p_a1d3c14f17c5b1d86cd46279f303a829c} 
 void {\bfseries Ini\+Distribution} (const vector$<$ double $>$ \+\_\+vini, const vector$<$ double $>$ \+\_\+pini, const vector$<$ double $>$ \+\_\+\+Tini)
 \item 
-\mbox{\Hypertarget{class_l_w_p_a253cf518a194b81b6fee6d09b4f8d4f3}\label{class_l_w_p_a253cf518a194b81b6fee6d09b4f8d4f3}} 
+\Hypertarget{class_l_w_p_a253cf518a194b81b6fee6d09b4f8d4f3}\label{class_l_w_p_a253cf518a194b81b6fee6d09b4f8d4f3} 
 double {\bfseries Get\+\_\+dprop} (string prop\+\_\+string)
 \item 
-\mbox{\Hypertarget{class_l_w_p_aa2fbc2f9ba755ad742a9ed20140803ee}\label{class_l_w_p_aa2fbc2f9ba755ad742a9ed20140803ee}} 
+\Hypertarget{class_l_w_p_aa2fbc2f9ba755ad742a9ed20140803ee}\label{class_l_w_p_aa2fbc2f9ba755ad742a9ed20140803ee} 
 void {\bfseries Set\+\_\+dprop} (string prop\+\_\+string, double val)
 \item 
-\mbox{\Hypertarget{class_l_w_p_ae7d85d9863635c898c014f03311b7cdf}\label{class_l_w_p_ae7d85d9863635c898c014f03311b7cdf}} 
+\Hypertarget{class_l_w_p_af6d2e551f7d0483eadb5411403e8079e}\label{class_l_w_p_af6d2e551f7d0483eadb5411403e8079e} 
+void {\bfseries Step} (double dt\+\_\+req)
+\item 
+\Hypertarget{class_l_w_p_ae7d85d9863635c898c014f03311b7cdf}\label{class_l_w_p_ae7d85d9863635c898c014f03311b7cdf} 
 void {\bfseries Step} (string BC\+\_\+start\+\_\+type, double BC\+\_\+start\+\_\+val1, double BC\+\_\+start\+\_\+val2, string BC\+\_\+end\+\_\+type, double BC\+\_\+end\+\_\+val1, double BC\+\_\+end\+\_\+val2, double dt\+\_\+req)
 \item 
-\mbox{\Hypertarget{class_l_w_p_a7b2dbb60a7ce44ef425b7ea9b72163be}\label{class_l_w_p_a7b2dbb60a7ce44ef425b7ea9b72163be}} 
-bool {\bfseries Get\+C0\+At\+Front} (double t\+\_\+target)
+\Hypertarget{class_l_w_p_ac3384213948feff08588b683643c5c4e}\label{class_l_w_p_ac3384213948feff08588b683643c5c4e} 
+bool {\bfseries BCLeft} (string type, double val1, double val2, bool write\+\_\+to\+\_\+node)
 \item 
-\mbox{\Hypertarget{class_l_w_p_ac09d61578e520e9438abe29f9ef7c86d}\label{class_l_w_p_ac09d61578e520e9438abe29f9ef7c86d}} 
+\Hypertarget{class_l_w_p_a7fb7682a4583288ffe2a802ea80a0518}\label{class_l_w_p_a7fb7682a4583288ffe2a802ea80a0518} 
+bool {\bfseries BCRight} (string type, double val1, double val2, bool write\+\_\+to\+\_\+node)
+\item 
+\Hypertarget{class_l_w_p_add722130dca31ac01001dc5f6e5f6d38}\label{class_l_w_p_add722130dca31ac01001dc5f6e5f6d38} 
+void {\bfseries Set\+\_\+\+BCRight\+\_\+\+Wall} ()
+\item 
+\Hypertarget{class_l_w_p_ac1674c7dd5253deefa05c7cbc4fa09d0}\label{class_l_w_p_ac1674c7dd5253deefa05c7cbc4fa09d0} 
+double {\bfseries Get\+C0\+At\+Front} (double t\+\_\+target)
+\item 
+\Hypertarget{class_l_w_p_ac09d61578e520e9438abe29f9ef7c86d}\label{class_l_w_p_ac09d61578e520e9438abe29f9ef7c86d} 
 double {\bfseries Get\+Beta\+Primitive\+At\+Front} (double t\+\_\+target)
 \item 
-\mbox{\Hypertarget{class_l_w_p_ac5ec2326d1b21d71325c3a72e4080ad6}\label{class_l_w_p_ac5ec2326d1b21d71325c3a72e4080ad6}} 
+\Hypertarget{class_l_w_p_ac5ec2326d1b21d71325c3a72e4080ad6}\label{class_l_w_p_ac5ec2326d1b21d71325c3a72e4080ad6} 
 void {\bfseries Get\+All\+Primitive\+At\+Front} (double t\+\_\+target, double \&pP, double \&vP, double \&TP, double \&rhoP)
 \item 
-\mbox{\Hypertarget{class_l_w_p_a849935a607832ef076d68723c295a7c3}\label{class_l_w_p_a849935a607832ef076d68723c295a7c3}} 
+\Hypertarget{class_l_w_p_a849935a607832ef076d68723c295a7c3}\label{class_l_w_p_a849935a607832ef076d68723c295a7c3} 
 double {\bfseries Get\+C0\+At\+End} (double t\+\_\+target)
 \item 
-\mbox{\Hypertarget{class_l_w_p_a14f32e6d2460b94620aea6566873e6aa}\label{class_l_w_p_a14f32e6d2460b94620aea6566873e6aa}} 
+\Hypertarget{class_l_w_p_a14f32e6d2460b94620aea6566873e6aa}\label{class_l_w_p_a14f32e6d2460b94620aea6566873e6aa} 
 double {\bfseries Get\+Alpha\+Primitive\+At\+End} (double t\+\_\+target)
 \item 
-\mbox{\Hypertarget{class_l_w_p_ae9b0f655b8d584e18af5960c7f017be5}\label{class_l_w_p_ae9b0f655b8d584e18af5960c7f017be5}} 
+\Hypertarget{class_l_w_p_ae9b0f655b8d584e18af5960c7f017be5}\label{class_l_w_p_ae9b0f655b8d584e18af5960c7f017be5} 
 void {\bfseries Get\+All\+Primitive\+At\+End} (double t\+\_\+target, double \&pP, double \&vP, double \&TP, double \&rhoP)
 \item 
-\mbox{\Hypertarget{class_l_w_p_a3441f0d69d3245b4aa27781f2042f5f2}\label{class_l_w_p_a3441f0d69d3245b4aa27781f2042f5f2}} 
+\Hypertarget{class_l_w_p_a3441f0d69d3245b4aa27781f2042f5f2}\label{class_l_w_p_a3441f0d69d3245b4aa27781f2042f5f2} 
 string {\bfseries Get\+Name} ()
 \item 
-\mbox{\Hypertarget{class_l_w_p_a6d0de65cafe05e4c076d5a4b3e3e9049}\label{class_l_w_p_a6d0de65cafe05e4c076d5a4b3e3e9049}} 
+\Hypertarget{class_l_w_p_a6d0de65cafe05e4c076d5a4b3e3e9049}\label{class_l_w_p_a6d0de65cafe05e4c076d5a4b3e3e9049} 
 double {\bfseries Get\+\_\+dt} ()
 \item 
-\mbox{\Hypertarget{class_l_w_p_ad0192ee840a8bf95373151790a53c4f4}\label{class_l_w_p_ad0192ee840a8bf95373151790a53c4f4}} 
+\Hypertarget{class_l_w_p_ad0192ee840a8bf95373151790a53c4f4}\label{class_l_w_p_ad0192ee840a8bf95373151790a53c4f4} 
 vector$<$ double $>$ {\bfseries Get\+\_\+xgrid} ()
 \item 
-\mbox{\Hypertarget{class_l_w_p_a45f6e90a4f777ca17c59c7282fc62fb8}\label{class_l_w_p_a45f6e90a4f777ca17c59c7282fc62fb8}} 
+\Hypertarget{class_l_w_p_a45f6e90a4f777ca17c59c7282fc62fb8}\label{class_l_w_p_a45f6e90a4f777ca17c59c7282fc62fb8} 
 vector$<$ double $>$ {\bfseries Get\+\_\+p} ()
 \item 
-\mbox{\Hypertarget{class_l_w_p_a8263e42710733ed2912c0e777dfaa712}\label{class_l_w_p_a8263e42710733ed2912c0e777dfaa712}} 
+\Hypertarget{class_l_w_p_a8263e42710733ed2912c0e777dfaa712}\label{class_l_w_p_a8263e42710733ed2912c0e777dfaa712} 
 vector$<$ double $>$ {\bfseries Get\+\_\+v} ()
 \item 
-\mbox{\Hypertarget{class_l_w_p_a11150e2e188fa9eceec8cf43a0c12fee}\label{class_l_w_p_a11150e2e188fa9eceec8cf43a0c12fee}} 
+\Hypertarget{class_l_w_p_a11150e2e188fa9eceec8cf43a0c12fee}\label{class_l_w_p_a11150e2e188fa9eceec8cf43a0c12fee} 
 vector$<$ double $>$ {\bfseries Get\+\_\+dvprop} (string prop\+\_\+string)
 \item 
 void \mbox{\hyperlink{class_l_w_p_a6099ce80536a506db01142692c19962d}{Save\+\_\+data}} ()
@@ -76,72 +88,57 @@ void \mbox{\hyperlink{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}{Update\+Dim
 \begin{DoxyCompactList}\small\item\em Calculates the dimensionless parameters Calculates the dimensionless parametwers of the pipe using the input parameters as a base. While these parametersa have a usual definitions, here values need to be passed, and as such any can be used for non-\/dimensionalization. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_l_w_p_a5fe23057c597baf5164e2b45e4fb1ed4}{Set\+Heat\+Transfer}} (double Tw, string heat\+\_\+transfer\+\_\+model, double tmp)
 \begin{DoxyCompactList}\small\item\em Sets up heat transfer through wall. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_units}{Units}}}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_units}{Units}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_units_aa10ded064259f35f044246879725b98a}{Units}} ()
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a64dc33d12edc3be94cfc72472cefecfe}\label{class_units_a64dc33d12edc3be94cfc72472cefecfe}} 
-{\bfseries $\sim$\+Units} ()
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Units} ()
 \begin{DoxyCompactList}\small\item\em Destuctor. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
+\doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_l_w_p_abef9f82d87b3ed9acb7cfd4a5362a8f4}\label{class_l_w_p_abef9f82d87b3ed9acb7cfd4a5362a8f4}} 
+\Hypertarget{class_l_w_p_abef9f82d87b3ed9acb7cfd4a5362a8f4}\label{class_l_w_p_abef9f82d87b3ed9acb7cfd4a5362a8f4} 
 string {\bfseries fname}
 \item 
-\mbox{\Hypertarget{class_l_w_p_a7ae6efcf2cb20a9aedf295ed534d87be}\label{class_l_w_p_a7ae6efcf2cb20a9aedf295ed534d87be}} 
-\mbox{\hyperlink{class_gas}{Gas}} $\ast$ {\bfseries gas}
+\Hypertarget{class_l_w_p_a7ae6efcf2cb20a9aedf295ed534d87be}\label{class_l_w_p_a7ae6efcf2cb20a9aedf295ed534d87be} 
+\mbox{\hyperlink{class_gas}{Gas}} \texorpdfstring{$\ast$}{*} {\bfseries gas}
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_units}{Units}}}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_units}{Units}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_units_aae98637c25e6a33b2521c48465f29691}\label{class_units_aae98637c25e6a33b2521c48465f29691}} 
 double {\bfseries ft\+\_\+to\+\_\+m}
 \begin{DoxyCompactList}\small\item\em Converts foot to meters. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_ac43b581dc1a05a12a84cba0bde9d0fb3}\label{class_units_ac43b581dc1a05a12a84cba0bde9d0fb3}} 
 double {\bfseries m\+\_\+to\+\_\+ft}
 \begin{DoxyCompactList}\small\item\em Convert meters to foot. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a825b374297ce7d7d0e03a3908d716ae8}\label{class_units_a825b374297ce7d7d0e03a3908d716ae8}} 
 double {\bfseries inch\+\_\+to\+\_\+m}
 \begin{DoxyCompactList}\small\item\em Convert inches to meters. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a80da69188cc3184cb3596223bc5d1fc1}\label{class_units_a80da69188cc3184cb3596223bc5d1fc1}} 
 double {\bfseries m\+\_\+to\+\_\+inch}
 \begin{DoxyCompactList}\small\item\em Convert metres to inches. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a0cf66a20a8f5651c3a5e46ebd6bb4f63}\label{class_units_a0cf66a20a8f5651c3a5e46ebd6bb4f63}} 
 double {\bfseries lbm\+\_\+to\+\_\+kg}
 \begin{DoxyCompactList}\small\item\em Convert pounds to kilograms. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_acefd99f83c8cf786bd5c6e045283f2e8}\label{class_units_acefd99f83c8cf786bd5c6e045283f2e8}} 
 double {\bfseries kg\+\_\+to\+\_\+lbm}
 \begin{DoxyCompactList}\small\item\em Multiplier for conversion from kilogram to pound. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a5215c9f5e61c890b28bff680e6a511ca}\label{class_units_a5215c9f5e61c890b28bff680e6a511ca}} 
 double {\bfseries lbf\+\_\+to\+\_\+N}
 \begin{DoxyCompactList}\small\item\em Multiplier for conversion of poundforce to Newtons. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_ab7a4c6a874120920d5414ed57178b57b}\label{class_units_ab7a4c6a874120920d5414ed57178b57b}} 
 double {\bfseries N\+\_\+to\+\_\+lbf}
 \begin{DoxyCompactList}\small\item\em Mulitplier for conversion of Newtons to poundforce. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a525b1531b6b496d29fab81d65df1b83b}\label{class_units_a525b1531b6b496d29fab81d65df1b83b}} 
 double {\bfseries psi\+\_\+to\+\_\+\+Pa}
 \begin{DoxyCompactList}\small\item\em Mulitplier ofr conversion of pound per square inch to Pa. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a1b5a970e875c7153f84b206b5d02ee6d}\label{class_units_a1b5a970e875c7153f84b206b5d02ee6d}} 
 double {\bfseries Pa\+\_\+to\+\_\+psi}
 \begin{DoxyCompactList}\small\item\em Multiplier for conversion of pascals to pound per square inch. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a9ae6f34b3ff8b508d964ec2b605bc1a1}\label{class_units_a9ae6f34b3ff8b508d964ec2b605bc1a1}} 
 double {\bfseries psi\+\_\+to\+\_\+bar}
 \begin{DoxyCompactList}\small\item\em Mulitplier for conversion of psi to bar. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a5c07ef1fbf32eb6f128824ea44f18124}\label{class_units_a5c07ef1fbf32eb6f128824ea44f18124}} 
 double {\bfseries bar\+\_\+to\+\_\+psi}
 \begin{DoxyCompactList}\small\item\em Multiplier for conversion of bar to psi. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_a5cf78bb6d35d06600c5b52dd7c451709}\label{class_units_a5cf78bb6d35d06600c5b52dd7c451709}} 
 double {\bfseries m3\+\_\+to\+\_\+inch3}
 \begin{DoxyCompactList}\small\item\em Multiplier for conversion of cubic meter to cumbic inch. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_units_aa8eaefa114dd3f3f71441fca9f530c68}\label{class_units_aa8eaefa114dd3f3f71441fca9f530c68}} 
 double {\bfseries inch3\+\_\+to\+\_\+m3}
 \begin{DoxyCompactList}\small\item\em Multiplier for conversion of cubic inches to cubic metres. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_l_w_p_a0d5239a98987cfa05b1b47c64bb2343e}\label{class_l_w_p_a0d5239a98987cfa05b1b47c64bb2343e}} 
+\Hypertarget{class_l_w_p_a0d5239a98987cfa05b1b47c64bb2343e}\label{class_l_w_p_a0d5239a98987cfa05b1b47c64bb2343e} 
 \index{LWP@{LWP}!IniUniform@{IniUniform}}
 \index{IniUniform@{IniUniform}!LWP@{LWP}}
 \doxysubsubsection{\texorpdfstring{IniUniform()}{IniUniform()}}
@@ -149,7 +146,7 @@ double {\bfseries inch3\+\_\+to\+\_\+m3}
 
 
 
-Initialize the \mbox{\hyperlink{class_l_w_p}{LWP}} pipe Initializes the \mbox{\hyperlink{class_l_w_p}{LWP}} pipe with as many points to statisfy a given timestep, an initial uniform (due to incompressibility) speed and a pressure at the inlet. (The generated pressure drops with friction.) 
+Initialize the \doxylink{class_l_w_p}{LWP} pipe Initializes the \doxylink{class_l_w_p}{LWP} pipe with as many points to statisfy a given timestep, an initial uniform (due to incompressibility) speed and a pressure at the inlet. (The generated pressure drops with friction.) 
 
 
 \begin{DoxyParams}{Parameters}
@@ -160,19 +157,19 @@ Initialize the \mbox{\hyperlink{class_l_w_p}{LWP}} pipe Initializes the \mbox{\h
 {\em dt\+\_\+target} & Target timestep, defines the grid \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_l_w_p_a6099ce80536a506db01142692c19962d}\label{class_l_w_p_a6099ce80536a506db01142692c19962d}} 
+\Hypertarget{class_l_w_p_a6099ce80536a506db01142692c19962d}\label{class_l_w_p_a6099ce80536a506db01142692c19962d} 
 \index{LWP@{LWP}!Save\_data@{Save\_data}}
 \index{Save\_data@{Save\_data}!LWP@{LWP}}
 \doxysubsubsection{\texorpdfstring{Save\_data()}{Save\_data()}}
 {\footnotesize\ttfamily void LWP\+::\+Save\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Save time history at the two ends of the pipe. \mbox{\Hypertarget{class_l_w_p_a5004db75c5567fdfe917b97ad71bd308}\label{class_l_w_p_a5004db75c5567fdfe917b97ad71bd308}} 
+Save time history at the two ends of the pipe. \Hypertarget{class_l_w_p_a5004db75c5567fdfe917b97ad71bd308}\label{class_l_w_p_a5004db75c5567fdfe917b97ad71bd308} 
 \index{LWP@{LWP}!Save\_distribution@{Save\_distribution}}
 \index{Save\_distribution@{Save\_distribution}!LWP@{LWP}}
 \doxysubsubsection{\texorpdfstring{Save\_distribution()}{Save\_distribution()}}
 {\footnotesize\ttfamily void LWP\+::\+Save\+\_\+distribution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Save current distribution of all variables to file. \mbox{\Hypertarget{class_l_w_p_a5fe23057c597baf5164e2b45e4fb1ed4}\label{class_l_w_p_a5fe23057c597baf5164e2b45e4fb1ed4}} 
+Save current distribution of all variables to file. \Hypertarget{class_l_w_p_a5fe23057c597baf5164e2b45e4fb1ed4}\label{class_l_w_p_a5fe23057c597baf5164e2b45e4fb1ed4} 
 \index{LWP@{LWP}!SetHeatTransfer@{SetHeatTransfer}}
 \index{SetHeatTransfer@{SetHeatTransfer}!LWP@{LWP}}
 \doxysubsubsection{\texorpdfstring{SetHeatTransfer()}{SetHeatTransfer()}}
@@ -186,12 +183,12 @@ Sets up heat transfer through wall.
 \begin{DoxyParams}{Parameters}
 {\em Tw} & \mbox{[}in\mbox{]} Wall (reference) temperature \\
 \hline
-{\em model} & \mbox{[}in\mbox{]} \char`\"{}adiabatic\char`\"{}, \char`\"{}constant\+\_\+alpha\char`\"{} or \char`\"{}\+Dittus-\/\+Boelter\char`\"{} \\
+{\em model} & \mbox{[}in\mbox{]} \"{}adiabatic\"{}, \"{}constant\+\_\+alpha\"{} or \"{}\+Dittus-\/\+Boelter\"{} \\
 \hline
-{\em tmp} & \mbox{[}in\mbox{]} if model=\char`\"{}constant\+\_\+alpha\char`\"{}, this sets the heat transfer coeff alpha If heat transfer is switched on, \mbox{\hyperlink{class_l_w_p_a5004db75c5567fdfe917b97ad71bd308}{Save\+\_\+distribution()}} will add alpha and Q values for each node. \\
+{\em tmp} & \mbox{[}in\mbox{]} if model=\"{}constant\+\_\+alpha\"{}, this sets the heat transfer coeff alpha If heat transfer is switched on, \doxylink{class_l_w_p_a5004db75c5567fdfe917b97ad71bd308}{Save\+\_\+distribution()} will add alpha and Q values for each node. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}\label{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}} 
+\Hypertarget{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}\label{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c} 
 \index{LWP@{LWP}!UpdateDimlessPars@{UpdateDimlessPars}}
 \index{UpdateDimlessPars@{UpdateDimlessPars}!LWP@{LWP}}
 \doxysubsubsection{\texorpdfstring{UpdateDimlessPars()}{UpdateDimlessPars()}}

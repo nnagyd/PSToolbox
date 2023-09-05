@@ -1,6 +1,6 @@
 CXX = g++
 CFLAGS = -g -Wall -std=c++11 -pedantic
-TARGETS = my_tools Gas IdealGas FrozenMixtureLiquidGas Units LWP SCP Reservoir Valve Connector Valve_with_Absorber CoolPropGas
+TARGETS = my_tools Gas IdealGas FrozenMixtureLiquidGas Units LWP SCP Reservoir Valve Connector Valve_with_Absorber CoolPropGas CoolPropHA
 INC = -I/usr/local/include/eigen3
 # LINK = -lmy_tools -lpython2.7
 LINK = -lmy_tools
@@ -10,7 +10,7 @@ LINK_CP = -L/Users/hoscsaba/program/CoolProp/build1 -lCoolProp
 
 all:$(TARGETS)
 	libtool -static -o libmy_tools.a my_tools.o
-	libtool -static -o libPSToolbox.a Gas.o IdealGas.o FrozenMixtureLiquidGas.o Units.o LWP.o SCP.o Reservoir.o Valve.o Connector.o CoolPropGas.o Valve_with_Absorber.o
+	libtool -static -o libPSToolbox.a Gas.o IdealGas.o FrozenMixtureLiquidGas.o Units.o LWP.o SCP.o Reservoir.o Valve.o Connector.o CoolPropGas.o CoolPropHA.o Valve_with_Absorber.o
 
 my_tools: my_tools.cpp 
 	$(CXX) $(INC) $(CFLAGS) my_tools.cpp -c -o my_tools.o
@@ -49,6 +49,9 @@ Connector: Connector.cpp
 
 CoolPropGas: CoolPropGas.cpp
 	$(CXX) $(INC_CP) $(LINK_CP) $(CFLAGS) CoolPropGas.cpp -c -o CoolPropGas.o
+
+CoolPropHA: CoolPropHA.cpp
+	$(CXX) $(INC_CP) $(LINK_CP) $(CFLAGS) CoolPropHA.cpp -c -o CoolPropHA.o
 
 clean:
 	$(RM) *.o *.a

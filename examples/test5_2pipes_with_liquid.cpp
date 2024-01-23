@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
 
 	SCP *p1 = new SCP("p1", "csp1","csp2",1000.,1400,L1, D1, lambda1, 0., 0., true); 
 	SCP *p2 = new SCP("p2", "csp2","csp3",1000.,1400,L2, D2, lambda2, 0., 0., true); 
-	Connector c;
+	Connector c(false);
 
 	p1->Ini(0., p0,1.);
 	p2->Ini(0., p0,1.);

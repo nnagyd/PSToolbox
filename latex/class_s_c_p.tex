@@ -42,7 +42,7 @@ double \mbox{\hyperlink{class_s_c_p_a046c2c6fa8dedf9d5797b294db9c4f15}{Get\+\_\+
 void \mbox{\hyperlink{class_s_c_p_ac1f64a4207c1e612da730cebbb44c682}{Set\+\_\+dprop}} (string prop\+\_\+string, double val)
 \begin{DoxyCompactList}\small\item\em Set a parameter Allows to reset the diameter or length the pipe. Updating the length will rescale the system. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_s_c_p_a58097cfe30d419e07d14bac541d04af5}{Step}} (string BC\+\_\+start\+\_\+type, double BC\+\_\+start\+\_\+val, string BC\+\_\+end\+\_\+type, double BC\+\_\+end\+\_\+val)
-\begin{DoxyCompactList}\small\item\em Take a timestep. Calculates a timestep in the system dependent on the boundary conditions. (Those are given by the same strings and values as the ones in BCLeft and BCRight) Accepted boundary condition types\+: \"{}\+Pressure\"{} \& \"{}\+Velocity\"{}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Take a timestep. Calculates a timestep in the system dependent on the boundary conditions. (Those are given by the same strings and values as the ones in BCLeft and BCRight) Accepted boundary condition types\+: "{}\+Pressure"{} \& "{}\+Velocity"{}. \end{DoxyCompactList}\item 
 \Hypertarget{class_s_c_p_a89b4153c9fb930954b585a0ca7cf9d7c}\label{class_s_c_p_a89b4153c9fb930954b585a0ca7cf9d7c} 
 double {\bfseries Get\+Alpha\+At\+End} (double t\+\_\+target)
 \item 
@@ -171,7 +171,7 @@ Return a property of the \doxylink{class_s_c_p}{SCP}.
 
 
 \begin{DoxyParams}{Parameters}
-{\em prop\+\_\+string} & A string describing the needed property (\"{}\+L\"{} \texorpdfstring{$\vert$}{|} \"{}\+L\+\_\+feet\"{} \texorpdfstring{$\vert$}{|} \"{}\+D\"{} \texorpdfstring{$\vert$}{|} \"{}\+D\+\_\+inch\"{} \texorpdfstring{$\vert$}{|} \"{}\+A\"{} \texorpdfstring{$\vert$}{|} \"{}dt\"{} \texorpdfstring{$\vert$}{|} \"{}p\+\_\+front\"{} \texorpdfstring{$\vert$}{|} \"{}p\+\_\+back\"{} \texorpdfstring{$\vert$}{|} \"{}v\+\_\+front\"{} \texorpdfstring{$\vert$}{|} \"{}v\+\_\+back\"{} \texorpdfstring{$\vert$}{|} \"{}mp\+\_\+front\"{} \texorpdfstring{$\vert$}{|} \"{}mp\+\_\+back\"{} \texorpdfstring{$\vert$}{|} \"{}frek\"{} \texorpdfstring{$\vert$}{|} \"{}tnext\"{} \texorpdfstring{$\vert$}{|} \"{}lambda\"{} \texorpdfstring{$\vert$}{|} \"{}phi\"{} \texorpdfstring{$\vert$}{|} \"{}mu\"{} \texorpdfstring{$\vert$}{|} \"{}rho\"{} \texorpdfstring{$\vert$}{|} \"{}a\"{}) \\
+{\em prop\+\_\+string} & A string describing the needed property ("{}\+L"{} \texorpdfstring{$\vert$}{|} "{}\+L\+\_\+feet"{} \texorpdfstring{$\vert$}{|} "{}\+D"{} \texorpdfstring{$\vert$}{|} "{}\+D\+\_\+inch"{} \texorpdfstring{$\vert$}{|} "{}\+A"{} \texorpdfstring{$\vert$}{|} "{}dt"{} \texorpdfstring{$\vert$}{|} "{}p\+\_\+front"{} \texorpdfstring{$\vert$}{|} "{}p\+\_\+back"{} \texorpdfstring{$\vert$}{|} "{}v\+\_\+front"{} \texorpdfstring{$\vert$}{|} "{}v\+\_\+back"{} \texorpdfstring{$\vert$}{|} "{}mp\+\_\+front"{} \texorpdfstring{$\vert$}{|} "{}mp\+\_\+back"{} \texorpdfstring{$\vert$}{|} "{}frek"{} \texorpdfstring{$\vert$}{|} "{}tnext"{} \texorpdfstring{$\vert$}{|} "{}lambda"{} \texorpdfstring{$\vert$}{|} "{}phi"{} \texorpdfstring{$\vert$}{|} "{}mu"{} \texorpdfstring{$\vert$}{|} "{}rho"{} \texorpdfstring{$\vert$}{|} "{}a"{}) \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -305,7 +305,7 @@ Set a parameter Allows to reset the diameter or length the pipe. Updating the le
 
 
 \begin{DoxyParams}{Parameters}
-{\em prop\+\_\+string} & \mbox{[}in\mbox{]} The paramtere to change. Accepted values are \"{}\+L\"{} and \"{}\+D\"{} \\
+{\em prop\+\_\+string} & \mbox{[}in\mbox{]} The paramtere to change. Accepted values are "{}\+L"{} and "{}\+D"{} \\
 \hline
 {\em val} & \mbox{[}in\mbox{]} The new value of the set parameter, in SI units. \\
 \hline
@@ -321,15 +321,15 @@ Set a parameter Allows to reset the diameter or length the pipe. Updating the le
 
 
 
-Take a timestep. Calculates a timestep in the system dependent on the boundary conditions. (Those are given by the same strings and values as the ones in BCLeft and BCRight) Accepted boundary condition types\+: \"{}\+Pressure\"{} \& \"{}\+Velocity\"{}. 
+Take a timestep. Calculates a timestep in the system dependent on the boundary conditions. (Those are given by the same strings and values as the ones in BCLeft and BCRight) Accepted boundary condition types\+: "{}\+Pressure"{} \& "{}\+Velocity"{}. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em BC\+\_\+start\+\_\+type} & the type of the boundary condition at the beginning of the pipe (\"{}\+Pressure\"{} \texorpdfstring{$\vert$}{|} \"{}\+Velocity\"{}) \\
+\mbox{\texttt{ in}}  & {\em BC\+\_\+start\+\_\+type} & the type of the boundary condition at the beginning of the pipe ("{}\+Pressure"{} \texorpdfstring{$\vert$}{|} "{}\+Velocity"{}) \\
 \hline
 \mbox{\texttt{ in}}  & {\em BC\+\_\+start\+\_\+val} & The value associated with the boundary condition at the start of the pipe \\
 \hline
-\mbox{\texttt{ in}}  & {\em BC\+\_\+end\+\_\+type} & the type of the boundary condition at the end of the pipe (\"{}\+Pressure\"{} \texorpdfstring{$\vert$}{|} \"{}\+Velocity\"{}) \\
+\mbox{\texttt{ in}}  & {\em BC\+\_\+end\+\_\+type} & the type of the boundary condition at the end of the pipe ("{}\+Pressure"{} \texorpdfstring{$\vert$}{|} "{}\+Velocity"{}) \\
 \hline
 \mbox{\texttt{ in}}  & {\em BC\+\_\+end\+\_\+val} & The value associated with the boundary condition at the end of the pipe \\
 \hline

@@ -9,65 +9,70 @@
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Valve.h"{}}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Valve\_with\_Absorber.h"{}}}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{comment}{//\ @file}}
-\DoxyCodeLine{00011\ \textcolor{comment}{}}
+\DoxyCodeLine{00010\ }
 \DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_connector}{Connector}}}
 \DoxyCodeLine{00014\ \{}
 \DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_connector}{Connector}}(\textcolor{keywordtype}{bool}\ DEBUG);}
 \DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_connector}{\string~Connector}}();}
 \DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Connector\_Reservoir\_and\_Valve(\textcolor{keywordtype}{double}\ t\_target,\ \mbox{\hyperlink{class_reservoir}{Reservoir}}*\ r,\ \mbox{\hyperlink{class_valve}{Valve}}\ *v,\ \textcolor{keywordtype}{double}\&\ p,\ \textcolor{keywordtype}{double}\&\ mp);}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Connector\_LWP\_Reservoir\_and\_Pipe\_Front(\textcolor{keywordtype}{double}\ t\_target,\ }
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_reservoir}{Reservoir}}\ *r,\ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p,\ \textcolor{keywordtype}{bool}\ inlet\_pressure\_drop,\ \textcolor{keywordtype}{double}\&\ pf,\ \textcolor{keywordtype}{double}\&\ Tf);\ \ }
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Connector\_LWP\_Reservoir\_and\_Pipe\_Front\_inlet(\textcolor{keywordtype}{double}\ t\_target,\ }
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_reservoir}{Reservoir}}\ *r,\ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p,\ \textcolor{keywordtype}{bool}\ inlet\_pressure\_drop,\ \textcolor{keywordtype}{double}\&\ pf,\ \textcolor{keywordtype}{double}\&\ Tf);\ \ }
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Connector\_LWP\_Reservoir\_and\_Pipe\_Front(\textcolor{keywordtype}{double}\ t\_target,\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_reservoir}{Reservoir}}\ *r,\ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p,\ \textcolor{keywordtype}{bool}\ inlet\_pressure\_drop);\ \ }
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Connector\_LWP\_Pipe\_Back\_and\_Valve(\textcolor{keywordtype}{double}\ t\_target,\ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p,\ \mbox{\hyperlink{class_valve}{Valve}}\ *v,\ \textcolor{keywordtype}{double}\ p\_downstream,\ \textcolor{keywordtype}{double}\&\ pb,\ \textcolor{keywordtype}{double}\&\ Tb);}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Connector\_LWP\_Pipe\_Back\_and\_Valve(\textcolor{keywordtype}{double}\ t\_target,\ }
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p,\ \mbox{\hyperlink{class_valve}{Valve}}\ *v,\ \textcolor{keywordtype}{double}\ p\_downstream);}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Connector\_LWP\_Pipe\_Back\_and\_Valve\_with\_Absorber(\textcolor{keywordtype}{double}\ t\_target,\ }
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p,\ \mbox{\hyperlink{class_valve__with___absorber}{Valve\_with\_Absorber}}\ *v,\ \textcolor{keywordtype}{double}\ p\_downstream,\ \textcolor{keywordtype}{double}\&\ pb,\ \textcolor{keywordtype}{double}\&\ Tb);}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connector_a07a60f145b6cb4fafdf13b221b186249}{Connector\_SCP\_Reservoir\_and\_Pipe\_Front}}(\textcolor{keywordtype}{double}\ t\_target,\ }
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_reservoir}{Reservoir}}\ *r,\ \mbox{\hyperlink{class_s_c_p}{SCP}}\ *p,\ \textcolor{keywordtype}{double}\ rho,\ \textcolor{keywordtype}{double}\ a,\ \textcolor{keywordtype}{bool}\ inlet\_pressure\_drop,\ \textcolor{keywordtype}{double}\&\ pf);}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Connector\_SCP\_Pipe\_Back\_and\_Valve(\textcolor{keywordtype}{double}\ t\_target,\ }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_c_p}{SCP}}\ *p,\ \mbox{\hyperlink{class_valve}{Valve}}\ *v,\ \textcolor{keywordtype}{double}\ rho,\ \textcolor{keywordtype}{double}\ a,\ \textcolor{keywordtype}{double}\ p\_downstream,\ \textcolor{keywordtype}{double}\&\ pb);}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Connector\_SCP\_Pipes(\textcolor{keywordtype}{double}\ t\_target,\ }
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_c_p}{SCP}}*\ p1,\ \textcolor{keywordtype}{bool}\ is\_front1,}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_c_p}{SCP}}*\ p2,\ \textcolor{keywordtype}{bool}\ is\_front2,}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ mpout,}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\&\ p,\ \textcolor{keywordtype}{double}\&\ v1,\ \textcolor{keywordtype}{double}\&\ v2);}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Connector\_SCP\_Pipes(\textcolor{keywordtype}{double}\ t\_target,\ }
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_c_p}{SCP}}\ *p1,\ \textcolor{keywordtype}{bool}\ is\_front1,}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_c_p}{SCP}}\ *p2,\ \textcolor{keywordtype}{bool}\ is\_front2,}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_c_p}{SCP}}\ *p3,\ \textcolor{keywordtype}{bool}\ is\_front3,}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ mpout,}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\&\ p,\ \textcolor{keywordtype}{double}\&\ v1,\ \textcolor{keywordtype}{double}\&\ v2,\ \textcolor{keywordtype}{double}\&\ v3);}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Connector\_LWP\_Pipes(\textcolor{keywordtype}{double}\ t\_target,\ }
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p1,\ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p2,\ }
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\&\ pL,\ \textcolor{keywordtype}{double}\&\ pR,\ }
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\&\ TL,\ \textcolor{keywordtype}{double}\&\ TR,}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\&\ rhoL,\ \textcolor{keywordtype}{double}\&\ rhoR,}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\&\ vL,\ \textcolor{keywordtype}{double}\&\ vR);}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ DEBUG;}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Connector\_LWP\_Reservoir\_and\_Pipe\_Front\_fun(\textcolor{keywordtype}{double}\ rho,\ \textcolor{keywordtype}{double}\ beta,\ }
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_reservoir}{Reservoir}}*\ r1,\ \mbox{\hyperlink{class_l_w_p}{LWP}}*\ p1,\ \textcolor{keywordtype}{bool}\ inlet\_pressure\_drop);}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ signed\_sqrt(\textcolor{keywordtype}{double}\ x);}
-\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Connector\_Reservoir\_and\_Valve\_Inlet(\textcolor{keywordtype}{double}\ t\_target,\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_reservoir}{Reservoir}}*\ r,\ \mbox{\hyperlink{class_valve}{Valve}}\ *v,\ \textcolor{keywordtype}{double}\ pd,\ \textcolor{keywordtype}{double}\&\ p,\ \textcolor{keywordtype}{double}\&\ mp);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Connector\_LWP\_Reservoir\_and\_Pipe\_Front(\textcolor{keywordtype}{double}\ t\_target,\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_reservoir}{Reservoir}}\ *r,\ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p,\ \textcolor{keywordtype}{bool}\ inlet\_pressure\_drop,\ \textcolor{keywordtype}{double}\&\ pf,\ \textcolor{keywordtype}{double}\&\ Tf);\ \ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Connector\_LWP\_Reservoir\_and\_Pipe\_Front\_inlet(\textcolor{keywordtype}{double}\ t\_target,\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_reservoir}{Reservoir}}\ *r,\ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p,\ \textcolor{keywordtype}{bool}\ inlet\_pressure\_drop,\ \textcolor{keywordtype}{double}\&\ pf,\ \textcolor{keywordtype}{double}\&\ Tf);\ \ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Connector\_LWP\_Reservoir\_and\_Pipe\_Front(\textcolor{keywordtype}{double}\ t\_target,\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_reservoir}{Reservoir}}\ *r,\ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p,\ \textcolor{keywordtype}{bool}\ inlet\_pressure\_drop);\ \ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Connector\_LWP\_Pipe\_Back\_and\_Valve(\textcolor{keywordtype}{double}\ t\_target,\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p,\ \mbox{\hyperlink{class_valve}{Valve}}\ *v,\ \textcolor{keywordtype}{double}\ p\_downstream,\ \textcolor{keywordtype}{double}\&\ pb,\ \textcolor{keywordtype}{double}\&\ Tb);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Connector\_LWP\_Pipe\_Back\_and\_Valve(\textcolor{keywordtype}{double}\ t\_target,\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p,\ \mbox{\hyperlink{class_valve}{Valve}}\ *v,\ \textcolor{keywordtype}{double}\ p\_downstream);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Connector\_LWP\_Pipe\_Back\_and\_Valve\_with\_Absorber(\textcolor{keywordtype}{double}\ t\_target,\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p,\ \mbox{\hyperlink{class_valve__with___absorber}{Valve\_with\_Absorber}}\ *v,\ \textcolor{keywordtype}{double}\ p\_downstream,\ \textcolor{keywordtype}{double}\&\ pb,\ \textcolor{keywordtype}{double}\&\ Tb);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connector_a07a60f145b6cb4fafdf13b221b186249}{Connector\_SCP\_Reservoir\_and\_Pipe\_Front}}(\textcolor{keywordtype}{double}\ t\_target,\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_reservoir}{Reservoir}}\ *r,\ \mbox{\hyperlink{class_s_c_p}{SCP}}\ *p,\ \textcolor{keywordtype}{double}\ rho,\ \textcolor{keywordtype}{double}\ a,\ \textcolor{keywordtype}{bool}\ inlet\_pressure\_drop,\ \textcolor{keywordtype}{double}\&\ pf);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Connector\_SCP\_Pipe\_Back\_and\_Valve(\textcolor{keywordtype}{double}\ t\_target,\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_c_p}{SCP}}\ *p,\ \mbox{\hyperlink{class_valve}{Valve}}\ *v,\ \textcolor{keywordtype}{double}\ rho,\ \textcolor{keywordtype}{double}\ a,\ \textcolor{keywordtype}{double}\ p\_downstream,\ \textcolor{keywordtype}{double}\&\ pb);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ Connector\_SCP\_Pipe\_Front\_and\_Valve\_Outlet(\textcolor{keywordtype}{double}\ t\_target,\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_c_p}{SCP}}\ *p,\ \mbox{\hyperlink{class_valve}{Valve}}\ *v,\ \textcolor{keywordtype}{double}\ p\_upstream,\ \textcolor{keywordtype}{double}\ rho,\ \textcolor{keywordtype}{double}\ a,\ \textcolor{keywordtype}{double}\&\ pb);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Connector\_SCP\_Pipes(\textcolor{keywordtype}{double}\ t\_target,\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_c_p}{SCP}}*\ p1,\ \textcolor{keywordtype}{bool}\ is\_front1,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_c_p}{SCP}}*\ p2,\ \textcolor{keywordtype}{bool}\ is\_front2,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ mpout,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\&\ p,\ \textcolor{keywordtype}{double}\&\ v1,\ \textcolor{keywordtype}{double}\&\ v2);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Connector\_SCP\_Pipes(\textcolor{keywordtype}{double}\ t\_target,\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_c_p}{SCP}}\ *p1,\ \textcolor{keywordtype}{bool}\ is\_front1,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_c_p}{SCP}}\ *p2,\ \textcolor{keywordtype}{bool}\ is\_front2,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_s_c_p}{SCP}}\ *p3,\ \textcolor{keywordtype}{bool}\ is\_front3,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ mpout,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\&\ p,\ \textcolor{keywordtype}{double}\&\ v1,\ \textcolor{keywordtype}{double}\&\ v2,\ \textcolor{keywordtype}{double}\&\ v3);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Connector\_LWP\_Pipes(\textcolor{keywordtype}{double}\ t\_target,\ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p1,\ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p2);\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ Connector\_LWP\_Pipes(\textcolor{keywordtype}{double}\ t\_target,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p1,\ \textcolor{keywordtype}{bool}\ is\_front1,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p2,\ \textcolor{keywordtype}{bool}\ is\_front2,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_l_w_p}{LWP}}\ *p3,\ \textcolor{keywordtype}{bool}\ is\_front3,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ mpout,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ T);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ DEBUG;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set\_LWP\_BC(\mbox{\hyperlink{class_l_w_p}{LWP}}*\ p1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ is\_front,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ p,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ T,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ v);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Connector\_LWP\_Reservoir\_and\_Pipe\_Front\_fun(\textcolor{keywordtype}{double}\ rho,\ \textcolor{keywordtype}{double}\ beta,\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_reservoir}{Reservoir}}*\ r1,\ \mbox{\hyperlink{class_l_w_p}{LWP}}*\ p1,\ \textcolor{keywordtype}{bool}\ inlet\_pressure\_drop);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ signed\_sqrt(\textcolor{keywordtype}{double}\ x);}
+\DoxyCodeLine{00076\ \};}
 
 \end{DoxyCode}

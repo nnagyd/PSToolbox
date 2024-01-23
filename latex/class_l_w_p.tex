@@ -86,6 +86,12 @@ void \mbox{\hyperlink{class_l_w_p_a5004db75c5567fdfe917b97ad71bd308}{Save\+\_\+d
 \item 
 void \mbox{\hyperlink{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}{Update\+Dimless\+Pars}} (double pref, double mp\+\_\+nevl, double omega, double xref, double m)
 \begin{DoxyCompactList}\small\item\em Calculates the dimensionless parameters Calculates the dimensionless parametwers of the pipe using the input parameters as a base. While these parametersa have a usual definitions, here values need to be passed, and as such any can be used for non-\/dimensionalization. \end{DoxyCompactList}\item 
+\Hypertarget{class_l_w_p_a0941634ccb136db9c0508507b3752159}\label{class_l_w_p_a0941634ccb136db9c0508507b3752159} 
+void {\bfseries Switch\+\_\+on\+\_\+\+DEBUG} ()
+\item 
+\Hypertarget{class_l_w_p_a67b35ed5dbc4c0ffd36603e54046541d}\label{class_l_w_p_a67b35ed5dbc4c0ffd36603e54046541d} 
+void {\bfseries Switch\+\_\+off\+\_\+\+DEBUG} ()
+\item 
 void \mbox{\hyperlink{class_l_w_p_a5fe23057c597baf5164e2b45e4fb1ed4}{Set\+Heat\+Transfer}} (double Tw, string heat\+\_\+transfer\+\_\+model, double tmp)
 \begin{DoxyCompactList}\small\item\em Sets up heat transfer through wall. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_units}{Units}}}
@@ -183,9 +189,9 @@ Sets up heat transfer through wall.
 \begin{DoxyParams}{Parameters}
 {\em Tw} & \mbox{[}in\mbox{]} Wall (reference) temperature \\
 \hline
-{\em model} & \mbox{[}in\mbox{]} \"{}adiabatic\"{}, \"{}constant\+\_\+alpha\"{} or \"{}\+Dittus-\/\+Boelter\"{} \\
+{\em model} & \mbox{[}in\mbox{]} "{}adiabatic"{}, "{}constant\+\_\+alpha"{} or "{}\+Dittus-\/\+Boelter"{} \\
 \hline
-{\em tmp} & \mbox{[}in\mbox{]} if model=\"{}constant\+\_\+alpha\"{}, this sets the heat transfer coeff alpha If heat transfer is switched on, \doxylink{class_l_w_p_a5004db75c5567fdfe917b97ad71bd308}{Save\+\_\+distribution()} will add alpha and Q values for each node. \\
+{\em tmp} & \mbox{[}in\mbox{]} if model="{}constant\+\_\+alpha"{}, this sets the heat transfer coeff alpha If heat transfer is switched on, \doxylink{class_l_w_p_a5004db75c5567fdfe917b97ad71bd308}{Save\+\_\+distribution()} will add alpha and Q values for each node. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c}\label{class_l_w_p_a813a723122fdb8141ded3ace0f03d34c} 

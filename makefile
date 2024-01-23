@@ -8,7 +8,9 @@ LINK = -lmy_tools
 INC_CP = -I/Users/hoscsaba/program/CoolProp/include -I/Users/hoscsaba/program/CoolProp/externals/fmtlib
 LINK_CP = -L/Users/hoscsaba/program/CoolProp/build1 -lCoolProp
 
-all:$(TARGETS)
+all: program1
+
+program1: $(TARGETS)
 	libtool -static -o libmy_tools.a my_tools.o
 	libtool -static -o libPSToolbox.a Gas.o IdealGas.o FrozenMixtureLiquidGas.o Units.o LWP.o SCP.o Reservoir.o Valve.o Connector.o CoolPropGas.o CoolPropHA.o Valve_with_Absorber.o
 
@@ -27,21 +29,21 @@ FrozenMixtureLiquidGas: FrozenMixtureLiquidGas.cpp
 Units: Units.cpp
 	$(CXX) $(CFLAGS) Units.cpp -c -o Units.o
 
-LWP: 
+LWP: LWP.cpp
 	$(CXX) $(INC) $(CFLAGS) LWP.cpp -c -o LWP.o
 
-SCP: 
+SCP: SCP.cpp
 	$(CXX) $(INC) $(CFLAGS) SCP.cpp -c -o SCP.o
 
-Reservoir: 
+Reservoir: Reservoir.cpp
 	$(CXX) $(INC) $(CFLAGS) Reservoir.cpp -c -o Reservoir.o
 # 	$(CXX) $(INC) $(LINK) $(CFLAGS) Reservoir.cpp -c -o Reservoir.o
 
-Valve:
+Valve: Valve.cpp
 	$(CXX) $(INC) $(CFLAGS) Valve.cpp -c -o Valve.o
 # 	$(CXX) $(INC) $(LINK) $(CFLAGS) Valve.cpp -c -o Valve.o
 
-Valve_with_Absorber:
+Valve_with_Absorber: Valve_with_absorber.cpp
 	$(CXX) $(INC) $(CFLAGS) Valve_with_Absorber.cpp -c -o Valve_with_Absorber.o
 
 Connector: Connector.cpp

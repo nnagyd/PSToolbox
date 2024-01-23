@@ -2,7 +2,7 @@
 \hypertarget{class_connector}{}\label{class_connector}\index{Connector@{Connector}}
 
 
-Class to contain Connectors.  
+Class for connecting elements.  
 
 
 
@@ -15,8 +15,8 @@ Class to contain Connectors.
 \Hypertarget{class_connector_ae29b3ae6cc0c34b261d49b24c4dfcb09}\label{class_connector_ae29b3ae6cc0c34b261d49b24c4dfcb09} 
 {\bfseries Connector} (bool DEBUG)
 \item 
-\Hypertarget{class_connector_a6974b6719efe311ee33aec7140439aa1}\label{class_connector_a6974b6719efe311ee33aec7140439aa1} 
-void {\bfseries Connector\+\_\+\+Reservoir\+\_\+and\+\_\+\+Valve} (double t\+\_\+target, \mbox{\hyperlink{class_reservoir}{Reservoir}} \texorpdfstring{$\ast$}{*}r, \mbox{\hyperlink{class_valve}{Valve}} \texorpdfstring{$\ast$}{*}v, double \&p, double \&mp)
+\Hypertarget{class_connector_a80c469bee02e077d977d832035812dab}\label{class_connector_a80c469bee02e077d977d832035812dab} 
+void {\bfseries Connector\+\_\+\+Reservoir\+\_\+and\+\_\+\+Valve\+\_\+\+Inlet} (double t\+\_\+target, \mbox{\hyperlink{class_reservoir}{Reservoir}} \texorpdfstring{$\ast$}{*}r, \mbox{\hyperlink{class_valve}{Valve}} \texorpdfstring{$\ast$}{*}v, double pd, double \&p, double \&mp)
 \item 
 \Hypertarget{class_connector_abfe3fa2d5091dbd6833936754725e943}\label{class_connector_abfe3fa2d5091dbd6833936754725e943} 
 void {\bfseries Connector\+\_\+\+LWP\+\_\+\+Reservoir\+\_\+and\+\_\+\+Pipe\+\_\+\+Front} (double t\+\_\+target, \mbox{\hyperlink{class_reservoir}{Reservoir}} \texorpdfstring{$\ast$}{*}r, \mbox{\hyperlink{class_l_w_p}{LWP}} \texorpdfstring{$\ast$}{*}p, bool inlet\+\_\+pressure\+\_\+drop, double \&pf, double \&Tf)
@@ -40,21 +40,27 @@ void \mbox{\hyperlink{class_connector_a07a60f145b6cb4fafdf13b221b186249}{Connect
 \Hypertarget{class_connector_a16b1ca2e3a17b044e619d39de80576b1}\label{class_connector_a16b1ca2e3a17b044e619d39de80576b1} 
 bool {\bfseries Connector\+\_\+\+SCP\+\_\+\+Pipe\+\_\+\+Back\+\_\+and\+\_\+\+Valve} (double t\+\_\+target, \mbox{\hyperlink{class_s_c_p}{SCP}} \texorpdfstring{$\ast$}{*}p, \mbox{\hyperlink{class_valve}{Valve}} \texorpdfstring{$\ast$}{*}v, double rho, double a, double p\+\_\+downstream, double \&pb)
 \item 
+\Hypertarget{class_connector_a70043aa1fee54ace7c1b9a57f077a3ee}\label{class_connector_a70043aa1fee54ace7c1b9a57f077a3ee} 
+bool {\bfseries Connector\+\_\+\+SCP\+\_\+\+Pipe\+\_\+\+Front\+\_\+and\+\_\+\+Valve\+\_\+\+Outlet} (double t\+\_\+target, \mbox{\hyperlink{class_s_c_p}{SCP}} \texorpdfstring{$\ast$}{*}p, \mbox{\hyperlink{class_valve}{Valve}} \texorpdfstring{$\ast$}{*}v, double p\+\_\+upstream, double rho, double a, double \&pb)
+\item 
 \Hypertarget{class_connector_ac6f13c672450413409ac698917469fee}\label{class_connector_ac6f13c672450413409ac698917469fee} 
 void {\bfseries Connector\+\_\+\+SCP\+\_\+\+Pipes} (double t\+\_\+target, \mbox{\hyperlink{class_s_c_p}{SCP}} \texorpdfstring{$\ast$}{*}p1, bool is\+\_\+front1, \mbox{\hyperlink{class_s_c_p}{SCP}} \texorpdfstring{$\ast$}{*}p2, bool is\+\_\+front2, double mpout, double \&p, double \&v1, double \&v2)
 \item 
 \Hypertarget{class_connector_a744d9b3278bb5f1d883d8481ac35f912}\label{class_connector_a744d9b3278bb5f1d883d8481ac35f912} 
 void {\bfseries Connector\+\_\+\+SCP\+\_\+\+Pipes} (double t\+\_\+target, \mbox{\hyperlink{class_s_c_p}{SCP}} \texorpdfstring{$\ast$}{*}p1, bool is\+\_\+front1, \mbox{\hyperlink{class_s_c_p}{SCP}} \texorpdfstring{$\ast$}{*}p2, bool is\+\_\+front2, \mbox{\hyperlink{class_s_c_p}{SCP}} \texorpdfstring{$\ast$}{*}p3, bool is\+\_\+front3, double mpout, double \&p, double \&v1, double \&v2, double \&v3)
 \item 
-\Hypertarget{class_connector_a36464720a7f45c0bb13520af3a74ad0f}\label{class_connector_a36464720a7f45c0bb13520af3a74ad0f} 
-void {\bfseries Connector\+\_\+\+LWP\+\_\+\+Pipes} (double t\+\_\+target, \mbox{\hyperlink{class_l_w_p}{LWP}} \texorpdfstring{$\ast$}{*}p1, \mbox{\hyperlink{class_l_w_p}{LWP}} \texorpdfstring{$\ast$}{*}p2, double \&pL, double \&pR, double \&TL, double \&TR, double \&rhoL, double \&rhoR, double \&vL, double \&vR)
+\Hypertarget{class_connector_ad26586fd0386a1e2aa1dd70dd7d40495}\label{class_connector_ad26586fd0386a1e2aa1dd70dd7d40495} 
+void {\bfseries Connector\+\_\+\+LWP\+\_\+\+Pipes} (double t\+\_\+target, \mbox{\hyperlink{class_l_w_p}{LWP}} \texorpdfstring{$\ast$}{*}p1, \mbox{\hyperlink{class_l_w_p}{LWP}} \texorpdfstring{$\ast$}{*}p2)
+\item 
+\Hypertarget{class_connector_ac11f3211c2fbf494dc88beb7aab1f7b7}\label{class_connector_ac11f3211c2fbf494dc88beb7aab1f7b7} 
+void {\bfseries Connector\+\_\+\+LWP\+\_\+\+Pipes} (double t\+\_\+target, \mbox{\hyperlink{class_l_w_p}{LWP}} \texorpdfstring{$\ast$}{*}p1, bool is\+\_\+front1, \mbox{\hyperlink{class_l_w_p}{LWP}} \texorpdfstring{$\ast$}{*}p2, bool is\+\_\+front2, \mbox{\hyperlink{class_l_w_p}{LWP}} \texorpdfstring{$\ast$}{*}p3, bool is\+\_\+front3, const double mpout, const double T)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Class to contain Connectors. 
+Class for connecting elements. 
 
-blabla 
+The class contains data for Connectors 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_connector_a1524c665eeaeca700fc72fdc70573039}\label{class_connector_a1524c665eeaeca700fc72fdc70573039} 

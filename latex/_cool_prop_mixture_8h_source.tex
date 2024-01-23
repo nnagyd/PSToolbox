@@ -1,0 +1,38 @@
+\doxysection{Cool\+Prop\+Mixture.\+h}
+\hypertarget{_cool_prop_mixture_8h_source}{}\label{_cool_prop_mixture_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Gas.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\#include\ "{}CoolProp.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cool_prop_gas}{CoolPropGas}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_gas}{Gas}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cool_prop_gas}{CoolPropGas}}(\textcolor{keyword}{const}\ std::string\ fluid\_name);}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cool_prop_gas}{\string~CoolPropGas}}();}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_rho(\textcolor{keywordtype}{double}\ p,\ \textcolor{keywordtype}{double}\ T);}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_p(\textcolor{keywordtype}{double}\ rho,\ \textcolor{keywordtype}{double}\ T);}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_T(\textcolor{keywordtype}{double}\ p,\ \textcolor{keywordtype}{double}\ rho);}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_SonicVel(\textcolor{keywordtype}{double}\ T,\ \textcolor{keywordtype}{double}\ p);}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_T\_from\_ep(\textcolor{keywordtype}{double}\ e,\ \textcolor{keywordtype}{double}\ p);}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_T\_from\_erho(\textcolor{keywordtype}{double}\ e,\ \textcolor{keywordtype}{double}\ rho);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_e\_from\_Tp(\textcolor{keywordtype}{double}\ T,\ \textcolor{keywordtype}{double}\ p);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_Prandtl\_from\_Tp(\textcolor{keywordtype}{double}\ T,\ \textcolor{keywordtype}{double}\ p);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_ThermalConductivity\_from\_Tp(\textcolor{keywordtype}{double}\ T,\ \textcolor{keywordtype}{double}\ p);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_DynamicViscosity\_from\_Tp(\textcolor{keywordtype}{double}\ T,\ \textcolor{keywordtype}{double}\ p);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_kappa\_pv();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_kappa\_Tv();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_kappa\_Tp();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_pcrit();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_cp();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_cV();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_cp(\textcolor{keywordtype}{double}\ p,\ \textcolor{keywordtype}{double}\ T);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_cV(\textcolor{keywordtype}{double}\ p,\ \textcolor{keywordtype}{double}\ T);\ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_MassFlux(\textcolor{keywordtype}{double}\ pu,\ \textcolor{keywordtype}{double}\ Tu,\ \textcolor{keywordtype}{double}\ pd,\ \textcolor{keywordtype}{double}\ Td);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_eta\_crit();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::string\ fluid\_name;}
+\DoxyCodeLine{00033\ \};}
+
+\end{DoxyCode}

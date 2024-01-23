@@ -25,8 +25,6 @@ MatrixXd num_jac(
     VectorXd (*fun)(VectorXd & x, const VectorXd & pars),
     VectorXd & x, const VectorXd & pars);
 
-//VectorXd linspace(double x_min, double x_max, int Nsteps, bool is_linear);
-
 double signum(double x);
 
 double mean(vector<double> x);

@@ -24,6 +24,8 @@ class LWP: public Units
 		//bool BCLeft(string type, double val1, double val2);
 		//void BCRight(string type, double val1, double val2);
 
+		bool DEBUG;
+
 		double Source(int i);
 		vector<vector<double> > data;
 		vector<double> tmpvec;
@@ -31,7 +33,7 @@ class LWP: public Units
 		bool do_plot_runtime;
 		bool left_boundary_points_already_updated; 
 		bool right_boundary_points_already_updated;
-bool is_BCRight_Wall;
+		bool is_BCRight_Wall;
 
 		void Pack(bool is_half_step);
 		void UnPackU(bool is_half_step);
@@ -43,7 +45,7 @@ bool is_BCRight_Wall;
 		void UpdateTimeStep();
 
 		void Add_data_row();
-		double P_MIN, T_MIN, art_visc;
+		double v_TOL, P_MIN, T_MIN, art_visc;
 
 		// For heat transfer via pipe wall
 		double Tw,heat_transfer_par;
@@ -74,9 +76,9 @@ bool is_BCRight_Wall;
 				const vector<double> _pini,
 				const vector<double> _Tini);
 		/*
-		   void Ini(double vini, double _pstart, double dt_target);
-		   void UpdateDimlessPars(double pref, double mp_nevl, double omega, double xref, double m);
-		   */
+			 void Ini(double vini, double _pstart, double dt_target);
+			 void UpdateDimlessPars(double pref, double mp_nevl, double omega, double xref, double m);
+			 */
 		double Get_dprop(string prop_string);
 		void Set_dprop(string prop_string, double val);
 		void Step(double dt_req);
@@ -109,6 +111,9 @@ bool is_BCRight_Wall;
 
 		string fname;
 		Gas *gas;
+
+		void Switch_on_DEBUG(){DEBUG=true;};
+		void Switch_off_DEBUG(){DEBUG=false;};
 
 		// For heat transfer via pipe wall
 		void SetHeatTransfer(double Tw, string heat_transfer_model, double tmp);

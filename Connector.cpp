@@ -209,6 +209,15 @@ void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
   if (!inlet_pressure_drop){
     is_inflow=p1->BCLeft("StaticPres_and_StaticTemp_Inlet",pt,Tt,false);
     pin=pt; Tin=Tt;
+
+        if (DEBUG){
+      cout<<endl<<"Connector_LWP_Reservoir_and_Pipe_Front()";
+      cout<<endl<<"pt="<<pt<<", Tt="<<Tt;
+      cout<<endl<<"p1="<<p1->Get_dprop("p_front");
+      cout<<", v1="<<p1->Get_dprop("v_front");
+cout<<endl<<"is_inflow = "<<is_inflow;
+    }
+
   }
   else{
     is_inflow=Connector_LWP_Reservoir_and_Pipe_Front_inlet(t_target,r1,p1,inlet_pressure_drop,pt,Tt);

@@ -346,13 +346,13 @@ double Reservoir::Get_dprop(string prop_string) {
     out = vol;
   else if (prop_string == "a") {
     if (is_Gas)
-      out = gas->Get_SonicVel(293,1.e5);
+      out = gas->Get_SonicVel(293,p);
     else
       out = a;
   }
   else if (prop_string == "T") {
     if (is_Gas)
-      out = T;
+      out = 293.;
     else {
       if (DEBUG){
         cout << endl << "WARNING!";
@@ -365,7 +365,7 @@ double Reservoir::Get_dprop(string prop_string) {
   else if (prop_string == "p")
     out = p;
   else if (prop_string == "rho")
-    out = rho;
+    out = gas->Get_rho(p,293.);
   else if (prop_string == "beta")
     out = beta;
   else {

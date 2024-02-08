@@ -4,8 +4,8 @@
 #include <vector>
 #include <cmath>
 #include <Eigen/Dense>
+#include "PSToolboxBaseEdge.h"
 #include "Units.h"
-
 
 using namespace std;
 using namespace Eigen;
@@ -16,12 +16,13 @@ using namespace Eigen;
   usual flow speeds in the pipe.)
   The solution of the system will be based on the method of characterisctics (MOC)
 */
-class SCP: public Units
+class SCP: public PSToolboxBaseEdge, Units
 {
 private:
   //Data
   double t, L, D, A, lambda, he, hv, ro, a, roa, dt, lambda_p_2D, S0, g;
-  string name, node_from, node_to;
+  //string name, node_from, node_to;
+  string node_from, node_to;
   double phi, alpha, gamma, mu;
   int Npts; //!< number of points the pipe is separated to during
   VectorXd x, v, p;

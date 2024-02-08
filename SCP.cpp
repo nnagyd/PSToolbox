@@ -6,6 +6,7 @@
 #include <sstream>
 #include <vector>
 #include "my_tools.h"
+#include "PSToolboxBaseEdge.h"
 
 #include <cmath>
 
@@ -20,9 +21,9 @@ SCP::SCP(const string _name, //!< [in] Name of the slightls compressible pipe
 		const double _lambda, //!< [in] Friction loss factor
 		const double _he, //!< [in] Height at the beginning [eleje] of the pipe
 		const double _hv, //!< [in] Height at the end [v�ge] of the pipe
-		const bool _save_data /**< [in] whether to save data*/ ) : Units() {
+		const bool _save_data /**< [in] whether to save data*/ ) : PSToolboxBaseEdge(_name), Units() {
 	save_data = _save_data;
-	name = _name;
+	//name = _name;
 	node_from = _cspe_name;
 	node_to = _cspv_name;
 	ro = _ro;

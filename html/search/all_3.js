@@ -1,4 +1,30 @@
 var searchData=
 [
-  ['datapair_0',['Datapair',['../struct_datapair.html',1,'']]]
+  ['cd_0',['Cd',['../_l_w_p__2___valve___b_ccheck_8m.html#a4c2b9fcc85e073a11c6fce8970d58a50',1,'LWP_2_Valve_BCcheck.m']]],
+  ['cdfun_1',['Cdfun',['../class_valve.html#ad182895de4386d4696566a30c260a897',1,'Valve']]],
+  ['cl_2',['cL',['../class_frozen_mixture_liquid_gas.html#a3ebe237b6e42496a4b6a7b11c736049a',1,'FrozenMixtureLiquidGas']]],
+  ['compare_3',['compare',['../my__tools_8cpp.html#a73a1566ec9ffab8c042cca810289e7ac',1,'my_tools.cpp']]],
+  ['connector_4',['connector',['../class_connector.html',1,'Connector'],['../class_connector.html#ae29b3ae6cc0c34b261d49b24c4dfcb09',1,'Connector::Connector()']]],
+  ['connector_2ecpp_5',['Connector.cpp',['../_connector_8cpp.html',1,'']]],
+  ['connector_2eh_6',['Connector.h',['../_connector_8h.html',1,'']]],
+  ['connector_5flwp_5fpipe_5fback_5fand_5fvalve_7',['connector_lwp_pipe_back_and_valve',['../class_connector.html#a1524c665eeaeca700fc72fdc70573039',1,'Connector::Connector_LWP_Pipe_Back_and_Valve(double t_target, LWP *p, Valve *v, double p_downstream)'],['../class_connector.html#a0c26734a5ca79673f137182ee081a298',1,'Connector::Connector_LWP_Pipe_Back_and_Valve(double t_target, LWP *p, Valve *v, double p_downstream, double &amp;pb, double &amp;Tb)']]],
+  ['connector_5flwp_5fpipe_5fback_5fand_5fvalve_5fwith_5fabsorber_8',['Connector_LWP_Pipe_Back_and_Valve_with_Absorber',['../class_connector.html#a53876523db2a68af24eb3501b02324b4',1,'Connector']]],
+  ['connector_5flwp_5fpipes_9',['connector_lwp_pipes',['../class_connector.html#ac11f3211c2fbf494dc88beb7aab1f7b7',1,'Connector::Connector_LWP_Pipes(double t_target, LWP *p1, bool is_front1, LWP *p2, bool is_front2, LWP *p3, bool is_front3, const double mpout, const double T)'],['../class_connector.html#ad26586fd0386a1e2aa1dd70dd7d40495',1,'Connector::Connector_LWP_Pipes(double t_target, LWP *p1, LWP *p2)']]],
+  ['connector_5flwp_5freservoir_5fand_5fpipe_5ffront_10',['connector_lwp_reservoir_and_pipe_front',['../class_connector.html#abfe3fa2d5091dbd6833936754725e943',1,'Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target, Reservoir *r, LWP *p, bool inlet_pressure_drop, double &amp;pf, double &amp;Tf)'],['../class_connector.html#a3c4f1264f1bfedf24616b5ecc92248b7',1,'Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target, Reservoir *r, LWP *p, bool inlet_pressure_drop)']]],
+  ['connector_5flwp_5freservoir_5fand_5fpipe_5ffront_5finlet_11',['Connector_LWP_Reservoir_and_Pipe_Front_inlet',['../class_connector.html#a1d5a68cd9ece83d1dad3ed1b8c8f635b',1,'Connector']]],
+  ['connector_5freservoir_5fand_5fvalve_5finlet_12',['Connector_Reservoir_and_Valve_Inlet',['../class_connector.html#a0c68c530eea0f178c376207e0190db24',1,'Connector']]],
+  ['connector_5fscp_5fpipe_5fback_5fand_5fvalve_13',['Connector_SCP_Pipe_Back_and_Valve',['../class_connector.html#a16b1ca2e3a17b044e619d39de80576b1',1,'Connector']]],
+  ['connector_5fscp_5fpipe_5ffront_5fand_5fvalve_5foutlet_14',['Connector_SCP_Pipe_Front_and_Valve_Outlet',['../class_connector.html#a70043aa1fee54ace7c1b9a57f077a3ee',1,'Connector']]],
+  ['connector_5fscp_5fpipes_15',['connector_scp_pipes',['../class_connector.html#ac6f13c672450413409ac698917469fee',1,'Connector::Connector_SCP_Pipes(double t_target, SCP *p1, bool is_front1, SCP *p2, bool is_front2, double mpout, double &amp;p, double &amp;v1, double &amp;v2)'],['../class_connector.html#a744d9b3278bb5f1d883d8481ac35f912',1,'Connector::Connector_SCP_Pipes(double t_target, SCP *p1, bool is_front1, SCP *p2, bool is_front2, SCP *p3, bool is_front3, double mpout, double &amp;p, double &amp;v1, double &amp;v2, double &amp;v3)']]],
+  ['connector_5fscp_5freservoir_5fand_5fpipe_5ffront_16',['Connector_SCP_Reservoir_and_Pipe_Front',['../class_connector.html#a07a60f145b6cb4fafdf13b221b186249',1,'Connector']]],
+  ['connectors_17',['connectors',['../class_p_s_toolbox_runner.html#a8c61cbf7af29bc9c48ca671426c93854',1,'PSToolboxRunner']]],
+  ['coolpprop_20support_18',['Installing with CoolpProp support',['../md_install___p_s_toolbox__win.html#autotoc_md3',1,'']]],
+  ['coolpropgas_19',['coolpropgas',['../class_cool_prop_gas.html#adb1fbecdcfc4ef392e69cf432dd94d90',1,'CoolPropGas::CoolPropGas()'],['../class_cool_prop_gas.html',1,'CoolPropGas']]],
+  ['coolpropgas_2ecpp_20',['CoolPropGas.cpp',['../_cool_prop_gas_8cpp.html',1,'']]],
+  ['coolpropgas_2eh_21',['CoolPropGas.h',['../_cool_prop_gas_8h.html',1,'']]],
+  ['coolpropha_22',['coolpropha',['../class_cool_prop_h_a.html#a8da6ab25950b8b90146edc3c63f265ca',1,'CoolPropHA::CoolPropHA()'],['../class_cool_prop_h_a.html',1,'CoolPropHA']]],
+  ['coolpropha_2ecpp_23',['CoolPropHA.cpp',['../_cool_prop_h_a_8cpp.html',1,'']]],
+  ['coolpropha_2eh_24',['CoolPropHA.h',['../_cool_prop_h_a_8h.html',1,'']]],
+  ['cp_25',['cp',['../class_ideal_gas.html#a14c45008348549bb9234e1e7c4961df5',1,'IdealGas']]],
+  ['cv_26',['cv',['../class_ideal_gas.html#a6caf46495d02ff5abaed974befac0495',1,'IdealGas::cV'],['../_l_w_p__2___valve___b_ccheck_8m.html#a4d9c871fdaa02e3bf4942d1a5f4f9f73',1,'cv:&#160;LWP_2_Valve_BCcheck.m']]]
 ];

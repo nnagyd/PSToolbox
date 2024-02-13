@@ -1,36 +1,36 @@
 \doxysection{Gas.\+h}
-\hypertarget{_gas_8h_source}{}\label{_gas_8h_source}
+\hypertarget{_gas_8h_source}{}\label{_gas_8h_source}\mbox{\hyperlink{_gas_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00002\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gas}{Gas}}}
 \DoxyCodeLine{00003\ \{}
 \DoxyCodeLine{00004\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keywordtype}{double}\ p;}
-\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{double}\ rho;}
-\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{double}\ T;}
-\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{double}\ e;}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}};}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a735aaa3bdcf2c171e813b4c435a432b2}{rho}};}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}};}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a0ed7699db3f9e71f8fe04ad6bd4e2baa}{e}};}
 \DoxyCodeLine{00009\ }
 \DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_gas}{Gas}}();}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_gas}{\string~Gas}}();}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_gas_a6506127f6d3c2f0e15e9592c1e0134ea}{Gas}}();}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_gas_a78b0365eb5310af7b1f2f1092be31926}{\string~Gas}}();}
 \DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_p(\textcolor{keywordtype}{double}\ rho,\ \textcolor{keywordtype}{double}\ T)\ =\ 0;}
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_rho(\textcolor{keywordtype}{double}\ p,\ \textcolor{keywordtype}{double}\ T)\ =\ 0;}
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_T(\textcolor{keywordtype}{double}\ p,\ \textcolor{keywordtype}{double}\ rho)\ =\ 0;}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_e\_from\_Tp(\textcolor{keywordtype}{double}\ T,\textcolor{keywordtype}{double}\ p)\ =\ 0;}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_SonicVel(\textcolor{keywordtype}{double}\ T,\ \textcolor{keywordtype}{double}\ p)\ =\ 0;}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_T\_from\_ep(\textcolor{keywordtype}{double}\ e,\ \textcolor{keywordtype}{double}\ p)\ =\ 0;}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_T\_from\_erho(\textcolor{keywordtype}{double}\ e,\ \textcolor{keywordtype}{double}\ rho)\ =\ 0;}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_Prandtl\_from\_Tp(\textcolor{keywordtype}{double}\ T,\ \textcolor{keywordtype}{double}\ p)=0;}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_ThermalConductivity\_from\_Tp(\textcolor{keywordtype}{double}\ T,\ \textcolor{keywordtype}{double}\ p)=0;}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_DynamicViscosity\_from\_Tp(\textcolor{keywordtype}{double}\ T,\ \textcolor{keywordtype}{double}\ p)=0;}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_kappa\_pv()\ =\ 0;}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_kappa\_Tv()\ =\ 0;}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_kappa\_Tp()\ =\ 0;}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_cp(\textcolor{keywordtype}{double}\ p,\ \textcolor{keywordtype}{double}\ T)\ =\ 0;}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_cV(\textcolor{keywordtype}{double}\ p,\ \textcolor{keywordtype}{double}\ T)\ =\ 0;}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_eta\_crit()\ =\ 0;}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ Get\_MassFlux(\textcolor{keywordtype}{double}\ pu,\ \textcolor{keywordtype}{double}\ rhou,\ \textcolor{keywordtype}{double}\ pd,\ \textcolor{keywordtype}{double}\ rhod)\ =\ 0;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_ab56247b61f7a428d2bba3fdede32160e}{Get\_p}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a735aaa3bdcf2c171e813b4c435a432b2}{rho}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}})\ =\ 0;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a68926d08085031d22d1002cc5e8d624a}{Get\_rho}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}})\ =\ 0;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_af1250a912519161ada99be3f8a51fedb}{Get\_T}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a735aaa3bdcf2c171e813b4c435a432b2}{rho}})\ =\ 0;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a778dfca16ae0df7a1d2d2d7881e018e2}{Get\_e\_from\_Tp}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}},\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}})\ =\ 0;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a19adfd6aefc7321a2bf8b5f54c19925e}{Get\_SonicVel}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}})\ =\ 0;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_ae0d91e705e13a079a2c6f4d21621a6fd}{Get\_T\_from\_ep}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a0ed7699db3f9e71f8fe04ad6bd4e2baa}{e}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}})\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_af2c9fa62156f888d1cac2c6aebebca09}{Get\_T\_from\_erho}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a0ed7699db3f9e71f8fe04ad6bd4e2baa}{e}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a735aaa3bdcf2c171e813b4c435a432b2}{rho}})\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a04da6535684b8febf9a5b3a6fe0cebf9}{Get\_Prandtl\_from\_Tp}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}})=0;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a477568220b178b3e4a51ee60b103451a}{Get\_ThermalConductivity\_from\_Tp}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}})=0;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_afa289a3d8a3592197a2d6c79a554a59d}{Get\_DynamicViscosity\_from\_Tp}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}})=0;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_afbb3561b223effe9537135293199db2f}{Get\_kappa\_pv}}()\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_ac46b7c1a4b449ceed9c916de11c84ee8}{Get\_kappa\_Tv}}()\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a74c379be0f66a67ef19bf2c480b4f0a8}{Get\_kappa\_Tp}}()\ =\ 0;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a2d5323882d08752e13ac73e2c2dd43ce}{Get\_cp}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}})\ =\ 0;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_ae49644371b6ca1faf4de9959d12b42f7}{Get\_cV}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}})\ =\ 0;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a86843414d7aa7f3fd039bb917aacf843}{Get\_eta\_crit}}()\ =\ 0;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_gas_a445292c603e0cd5c4242957094490ba4}{Get\_MassFlux}}(\textcolor{keywordtype}{double}\ pu,\ \textcolor{keywordtype}{double}\ rhou,\ \textcolor{keywordtype}{double}\ pd,\ \textcolor{keywordtype}{double}\ rhod)\ =\ 0;}
 \DoxyCodeLine{00031\ \};}
 
 \end{DoxyCode}

@@ -1,7 +1,22 @@
 var searchData=
 [
-  ['lbf_5fto_5fn_0',['lbf_to_N',['../class_units.html#a5215c9f5e61c890b28bff680e6a511ca',1,'Units']]],
-  ['lbm_5fto_5fkg_1',['lbm_to_kg',['../class_units.html#a0cf66a20a8f5651c3a5e46ebd6bb4f63',1,'Units']]],
-  ['library_2',['Using the library',['../md_install___p_s_toolbox__win.html#autotoc_md2',1,'']]],
-  ['lwp_3',['LWP',['../class_l_w_p.html',1,'']]]
+  ['i_0',['i',['../_l_w_p__2___valve___b_ccheck_8m.html#a6f6ccfcf58b31cb6412107d9d5281426',1,'LWP_2_Valve_BCcheck.m']]],
+  ['idealgas_1',['idealgas',['../class_ideal_gas.html',1,'IdealGas'],['../class_ideal_gas.html#a49de9b805a4c160746961f2a8df35e48',1,'IdealGas::IdealGas(const double _kappa, const double _R)'],['../class_ideal_gas.html#a4938f396a67b48b38478d40a6a6babfa',1,'IdealGas::IdealGas(IdealGas *g)'],['../class_ideal_gas.html#a28ab029e9873f931204ee8b74de0e3f9',1,'IdealGas::IdealGas()']]],
+  ['idealgas_2ecpp_2',['IdealGas.cpp',['../_ideal_gas_8cpp.html',1,'']]],
+  ['idealgas_2eh_3',['IdealGas.h',['../_ideal_gas_8h.html',1,'']]],
+  ['if_4',['if',['../_l_w_p__2___valve___b_ccheck_8m.html#a4a72014f35a54787992ea4b3130e2bfc',1,'LWP_2_Valve_BCcheck.m']]],
+  ['inch3_5fto_5fm3_5',['inch3_to_m3',['../class_units.html#aa8eaefa114dd3f3f71441fca9f530c68',1,'Units']]],
+  ['inch_5fto_5fm_6',['inch_to_m',['../class_units.html#a825b374297ce7d7d0e03a3908d716ae8',1,'Units']]],
+  ['info_7',['info',['../class_l_w_p.html#aa36b088feffd84c4441fdd3d74cfc15c',1,'LWP::Info()'],['../class_p_s_toolbox_base_edge.html#a4cfb66702f57eb57a4acd23c6d361d2f',1,'PSToolboxBaseEdge::Info()'],['../class_reservoir.html#a093db21486b33b07564c0f2a555ef94a',1,'Reservoir::Info()'],['../class_s_c_p.html#a3921a67c908dadf1f0ff21cc9464dcc5',1,'SCP::Info()'],['../class_valve.html#a91da869e462dc8639ad119c83fbc35e9',1,'Valve::Info()'],['../class_valve__with___absorber.html#a249cd75e7a8c079744d33337513f2978',1,'Valve_with_Absorber::Info()']]],
+  ['ini_8',['ini',['../class_p_s_toolbox_base_edge.html#a1a152f3ff28fa36b5b6da17bceb2659e',1,'PSToolboxBaseEdge::Ini()'],['../class_reservoir.html#a61a6925be17180de646b0c4151c59454',1,'Reservoir::Ini(double _pstart)'],['../class_reservoir.html#af0b230c3a0f3a6d3d84dfb0a3e8d8de2',1,'Reservoir::Ini(double _pstart, double _Tstart)'],['../class_s_c_p.html#afd01c84f7ecfe434523957f646bfbcb1',1,'SCP::Ini(int Npts_mul)'],['../class_s_c_p.html#a7c41b5c5742ed46307d91d73e6a46327',1,'SCP::Ini(double vini, double _pstart)'],['../class_s_c_p.html#a9f5e519bf13863e1632f5607624143d1',1,'SCP::Ini(double vini, double _pstart, int Npts_mul)'],['../class_s_c_p.html#a3709666047b1cf4cc6b6b460430bb83e',1,'SCP::Ini(double vini, double _pstart, double dt_target)'],['../class_valve.html#a953cf0c50beb80d642f59ee48149866d',1,'Valve::Ini()'],['../class_valve.html#a91956e0fe1578c03edefb31d6f9588f4',1,'Valve::Ini(double _xstart, double _vstart, double _pstart)'],['../class_valve.html#a73150bc1b2e4eaefd63a8299d4283fc3',1,'Valve::Ini(double _xstart, double _vstart)'],['../class_valve__with___absorber.html#a74e12d9b81fbef08bb8477242d7e1e45',1,'Valve_with_Absorber::Ini()'],['../class_valve__with___absorber.html#a2e7e4fa42e790d85afe3aa4e2fef55f6',1,'Valve_with_Absorber::Ini(double _xstart, double _vstart, double _pstart)'],['../class_valve__with___absorber.html#a19c0d699d16939ab4229bb884ddaf66f',1,'Valve_with_Absorber::Ini(double _xstart, double _vstart)']]],
+  ['inidistribution_9',['IniDistribution',['../class_l_w_p.html#a1d3c14f17c5b1d86cd46279f303a829c',1,'LWP']]],
+  ['iniuniform_10',['iniuniform',['../class_l_w_p.html#a875d84fdd79ada0be0ef67e49c30804a',1,'LWP::IniUniform(double _vini, double _pini, double _Tini, int Npts_mul)'],['../class_l_w_p.html#a0d5239a98987cfa05b1b47c64bb2343e',1,'LWP::IniUniform(double _vini, double _pini, double _Tini, double dt_target)']]],
+  ['input_11',['Input',['../class_input.html',1,'']]],
+  ['install_12',['Install',['../md_install___p_s_toolbox__win.html#autotoc_md1',1,'']]],
+  ['install_5fpstoolbox_5fwin_2emd_13',['install_PSToolbox_win.md',['../install___p_s_toolbox__win_8md.html',1,'']]],
+  ['installing_20and_20using_20pstoolbox_20on_20windows_14',['Installing and using PSToolbox on Windows',['../md_install___p_s_toolbox__win.html',1,'']]],
+  ['installing_20with_20coolpprop_20support_15',['Installing with CoolpProp support',['../md_install___p_s_toolbox__win.html#autotoc_md3',1,'']]],
+  ['interp1_16',['interp1',['../my__tools_8h.html#a8dccf9fac8facd3c991b7319096e063d',1,'interp1(vector&lt; double &gt; x, vector&lt; double &gt; y, vector&lt; double &gt; xi):&#160;my_tools.cpp'],['../my__tools_8cpp.html#a8dccf9fac8facd3c991b7319096e063d',1,'interp1(vector&lt; double &gt; x, vector&lt; double &gt; y, vector&lt; double &gt; xi):&#160;my_tools.cpp']]],
+  ['interpolate_5fval_17',['interpolate_val',['../my__tools_8cpp.html#afe6dca40d73c757482fa1b1c1bfe568e',1,'interpolate_val(vector&lt; double &gt; x, vector&lt; double &gt; y, double x0):&#160;my_tools.cpp'],['../my__tools_8h.html#afe6dca40d73c757482fa1b1c1bfe568e',1,'interpolate_val(vector&lt; double &gt; x, vector&lt; double &gt; y, double x0):&#160;my_tools.cpp']]],
+  ['is_5fgas_18',['is_Gas',['../class_reservoir.html#aa205bfa0a21280929d65f5676aeaeb92',1,'Reservoir']]]
 ];

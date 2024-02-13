@@ -1,5 +1,5 @@
 \doxysection{Valve.\+h}
-\hypertarget{_valve_8h_source}{}\label{_valve_8h_source}
+\hypertarget{_valve_8h_source}{}\label{_valve_8h_source}\mbox{\hyperlink{_valve_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00002\ }
@@ -7,8 +7,8 @@
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cmath>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <Eigen/Dense>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Units.h"{}}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}IdealGas.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_units_8h}{Units.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ideal_gas_8h}{IdealGas.h}}"{}}}
 \DoxyCodeLine{00009\ \textcolor{comment}{//\#include\ "{}/Users/hoscsaba/program/matplotlib-\/cpp/matplotlibcpp.h"{}}}
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00011\ \textcolor{keyword}{using\ namespace\ }std;}
@@ -16,107 +16,108 @@
 \DoxyCodeLine{00013\ }
 \DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_valve}{Valve}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_units}{Units}}}
 \DoxyCodeLine{00019\ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ save\_data;\ }
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ name;\ }
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m;\ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ s;\ }
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ k;\ \ \textcolor{comment}{/*damping\ factor\ in\ valve*/}}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ A;\ \textcolor{comment}{/*effective\ area\ of\ the\ valve\ */}}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Cd;\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ ro\ \textcolor{comment}{/*Desity\ of\ fluid\ in\ the\ valve\ */},\ Dbore\ \textcolor{comment}{/*Smallest\ cross\ section\ in\ valve*/},\ xe\ ,\ p\_set\ \textcolor{comment}{/*\ set\ pressure\ */};}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ mp\_nevl;\ \textcolor{comment}{/*Design\ pressure\ */}}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ xmax\_unrestricted;\ \textcolor{comment}{/*maximum\ allowed\ displacement\ */}}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ RT;\ \textcolor{comment}{/*\ restriction,\ percent,\ 0=unrestricted*/}}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ xmax;\ \textcolor{comment}{/*\ restricted\ (actual)\ max.\ lift*/}}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ r\ ;}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ t,\ x\ ,\ v\ ,\ p\ \textcolor{comment}{/*inlet\ side\ pressure\ in\ the\ valve\ */};}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ pref\ ,\ xref\ ,\ delta\ ;}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ini\_done;\ }
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ x\_simul\_min\ ,\ x\_simul\_max\ ;}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ TINY\_VELOCITY,\ TINY\_OPENING;\ }
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_closed,\ is\_fully\_open;\ }
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ VectorXd\ ValveODE(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ x,\ \textcolor{keyword}{const}\ VectorXd\ \&y,\ \textcolor{keyword}{const}\ VectorXd\ \&pars);}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ rk45(\textcolor{keywordtype}{double}\ x\_0,}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ x\_max,}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ VectorXd\ y\_0,}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector<double>\ \&x,\ vector<vector<double>\ >\ \&y,}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ VectorXd\ \&\ pars);}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//double\ SumStatForce(const\ double\ x,\ const\ double\ pv,\ const\ double\ pb);}}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ double\ Aeff(const\ double\ x);}}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Aeffmax,\ a1,\ a2,\ a3;}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cd\ coeffs}}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ b0,b1,b2,b3;}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ vector<vector<double>\ >\ data;}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ vector<double>\ tmpvec;}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gas}{Gas}}*\ gas;}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_Gas;}
-\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ save\_data;\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{string}\ name;\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{double}\ m;\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{double}\ s;\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{double}\ k;\ \ \textcolor{comment}{/*damping\ factor\ in\ valve*/}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{double}\ A;\ \textcolor{comment}{/*effective\ area\ of\ the\ valve\ */}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{double}\ Cd;\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{double}\ ro\ \textcolor{comment}{/*Desity\ of\ fluid\ in\ the\ valve\ */},\ Dbore\ \textcolor{comment}{/*Smallest\ cross\ section\ in\ valve*/},\ xe\ ,\ p\_set\ \textcolor{comment}{/*\ set\ pressure\ */};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{double}\ mp\_nevl;\ \textcolor{comment}{/*Design\ pressure\ */}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ mp;\ \textcolor{comment}{//\ actual\ mass\ flow\ rate}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{double}\ xmax\_unrestricted;\ \textcolor{comment}{/*maximum\ allowed\ displacement\ */}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{double}\ RT;\ \textcolor{comment}{/*\ restriction,\ percent,\ 0=unrestricted*/}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{double}\ xmax;\ \textcolor{comment}{/*\ restricted\ (actual)\ max.\ lift*/}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{double}\ r\ ;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{double}\ t,\ x\ ,\ v\ ,\ p\ \textcolor{comment}{/*inlet\ side\ pressure\ in\ the\ valve\ */};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ pref\ ,\ xref\ ,\ delta\ ;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ ini\_done;\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{double}\ x\_simul\_min\ ,\ x\_simul\_max\ ;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{double}\ TINY\_VELOCITY,\ TINY\_OPENING;\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_closed,\ is\_fully\_open;\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ VectorXd\ ValveODE(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_l_w_p__2___valve___b_ccheck_8m_a7fe6bc70e52971515c699da7a36c1d87}{x}},\ \textcolor{keyword}{const}\ VectorXd\ \&y,\ \textcolor{keyword}{const}\ VectorXd\ \&\mbox{\hyperlink{_l_w_p__2___valve___b_ccheck_8m_abe25911381437fd4164e906339fe9cfc}{pars}});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ rk45(\textcolor{keywordtype}{double}\ x\_0,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ x\_max,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ VectorXd\ y\_0,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ vector<double>\ \&\mbox{\hyperlink{_l_w_p__2___valve___b_ccheck_8m_a7fe6bc70e52971515c699da7a36c1d87}{x}},\ vector<vector<double>\ >\ \&y,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ VectorXd\ \&\ \mbox{\hyperlink{_l_w_p__2___valve___b_ccheck_8m_abe25911381437fd4164e906339fe9cfc}{pars}});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//double\ SumStatForce(const\ double\ x,\ const\ double\ pv,\ const\ double\ pb);}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ double\ Aeff(const\ double\ x);}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{double}\ Aeffmax,\ a1,\ a2,\ a3;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ Cd\ coeffs}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{double}\ b0,b1,b2,b3;}
+\DoxyCodeLine{00055\ \ \ \ \ vector<vector<double>\ >\ data;}
+\DoxyCodeLine{00056\ \ \ \ \ vector<double>\ tmpvec;}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_gas}{Gas}}*\ gas;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_Gas;}
 \DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_MassFlowRate\_Compressible(\textcolor{keywordtype}{double}\ p\_upstream,\ \textcolor{keywordtype}{double}\ T\_upstream,\ \textcolor{keywordtype}{double}\ p\_downstream,\ \textcolor{keywordtype}{double}\ T\_downstream,\ \textcolor{keywordtype}{double}\ xx);}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_MassFlowRate\_Compressible\_Choked(\textcolor{keywordtype}{double}\ p\_upstream,\ \textcolor{keywordtype}{double}\ T\_upstream,\ \textcolor{keywordtype}{double}\ x);}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_MassFlowRate\_Compressible\_UnChoked(\textcolor{keywordtype}{double}\ p\_upstream,\ \textcolor{keywordtype}{double}\ T\_upstream,\ \textcolor{keywordtype}{double}\ p\_downstream,\ \textcolor{keywordtype}{double}\ xx);}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_MassFlowRate\_InCompressible(\textcolor{keywordtype}{double}\ p\_upstream,\ \textcolor{keywordtype}{double}\ p\_downstream,\ \textcolor{keywordtype}{double}\ rho,\ \textcolor{keywordtype}{double}\ x)\ ;}
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_valve}{Valve}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \_nev,}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_m,}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_k,}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_s,}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_Dbore,}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_Cd,}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_ro,}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ p\_set,}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//const\ double\ \_mp\_nevl,}}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_xmax,}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_r,}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_pref,}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ save\_data);}
-\DoxyCodeLine{00078\ }
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_valve}{Valve}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \_nev,}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_m,}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_k,}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_s,}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_Dbore,}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_Cd,}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gas}{Gas}}*\ \_gas,}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ p\_set,}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//const\ double\ \_mp\_nevl,}}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_xmax,}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_r,}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_pref,}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ save\_data);}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_valve}{\string~Valve}}();}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ GetName();}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ Info();}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update(\textcolor{keywordtype}{double}\ delta\_t,\ \textcolor{keywordtype}{double}\ p\_valve,\ \textcolor{keywordtype}{double}\ p\_back,\ \textcolor{keywordtype}{bool}\ monitor\_min\_max);}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Ini();}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Ini(\textcolor{keywordtype}{double}\ \_xstart,\ \textcolor{keywordtype}{double}\ \_vstart,\ \textcolor{keywordtype}{double}\ \_pstart);}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Ini(\textcolor{keywordtype}{double}\ \_xstart,\ \textcolor{keywordtype}{double}\ \_vstart);}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateDimlessPars();}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_dprop(\textcolor{keywordtype}{string}\ prop\_string);}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ vector<double>\ Get\_dvprop(\textcolor{keywordtype}{string}\ prop\_string);}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Set\_dprop(\textcolor{keywordtype}{string}\ prop\_string,\ \textcolor{keywordtype}{double}\ val);}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ List\_data();}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Save\_data();}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{comment}{//void\ Plot();}}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ fname;}
-\DoxyCodeLine{00107\ }
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_valve_a09e51698b043545e875dbd5e44e2876a}{Aeff}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ x);}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_valve_ad182895de4386d4696566a30c260a897}{Cdfun}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ x);}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_valve_a499bc164260239199838c6c90a339657}{SetAeffCoeffs}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_a1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_a2,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_a3,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Aeffmax);}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_valve_a7ff89a5c293c54fe0591acdb7a55a4f1}{SetCdCoeffs}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_b0,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_b1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_b2,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_b3);}
-\DoxyCodeLine{00112\ }
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_MassFlowRate(\textcolor{keywordtype}{double}\ p\_upstream,\ \textcolor{keywordtype}{double}\ T\_upstream,\ \textcolor{keywordtype}{double}\ p\_downstream,\ \textcolor{keywordtype}{double}\ T\_downstream,\ \textcolor{keywordtype}{double}\ xx);}
-\DoxyCodeLine{00114\ }
-\DoxyCodeLine{00115\ \textcolor{comment}{//\ \ \ \ \ \ double\ Get\_MassFlowRate\_Compressible(double\ p\_upstream,\ double\ T\_upstream,\ double\ p\_downstream,\ double\ T\_downstream,\ double\ xx);}}
-\DoxyCodeLine{00116\ \textcolor{comment}{//\ \ \ \ \ \ double\ Get\_MassFlowRate\_Compressible\_Choked(double\ p\_upstream,\ double\ T\_upstream,\ double\ x);}}
-\DoxyCodeLine{00117\ \textcolor{comment}{//\ \ \ \ \ \ double\ Get\_MassFlowRate\_Compressible\_UnChoked(double\ p\_upstream,\ double\ T\_upstream,\ double\ p\_downstream,\ double\ xx);}}
-\DoxyCodeLine{00118\ \textcolor{comment}{//\ \ \ \ \ \ double\ Get\_MassFlowRate\_InCompressible(double\ p\_upstream,\ double\ p\_downstream,\ double\ rho,\ double\ x)\ ;}}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{comment}{//void\ Plot(bool\ show,\ bool\ save);}}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ SumStatForce(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ pv,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ pb);}
-\DoxyCodeLine{00121\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_MassFlowRate\_Compressible(\textcolor{keywordtype}{double}\ p\_upstream,\ \textcolor{keywordtype}{double}\ T\_upstream,\ \textcolor{keywordtype}{double}\ p\_downstream,\ \textcolor{keywordtype}{double}\ T\_downstream,\ \textcolor{keywordtype}{double}\ xx);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_MassFlowRate\_Compressible\_Choked(\textcolor{keywordtype}{double}\ p\_upstream,\ \textcolor{keywordtype}{double}\ T\_upstream,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_l_w_p__2___valve___b_ccheck_8m_a7fe6bc70e52971515c699da7a36c1d87}{x}});}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_MassFlowRate\_Compressible\_UnChoked(\textcolor{keywordtype}{double}\ p\_upstream,\ \textcolor{keywordtype}{double}\ T\_upstream,\ \textcolor{keywordtype}{double}\ p\_downstream,\ \textcolor{keywordtype}{double}\ xx);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{double}\ Get\_MassFlowRate\_InCompressible(\textcolor{keywordtype}{double}\ p\_upstream,\ \textcolor{keywordtype}{double}\ p\_downstream,\ \textcolor{keywordtype}{double}\ rho,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_l_w_p__2___valve___b_ccheck_8m_a7fe6bc70e52971515c699da7a36c1d87}{x}})\ ;}
+\DoxyCodeLine{00065\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_valve}{Valve}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \_nev,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_m,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_k,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_s,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_Dbore,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_Cd,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_ro,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ p\_set,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//const\ double\ \_mp\_nevl,}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_xmax,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_r,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_pref,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ save\_data);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_valve}{Valve}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \_nev,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_m,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_k,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_s,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_Dbore,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_Cd,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gas}{Gas}}*\ \_gas,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ p\_set,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{comment}{//const\ double\ \_mp\_nevl,}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_xmax,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_r,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_pref,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ save\_data);}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{class_valve_ac59a5787dce2cf623fe3b6a42b7add15}{\string~Valve}}();}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_valve_a8d7f1f36ac81611396a6718cc14a7669}{GetName}}();}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_valve_a91da869e462dc8639ad119c83fbc35e9}{Info}}();}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_valve_a89bbc20718e6d252214894deceeb6c85}{Update}}(\textcolor{keywordtype}{double}\ delta\_t,\ \textcolor{keywordtype}{double}\ p\_valve,\ \textcolor{keywordtype}{double}\ p\_back,\ \textcolor{keywordtype}{bool}\ monitor\_min\_max);}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_valve_a953cf0c50beb80d642f59ee48149866d}{Ini}}();}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_valve_a953cf0c50beb80d642f59ee48149866d}{Ini}}(\textcolor{keywordtype}{double}\ \_xstart,\ \textcolor{keywordtype}{double}\ \_vstart,\ \textcolor{keywordtype}{double}\ \_pstart);}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_valve_a953cf0c50beb80d642f59ee48149866d}{Ini}}(\textcolor{keywordtype}{double}\ \_xstart,\ \textcolor{keywordtype}{double}\ \_vstart);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_valve_ab5a0dac96189a1622be491c3287b6b56}{UpdateDimlessPars}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_valve_a4a78e521e269afe83c5a6a2e4e6b0ff7}{Get\_dprop}}(\textcolor{keywordtype}{string}\ prop\_string);}
+\DoxyCodeLine{00102\ \ \ \ \ vector<double>\ \mbox{\hyperlink{class_valve_a3cb46619d5d347d6b0d2c8e146e2b1a8}{Get\_dvprop}}(\textcolor{keywordtype}{string}\ prop\_string);}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_valve_a48561d21336bf25d49461c21b97b1718}{Set\_dprop}}(\textcolor{keywordtype}{string}\ prop\_string,\ \textcolor{keywordtype}{double}\ val);}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_valve_a3d13efa7e489e1eceafeedc06849e4fa}{List\_data}}();}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_valve_a064fad4d4bab3e0938f57c95fe578289}{Save\_data}}();}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{comment}{//void\ Plot();}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_valve_aee0a3a57d46e8dc45ef725ad7ac5b24f}{fname}};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_valve_a09e51698b043545e875dbd5e44e2876a}{Aeff}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ x);}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_valve_ad182895de4386d4696566a30c260a897}{Cdfun}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ x);}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_valve_a499bc164260239199838c6c90a339657}{SetAeffCoeffs}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_a1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_a2,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_a3,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ Aeffmax);}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_valve_a7ff89a5c293c54fe0591acdb7a55a4f1}{SetCdCoeffs}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_b0,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_b1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_b2,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \_b3);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_valve_a8b888ce9f7151c8790f428c301dea232}{Get\_MassFlowRate}}(\textcolor{keywordtype}{double}\ p\_upstream,\ \textcolor{keywordtype}{double}\ T\_upstream,\ \textcolor{keywordtype}{double}\ p\_downstream,\ \textcolor{keywordtype}{double}\ T\_downstream,\ \textcolor{keywordtype}{double}\ xx);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ double\ Get\_MassFlowRate\_Compressible(double\ p\_upstream,\ double\ T\_upstream,\ double\ p\_downstream,\ double\ T\_downstream,\ double\ xx);}}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ double\ Get\_MassFlowRate\_Compressible\_Choked(double\ p\_upstream,\ double\ T\_upstream,\ double\ x);}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ double\ Get\_MassFlowRate\_Compressible\_UnChoked(double\ p\_upstream,\ double\ T\_upstream,\ double\ p\_downstream,\ double\ xx);}}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ double\ Get\_MassFlowRate\_InCompressible(double\ p\_upstream,\ double\ p\_downstream,\ double\ rho,\ double\ x)\ ;}}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{comment}{//void\ Plot(bool\ show,\ bool\ save);}}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_valve_a8507a2b6e6b88d4e4ae0359416f320ba}{SumStatForce}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ x,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ pv,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ pb);}
+\DoxyCodeLine{00122\ \};}
 
 \end{DoxyCode}

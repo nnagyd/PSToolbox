@@ -21,8 +21,57 @@ Connector::Connector(bool _DEBUG) {
   DEBUG=_DEBUG;
 }
 
-// ! Default Destructor
+// ! Empty Destructor
 Connector::~Connector() {}
+
+// ! Edges junction for two edges
+Connector::Connector(PSToolboxBaseEdge *_e1,bool _is_front1, 
+    PSToolboxBaseEdge *_e2, bool _is_front2, 
+    double _demand, bool _DEBUG){
+  e1=_e1;
+  e2=_e2;
+  is_front1=_is_front1;
+  is_front1=_is_front2;
+  demand=_demand;
+  DEBUG=_DEBUG;
+
+  type = 1;
+}
+
+// ! Edge-to simple BC
+Connector::Connector(PSToolboxBaseEdge *_e1, bool _is_front1, 
+    string _BC_type, double _BC_value,
+    double _demand, bool _DEBUG){
+
+  e1=_e1;
+  is_front1=_is_front1;
+  BC_type = _BC_type;
+  BC_value = _BC_value;
+  demand=_demand;
+  DEBUG=_DEBUG;
+
+  type=2;
+}
+
+// This is the main update function
+void Connector::Update(double t_target){
+  switch (type) {
+    case 1:
+      Connector_SCP_Pipes(t_target);
+      break;
+
+    case 2:
+      Connector_SCP_Pipe_Simple_BC(t_target); 
+      break;
+
+    default:
+      cout<<endl<<"ERROR!!!";
+      cout<<endl<<"Connector::Update() -> unknown type="<<type<<endl;
+      cin.get();
+      break;
+  }
+
+}
 
 //! Connect Reservoir to Valve
 /*! Connect Reservoir to Valve
@@ -132,10 +181,11 @@ bool Connector::Connector_LWP_Pipe_Back_and_Valve(double t_target,
     mp  = v1->Get_MassFlowRate(p, T, p_downstream, 293., v1->Get_dprop("x"));
     v   = mp / rho / Apipe;
     p   = alpha - rho * a * v;
-    //T   = p1->gas->Get_T(p,rho);
-    err1 = (alpha - (p + rho * a * v)) / 1.e5;
+    T   = p1->gas->Get_T(p,rho);
+    //err1 = (alpha - (p + rho * a * v)) / 1.e5;
     err2 = rho * v * Apipe - mp;
-    err = sqrt(err1 * err1 + err2 * err2);
+    //err = sqrt(err1 * err1 + err2 * err2);
+    err = sqrt(err2 * err2);
 
     iter++;
     if (iter == MAX_ITER) {
@@ -210,12 +260,12 @@ void Connector::Connector_LWP_Reservoir_and_Pipe_Front(double t_target,
     is_inflow=p1->BCLeft("StaticPres_and_StaticTemp_Inlet",pt,Tt,false);
     pin=pt; Tin=Tt;
 
-        if (DEBUG){
+    if (DEBUG){
       cout<<endl<<"Connector_LWP_Reservoir_and_Pipe_Front()";
       cout<<endl<<"pt="<<pt<<", Tt="<<Tt;
       cout<<endl<<"p1="<<p1->Get_dprop("p_front");
       cout<<", v1="<<p1->Get_dprop("v_front");
-cout<<endl<<"is_inflow = "<<is_inflow;
+      cout<<endl<<"is_inflow = "<<is_inflow;
     }
 
   }
@@ -670,6 +720,25 @@ void Connector::Connector_SCP_Reservoir_and_Pipe_Front(double t_target,
   //cin.get();
 }
 
+void Connector::Connector_SCP_Pipe_Simple_BC(double t_target){
+  if (is_front1)
+    e1->Set_BC_Left(BC_type,BC_value);
+  else 
+    e1->Set_BC_Right(BC_type,BC_value);
+
+}
+
+
+// ! This function maps the internally stored SCP pipe pointers
+// e1 and e2 to the more general 
+// Connector_SCP_Pipes(t,*p1,bool,*p2,bool,mpout,p,v1,v2) function
+
+void Connector::Connector_SCP_Pipes(double t_target){
+  double p,v1,v2;
+  SCP* _e1 = static_cast<SCP*>(e1);
+  SCP* _e2 = static_cast<SCP*>(e2);
+  Connector_SCP_Pipes(t_target,_e1,is_front1,_e2,is_front2,demand,p,v1,v2);
+}
 
 void Connector::Connector_SCP_Pipes(double t_target,
     SCP *p1, bool is_front1,

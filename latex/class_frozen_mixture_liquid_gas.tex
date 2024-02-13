@@ -1,5 +1,9 @@
 \doxysection{Frozen\+Mixture\+Liquid\+Gas Class Reference}
 \hypertarget{class_frozen_mixture_liquid_gas}{}\label{class_frozen_mixture_liquid_gas}\index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
+
+
+{\ttfamily \#include $<$Frozen\+Mixture\+Liquid\+Gas.\+h$>$}
+
 Inheritance diagram for Frozen\+Mixture\+Liquid\+Gas\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,22 +13,21 @@ Inheritance diagram for Frozen\+Mixture\+Liquid\+Gas\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_frozen_mixture_liquid_gas_a48895a189662f571508ceedbfbdc4c27}\label{class_frozen_mixture_liquid_gas_a48895a189662f571508ceedbfbdc4c27} 
-{\bfseries Frozen\+Mixture\+Liquid\+Gas} (const double x\+\_\+g, const double \+\_\+aL, const double \+\_\+rho\+L\+\_\+ref, const double \+\_\+p\+L\+\_\+ref, const double \+\_\+cV, \mbox{\hyperlink{class_ideal_gas}{Ideal\+Gas}} \texorpdfstring{$\ast$}{*}gas)
+\mbox{\hyperlink{class_frozen_mixture_liquid_gas_a48895a189662f571508ceedbfbdc4c27}{Frozen\+Mixture\+Liquid\+Gas}} (const double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_abb9bbeab57753d6b43697805b699ae34}{x\+\_\+g}}, const double \+\_\+aL, const double \+\_\+rho\+L\+\_\+ref, const double \+\_\+p\+L\+\_\+ref, const double \+\_\+cV, \mbox{\hyperlink{class_ideal_gas}{Ideal\+Gas}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_frozen_mixture_liquid_gas_a148267a561e9d0fee01f1cc006615e68}{gas}})
 \item 
-double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a2d20fec513c13324f9be5ea95b33d43b}{Get\+\_\+p}} (double rho, double T)
+\mbox{\hyperlink{class_frozen_mixture_liquid_gas_ade32be4a13dae29aa3a3b41928b674c8}{\texorpdfstring{$\sim$}{\string~}\+Frozen\+Mixture\+Liquid\+Gas}} ()
 \item 
-double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a75bc9aaed7b8eae7cd84e4e7c34f11b3}{Get\+\_\+rho}} (double p, double T)
+double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a2d20fec513c13324f9be5ea95b33d43b}{Get\+\_\+p}} (double \mbox{\hyperlink{class_gas_a735aaa3bdcf2c171e813b4c435a432b2}{rho}}, double \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}})
 \item 
-double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a2690cccd6a2df2102b4d73da262afebe}{Get\+\_\+T}} (double p, double rho)
+double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a75bc9aaed7b8eae7cd84e4e7c34f11b3}{Get\+\_\+rho}} (double \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}}, double \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}})
 \item 
-\Hypertarget{class_frozen_mixture_liquid_gas_a1006f44d0392a49247d6b9dde64dbb44}\label{class_frozen_mixture_liquid_gas_a1006f44d0392a49247d6b9dde64dbb44} 
-double {\bfseries Get\+\_\+e} (double T)
+double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a2690cccd6a2df2102b4d73da262afebe}{Get\+\_\+T}} (double \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}}, double \mbox{\hyperlink{class_gas_a735aaa3bdcf2c171e813b4c435a432b2}{rho}})
 \item 
-double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_ae1b3ef09051f57cfb78b333e68fcd13b}{Get\+\_\+\+Sonic\+Vel}} (double T, double p)
+double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a1006f44d0392a49247d6b9dde64dbb44}{Get\+\_\+e}} (double \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}})
 \item 
-\Hypertarget{class_frozen_mixture_liquid_gas_a84729a0a753f6b10443821a453bd858b}\label{class_frozen_mixture_liquid_gas_a84729a0a753f6b10443821a453bd858b} 
-double {\bfseries Get\+\_\+\+T\+\_\+from\+\_\+e} (double e)
+double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_ae1b3ef09051f57cfb78b333e68fcd13b}{Get\+\_\+\+Sonic\+Vel}} (double \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}}, double \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}})
+\item 
+double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a84729a0a753f6b10443821a453bd858b}{Get\+\_\+\+T\+\_\+from\+\_\+e}} (double \mbox{\hyperlink{class_gas_a0ed7699db3f9e71f8fe04ad6bd4e2baa}{e}})
 \item 
 double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_afc05edd4ae8900732eb41f6858b38c84}{Get\+\_\+kappa\+\_\+pv}} ()
 \item 
@@ -32,47 +35,48 @@ double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_aab3f36f8bae62a76b8c057d
 \item 
 double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_ade85ba228a0dc9ab15ea347f589b1915}{Get\+\_\+kappa\+\_\+\+Tp}} ()
 \item 
-\Hypertarget{class_frozen_mixture_liquid_gas_a8300c0092b9bc459e854e5b1fe042432}\label{class_frozen_mixture_liquid_gas_a8300c0092b9bc459e854e5b1fe042432} 
-double {\bfseries Get\+\_\+pcrit} (double pr, double omega)
+double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a8300c0092b9bc459e854e5b1fe042432}{Get\+\_\+pcrit}} (double pr, double omega)
 \item 
-double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a0b1f2a9a905ebe6b65f0531811bea129}{Get\+\_\+cp}} (double p, double T)
+double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a0b1f2a9a905ebe6b65f0531811bea129}{Get\+\_\+cp}} (double \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}}, double \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}})
 \item 
-double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a7eecc89f0026894252e180d7aa11ffd4}{Get\+\_\+cV}} (double p, double T)
+double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a7eecc89f0026894252e180d7aa11ffd4}{Get\+\_\+cV}} (double \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}}, double \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}})
 \item 
 double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_ac171f9bdf1d642fb327befba066a7c8a}{Get\+\_\+\+Mass\+Flux}} (double pu, double Tu, double pd, double Td)
 \item 
-\Hypertarget{class_frozen_mixture_liquid_gas_a286acec5af6cdd774cc070f6e4c12097}\label{class_frozen_mixture_liquid_gas_a286acec5af6cdd774cc070f6e4c12097} 
-double {\bfseries rho\+\_\+L} (double p)
+double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a286acec5af6cdd774cc070f6e4c12097}{rho\+\_\+L}} (double \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}})
 \item 
-\Hypertarget{class_frozen_mixture_liquid_gas_a109514b273bbd17d831b0cd70459cc87}\label{class_frozen_mixture_liquid_gas_a109514b273bbd17d831b0cd70459cc87} 
-double {\bfseries Get\+\_\+alpha\+\_\+g} (double p, double T)
+double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a109514b273bbd17d831b0cd70459cc87}{Get\+\_\+alpha\+\_\+g}} (double \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}}, double \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}})
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ideal_gas}{Ideal\+Gas}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_ideal_gas_a49de9b805a4c160746961f2a8df35e48}{Ideal\+Gas}} (const double \+\_\+kappa, const double \+\_\+R)
 \item 
-{\bfseries Ideal\+Gas} (\mbox{\hyperlink{class_ideal_gas}{Ideal\+Gas}} \texorpdfstring{$\ast$}{*}g)
+\mbox{\hyperlink{class_ideal_gas_a4938f396a67b48b38478d40a6a6babfa}{Ideal\+Gas}} (\mbox{\hyperlink{class_ideal_gas}{Ideal\+Gas}} \texorpdfstring{$\ast$}{*}g)
 \item 
-double \mbox{\hyperlink{class_ideal_gas_a003a25e110d40e86bb4fb2a76e4ec261}{Get\+\_\+p}} (double rho, double T)
+\mbox{\hyperlink{class_ideal_gas_a28ab029e9873f931204ee8b74de0e3f9}{Ideal\+Gas}} ()
 \item 
-double \mbox{\hyperlink{class_ideal_gas_a6d6da951b6035e25143ca7dcd79df51c}{Get\+\_\+rho}} (double p, double T)
+\mbox{\hyperlink{class_ideal_gas_a78411fe6711c42a00210b3033a0befce}{\texorpdfstring{$\sim$}{\string~}\+Ideal\+Gas}} ()
 \item 
-double \mbox{\hyperlink{class_ideal_gas_a3475de367bcf73dd6ccd32da1f300e96}{Get\+\_\+T}} (double p, double rho)
+double \mbox{\hyperlink{class_ideal_gas_a003a25e110d40e86bb4fb2a76e4ec261}{Get\+\_\+p}} (double \mbox{\hyperlink{class_gas_a735aaa3bdcf2c171e813b4c435a432b2}{rho}}, double \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}})
 \item 
-double \mbox{\hyperlink{class_ideal_gas_ac3494000af614bb8532aa346308469b8}{Get\+\_\+e\+\_\+from\+\_\+\+Tp}} (double T, double p)
+double \mbox{\hyperlink{class_ideal_gas_a6d6da951b6035e25143ca7dcd79df51c}{Get\+\_\+rho}} (double \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}}, double \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}})
 \item 
-double \mbox{\hyperlink{class_ideal_gas_a33ed0ddc662709e2d6de454c7ebe99a7}{Get\+\_\+\+Sonic\+Vel}} (double T, double p)
+double \mbox{\hyperlink{class_ideal_gas_a3475de367bcf73dd6ccd32da1f300e96}{Get\+\_\+T}} (double \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}}, double \mbox{\hyperlink{class_gas_a735aaa3bdcf2c171e813b4c435a432b2}{rho}})
 \item 
-double \mbox{\hyperlink{class_ideal_gas_aabbac25cf6098971fba9b15306032013}{Get\+\_\+\+T\+\_\+from\+\_\+ep}} (double e, double p)
+double \mbox{\hyperlink{class_ideal_gas_ac3494000af614bb8532aa346308469b8}{Get\+\_\+e\+\_\+from\+\_\+\+Tp}} (double \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}}, double \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}})
 \item 
-double \mbox{\hyperlink{class_ideal_gas_a110d8841869b9023a3da0f7fdf5dcfb6}{Get\+\_\+\+T\+\_\+from\+\_\+erho}} (double e, double rho)
+double \mbox{\hyperlink{class_ideal_gas_a33ed0ddc662709e2d6de454c7ebe99a7}{Get\+\_\+\+Sonic\+Vel}} (double \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}}, double \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}})
 \item 
-double \mbox{\hyperlink{class_ideal_gas_a1ccd74d5055d94a8a68ab8597faac6b7}{Get\+\_\+\+Prandtl\+\_\+from\+\_\+\+Tp}} (double T, double p)
+double \mbox{\hyperlink{class_ideal_gas_aabbac25cf6098971fba9b15306032013}{Get\+\_\+\+T\+\_\+from\+\_\+ep}} (double \mbox{\hyperlink{class_gas_a0ed7699db3f9e71f8fe04ad6bd4e2baa}{e}}, double \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}})
 \item 
-double \mbox{\hyperlink{class_ideal_gas_a164298983990d30edad69527d882deaa}{Get\+\_\+\+Thermal\+Conductivity\+\_\+from\+\_\+\+Tp}} (double T, double p)
+double \mbox{\hyperlink{class_ideal_gas_a110d8841869b9023a3da0f7fdf5dcfb6}{Get\+\_\+\+T\+\_\+from\+\_\+erho}} (double \mbox{\hyperlink{class_gas_a0ed7699db3f9e71f8fe04ad6bd4e2baa}{e}}, double \mbox{\hyperlink{class_gas_a735aaa3bdcf2c171e813b4c435a432b2}{rho}})
 \item 
-double \mbox{\hyperlink{class_ideal_gas_a62679fa5a59124e4e402b82786b09b5e}{Get\+\_\+\+Dynamic\+Viscosity\+\_\+from\+\_\+\+Tp}} (double T, double p)
+double \mbox{\hyperlink{class_ideal_gas_a1ccd74d5055d94a8a68ab8597faac6b7}{Get\+\_\+\+Prandtl\+\_\+from\+\_\+\+Tp}} (double \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}}, double \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}})
+\item 
+double \mbox{\hyperlink{class_ideal_gas_a164298983990d30edad69527d882deaa}{Get\+\_\+\+Thermal\+Conductivity\+\_\+from\+\_\+\+Tp}} (double \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}}, double \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}})
+\item 
+double \mbox{\hyperlink{class_ideal_gas_a62679fa5a59124e4e402b82786b09b5e}{Get\+\_\+\+Dynamic\+Viscosity\+\_\+from\+\_\+\+Tp}} (double \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}}, double \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}})
 \item 
 double \mbox{\hyperlink{class_ideal_gas_a9edd0c74d1b2908a7deba4f1a315b226}{Get\+\_\+kappa\+\_\+pv}} ()
 \item 
@@ -80,63 +84,85 @@ double \mbox{\hyperlink{class_ideal_gas_a232c7ea3e7bceca289a3b2372fa45266}{Get\+
 \item 
 double \mbox{\hyperlink{class_ideal_gas_a79e200c5e9f3423e13be31f382bc2212}{Get\+\_\+kappa\+\_\+\+Tp}} ()
 \item 
-double {\bfseries Get\+\_\+pcrit} ()
+double \mbox{\hyperlink{class_ideal_gas_ab1dad70757b9c07e1fc5c5078ba56d30}{Get\+\_\+pcrit}} ()
 \item 
-double \mbox{\hyperlink{class_ideal_gas_ab314861529e7c0c7711ad1cb163bdfd3}{Get\+\_\+cp}} (double p, double T)
+double \mbox{\hyperlink{class_ideal_gas_ab314861529e7c0c7711ad1cb163bdfd3}{Get\+\_\+cp}} (double \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}}, double \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}})
 \item 
-double \mbox{\hyperlink{class_ideal_gas_afd1e1499429871b7f09c85179e7089cd}{Get\+\_\+cV}} (double p, double T)
+double \mbox{\hyperlink{class_ideal_gas_afd1e1499429871b7f09c85179e7089cd}{Get\+\_\+cV}} (double \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}}, double \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}})
 \item 
 double \mbox{\hyperlink{class_ideal_gas_ab2b3f18fe44b3671983f128705f4476e}{Get\+\_\+\+Mass\+Flux}} (double pu, double Tu, double pd, double Td)
 \item 
 double \mbox{\hyperlink{class_ideal_gas_a546349500174946b9cd432fc1df6686d}{Get\+\_\+eta\+\_\+crit}} ()
 \end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_gas}{Gas}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gas_a6506127f6d3c2f0e15e9592c1e0134ea}{Gas}} ()
+\item 
+virtual \mbox{\hyperlink{class_gas_a78b0365eb5310af7b1f2f1092be31926}{\texorpdfstring{$\sim$}{\string~}\+Gas}} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_frozen_mixture_liquid_gas_ae6e527ac8247e20cf29035dbf6a8e49f}\label{class_frozen_mixture_liquid_gas_ae6e527ac8247e20cf29035dbf6a8e49f} 
-double {\bfseries rho\+L\+\_\+ref}
+double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_ae6e527ac8247e20cf29035dbf6a8e49f}{rho\+L\+\_\+ref}}
 \item 
-\Hypertarget{class_frozen_mixture_liquid_gas_a8e3fef977d15c9fc7554684dcf558391}\label{class_frozen_mixture_liquid_gas_a8e3fef977d15c9fc7554684dcf558391} 
-double {\bfseries p\+L\+\_\+ref}
+double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a8e3fef977d15c9fc7554684dcf558391}{p\+L\+\_\+ref}}
 \item 
-\Hypertarget{class_frozen_mixture_liquid_gas_a37d7ef58e9b0e738200235640857cc21}\label{class_frozen_mixture_liquid_gas_a37d7ef58e9b0e738200235640857cc21} 
-double {\bfseries aL}
+double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a37d7ef58e9b0e738200235640857cc21}{aL}}
 \item 
-\Hypertarget{class_frozen_mixture_liquid_gas_a3ebe237b6e42496a4b6a7b11c736049a}\label{class_frozen_mixture_liquid_gas_a3ebe237b6e42496a4b6a7b11c736049a} 
-double {\bfseries cL}
+double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a3ebe237b6e42496a4b6a7b11c736049a}{cL}}
 \item 
-\Hypertarget{class_frozen_mixture_liquid_gas_abb9bbeab57753d6b43697805b699ae34}\label{class_frozen_mixture_liquid_gas_abb9bbeab57753d6b43697805b699ae34} 
-double {\bfseries x\+\_\+g}
+double \mbox{\hyperlink{class_frozen_mixture_liquid_gas_abb9bbeab57753d6b43697805b699ae34}{x\+\_\+g}}
 \item 
-\Hypertarget{class_frozen_mixture_liquid_gas_a148267a561e9d0fee01f1cc006615e68}\label{class_frozen_mixture_liquid_gas_a148267a561e9d0fee01f1cc006615e68} 
-\mbox{\hyperlink{class_ideal_gas}{Ideal\+Gas}} \texorpdfstring{$\ast$}{*} {\bfseries gas}
+\mbox{\hyperlink{class_ideal_gas}{Ideal\+Gas}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_frozen_mixture_liquid_gas_a148267a561e9d0fee01f1cc006615e68}{gas}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_ideal_gas}{Ideal\+Gas}}}
 \begin{DoxyCompactItemize}
 \item 
-double {\bfseries kappa}
+double \mbox{\hyperlink{class_ideal_gas_a89cc74c7f366f998dc86d7df26a81ca2}{kappa}}
 \item 
-double {\bfseries R}
+double \mbox{\hyperlink{class_ideal_gas_a87bec5783822dee54180b0e2e5b1258d}{R}}
 \item 
-double {\bfseries cp}
+double \mbox{\hyperlink{class_ideal_gas_a14c45008348549bb9234e1e7c4961df5}{cp}}
 \item 
-double {\bfseries cV}
+double \mbox{\hyperlink{class_ideal_gas_a6caf46495d02ff5abaed974befac0495}{cV}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_gas}{Gas}}}
 \begin{DoxyCompactItemize}
 \item 
-double {\bfseries p}
+double \mbox{\hyperlink{class_gas_a1a88e7510d1ad8e14ff8cab4a0562491}{p}}
 \item 
-double {\bfseries rho}
+double \mbox{\hyperlink{class_gas_a735aaa3bdcf2c171e813b4c435a432b2}{rho}}
 \item 
-double {\bfseries T}
+double \mbox{\hyperlink{class_gas_a42f7701045a5353123441f4dd018b4b9}{T}}
 \item 
-double {\bfseries e}
+double \mbox{\hyperlink{class_gas_a0ed7699db3f9e71f8fe04ad6bd4e2baa}{e}}
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_frozen_mixture_liquid_gas_a48895a189662f571508ceedbfbdc4c27}\label{class_frozen_mixture_liquid_gas_a48895a189662f571508ceedbfbdc4c27} 
+\index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
+\index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
+\doxysubsubsection{\texorpdfstring{FrozenMixtureLiquidGas()}{FrozenMixtureLiquidGas()}}
+{\footnotesize\ttfamily Frozen\+Mixture\+Liquid\+Gas\+::\+Frozen\+Mixture\+Liquid\+Gas (\begin{DoxyParamCaption}\item[{const double}]{x\+\_\+g,  }\item[{const double}]{\+\_\+aL,  }\item[{const double}]{\+\_\+rho\+L\+\_\+ref,  }\item[{const double}]{\+\_\+p\+L\+\_\+ref,  }\item[{const double}]{\+\_\+cV,  }\item[{\mbox{\hyperlink{class_ideal_gas}{Ideal\+Gas}} \texorpdfstring{$\ast$}{*}}]{gas }\end{DoxyParamCaption})}
+
+\Hypertarget{class_frozen_mixture_liquid_gas_ade32be4a13dae29aa3a3b41928b674c8}\label{class_frozen_mixture_liquid_gas_ade32be4a13dae29aa3a3b41928b674c8} 
+\index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!````~FrozenMixtureLiquidGas@{\texorpdfstring{$\sim$}{\string~}FrozenMixtureLiquidGas}}
+\index{````~FrozenMixtureLiquidGas@{\texorpdfstring{$\sim$}{\string~}FrozenMixtureLiquidGas}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}FrozenMixtureLiquidGas()}{\string~FrozenMixtureLiquidGas()}}
+{\footnotesize\ttfamily Frozen\+Mixture\+Liquid\+Gas\+::\texorpdfstring{$\sim$}{\string~}\+Frozen\+Mixture\+Liquid\+Gas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_frozen_mixture_liquid_gas_a109514b273bbd17d831b0cd70459cc87}\label{class_frozen_mixture_liquid_gas_a109514b273bbd17d831b0cd70459cc87} 
+\index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!Get\_alpha\_g@{Get\_alpha\_g}}
+\index{Get\_alpha\_g@{Get\_alpha\_g}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
+\doxysubsubsection{\texorpdfstring{Get\_alpha\_g()}{Get\_alpha\_g()}}
+{\footnotesize\ttfamily double Frozen\+Mixture\+Liquid\+Gas\+::\+Get\+\_\+alpha\+\_\+g (\begin{DoxyParamCaption}\item[{double}]{p,  }\item[{double}]{T }\end{DoxyParamCaption})}
+
 \Hypertarget{class_frozen_mixture_liquid_gas_a0b1f2a9a905ebe6b65f0531811bea129}\label{class_frozen_mixture_liquid_gas_a0b1f2a9a905ebe6b65f0531811bea129} 
 \index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!Get\_cp@{Get\_cp}}
 \index{Get\_cp@{Get\_cp}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
@@ -145,7 +171,7 @@ double {\bfseries e}
 
 
 
-Implements \mbox{\hyperlink{class_gas}{Gas}}.
+Implements \mbox{\hyperlink{class_gas_a2d5323882d08752e13ac73e2c2dd43ce}{Gas}}.
 
 \Hypertarget{class_frozen_mixture_liquid_gas_a7eecc89f0026894252e180d7aa11ffd4}\label{class_frozen_mixture_liquid_gas_a7eecc89f0026894252e180d7aa11ffd4} 
 \index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!Get\_cV@{Get\_cV}}
@@ -155,7 +181,13 @@ Implements \mbox{\hyperlink{class_gas}{Gas}}.
 
 
 
-Implements \mbox{\hyperlink{class_gas}{Gas}}.
+Implements \mbox{\hyperlink{class_gas_ae49644371b6ca1faf4de9959d12b42f7}{Gas}}.
+
+\Hypertarget{class_frozen_mixture_liquid_gas_a1006f44d0392a49247d6b9dde64dbb44}\label{class_frozen_mixture_liquid_gas_a1006f44d0392a49247d6b9dde64dbb44} 
+\index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!Get\_e@{Get\_e}}
+\index{Get\_e@{Get\_e}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
+\doxysubsubsection{\texorpdfstring{Get\_e()}{Get\_e()}}
+{\footnotesize\ttfamily double Frozen\+Mixture\+Liquid\+Gas\+::\+Get\+\_\+e (\begin{DoxyParamCaption}\item[{double}]{T }\end{DoxyParamCaption})}
 
 \Hypertarget{class_frozen_mixture_liquid_gas_afc05edd4ae8900732eb41f6858b38c84}\label{class_frozen_mixture_liquid_gas_afc05edd4ae8900732eb41f6858b38c84} 
 \index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!Get\_kappa\_pv@{Get\_kappa\_pv}}
@@ -165,7 +197,7 @@ Implements \mbox{\hyperlink{class_gas}{Gas}}.
 
 
 
-Implements \mbox{\hyperlink{class_gas}{Gas}}.
+Implements \mbox{\hyperlink{class_gas_afbb3561b223effe9537135293199db2f}{Gas}}.
 
 \Hypertarget{class_frozen_mixture_liquid_gas_ade85ba228a0dc9ab15ea347f589b1915}\label{class_frozen_mixture_liquid_gas_ade85ba228a0dc9ab15ea347f589b1915} 
 \index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!Get\_kappa\_Tp@{Get\_kappa\_Tp}}
@@ -175,7 +207,7 @@ Implements \mbox{\hyperlink{class_gas}{Gas}}.
 
 
 
-Implements \mbox{\hyperlink{class_gas}{Gas}}.
+Implements \mbox{\hyperlink{class_gas_a74c379be0f66a67ef19bf2c480b4f0a8}{Gas}}.
 
 \Hypertarget{class_frozen_mixture_liquid_gas_aab3f36f8bae62a76b8c057d4db27c579}\label{class_frozen_mixture_liquid_gas_aab3f36f8bae62a76b8c057d4db27c579} 
 \index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!Get\_kappa\_Tv@{Get\_kappa\_Tv}}
@@ -185,7 +217,7 @@ Implements \mbox{\hyperlink{class_gas}{Gas}}.
 
 
 
-Implements \mbox{\hyperlink{class_gas}{Gas}}.
+Implements \mbox{\hyperlink{class_gas_ac46b7c1a4b449ceed9c916de11c84ee8}{Gas}}.
 
 \Hypertarget{class_frozen_mixture_liquid_gas_ac171f9bdf1d642fb327befba066a7c8a}\label{class_frozen_mixture_liquid_gas_ac171f9bdf1d642fb327befba066a7c8a} 
 \index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!Get\_MassFlux@{Get\_MassFlux}}
@@ -195,7 +227,7 @@ Implements \mbox{\hyperlink{class_gas}{Gas}}.
 
 
 
-Implements \mbox{\hyperlink{class_gas}{Gas}}.
+Implements \mbox{\hyperlink{class_gas_a445292c603e0cd5c4242957094490ba4}{Gas}}.
 
 \Hypertarget{class_frozen_mixture_liquid_gas_a2d20fec513c13324f9be5ea95b33d43b}\label{class_frozen_mixture_liquid_gas_a2d20fec513c13324f9be5ea95b33d43b} 
 \index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!Get\_p@{Get\_p}}
@@ -205,7 +237,13 @@ Implements \mbox{\hyperlink{class_gas}{Gas}}.
 
 
 
-Implements \mbox{\hyperlink{class_gas}{Gas}}.
+Implements \mbox{\hyperlink{class_gas_ab56247b61f7a428d2bba3fdede32160e}{Gas}}.
+
+\Hypertarget{class_frozen_mixture_liquid_gas_a8300c0092b9bc459e854e5b1fe042432}\label{class_frozen_mixture_liquid_gas_a8300c0092b9bc459e854e5b1fe042432} 
+\index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!Get\_pcrit@{Get\_pcrit}}
+\index{Get\_pcrit@{Get\_pcrit}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
+\doxysubsubsection{\texorpdfstring{Get\_pcrit()}{Get\_pcrit()}}
+{\footnotesize\ttfamily double Frozen\+Mixture\+Liquid\+Gas\+::\+Get\+\_\+pcrit (\begin{DoxyParamCaption}\item[{double}]{pr,  }\item[{double}]{omega }\end{DoxyParamCaption})}
 
 \Hypertarget{class_frozen_mixture_liquid_gas_a75bc9aaed7b8eae7cd84e4e7c34f11b3}\label{class_frozen_mixture_liquid_gas_a75bc9aaed7b8eae7cd84e4e7c34f11b3} 
 \index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!Get\_rho@{Get\_rho}}
@@ -215,7 +253,7 @@ Implements \mbox{\hyperlink{class_gas}{Gas}}.
 
 
 
-Implements \mbox{\hyperlink{class_gas}{Gas}}.
+Implements \mbox{\hyperlink{class_gas_a68926d08085031d22d1002cc5e8d624a}{Gas}}.
 
 \Hypertarget{class_frozen_mixture_liquid_gas_ae1b3ef09051f57cfb78b333e68fcd13b}\label{class_frozen_mixture_liquid_gas_ae1b3ef09051f57cfb78b333e68fcd13b} 
 \index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!Get\_SonicVel@{Get\_SonicVel}}
@@ -225,7 +263,7 @@ Implements \mbox{\hyperlink{class_gas}{Gas}}.
 
 
 
-Implements \mbox{\hyperlink{class_gas}{Gas}}.
+Implements \mbox{\hyperlink{class_gas_a19adfd6aefc7321a2bf8b5f54c19925e}{Gas}}.
 
 \Hypertarget{class_frozen_mixture_liquid_gas_a2690cccd6a2df2102b4d73da262afebe}\label{class_frozen_mixture_liquid_gas_a2690cccd6a2df2102b4d73da262afebe} 
 \index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!Get\_T@{Get\_T}}
@@ -235,11 +273,62 @@ Implements \mbox{\hyperlink{class_gas}{Gas}}.
 
 
 
-Implements \mbox{\hyperlink{class_gas}{Gas}}.
+Implements \mbox{\hyperlink{class_gas_af1250a912519161ada99be3f8a51fedb}{Gas}}.
+
+\Hypertarget{class_frozen_mixture_liquid_gas_a84729a0a753f6b10443821a453bd858b}\label{class_frozen_mixture_liquid_gas_a84729a0a753f6b10443821a453bd858b} 
+\index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!Get\_T\_from\_e@{Get\_T\_from\_e}}
+\index{Get\_T\_from\_e@{Get\_T\_from\_e}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
+\doxysubsubsection{\texorpdfstring{Get\_T\_from\_e()}{Get\_T\_from\_e()}}
+{\footnotesize\ttfamily double Frozen\+Mixture\+Liquid\+Gas\+::\+Get\+\_\+\+T\+\_\+from\+\_\+e (\begin{DoxyParamCaption}\item[{double}]{e }\end{DoxyParamCaption})}
+
+\Hypertarget{class_frozen_mixture_liquid_gas_a286acec5af6cdd774cc070f6e4c12097}\label{class_frozen_mixture_liquid_gas_a286acec5af6cdd774cc070f6e4c12097} 
+\index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!rho\_L@{rho\_L}}
+\index{rho\_L@{rho\_L}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
+\doxysubsubsection{\texorpdfstring{rho\_L()}{rho\_L()}}
+{\footnotesize\ttfamily double Frozen\+Mixture\+Liquid\+Gas\+::rho\+\_\+L (\begin{DoxyParamCaption}\item[{double}]{p }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_frozen_mixture_liquid_gas_a37d7ef58e9b0e738200235640857cc21}\label{class_frozen_mixture_liquid_gas_a37d7ef58e9b0e738200235640857cc21} 
+\index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!aL@{aL}}
+\index{aL@{aL}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
+\doxysubsubsection{\texorpdfstring{aL}{aL}}
+{\footnotesize\ttfamily double Frozen\+Mixture\+Liquid\+Gas\+::aL}
+
+\Hypertarget{class_frozen_mixture_liquid_gas_a3ebe237b6e42496a4b6a7b11c736049a}\label{class_frozen_mixture_liquid_gas_a3ebe237b6e42496a4b6a7b11c736049a} 
+\index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!cL@{cL}}
+\index{cL@{cL}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
+\doxysubsubsection{\texorpdfstring{cL}{cL}}
+{\footnotesize\ttfamily double Frozen\+Mixture\+Liquid\+Gas\+::cL}
+
+\Hypertarget{class_frozen_mixture_liquid_gas_a148267a561e9d0fee01f1cc006615e68}\label{class_frozen_mixture_liquid_gas_a148267a561e9d0fee01f1cc006615e68} 
+\index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!gas@{gas}}
+\index{gas@{gas}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
+\doxysubsubsection{\texorpdfstring{gas}{gas}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ideal_gas}{Ideal\+Gas}}\texorpdfstring{$\ast$}{*} Frozen\+Mixture\+Liquid\+Gas\+::gas}
+
+\Hypertarget{class_frozen_mixture_liquid_gas_a8e3fef977d15c9fc7554684dcf558391}\label{class_frozen_mixture_liquid_gas_a8e3fef977d15c9fc7554684dcf558391} 
+\index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!pL\_ref@{pL\_ref}}
+\index{pL\_ref@{pL\_ref}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
+\doxysubsubsection{\texorpdfstring{pL\_ref}{pL\_ref}}
+{\footnotesize\ttfamily double Frozen\+Mixture\+Liquid\+Gas\+::p\+L\+\_\+ref}
+
+\Hypertarget{class_frozen_mixture_liquid_gas_ae6e527ac8247e20cf29035dbf6a8e49f}\label{class_frozen_mixture_liquid_gas_ae6e527ac8247e20cf29035dbf6a8e49f} 
+\index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!rhoL\_ref@{rhoL\_ref}}
+\index{rhoL\_ref@{rhoL\_ref}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
+\doxysubsubsection{\texorpdfstring{rhoL\_ref}{rhoL\_ref}}
+{\footnotesize\ttfamily double Frozen\+Mixture\+Liquid\+Gas\+::rho\+L\+\_\+ref}
+
+\Hypertarget{class_frozen_mixture_liquid_gas_abb9bbeab57753d6b43697805b699ae34}\label{class_frozen_mixture_liquid_gas_abb9bbeab57753d6b43697805b699ae34} 
+\index{FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}!x\_g@{x\_g}}
+\index{x\_g@{x\_g}!FrozenMixtureLiquidGas@{FrozenMixtureLiquidGas}}
+\doxysubsubsection{\texorpdfstring{x\_g}{x\_g}}
+{\footnotesize\ttfamily double Frozen\+Mixture\+Liquid\+Gas\+::x\+\_\+g}
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Frozen\+Mixture\+Liquid\+Gas.\+h\item 
-Frozen\+Mixture\+Liquid\+Gas.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{_frozen_mixture_liquid_gas_8h}{Frozen\+Mixture\+Liquid\+Gas.\+h}}\item 
+\mbox{\hyperlink{_frozen_mixture_liquid_gas_8cpp}{Frozen\+Mixture\+Liquid\+Gas.\+cpp}}\end{DoxyCompactItemize}

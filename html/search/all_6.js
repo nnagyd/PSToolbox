@@ -1,13 +1,9 @@
 var searchData=
 [
-  ['idealgas_0',['idealgas',['../class_ideal_gas.html',1,'IdealGas'],['../class_ideal_gas.html#a49de9b805a4c160746961f2a8df35e48',1,'IdealGas::IdealGas()']]],
-  ['inch3_5fto_5fm3_1',['inch3_to_m3',['../class_units.html#aa8eaefa114dd3f3f71441fca9f530c68',1,'Units']]],
-  ['inch_5fto_5fm_2',['inch_to_m',['../class_units.html#a825b374297ce7d7d0e03a3908d716ae8',1,'Units']]],
-  ['info_3',['Info',['../class_s_c_p.html#a49d5f5d781536e58ce5e21026dfa8059',1,'SCP']]],
-  ['ini_4',['ini',['../class_s_c_p.html#a7c41b5c5742ed46307d91d73e6a46327',1,'SCP::Ini(double vini, double _pstart)'],['../class_s_c_p.html#afd01c84f7ecfe434523957f646bfbcb1',1,'SCP::Ini(int Npts_mul)'],['../class_s_c_p.html#a3709666047b1cf4cc6b6b460430bb83e',1,'SCP::Ini(double vini, double _pstart, double dt_target)'],['../class_s_c_p.html#a9f5e519bf13863e1632f5607624143d1',1,'SCP::Ini(double vini, double _pstart, int Npts_mul)']]],
-  ['iniuniform_5',['IniUniform',['../class_l_w_p.html#a0d5239a98987cfa05b1b47c64bb2343e',1,'LWP']]],
-  ['input_6',['Input',['../class_input.html',1,'']]],
-  ['install_7',['Install',['../md_install___p_s_toolbox__win.html#autotoc_md1',1,'']]],
-  ['installing_20and_20using_20pstoolbox_20on_20windows_8',['Installing and using PSToolbox on Windows',['../md_install___p_s_toolbox__win.html',1,'']]],
-  ['installing_20with_20coolpprop_20support_9',['Installing with CoolpProp support',['../md_install___p_s_toolbox__win.html#autotoc_md3',1,'']]]
+  ['fluid_5fname_0',['fluid_name',['../class_cool_prop_gas.html#a6b5732b8d5af277feee001e9cd1ac273',1,'CoolPropGas::fluid_name'],['../class_cool_prop_h_a.html#a399f318208cfd430cdf716333aff9162',1,'CoolPropHA::fluid_name']]],
+  ['fname_1',['fname',['../class_valve.html#aee0a3a57d46e8dc45ef725ad7ac5b24f',1,'Valve::fname'],['../class_reservoir.html#ab7bc173165dec1b596ec7a9c15ab88d2',1,'Reservoir::fname'],['../class_valve__with___absorber.html#aa330c4a46dcebcd8eb0109b5b7a5b7af',1,'Valve_with_Absorber::fname'],['../class_l_w_p.html#abef9f82d87b3ed9acb7cfd4a5362a8f4',1,'LWP::fname'],['../class_s_c_p.html#a77886d757791949bd29efe51e6c47703',1,'SCP::fname']]],
+  ['frozenmixtureliquidgas_2',['frozenmixtureliquidgas',['../class_frozen_mixture_liquid_gas.html',1,'FrozenMixtureLiquidGas'],['../class_frozen_mixture_liquid_gas.html#a48895a189662f571508ceedbfbdc4c27',1,'FrozenMixtureLiquidGas::FrozenMixtureLiquidGas()']]],
+  ['frozenmixtureliquidgas_2ecpp_3',['FrozenMixtureLiquidGas.cpp',['../_frozen_mixture_liquid_gas_8cpp.html',1,'']]],
+  ['frozenmixtureliquidgas_2eh_4',['FrozenMixtureLiquidGas.h',['../_frozen_mixture_liquid_gas_8h.html',1,'']]],
+  ['ft_5fto_5fm_5',['ft_to_m',['../class_units.html#aae98637c25e6a33b2521c48465f29691',1,'Units']]]
 ];

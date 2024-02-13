@@ -1,0 +1,31 @@
+\doxysection{PSToolbox\+Base\+Edge.\+h}
+\hypertarget{_p_s_toolbox_base_edge_8h_source}{}\label{_p_s_toolbox_base_edge_8h_source}\mbox{\hyperlink{_p_s_toolbox_base_edge_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PSToolboxBaseEdge\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PSToolboxBaseEdge\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_p_s_toolbox_base_edge}{PSToolboxBaseEdge}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_p_s_toolbox_base_edge_a3b4da68ffb04db1c11898f3d53f46345}{name}};\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_p_s_toolbox_base_edge_aa5eee494325f2d253bcbd52c5b9456e9}{type}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_p_s_toolbox_base_edge}{PSToolboxBaseEdge}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_p_s_toolbox_base_edge_a3b4da68ffb04db1c11898f3d53f46345}{name}});}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_p_s_toolbox_base_edge_a3664abfc29dc1cbdf71ac85e45fd2302}{\string~PSToolboxBaseEdge}}()\{\};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_p_s_toolbox_base_edge_aac5d028f66e59fa00ea43ed11c4174ca}{Get\_name}}()\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_p_s_toolbox_base_edge_a3b4da68ffb04db1c11898f3d53f46345}{name}};\};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_p_s_toolbox_base_edge_a66e6f5d1e28dd1c0c635e127a9b41e71}{Get\_type}}()\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_p_s_toolbox_base_edge_aa5eee494325f2d253bcbd52c5b9456e9}{type}};\};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_p_s_toolbox_base_edge_aa7743b74530c578ce3ca0592938899b0}{Get\_t}}()=0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_p_s_toolbox_base_edge_a7e410f4db9a48f4082ff155fc53b8787}{Get\_dt}}()=0;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_p_s_toolbox_base_edge_afefed4315cd20e5a5cfea459da6e4977}{Get\_tnext}}()=0;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_p_s_toolbox_base_edge_a1a152f3ff28fa36b5b6da17bceb2659e}{Ini}}(\textcolor{keywordtype}{int})=0;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_p_s_toolbox_base_edge_a4cfb66702f57eb57a4acd23c6d361d2f}{Info}}()=0;}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

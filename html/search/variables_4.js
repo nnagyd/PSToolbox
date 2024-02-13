@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['lbf_5fto_5fn_0',['lbf_to_N',['../class_units.html#a5215c9f5e61c890b28bff680e6a511ca',1,'Units']]],
-  ['lbm_5fto_5fkg_1',['lbm_to_kg',['../class_units.html#a0cf66a20a8f5651c3a5e46ebd6bb4f63',1,'Units']]]
+  ['fluid_5fname_0',['fluid_name',['../class_cool_prop_gas.html#a6b5732b8d5af277feee001e9cd1ac273',1,'CoolPropGas::fluid_name'],['../class_cool_prop_h_a.html#a399f318208cfd430cdf716333aff9162',1,'CoolPropHA::fluid_name']]],
+  ['fname_1',['fname',['../class_l_w_p.html#abef9f82d87b3ed9acb7cfd4a5362a8f4',1,'LWP::fname'],['../class_reservoir.html#ab7bc173165dec1b596ec7a9c15ab88d2',1,'Reservoir::fname'],['../class_s_c_p.html#a77886d757791949bd29efe51e6c47703',1,'SCP::fname'],['../class_valve.html#aee0a3a57d46e8dc45ef725ad7ac5b24f',1,'Valve::fname'],['../class_valve__with___absorber.html#aa330c4a46dcebcd8eb0109b5b7a5b7af',1,'Valve_with_Absorber::fname']]],
+  ['ft_5fto_5fm_2',['ft_to_m',['../class_units.html#aae98637c25e6a33b2521c48465f29691',1,'Units']]]
 ];

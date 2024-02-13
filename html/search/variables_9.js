@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['k_0',['k',['../class_valve.html#a3e349f6355d94cb9546c466b1b01a29f',1,'Valve']]],
-  ['kappa_1',['kappa',['../class_ideal_gas.html#a89cc74c7f366f998dc86d7df26a81ca2',1,'IdealGas::kappa()'],['../_l_w_p__2___valve___b_ccheck_8m.html#a05c35019108b510c24383c505ab98b92',1,'kappa():&#160;LWP_2_Valve_BCcheck.m']]],
-  ['kg_5fto_5flbm_2',['kg_to_lbm',['../class_units.html#acefd99f83c8cf786bd5c6e045283f2e8',1,'Units']]]
+  ['m3_5fto_5finch3_0',['m3_to_inch3',['../class_units.html#a5cf78bb6d35d06600c5b52dd7c451709',1,'Units']]],
+  ['m_5fto_5fft_1',['m_to_ft',['../class_units.html#ac43b581dc1a05a12a84cba0bde9d0fb3',1,'Units']]],
+  ['m_5fto_5finch_2',['m_to_inch',['../class_units.html#a80da69188cc3184cb3596223bc5d1fc1',1,'Units']]],
+  ['mp_3',['mp',['../_l_w_p__2___valve___b_ccheck_8m.html#ad4e81f3b89de6ef7f1534a663a12825f',1,'LWP_2_Valve_BCcheck.m']]],
+  ['mul_4',['mul',['../_l_w_p__2___valve___b_ccheck_8m.html#ab5180fa31f3a4727764de27705f76940',1,'LWP_2_Valve_BCcheck.m']]]
 ];

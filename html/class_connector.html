@@ -90,57 +90,83 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae29b3ae6cc0c34b261d49b24c4dfcb09" id="r_ae29b3ae6cc0c34b261d49b24c4dfcb09"><td class="memItemLeft" align="right" valign="top"><a id="ae29b3ae6cc0c34b261d49b24c4dfcb09" name="ae29b3ae6cc0c34b261d49b24c4dfcb09"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Connector</b> (bool DEBUG)</td></tr>
+<tr class="memitem:ae29b3ae6cc0c34b261d49b24c4dfcb09" id="r_ae29b3ae6cc0c34b261d49b24c4dfcb09"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#ae29b3ae6cc0c34b261d49b24c4dfcb09">Connector</a> (bool DEBUG)</td></tr>
 <tr class="separator:ae29b3ae6cc0c34b261d49b24c4dfcb09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80c469bee02e077d977d832035812dab" id="r_a80c469bee02e077d977d832035812dab"><td class="memItemLeft" align="right" valign="top"><a id="a80c469bee02e077d977d832035812dab" name="a80c469bee02e077d977d832035812dab"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Connector_Reservoir_and_Valve_Inlet</b> (double t_target, <a class="el" href="class_reservoir.html">Reservoir</a> *r, <a class="el" href="class_valve.html">Valve</a> *v, double pd, double &amp;p, double &amp;mp)</td></tr>
-<tr class="separator:a80c469bee02e077d977d832035812dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfe3fa2d5091dbd6833936754725e943" id="r_abfe3fa2d5091dbd6833936754725e943"><td class="memItemLeft" align="right" valign="top"><a id="abfe3fa2d5091dbd6833936754725e943" name="abfe3fa2d5091dbd6833936754725e943"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Connector_LWP_Reservoir_and_Pipe_Front</b> (double t_target, <a class="el" href="class_reservoir.html">Reservoir</a> *r, <a class="el" href="class_l_w_p.html">LWP</a> *p, bool inlet_pressure_drop, double &amp;pf, double &amp;Tf)</td></tr>
+<tr class="memitem:a0f084edc18ed6e3a25314689d5bf9244" id="r_a0f084edc18ed6e3a25314689d5bf9244"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a0f084edc18ed6e3a25314689d5bf9244">~Connector</a> ()</td></tr>
+<tr class="separator:a0f084edc18ed6e3a25314689d5bf9244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c68c530eea0f178c376207e0190db24" id="r_a0c68c530eea0f178c376207e0190db24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a0c68c530eea0f178c376207e0190db24">Connector_Reservoir_and_Valve_Inlet</a> (double t_target, <a class="el" href="class_reservoir.html">Reservoir</a> *r, <a class="el" href="class_valve.html">Valve</a> *v, bool INLET_PRESSURE_DROP, double pd, double &amp;p, double &amp;<a class="el" href="_l_w_p__2___valve___b_ccheck_8m.html#ad4e81f3b89de6ef7f1534a663a12825f">mp</a>)</td></tr>
+<tr class="memdesc:a0c68c530eea0f178c376207e0190db24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect <a class="el" href="class_reservoir.html" title="Class for modeling Reservoir.">Reservoir</a> to <a class="el" href="class_valve.html" title="A class for handling both liquid and fluid valves A class for storing data regarding a valve and allo...">Valve</a>.  <br /></td></tr>
+<tr class="separator:a0c68c530eea0f178c376207e0190db24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfe3fa2d5091dbd6833936754725e943" id="r_abfe3fa2d5091dbd6833936754725e943"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#abfe3fa2d5091dbd6833936754725e943">Connector_LWP_Reservoir_and_Pipe_Front</a> (double t_target, <a class="el" href="class_reservoir.html">Reservoir</a> *r, <a class="el" href="class_l_w_p.html">LWP</a> *p, bool inlet_pressure_drop, double &amp;pf, double &amp;Tf)</td></tr>
 <tr class="separator:abfe3fa2d5091dbd6833936754725e943"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d5a68cd9ece83d1dad3ed1b8c8f635b" id="r_a1d5a68cd9ece83d1dad3ed1b8c8f635b"><td class="memItemLeft" align="right" valign="top"><a id="a1d5a68cd9ece83d1dad3ed1b8c8f635b" name="a1d5a68cd9ece83d1dad3ed1b8c8f635b"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>Connector_LWP_Reservoir_and_Pipe_Front_inlet</b> (double t_target, <a class="el" href="class_reservoir.html">Reservoir</a> *r, <a class="el" href="class_l_w_p.html">LWP</a> *p, bool inlet_pressure_drop, double &amp;pf, double &amp;Tf)</td></tr>
+<tr class="memitem:a1d5a68cd9ece83d1dad3ed1b8c8f635b" id="r_a1d5a68cd9ece83d1dad3ed1b8c8f635b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a1d5a68cd9ece83d1dad3ed1b8c8f635b">Connector_LWP_Reservoir_and_Pipe_Front_inlet</a> (double t_target, <a class="el" href="class_reservoir.html">Reservoir</a> *r, <a class="el" href="class_l_w_p.html">LWP</a> *p, bool inlet_pressure_drop, double &amp;pf, double &amp;Tf)</td></tr>
 <tr class="separator:a1d5a68cd9ece83d1dad3ed1b8c8f635b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c4f1264f1bfedf24616b5ecc92248b7" id="r_a3c4f1264f1bfedf24616b5ecc92248b7"><td class="memItemLeft" align="right" valign="top"><a id="a3c4f1264f1bfedf24616b5ecc92248b7" name="a3c4f1264f1bfedf24616b5ecc92248b7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Connector_LWP_Reservoir_and_Pipe_Front</b> (double t_target, <a class="el" href="class_reservoir.html">Reservoir</a> *r, <a class="el" href="class_l_w_p.html">LWP</a> *p, bool inlet_pressure_drop)</td></tr>
+<tr class="memitem:a3c4f1264f1bfedf24616b5ecc92248b7" id="r_a3c4f1264f1bfedf24616b5ecc92248b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a3c4f1264f1bfedf24616b5ecc92248b7">Connector_LWP_Reservoir_and_Pipe_Front</a> (double t_target, <a class="el" href="class_reservoir.html">Reservoir</a> *r, <a class="el" href="class_l_w_p.html">LWP</a> *p, bool inlet_pressure_drop)</td></tr>
 <tr class="separator:a3c4f1264f1bfedf24616b5ecc92248b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c26734a5ca79673f137182ee081a298" id="r_a0c26734a5ca79673f137182ee081a298"><td class="memItemLeft" align="right" valign="top"><a id="a0c26734a5ca79673f137182ee081a298" name="a0c26734a5ca79673f137182ee081a298"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>Connector_LWP_Pipe_Back_and_Valve</b> (double t_target, <a class="el" href="class_l_w_p.html">LWP</a> *p, <a class="el" href="class_valve.html">Valve</a> *v, double p_downstream, double &amp;pb, double &amp;Tb)</td></tr>
+<tr class="memitem:a0c26734a5ca79673f137182ee081a298" id="r_a0c26734a5ca79673f137182ee081a298"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a0c26734a5ca79673f137182ee081a298">Connector_LWP_Pipe_Back_and_Valve</a> (double t_target, <a class="el" href="class_l_w_p.html">LWP</a> *p, <a class="el" href="class_valve.html">Valve</a> *v, double p_downstream, double &amp;pb, double &amp;Tb)</td></tr>
 <tr class="separator:a0c26734a5ca79673f137182ee081a298"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1524c665eeaeca700fc72fdc70573039" id="r_a1524c665eeaeca700fc72fdc70573039"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a1524c665eeaeca700fc72fdc70573039">Connector_LWP_Pipe_Back_and_Valve</a> (double t_target, <a class="el" href="class_l_w_p.html">LWP</a> *p, <a class="el" href="class_valve.html">Valve</a> *v, double p_downstream)</td></tr>
 <tr class="memdesc:a1524c665eeaeca700fc72fdc70573039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect <a class="el" href="class_l_w_p.html">LWP</a> end to <a class="el" href="class_valve.html" title="A class for handling both liquid and fluid valves A class for storing data regarding a valve and allo...">Valve</a>.  <br /></td></tr>
 <tr class="separator:a1524c665eeaeca700fc72fdc70573039"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53876523db2a68af24eb3501b02324b4" id="r_a53876523db2a68af24eb3501b02324b4"><td class="memItemLeft" align="right" valign="top"><a id="a53876523db2a68af24eb3501b02324b4" name="a53876523db2a68af24eb3501b02324b4"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>Connector_LWP_Pipe_Back_and_Valve_with_Absorber</b> (double t_target, <a class="el" href="class_l_w_p.html">LWP</a> *p, <a class="el" href="class_valve__with___absorber.html">Valve_with_Absorber</a> *v, double p_downstream, double &amp;pb, double &amp;Tb)</td></tr>
+<tr class="memitem:a53876523db2a68af24eb3501b02324b4" id="r_a53876523db2a68af24eb3501b02324b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a53876523db2a68af24eb3501b02324b4">Connector_LWP_Pipe_Back_and_Valve_with_Absorber</a> (double t_target, <a class="el" href="class_l_w_p.html">LWP</a> *p, <a class="el" href="class_valve__with___absorber.html">Valve_with_Absorber</a> *v, double p_downstream, double &amp;pb, double &amp;Tb)</td></tr>
 <tr class="separator:a53876523db2a68af24eb3501b02324b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07a60f145b6cb4fafdf13b221b186249" id="r_a07a60f145b6cb4fafdf13b221b186249"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a07a60f145b6cb4fafdf13b221b186249">Connector_SCP_Reservoir_and_Pipe_Front</a> (double t_target, <a class="el" href="class_reservoir.html">Reservoir</a> *r, <a class="el" href="class_s_c_p.html">SCP</a> *p, double rho, double a, bool inlet_pressure_drop, double &amp;pf)</td></tr>
 <tr class="separator:a07a60f145b6cb4fafdf13b221b186249"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16b1ca2e3a17b044e619d39de80576b1" id="r_a16b1ca2e3a17b044e619d39de80576b1"><td class="memItemLeft" align="right" valign="top"><a id="a16b1ca2e3a17b044e619d39de80576b1" name="a16b1ca2e3a17b044e619d39de80576b1"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>Connector_SCP_Pipe_Back_and_Valve</b> (double t_target, <a class="el" href="class_s_c_p.html">SCP</a> *p, <a class="el" href="class_valve.html">Valve</a> *v, double rho, double a, double p_downstream, double &amp;pb)</td></tr>
+<tr class="memitem:a16b1ca2e3a17b044e619d39de80576b1" id="r_a16b1ca2e3a17b044e619d39de80576b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a16b1ca2e3a17b044e619d39de80576b1">Connector_SCP_Pipe_Back_and_Valve</a> (double t_target, <a class="el" href="class_s_c_p.html">SCP</a> *p, <a class="el" href="class_valve.html">Valve</a> *v, double rho, double a, double p_downstream, double &amp;pb)</td></tr>
 <tr class="separator:a16b1ca2e3a17b044e619d39de80576b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70043aa1fee54ace7c1b9a57f077a3ee" id="r_a70043aa1fee54ace7c1b9a57f077a3ee"><td class="memItemLeft" align="right" valign="top"><a id="a70043aa1fee54ace7c1b9a57f077a3ee" name="a70043aa1fee54ace7c1b9a57f077a3ee"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>Connector_SCP_Pipe_Front_and_Valve_Outlet</b> (double t_target, <a class="el" href="class_s_c_p.html">SCP</a> *p, <a class="el" href="class_valve.html">Valve</a> *v, double p_upstream, double rho, double a, double &amp;pb)</td></tr>
+<tr class="memitem:a70043aa1fee54ace7c1b9a57f077a3ee" id="r_a70043aa1fee54ace7c1b9a57f077a3ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a70043aa1fee54ace7c1b9a57f077a3ee">Connector_SCP_Pipe_Front_and_Valve_Outlet</a> (double t_target, <a class="el" href="class_s_c_p.html">SCP</a> *p, <a class="el" href="class_valve.html">Valve</a> *v, double p_upstream, double rho, double a, double &amp;pb)</td></tr>
 <tr class="separator:a70043aa1fee54ace7c1b9a57f077a3ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6f13c672450413409ac698917469fee" id="r_ac6f13c672450413409ac698917469fee"><td class="memItemLeft" align="right" valign="top"><a id="ac6f13c672450413409ac698917469fee" name="ac6f13c672450413409ac698917469fee"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Connector_SCP_Pipes</b> (double t_target, <a class="el" href="class_s_c_p.html">SCP</a> *p1, bool is_front1, <a class="el" href="class_s_c_p.html">SCP</a> *p2, bool is_front2, double mpout, double &amp;p, double &amp;v1, double &amp;v2)</td></tr>
+<tr class="memitem:ac6f13c672450413409ac698917469fee" id="r_ac6f13c672450413409ac698917469fee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#ac6f13c672450413409ac698917469fee">Connector_SCP_Pipes</a> (double t_target, <a class="el" href="class_s_c_p.html">SCP</a> *p1, bool is_front1, <a class="el" href="class_s_c_p.html">SCP</a> *p2, bool is_front2, double mpout, double &amp;p, double &amp;v1, double &amp;v2)</td></tr>
 <tr class="separator:ac6f13c672450413409ac698917469fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a744d9b3278bb5f1d883d8481ac35f912" id="r_a744d9b3278bb5f1d883d8481ac35f912"><td class="memItemLeft" align="right" valign="top"><a id="a744d9b3278bb5f1d883d8481ac35f912" name="a744d9b3278bb5f1d883d8481ac35f912"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Connector_SCP_Pipes</b> (double t_target, <a class="el" href="class_s_c_p.html">SCP</a> *p1, bool is_front1, <a class="el" href="class_s_c_p.html">SCP</a> *p2, bool is_front2, <a class="el" href="class_s_c_p.html">SCP</a> *p3, bool is_front3, double mpout, double &amp;p, double &amp;v1, double &amp;v2, double &amp;v3)</td></tr>
+<tr class="memitem:a744d9b3278bb5f1d883d8481ac35f912" id="r_a744d9b3278bb5f1d883d8481ac35f912"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#a744d9b3278bb5f1d883d8481ac35f912">Connector_SCP_Pipes</a> (double t_target, <a class="el" href="class_s_c_p.html">SCP</a> *p1, bool is_front1, <a class="el" href="class_s_c_p.html">SCP</a> *p2, bool is_front2, <a class="el" href="class_s_c_p.html">SCP</a> *p3, bool is_front3, double mpout, double &amp;p, double &amp;v1, double &amp;v2, double &amp;v3)</td></tr>
 <tr class="separator:a744d9b3278bb5f1d883d8481ac35f912"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad26586fd0386a1e2aa1dd70dd7d40495" id="r_ad26586fd0386a1e2aa1dd70dd7d40495"><td class="memItemLeft" align="right" valign="top"><a id="ad26586fd0386a1e2aa1dd70dd7d40495" name="ad26586fd0386a1e2aa1dd70dd7d40495"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Connector_LWP_Pipes</b> (double t_target, <a class="el" href="class_l_w_p.html">LWP</a> *p1, <a class="el" href="class_l_w_p.html">LWP</a> *p2)</td></tr>
+<tr class="memitem:ad26586fd0386a1e2aa1dd70dd7d40495" id="r_ad26586fd0386a1e2aa1dd70dd7d40495"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#ad26586fd0386a1e2aa1dd70dd7d40495">Connector_LWP_Pipes</a> (double t_target, <a class="el" href="class_l_w_p.html">LWP</a> *p1, <a class="el" href="class_l_w_p.html">LWP</a> *p2)</td></tr>
 <tr class="separator:ad26586fd0386a1e2aa1dd70dd7d40495"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac11f3211c2fbf494dc88beb7aab1f7b7" id="r_ac11f3211c2fbf494dc88beb7aab1f7b7"><td class="memItemLeft" align="right" valign="top"><a id="ac11f3211c2fbf494dc88beb7aab1f7b7" name="ac11f3211c2fbf494dc88beb7aab1f7b7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Connector_LWP_Pipes</b> (double t_target, <a class="el" href="class_l_w_p.html">LWP</a> *p1, bool is_front1, <a class="el" href="class_l_w_p.html">LWP</a> *p2, bool is_front2, <a class="el" href="class_l_w_p.html">LWP</a> *p3, bool is_front3, const double mpout, const double T)</td></tr>
+<tr class="memitem:ac11f3211c2fbf494dc88beb7aab1f7b7" id="r_ac11f3211c2fbf494dc88beb7aab1f7b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_connector.html#ac11f3211c2fbf494dc88beb7aab1f7b7">Connector_LWP_Pipes</a> (double t_target, <a class="el" href="class_l_w_p.html">LWP</a> *p1, bool is_front1, <a class="el" href="class_l_w_p.html">LWP</a> *p2, bool is_front2, <a class="el" href="class_l_w_p.html">LWP</a> *p3, bool is_front3, const double mpout, const double T)</td></tr>
 <tr class="separator:ac11f3211c2fbf494dc88beb7aab1f7b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for connecting elements. </p>
 <p>The class contains data for Connectors </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae29b3ae6cc0c34b261d49b24c4dfcb09" name="ae29b3ae6cc0c34b261d49b24c4dfcb09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae29b3ae6cc0c34b261d49b24c4dfcb09">&#9670;&#160;</a></span>Connector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Connector::Connector </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>DEBUG</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0f084edc18ed6e3a25314689d5bf9244" name="a0f084edc18ed6e3a25314689d5bf9244"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f084edc18ed6e3a25314689d5bf9244">&#9670;&#160;</a></span>~Connector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Connector::~Connector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1524c665eeaeca700fc72fdc70573039" name="a1524c665eeaeca700fc72fdc70573039"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1524c665eeaeca700fc72fdc70573039">&#9670;&#160;</a></span>Connector_LWP_Pipe_Back_and_Valve()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1524c665eeaeca700fc72fdc70573039">&#9670;&#160;</a></span>Connector_LWP_Pipe_Back_and_Valve() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -189,6 +215,703 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Connector_LWP_Pipes</
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a0c26734a5ca79673f137182ee081a298" name="a0c26734a5ca79673f137182ee081a298"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c26734a5ca79673f137182ee081a298">&#9670;&#160;</a></span>Connector_LWP_Pipe_Back_and_Valve() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Connector::Connector_LWP_Pipe_Back_and_Valve </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t_target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_l_w_p.html">LWP</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_valve.html">Valve</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p_downstream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>pb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>Tb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a53876523db2a68af24eb3501b02324b4" name="a53876523db2a68af24eb3501b02324b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53876523db2a68af24eb3501b02324b4">&#9670;&#160;</a></span>Connector_LWP_Pipe_Back_and_Valve_with_Absorber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Connector::Connector_LWP_Pipe_Back_and_Valve_with_Absorber </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t_target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_l_w_p.html">LWP</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_valve__with___absorber.html">Valve_with_Absorber</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p_downstream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>pb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>Tb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac11f3211c2fbf494dc88beb7aab1f7b7" name="ac11f3211c2fbf494dc88beb7aab1f7b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac11f3211c2fbf494dc88beb7aab1f7b7">&#9670;&#160;</a></span>Connector_LWP_Pipes() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Connector::Connector_LWP_Pipes </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t_target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_l_w_p.html">LWP</a> *&#160;</td>
+          <td class="paramname"><em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_front1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_l_w_p.html">LWP</a> *&#160;</td>
+          <td class="paramname"><em>p2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_front2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_l_w_p.html">LWP</a> *&#160;</td>
+          <td class="paramname"><em>p3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_front3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>mpout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>T</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad26586fd0386a1e2aa1dd70dd7d40495" name="ad26586fd0386a1e2aa1dd70dd7d40495"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad26586fd0386a1e2aa1dd70dd7d40495">&#9670;&#160;</a></span>Connector_LWP_Pipes() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Connector::Connector_LWP_Pipes </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t_target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_l_w_p.html">LWP</a> *&#160;</td>
+          <td class="paramname"><em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_l_w_p.html">LWP</a> *&#160;</td>
+          <td class="paramname"><em>p2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3c4f1264f1bfedf24616b5ecc92248b7" name="a3c4f1264f1bfedf24616b5ecc92248b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c4f1264f1bfedf24616b5ecc92248b7">&#9670;&#160;</a></span>Connector_LWP_Reservoir_and_Pipe_Front() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Connector::Connector_LWP_Reservoir_and_Pipe_Front </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t_target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_reservoir.html">Reservoir</a> *&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_l_w_p.html">LWP</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>inlet_pressure_drop</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abfe3fa2d5091dbd6833936754725e943" name="abfe3fa2d5091dbd6833936754725e943"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfe3fa2d5091dbd6833936754725e943">&#9670;&#160;</a></span>Connector_LWP_Reservoir_and_Pipe_Front() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Connector::Connector_LWP_Reservoir_and_Pipe_Front </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t_target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_reservoir.html">Reservoir</a> *&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_l_w_p.html">LWP</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>inlet_pressure_drop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>pf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>Tf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d5a68cd9ece83d1dad3ed1b8c8f635b" name="a1d5a68cd9ece83d1dad3ed1b8c8f635b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d5a68cd9ece83d1dad3ed1b8c8f635b">&#9670;&#160;</a></span>Connector_LWP_Reservoir_and_Pipe_Front_inlet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Connector::Connector_LWP_Reservoir_and_Pipe_Front_inlet </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t_target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_reservoir.html">Reservoir</a> *&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_l_w_p.html">LWP</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>inlet_pressure_drop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>pf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>Tf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c68c530eea0f178c376207e0190db24" name="a0c68c530eea0f178c376207e0190db24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c68c530eea0f178c376207e0190db24">&#9670;&#160;</a></span>Connector_Reservoir_and_Valve_Inlet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Connector::Connector_Reservoir_and_Valve_Inlet </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t_target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_reservoir.html">Reservoir</a> *&#160;</td>
+          <td class="paramname"><em>r1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_valve.html">Valve</a> *&#160;</td>
+          <td class="paramname"><em>v1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>INLET_PRESSURE_DROP</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p_downstream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>mp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Connect <a class="el" href="class_reservoir.html" title="Class for modeling Reservoir.">Reservoir</a> to <a class="el" href="class_valve.html" title="A class for handling both liquid and fluid valves A class for storing data regarding a valve and allo...">Valve</a>. </p>
+<p>Connect <a class="el" href="class_reservoir.html" title="Class for modeling Reservoir.">Reservoir</a> to <a class="el" href="class_valve.html" title="A class for handling both liquid and fluid valves A class for storing data regarding a valve and allo...">Valve</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t_target,s</td><td></td></tr>
+    <tr><td class="paramname">Reservoir*</td><td>reservoir </td></tr>
+    <tr><td class="paramname">Valve*</td><td>valve </td></tr>
+    <tr><td class="paramname">p_downstream</td><td></td></tr>
+    <tr><td class="paramname">&amp;p</td><td>pressure @ connection </td></tr>
+    <tr><td class="paramname">&amp;T</td><td>temperature @ connection </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a16b1ca2e3a17b044e619d39de80576b1" name="a16b1ca2e3a17b044e619d39de80576b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16b1ca2e3a17b044e619d39de80576b1">&#9670;&#160;</a></span>Connector_SCP_Pipe_Back_and_Valve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Connector::Connector_SCP_Pipe_Back_and_Valve </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t_target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_s_c_p.html">SCP</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_valve.html">Valve</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rho</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p_downstream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>pb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a70043aa1fee54ace7c1b9a57f077a3ee" name="a70043aa1fee54ace7c1b9a57f077a3ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70043aa1fee54ace7c1b9a57f077a3ee">&#9670;&#160;</a></span>Connector_SCP_Pipe_Front_and_Valve_Outlet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Connector::Connector_SCP_Pipe_Front_and_Valve_Outlet </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t_target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_s_c_p.html">SCP</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_valve.html">Valve</a> *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p_upstream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rho</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>pb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac6f13c672450413409ac698917469fee" name="ac6f13c672450413409ac698917469fee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6f13c672450413409ac698917469fee">&#9670;&#160;</a></span>Connector_SCP_Pipes() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Connector::Connector_SCP_Pipes </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t_target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_s_c_p.html">SCP</a> *&#160;</td>
+          <td class="paramname"><em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_front1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_s_c_p.html">SCP</a> *&#160;</td>
+          <td class="paramname"><em>p2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_front2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>mpout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>v1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>v2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a744d9b3278bb5f1d883d8481ac35f912" name="a744d9b3278bb5f1d883d8481ac35f912"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a744d9b3278bb5f1d883d8481ac35f912">&#9670;&#160;</a></span>Connector_SCP_Pipes() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Connector::Connector_SCP_Pipes </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t_target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_s_c_p.html">SCP</a> *&#160;</td>
+          <td class="paramname"><em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_front1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_s_c_p.html">SCP</a> *&#160;</td>
+          <td class="paramname"><em>p2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_front2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_s_c_p.html">SCP</a> *&#160;</td>
+          <td class="paramname"><em>p3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_front3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>mpout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>v1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>v2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>v3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -264,7 +987,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Connector_LWP_Pipes</
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_connector_8h_source.html">Connector.h</a></li>
-<li><b>Connector.cpp</b></li>
+<li><a class="el" href="_connector_8cpp.html">Connector.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

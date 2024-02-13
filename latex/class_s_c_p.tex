@@ -20,13 +20,18 @@ Inheritance diagram for SCP\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_s_c_p_a3dedbee89f8f613bd2987b6fca6dca94}{SCP}} (const string \+\_\+nev, const string \+\_\+cspe\+\_\+nev, const string \+\_\+cspv\+\_\+nev, const double \+\_\+ro, const double \+\_\+a, const double \+\_\+L, const double \+\_\+D, const double \+\_\+lambda, const double \+\_\+he, const double \+\_\+hv, const bool save\+\_\+data)
 \begin{DoxyCompactList}\small\item\em Constructor for the slightly compressible pipe class. \end{DoxyCompactList}\item 
-\Hypertarget{class_s_c_p_aec0db6047f6437d1ff4de3e5c21a9671}\label{class_s_c_p_aec0db6047f6437d1ff4de3e5c21a9671} 
-{\bfseries \texorpdfstring{$\sim$}{\string~}\+SCP} ()
+\mbox{\hyperlink{class_s_c_p_aec0db6047f6437d1ff4de3e5c21a9671}{\texorpdfstring{$\sim$}{\string~}\+SCP}} ()
 \begin{DoxyCompactList}\small\item\em Desctructor of the \doxylink{class_s_c_p}{SCP} class. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_s_c_p_af16d744aa2d09926cf227f260773a82c}{Get\+Name}} ()
 \begin{DoxyCompactList}\small\item\em Gives name of the pipe Returns the name of the \doxylink{class_s_c_p}{SCP} pipe. \end{DoxyCompactList}\item 
-string \mbox{\hyperlink{class_s_c_p_a49d5f5d781536e58ce5e21026dfa8059}{Info}} (bool show\+\_\+pts)
+string \mbox{\hyperlink{class_s_c_p_a3921a67c908dadf1f0ff21cc9464dcc5}{Info}} ()
 \begin{DoxyCompactList}\small\item\em Return the basic info of the pipe Returns the basic info about the pipe section. If so set, the data within the points is also displayed. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_s_c_p_aa0184931d7a224c3a1ae446c89d939e6}{Get\+\_\+t}} ()
+\item 
+double \mbox{\hyperlink{class_s_c_p_a04d59ecccb20d8ed02417c0c23d1f374}{Get\+\_\+dt}} ()
+\item 
+double \mbox{\hyperlink{class_s_c_p_ada3d7fb1efb4bdb22c9e5f009bd53b71}{Get\+\_\+tnext}} ()
+\item 
 void \mbox{\hyperlink{class_s_c_p_afd01c84f7ecfe434523957f646bfbcb1}{Ini}} (int Npts\+\_\+mul)
 \begin{DoxyCompactList}\small\item\em Initialize the \doxylink{class_s_c_p}{SCP} pipe Initializes the \doxylink{class_s_c_p}{SCP} pipe with a given number of points at 1 bar pressure and 0 velocity. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_s_c_p_a7c41b5c5742ed46307d91d73e6a46327}{Ini}} (double vini, double \+\_\+pstart)
@@ -43,76 +48,48 @@ void \mbox{\hyperlink{class_s_c_p_ac1f64a4207c1e612da730cebbb44c682}{Set\+\_\+dp
 \begin{DoxyCompactList}\small\item\em Set a parameter Allows to reset the diameter or length the pipe. Updating the length will rescale the system. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_s_c_p_a58097cfe30d419e07d14bac541d04af5}{Step}} (string BC\+\_\+start\+\_\+type, double BC\+\_\+start\+\_\+val, string BC\+\_\+end\+\_\+type, double BC\+\_\+end\+\_\+val)
 \begin{DoxyCompactList}\small\item\em Take a timestep. Calculates a timestep in the system dependent on the boundary conditions. (Those are given by the same strings and values as the ones in BCLeft and BCRight) Accepted boundary condition types\+: "{}\+Pressure"{} \& "{}\+Velocity"{}. \end{DoxyCompactList}\item 
-\Hypertarget{class_s_c_p_a89b4153c9fb930954b585a0ca7cf9d7c}\label{class_s_c_p_a89b4153c9fb930954b585a0ca7cf9d7c} 
-double {\bfseries Get\+Alpha\+At\+End} (double t\+\_\+target)
+double \mbox{\hyperlink{class_s_c_p_a89b4153c9fb930954b585a0ca7cf9d7c}{Get\+Alpha\+At\+End}} (double t\+\_\+target)
 \item 
-\Hypertarget{class_s_c_p_a6183e93948861f5d3a3282cbf31f977b}\label{class_s_c_p_a6183e93948861f5d3a3282cbf31f977b} 
-double {\bfseries Get\+Beta\+At\+Front} (double t\+\_\+target)
+double \mbox{\hyperlink{class_s_c_p_a6183e93948861f5d3a3282cbf31f977b}{Get\+Beta\+At\+Front}} (double t\+\_\+target)
 \item 
-\Hypertarget{class_s_c_p_a6137f34f11cf5c9b4c3fc3c266aac067}\label{class_s_c_p_a6137f34f11cf5c9b4c3fc3c266aac067} 
-double {\bfseries Get\+Alpha\+Primitive\+At\+End} (double t\+\_\+target)
+double \mbox{\hyperlink{class_s_c_p_a6137f34f11cf5c9b4c3fc3c266aac067}{Get\+Alpha\+Primitive\+At\+End}} (double t\+\_\+target)
 \item 
-\Hypertarget{class_s_c_p_a67b7c3d88873f91950d4881c42947bc7}\label{class_s_c_p_a67b7c3d88873f91950d4881c42947bc7} 
-double {\bfseries Get\+Beta\+Primitive\+At\+Front} (double t\+\_\+target)
+double \mbox{\hyperlink{class_s_c_p_a67b7c3d88873f91950d4881c42947bc7}{Get\+Beta\+Primitive\+At\+Front}} (double t\+\_\+target)
 \item 
-\Hypertarget{class_s_c_p_a15a21288294d0ae18e73ef2fccc1388b}\label{class_s_c_p_a15a21288294d0ae18e73ef2fccc1388b} 
-void {\bfseries Save\+\_\+data} ()
+void \mbox{\hyperlink{class_s_c_p_a15a21288294d0ae18e73ef2fccc1388b}{Save\+\_\+data}} ()
 \begin{DoxyCompactList}\small\item\em Exports savied data Exports data saved from previous settings (such as steps and initialization.) Only works if the save\+\_\+data flag was set to true, otherwise an error message is displayed. Data is saved to the previously determined savefile name. No inputs/outputs. \end{DoxyCompactList}\item 
-\Hypertarget{class_s_c_p_a788d3c89f8db4ae29abe3d90dea03e54}\label{class_s_c_p_a788d3c89f8db4ae29abe3d90dea03e54} 
-void {\bfseries Save\+\_\+status} (bool newfile, bool atonce)
+void \mbox{\hyperlink{class_s_c_p_a788d3c89f8db4ae29abe3d90dea03e54}{Save\+\_\+status}} (bool newfile, bool atonce)
 \item 
 float \mbox{\hyperlink{class_s_c_p_acf9565ea5e961dc2b13593556414a113}{Get\+Penult}} (string what)
 \begin{DoxyCompactList}\small\item\em Export the penultimate values of a given return data Returns the penultimate value of the collected data. Only one value, the one specified by the input value is returned. Possible values\+: t,p\+\_\+front, p\+\_\+back, v\+\_\+front, v\+\_\+back, mp\+\_\+front, mp\+\_\+back. \end{DoxyCompactList}\item 
-\Hypertarget{class_s_c_p_a5736aeb413b6ea08f0c7bd6aa3da1d45}\label{class_s_c_p_a5736aeb413b6ea08f0c7bd6aa3da1d45} 
-vector$<$ double $>$ {\bfseries Get\+\_\+dvprop} (string prop\+\_\+string)
+vector$<$ double $>$ \mbox{\hyperlink{class_s_c_p_a5736aeb413b6ea08f0c7bd6aa3da1d45}{Get\+\_\+dvprop}} (string prop\+\_\+string)
 \item 
-\Hypertarget{class_s_c_p_a77774ab55f72cd0b175c09d6f7b8fba3}\label{class_s_c_p_a77774ab55f72cd0b175c09d6f7b8fba3} 
-void {\bfseries list\+\_\+pv} ()
+void \mbox{\hyperlink{class_s_c_p_a77774ab55f72cd0b175c09d6f7b8fba3}{list\+\_\+pv}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_units}{Units}}}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_p_s_toolbox_base_edge}{PSToolbox\+Base\+Edge}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_units_aa10ded064259f35f044246879725b98a}{Units}} ()
-\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-{\bfseries \texorpdfstring{$\sim$}{\string~}\+Units} ()
-\begin{DoxyCompactList}\small\item\em Destuctor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_p_s_toolbox_base_edge_a57fc68d03e129c6216e46b6bec83bab3}{PSToolbox\+Base\+Edge}} (const string \mbox{\hyperlink{class_p_s_toolbox_base_edge_a3b4da68ffb04db1c11898f3d53f46345}{name}})
+\item 
+\mbox{\hyperlink{class_p_s_toolbox_base_edge_a3664abfc29dc1cbdf71ac85e45fd2302}{\texorpdfstring{$\sim$}{\string~}\+PSToolbox\+Base\+Edge}} ()
+\item 
+string \mbox{\hyperlink{class_p_s_toolbox_base_edge_aac5d028f66e59fa00ea43ed11c4174ca}{Get\+\_\+name}} ()
+\item 
+unsigned int \mbox{\hyperlink{class_p_s_toolbox_base_edge_a66e6f5d1e28dd1c0c635e127a9b41e71}{Get\+\_\+type}} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_s_c_p_a77886d757791949bd29efe51e6c47703}\label{class_s_c_p_a77886d757791949bd29efe51e6c47703} 
-string {\bfseries fname}
+string \mbox{\hyperlink{class_s_c_p_a77886d757791949bd29efe51e6c47703}{fname}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_units}{Units}}}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_p_s_toolbox_base_edge}{PSToolbox\+Base\+Edge}}}
 \begin{DoxyCompactItemize}
 \item 
-double {\bfseries ft\+\_\+to\+\_\+m}
-\begin{DoxyCompactList}\small\item\em Converts foot to meters. \end{DoxyCompactList}\item 
-double {\bfseries m\+\_\+to\+\_\+ft}
-\begin{DoxyCompactList}\small\item\em Convert meters to foot. \end{DoxyCompactList}\item 
-double {\bfseries inch\+\_\+to\+\_\+m}
-\begin{DoxyCompactList}\small\item\em Convert inches to meters. \end{DoxyCompactList}\item 
-double {\bfseries m\+\_\+to\+\_\+inch}
-\begin{DoxyCompactList}\small\item\em Convert metres to inches. \end{DoxyCompactList}\item 
-double {\bfseries lbm\+\_\+to\+\_\+kg}
-\begin{DoxyCompactList}\small\item\em Convert pounds to kilograms. \end{DoxyCompactList}\item 
-double {\bfseries kg\+\_\+to\+\_\+lbm}
-\begin{DoxyCompactList}\small\item\em Multiplier for conversion from kilogram to pound. \end{DoxyCompactList}\item 
-double {\bfseries lbf\+\_\+to\+\_\+N}
-\begin{DoxyCompactList}\small\item\em Multiplier for conversion of poundforce to Newtons. \end{DoxyCompactList}\item 
-double {\bfseries N\+\_\+to\+\_\+lbf}
-\begin{DoxyCompactList}\small\item\em Mulitplier for conversion of Newtons to poundforce. \end{DoxyCompactList}\item 
-double {\bfseries psi\+\_\+to\+\_\+\+Pa}
-\begin{DoxyCompactList}\small\item\em Mulitplier ofr conversion of pound per square inch to Pa. \end{DoxyCompactList}\item 
-double {\bfseries Pa\+\_\+to\+\_\+psi}
-\begin{DoxyCompactList}\small\item\em Multiplier for conversion of pascals to pound per square inch. \end{DoxyCompactList}\item 
-double {\bfseries psi\+\_\+to\+\_\+bar}
-\begin{DoxyCompactList}\small\item\em Mulitplier for conversion of psi to bar. \end{DoxyCompactList}\item 
-double {\bfseries bar\+\_\+to\+\_\+psi}
-\begin{DoxyCompactList}\small\item\em Multiplier for conversion of bar to psi. \end{DoxyCompactList}\item 
-double {\bfseries m3\+\_\+to\+\_\+inch3}
-\begin{DoxyCompactList}\small\item\em Multiplier for conversion of cubic meter to cumbic inch. \end{DoxyCompactList}\item 
-double {\bfseries inch3\+\_\+to\+\_\+m3}
-\begin{DoxyCompactList}\small\item\em Multiplier for conversion of cubic inches to cubic metres. \end{DoxyCompactList}\end{DoxyCompactItemize}
+string \mbox{\hyperlink{class_p_s_toolbox_base_edge_a3b4da68ffb04db1c11898f3d53f46345}{name}}
+\item 
+unsigned int \mbox{\hyperlink{class_p_s_toolbox_base_edge_aa5eee494325f2d253bcbd52c5b9456e9}{type}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -156,6 +133,16 @@ Constructor for the slightly compressible pipe class.
 \mbox{\texttt{ in}}  & {\em \+\_\+save\+\_\+data} & whether to save data \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_s_c_p_aec0db6047f6437d1ff4de3e5c21a9671}\label{class_s_c_p_aec0db6047f6437d1ff4de3e5c21a9671} 
+\index{SCP@{SCP}!````~SCP@{\texorpdfstring{$\sim$}{\string~}SCP}}
+\index{````~SCP@{\texorpdfstring{$\sim$}{\string~}SCP}!SCP@{SCP}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SCP()}{\string~SCP()}}
+{\footnotesize\ttfamily SCP\+::\texorpdfstring{$\sim$}{\string~}\+SCP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Desctructor of the \doxylink{class_s_c_p}{SCP} class. 
+
 
 
 \doxysubsection{Member Function Documentation}
@@ -177,6 +164,66 @@ Return a property of the \doxylink{class_s_c_p}{SCP}.
 \begin{DoxyReturn}{Returns}
 The value that was looked up. 
 \end{DoxyReturn}
+\Hypertarget{class_s_c_p_a04d59ecccb20d8ed02417c0c23d1f374}\label{class_s_c_p_a04d59ecccb20d8ed02417c0c23d1f374} 
+\index{SCP@{SCP}!Get\_dt@{Get\_dt}}
+\index{Get\_dt@{Get\_dt}!SCP@{SCP}}
+\doxysubsubsection{\texorpdfstring{Get\_dt()}{Get\_dt()}}
+{\footnotesize\ttfamily double SCP\+::\+Get\+\_\+dt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_p_s_toolbox_base_edge_a7e410f4db9a48f4082ff155fc53b8787}{PSToolbox\+Base\+Edge}}.
+
+\Hypertarget{class_s_c_p_a5736aeb413b6ea08f0c7bd6aa3da1d45}\label{class_s_c_p_a5736aeb413b6ea08f0c7bd6aa3da1d45} 
+\index{SCP@{SCP}!Get\_dvprop@{Get\_dvprop}}
+\index{Get\_dvprop@{Get\_dvprop}!SCP@{SCP}}
+\doxysubsubsection{\texorpdfstring{Get\_dvprop()}{Get\_dvprop()}}
+{\footnotesize\ttfamily vector$<$ double $>$ SCP\+::\+Get\+\_\+dvprop (\begin{DoxyParamCaption}\item[{string}]{prop\+\_\+string }\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_c_p_aa0184931d7a224c3a1ae446c89d939e6}\label{class_s_c_p_aa0184931d7a224c3a1ae446c89d939e6} 
+\index{SCP@{SCP}!Get\_t@{Get\_t}}
+\index{Get\_t@{Get\_t}!SCP@{SCP}}
+\doxysubsubsection{\texorpdfstring{Get\_t()}{Get\_t()}}
+{\footnotesize\ttfamily double SCP\+::\+Get\+\_\+t (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_p_s_toolbox_base_edge_aa7743b74530c578ce3ca0592938899b0}{PSToolbox\+Base\+Edge}}.
+
+\Hypertarget{class_s_c_p_ada3d7fb1efb4bdb22c9e5f009bd53b71}\label{class_s_c_p_ada3d7fb1efb4bdb22c9e5f009bd53b71} 
+\index{SCP@{SCP}!Get\_tnext@{Get\_tnext}}
+\index{Get\_tnext@{Get\_tnext}!SCP@{SCP}}
+\doxysubsubsection{\texorpdfstring{Get\_tnext()}{Get\_tnext()}}
+{\footnotesize\ttfamily double SCP\+::\+Get\+\_\+tnext (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_p_s_toolbox_base_edge_afefed4315cd20e5a5cfea459da6e4977}{PSToolbox\+Base\+Edge}}.
+
+\Hypertarget{class_s_c_p_a89b4153c9fb930954b585a0ca7cf9d7c}\label{class_s_c_p_a89b4153c9fb930954b585a0ca7cf9d7c} 
+\index{SCP@{SCP}!GetAlphaAtEnd@{GetAlphaAtEnd}}
+\index{GetAlphaAtEnd@{GetAlphaAtEnd}!SCP@{SCP}}
+\doxysubsubsection{\texorpdfstring{GetAlphaAtEnd()}{GetAlphaAtEnd()}}
+{\footnotesize\ttfamily double SCP\+::\+Get\+Alpha\+At\+End (\begin{DoxyParamCaption}\item[{double}]{t\+\_\+target }\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_c_p_a6137f34f11cf5c9b4c3fc3c266aac067}\label{class_s_c_p_a6137f34f11cf5c9b4c3fc3c266aac067} 
+\index{SCP@{SCP}!GetAlphaPrimitiveAtEnd@{GetAlphaPrimitiveAtEnd}}
+\index{GetAlphaPrimitiveAtEnd@{GetAlphaPrimitiveAtEnd}!SCP@{SCP}}
+\doxysubsubsection{\texorpdfstring{GetAlphaPrimitiveAtEnd()}{GetAlphaPrimitiveAtEnd()}}
+{\footnotesize\ttfamily double SCP\+::\+Get\+Alpha\+Primitive\+At\+End (\begin{DoxyParamCaption}\item[{double}]{t\+\_\+target }\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_c_p_a6183e93948861f5d3a3282cbf31f977b}\label{class_s_c_p_a6183e93948861f5d3a3282cbf31f977b} 
+\index{SCP@{SCP}!GetBetaAtFront@{GetBetaAtFront}}
+\index{GetBetaAtFront@{GetBetaAtFront}!SCP@{SCP}}
+\doxysubsubsection{\texorpdfstring{GetBetaAtFront()}{GetBetaAtFront()}}
+{\footnotesize\ttfamily double SCP\+::\+Get\+Beta\+At\+Front (\begin{DoxyParamCaption}\item[{double}]{t\+\_\+target }\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_c_p_a67b7c3d88873f91950d4881c42947bc7}\label{class_s_c_p_a67b7c3d88873f91950d4881c42947bc7} 
+\index{SCP@{SCP}!GetBetaPrimitiveAtFront@{GetBetaPrimitiveAtFront}}
+\index{GetBetaPrimitiveAtFront@{GetBetaPrimitiveAtFront}!SCP@{SCP}}
+\doxysubsubsection{\texorpdfstring{GetBetaPrimitiveAtFront()}{GetBetaPrimitiveAtFront()}}
+{\footnotesize\ttfamily double SCP\+::\+Get\+Beta\+Primitive\+At\+Front (\begin{DoxyParamCaption}\item[{double}]{t\+\_\+target }\end{DoxyParamCaption})}
+
 \Hypertarget{class_s_c_p_af16d744aa2d09926cf227f260773a82c}\label{class_s_c_p_af16d744aa2d09926cf227f260773a82c} 
 \index{SCP@{SCP}!GetName@{GetName}}
 \index{GetName@{GetName}!SCP@{SCP}}
@@ -205,11 +252,11 @@ Export the penultimate values of a given return data Returns the penultimate val
 {\em The} & name of the value we would like tor return. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{class_s_c_p_a49d5f5d781536e58ce5e21026dfa8059}\label{class_s_c_p_a49d5f5d781536e58ce5e21026dfa8059} 
+\Hypertarget{class_s_c_p_a3921a67c908dadf1f0ff21cc9464dcc5}\label{class_s_c_p_a3921a67c908dadf1f0ff21cc9464dcc5} 
 \index{SCP@{SCP}!Info@{Info}}
 \index{Info@{Info}!SCP@{SCP}}
 \doxysubsubsection{\texorpdfstring{Info()}{Info()}}
-{\footnotesize\ttfamily string SCP\+::\+Info (\begin{DoxyParamCaption}\item[{bool}]{show\+\_\+pts }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily string SCP\+::\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -223,6 +270,10 @@ Return the basic info of the pipe Returns the basic info about the pipe section.
 \begin{DoxyReturn}{Returns}
 a string containing all the pipe data, in a printable form. 
 \end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_p_s_toolbox_base_edge_a4cfb66702f57eb57a4acd23c6d361d2f}{PSToolbox\+Base\+Edge}}.
+
 \Hypertarget{class_s_c_p_a7c41b5c5742ed46307d91d73e6a46327}\label{class_s_c_p_a7c41b5c5742ed46307d91d73e6a46327} 
 \index{SCP@{SCP}!Ini@{Ini}}
 \index{Ini@{Ini}!SCP@{SCP}}
@@ -282,7 +333,7 @@ Initialize the \doxylink{class_s_c_p}{SCP} pipe Initializes the \doxylink{class_
 \index{SCP@{SCP}!Ini@{Ini}}
 \index{Ini@{Ini}!SCP@{SCP}}
 \doxysubsubsection{\texorpdfstring{Ini()}{Ini()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily void SCP\+::\+Ini (\begin{DoxyParamCaption}\item[{int}]{Npts\+\_\+mul }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void SCP\+::\+Ini (\begin{DoxyParamCaption}\item[{int}]{Npts\+\_\+mul }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -293,6 +344,32 @@ Initialize the \doxylink{class_s_c_p}{SCP} pipe Initializes the \doxylink{class_
 {\em Npts\+\_\+mul} & Base number of points to create, actually 20 as many created \\
 \hline
 \end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_p_s_toolbox_base_edge_a1a152f3ff28fa36b5b6da17bceb2659e}{PSToolbox\+Base\+Edge}}.
+
+\Hypertarget{class_s_c_p_a77774ab55f72cd0b175c09d6f7b8fba3}\label{class_s_c_p_a77774ab55f72cd0b175c09d6f7b8fba3} 
+\index{SCP@{SCP}!list\_pv@{list\_pv}}
+\index{list\_pv@{list\_pv}!SCP@{SCP}}
+\doxysubsubsection{\texorpdfstring{list\_pv()}{list\_pv()}}
+{\footnotesize\ttfamily void SCP\+::list\+\_\+pv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_s_c_p_a15a21288294d0ae18e73ef2fccc1388b}\label{class_s_c_p_a15a21288294d0ae18e73ef2fccc1388b} 
+\index{SCP@{SCP}!Save\_data@{Save\_data}}
+\index{Save\_data@{Save\_data}!SCP@{SCP}}
+\doxysubsubsection{\texorpdfstring{Save\_data()}{Save\_data()}}
+{\footnotesize\ttfamily void SCP\+::\+Save\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Exports savied data Exports data saved from previous settings (such as steps and initialization.) Only works if the save\+\_\+data flag was set to true, otherwise an error message is displayed. Data is saved to the previously determined savefile name. No inputs/outputs. 
+
+\Hypertarget{class_s_c_p_a788d3c89f8db4ae29abe3d90dea03e54}\label{class_s_c_p_a788d3c89f8db4ae29abe3d90dea03e54} 
+\index{SCP@{SCP}!Save\_status@{Save\_status}}
+\index{Save\_status@{Save\_status}!SCP@{SCP}}
+\doxysubsubsection{\texorpdfstring{Save\_status()}{Save\_status()}}
+{\footnotesize\ttfamily void SCP\+::\+Save\+\_\+status (\begin{DoxyParamCaption}\item[{bool}]{newfile,  }\item[{bool}]{atonce }\end{DoxyParamCaption})}
+
 \Hypertarget{class_s_c_p_ac1f64a4207c1e612da730cebbb44c682}\label{class_s_c_p_ac1f64a4207c1e612da730cebbb44c682} 
 \index{SCP@{SCP}!Set\_dprop@{Set\_dprop}}
 \index{Set\_dprop@{Set\_dprop}!SCP@{SCP}}
@@ -362,7 +439,16 @@ Calculates the dimensionless parameters Calculates the dimensionless parametwers
 \end{DoxyParams}
 
 
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_s_c_p_a77886d757791949bd29efe51e6c47703}\label{class_s_c_p_a77886d757791949bd29efe51e6c47703} 
+\index{SCP@{SCP}!fname@{fname}}
+\index{fname@{fname}!SCP@{SCP}}
+\doxysubsubsection{\texorpdfstring{fname}{fname}}
+{\footnotesize\ttfamily string SCP\+::fname}
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-SCP.\+h\item 
-SCP.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{_s_c_p_8h}{SCP.\+h}}\item 
+\mbox{\hyperlink{_s_c_p_8cpp}{SCP.\+cpp}}\end{DoxyCompactItemize}

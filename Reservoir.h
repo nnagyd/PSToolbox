@@ -43,11 +43,17 @@ class Reservoir: public Units
         const double _a,
         const double _rho,
         const bool save_data);
-    Reservoir(const string _name,
+     Reservoir(const string _name,
         const double _vol,
         IdealGas* gas,
         double n_poly,
         const bool _save_data);
+    Reservoir(const string _name,
+        const double _vol,
+        IdealGas* gas,
+        double n_poly,
+        const bool _save_data,
+        const double Tt);
     Reservoir(const string _name,
         const double _vol,
         Gas* gas,

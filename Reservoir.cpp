@@ -51,11 +51,37 @@ Reservoir::Reservoir(const string _name,
   n_poly = _n_poly;
   a = gas->Get_SonicVel(293.,1.e5);
 
+  T=293.;
   t = 0;
   p = 0.;
   Ini_done = false;
   DEBUG=false;
 }
+
+Reservoir::Reservoir(const string _name,
+    const double _vol,
+    IdealGas* _gas,
+    double _n_poly,
+    const bool _save_data,
+    const double Tt) : Units() {
+  save_data = _save_data;
+  name = _name;
+  vol = _vol;
+  fname = name + ".dat";
+  beta = 0.;
+  is_Gas = true;
+  gas = _gas;
+
+  n_poly = _n_poly;
+  a = gas->Get_SonicVel(293.,1.e5);
+
+  T=Tt;
+  t = 0;
+  p = 0.;
+  Ini_done = false;
+  DEBUG=false;
+}
+
 
 
 Reservoir::Reservoir(const string _name,
@@ -177,11 +203,12 @@ VectorXd Reservoir::ReservoirODE(const double x, const VectorXd & y, const Vecto
   VectorXd out(1);
   if (is_Gas)
     a = gas->Get_SonicVel(T,p);
-
   out(0) = a * a / vol * (pars(0) - pars(1));
   //printf("\n reservoir: p=%6.4f bar, a=%5.3e, vol=%5.3e, dq=%5.3e, dp/dt= %5.3f bar/s",y(0)/1.e5,a,vol,pars(0)-pars(1),out(0)/1.e5);
+//cin.get();
   return out;
 }
+
 
 void Reservoir::rk45(
     double x_0, double x_max, VectorXd y_0,

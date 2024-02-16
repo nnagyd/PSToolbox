@@ -16,7 +16,8 @@ class Connector
   public:
     Connector(bool DEBUG);
 
-    Connector(PSToolboxBaseEdge *e1,bool is_front1, 
+    Connector(
+        PSToolboxBaseEdge *e1,bool is_front1, 
         PSToolboxBaseEdge *e2, bool is_front2, 
         double demand, bool DEBUG);
 

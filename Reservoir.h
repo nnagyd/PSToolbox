@@ -53,7 +53,7 @@ class Reservoir: public Units
         IdealGas* gas,
         double n_poly,
         const bool _save_data,
-        const double Tt);
+        cons double Tt);
     Reservoir(const string _name,
         const double _vol,
         Gas* gas,

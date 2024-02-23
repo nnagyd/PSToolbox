@@ -1,0 +1,40 @@
+[TITLE]
+prueba	 
+
+[JUNCTIONS]
+;ID              	Elev        	Demand      	Pattern         
+ n2              	113         	0         	Fix             	;  
+ n3              	100         	0        	Fix             	;
+
+[RESERVOIRS]
+;ID              	Head        	Pattern         
+ n1               	100000.0      	                	;
+
+[TANKS]
+;ID              	Elevation   	InitLevel   	MinLevel    	MaxLevel    	Diameter    	MinVol      	VolCurve        	Overflow
+
+[PIPES]
+;ID              	Node1           	Node2           	Length      	Diameter    	Roughness   	MinorLoss   	Status
+ p1               	n1               	n2              	200           	125         	101         	0           	Open  	;
+ p2               	n2               	n3              	100        	100         	100         	0           	Open  	;
+
+[PUMPS]
+;ID              	Node1           	Node2           	Parameters
+
+[VALVES]
+;ID              	Node1           	Node2           	Diameter    	Type	Setting     	MinorLoss   
+
+[TAGS]
+
+[DEMANDS]
+;Junction        	Demand      	Pattern         	Category
+
+[STATUS]
+;ID              	Status/Setting
+
+[PATTERNS]
+;ID              	Multipliers
+;
+
+
+[END]
